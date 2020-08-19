@@ -8,7 +8,7 @@ from main.server.api import api_bp
 import os
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app_config = os.getenv("APP_CONFIG", "main.server.config.DevelopmentConfig")
 app.config.from_object(app_config)
 
