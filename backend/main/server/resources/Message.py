@@ -56,3 +56,15 @@ class MessageResource(Resource):
 
         message = message_schema.dump(message)
         return {'status': 'success', 'message': message}, 200
+
+    def delete(self, messageID):
+        """delete a message by ID"""
+
+        message = Message.query.filter_by(messageID=messageID)
+
+        if not message.first():
+            return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
+
+        message.delete()
+        db.session.commit()
+        return {'status': 'sucess', 'message': 'Message Deleted'}, 200
