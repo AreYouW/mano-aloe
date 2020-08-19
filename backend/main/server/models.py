@@ -11,10 +11,10 @@ class Message(db.Model):
     region = db.Column(db.String(16), nullable=False)
     username = db.Column(db.String(256), nullable=False)
 
-    def __init__(self, original_message, japanese_message, english_message, region, username):
+    def __init__(self, original_message, translated_japanese_message, translated_english_message, region, username):
         self.original_message = original_message
-        self.translated_japanese_message = japanese_message
-        self.translated_english_message = english_message
+        self.translated_japanese_message = translated_japanese_message
+        self.translated_english_message = translated_english_message
         self.region = region
         self.username = username
 
