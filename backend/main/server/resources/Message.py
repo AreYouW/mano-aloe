@@ -29,15 +29,15 @@ class MessageListResource(Resource):
 
         data = message_schema.load(json_data)
 
-        message = Message.query.filter_by(original_message=data.get('original_message'),
+        message = Message.query.filter_by(orig_msg=data.get('orig_msg'),
                                           username=data.get('username')).first()
 
         if message:
             return {'status': 'fail', 'message': 'Message already exists'}, 400
 
-        message = Message(original_message=data.get('original_message'),
-                          translated_japanese_message=data.get('translated_japanese_message'),
-                          translated_english_message=data.get('translated_english_message'), region=data.get('region'),
+        message = Message(orig_msg=data.get('orig_msg'),
+                          jp_msg=data.get('jp_msg'),
+                          region=data.get('region'),
                           username=data.get('username'))
 
         db.session.add(message)
