@@ -22,7 +22,7 @@ export default function App() {
     <Router>
       <div>
         <header className="App-header">
-          <img src={AloeBackground} alt="Aloe Background" style={{maxHeight:"60vw"}}/>
+          <img src={AloeBackground} alt="Aloe Background" style={{maxWidth:"80vw"}}/>
           <iframe className="video-tag-left" src="https://www.youtube.com/embed/mM1fiRGR7bw" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           <img src={AloeHeartIcon} alt="logo" className="logo-tag-right App-logo" />
         </header>
