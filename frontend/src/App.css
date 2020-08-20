@@ -47,7 +47,7 @@ body {
 
 .App-header {
   min-height: 100vh;
-  display: fle;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
