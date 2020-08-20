@@ -1,5 +1,24 @@
+.video-tag-left {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  z-index: 1000;
+  padding: 5px;
+  width: 10.19vw;
+  height: 5.73vw;
+}
+
+.logo-tag-right {
+  float: right;
+  position: absolute;
+  right: 5vmin;
+  top: 20%;
+  z-index: 1000;
+}
+
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
