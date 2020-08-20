@@ -1,0 +1,994 @@
+[
+  {
+    "Name": "Splinter",
+    "Country": "Norway",
+    "Native_message": "Frøken Aloe, Jeg syner du er veldig pen, og jeg gleder meg til å se deg live når enn du måtte komme tilbake fra suspensjon",
+    "EN_message": "Dearest Aloe, Although I haven't had the opportunity to get to know you all that well yet, I believe that - despite everything that may happen - it is right to support you and stay with you no matter how little I can do as a fan that, moreover, doesn't even know Japanese. I really hope I'll see you and listen to you sing again soon. Stay strong",
+    "JP_message_(Deepl)": "アロエちゃん、とても可愛いと思いますよ, 停学後のライブを楽しみにしています.",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Ice",
+    "Country": "Germany",
+    "Native_message": "Tag Aloe,\ndu bist cool. Ich würd mich sehr freuen wenn du wieder zurück kommst um Spaß mit uns und den HoloFive leuten zu haben. Wir lieben dich, bleib stark!",
+    "EN_message": "G'day Aloe,\nyou're cool. I'll be very happy when you're coming back to once more have fun with us and the HoloFive crew. We love you, stay strong!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Swhite",
+    "Country": "Indonesia",
+    "Native_message": "Hallo Aloe-chan, Aku harap kamu selalu dalam suasana hati yang baik, dan selalu memiliki hari-hari yang cerah. Aku harap kamu tetap kuat mulai saat ini dan seterusnya. Salam dari Indonesia <3",
+    "EN_message": "Hello Aloe-chan, I hope you are always in a good mood, and always have a cheerful days. I hope you keep stronger from this moment and forever. Regards from Indonesia <3",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは、いつもご機嫌で、いつも明るい日々を過ごされているといいですね。 今この瞬間から、そしていつまでも強くあり続けてくださいね。 インドネシアからのご挨拶 <3 (下手な翻訳でごめんなさい。)",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Arvenn",
+    "Country": "Italy",
+    "Native_message": "Carissima Aloe,\nSebbene non abbia ancora avuto modo di conoscerti adeguatamente, ritengo che - al di là di qualunque cosa succeda - sia giusto supportarti e starti vicino per quel poco che posso fare da fan che, peraltro, neanche conosce il giapponese. Spero tantissimo di tornare a vederti e sentirti cantare presto.\nSii forte!",
+    "EN_message": "Dearest Aloe, Although I haven't had the opportunity to get to know you all that well yet, I believe that - despite everything that may happen - it is right to support you and stay with you no matter how little I can do as a fan that, moreover, doesn't even know Japanese. I really hope I'll see you and listen to you sing again soon. Stay strong!",
+    "JP_message_(Deepl)": "親愛なるアロエ まだまだ皆さんのことをよく知る機会はありませんが、日本語もわからないファンの私にできることは、どんなことがあっても、少しでも皆さんを応援し、一緒にいることが正しいことだと思っています。また近いうちにお会いして歌を聴きたいと思います。 頑張れ！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Pejota",
+    "Country": "Brazil",
+    "Native_message": "Bom dia / boa tarde / boa noite do Brasil :flag_br:, Aloe-chan!\n\nEspero que esteja tudo bem com você! Estou muito ansioso pela sua volta e mal posso esperar por todas as memórias maravilhosas que iremos criar contigo! Estou torcendo para o seu sucesso!",
+    "EN_message": "Good morning / good afternoon / good night from Brazil , Aloe-chan! I hope everything is fine with you! I am very much looking forward to your return and I can't wait for all the wonderful memories that we will create with you! I'm rooting for your success!",
+    "JP_message_(Deepl)": "ブラジルからのおはようございます/おはようございます/おやすみなさい  アロエちゃん! アロエちゃん、お元気ですか？アロエちゃんの帰国をとても楽しみにしています。応援しています! 私はあなたとの間に何も問題がないことを願っています！私はあなたが戻ってくるのをとても楽しみにしています。私はあなたの復帰をとても楽しみにしていますし、あなたと一緒に作る素敵な思い出が待ち遠しいです! あなたの成功を応援しています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Shivermetimbers",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe I wish you well and hope everything is ok. I along with many people will be very happy when you return. We have your back friend.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Necrosis",
+    "Country": "Indonesia",
+    "Native_message": "Halo Mano Aloe, Apa kabar hari ini? Semua baik baik saja kan? Saya harap kamu baik-baik saja! Saya hanya ingin mengaatakan bahwa saya masih mendukung kamu!",
+    "EN_message": "Hello Mano Aloe, how are you today? are you fine? i hope you’re fine! I just want to tell you that i’m still supporting you!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Dscy",
+    "Country": "Colombia",
+    "Native_message": "Aloe-chan, espero impacientemente tu regreso para crear maravillosos recuerdos de aquí en adelante. Deseo de todo corazón que te encuentres bien, porque si tú eres feliz, nosotros también. ¡De ahora en adelante siempre te apoyaremos sin importar qué!",
+    "EN_message": "Aloe-chan, I look forward to your return to create wonderful memories from here on. I wish from the bottom of my heart that you are well, because if you are happy, we are happy too. From now on, we will always support you no matter what!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "The Wisest of Wolfies",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "I am greatly looking forward to your return, Mano Aloe. Your singing was amazing and your personality is infectious, brightening my day. I wish nothing but the best and that after these two weeks you may be happy and smile again, and that from here on the tears you shed be tears of joy. This community is a family, that means no one gets left behind.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Eisen | ixSairai",
+    "Country": "Philippines",
+    "Native_message": "Kumusta Aloe!\nKaming ay iyong mga taga-hanga mula sa ibayong baybayin. Hatiin man kami ng malawak na karagatan at kalupaan, iba't iba man ang aming wika at kultura, kami ay ipinagbubuklod ng iisang saloobin. Mula sa kaloob-looban ng aming puso, kami ay sumusuporta sa iyo! Matagal man ang dalawang linggo, kami ay susuporta hanggang sa makabalik ka at sa mga susunod pang mga panahon! Maghihintay kami sa iyong pag-balik! ",
+    "EN_message": "Greetings Aloe!\nWe are your fans from faraway shores. Although us overseas fans may be divided by vast oceans and lands, variety of cultures and languages, we are united by one thought. We are rooting for Aloe with all our hearts! Two weeks may be a long time, but we will be cheering her on until then and beyond. We will wait for your return.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "PlusOne",
+    "Country": "Bahrain",
+    "Native_message": "اننا نتطلع لرؤية عودتك إلينا. نرجو ان نراك  و  انت بصحة و سعادة و نتطلع لصنع الكثير من الذكريات السعيدة معاً في المستقبل.",
+    "EN_message": "We look forward to seeing you return to us. We hope to see you healthy and happy, and we look forward to making a lot happy memories together in the future.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Disty",
+    "Country": "Turkey",
+    "Native_message": "Türkiye'den merhaba Aloe! Bu gün nasılsın, iyi misin? İlk canlı yayını izlediğimde sesini gerçekten çok sevdim! İlerideki yayınları ve şarkılarını dört gözle bekliyoruz. Bütün Dünyadan seni destekliyoruz! Seni seviyoruz!",
+    "EN_message": "Hello from Turkey Aloe! How are you today? Are you fine? When I watched your debut stream I loved your voice! We look forward to your future streams and songs! We support you from all over the World! We love you!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "dranimecus",
+    "Country": "Argentina",
+    "Native_message": "Tal vez no te habremos visto mucho pero lo poco que vimos fue suficiente como para quedar fascinados por tu forma de ser, los errores no son cosas solo de humanos pero también de demonios! Por favor no te desanimes y si tienes energías para eso entonces mejor usarlas en hacer que tu regreso sea 1000 veces mejor!!! Por favor... No te rindas",
+    "EN_message": "We could not have seen you a lot but what we saw was more than enough to be delighted about you, the errors are not only for humans but for demons too! Please take it easy on you and if you feel bad use that energy to make your come back 1000 times better and to never makes this again!!! Please... Don't surrender",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Snacki",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san,\n\nI am an overseas fan from the USA, and I greatly enjoyed your performance during your debut.  Please stay strong during this difficult time! Know that myself and all of your fans miss you and are eagerly waiting for your grand return.\n\n Love ya!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Alt F4",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe,\n\nYou were the first 5th Gen member that I subscribed to, because I loved your debut stream and your singing! I cannot wait to hear more of it, and I am looking forward to the day you come back!\n\nWith love from the United States of America",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Tails",
+    "Country": "Brazil",
+    "Native_message": "Hey Aloe-chan! Sua música foi demais! Você é uma das mais talentosas e seu debut foi um dos mais marcantes e divertidos! Eu realmente espero ver mais de você no futuro. Livestreaming como uma VTuber pode vir com suas dificuldades, mas também vem com muito carinho e apoio dos fãs que te adoram! Muitos abraços!! ",
+    "EN_message": "Hey Aloe-chan! Your singing was amazing! You are one of the most talented, and your debut was one of the most memorable and fun! I really hope to see more of you in the future. Streaming as a VTuber might come with it's hardships, but it also comes with lots of care and support from the fans who love you! Lots of hugs!!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Dece",
+    "Country": "Germany",
+    "Native_message": "",
+    "EN_message": "Hey Aloe-san,\nYou made a big step already by admitting your mistakes and we all are sure you learned your lesson.\nSo let's concentrate on your Idol career and don't let anyone get in the way doing what you love!\nWe're here to support you and hear your great, unique singing again.\nBest wishes and lot's of support by a german fan,\n\nDece",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Mr.Mech",
+    "Country": "Korea",
+    "Native_message": "알로에 님, 안녕하세요. 이런 감사를 표현하는 편지는 잘못 쓰지만, 한번 써보겠습니다. 지금까지 힘쓰고, 노력해주신 거에 대해서 감사를 드리고 싶습니다. 상황이 조금 꼬엿고, 힘들 것입니다. 물론, 이 상황이 터진 시기도 좋은 시기가 아녔습니다. 그러나, 아무리 Idol, 아이돌, 연예인이어도 (가상 아이돌이든 아니든) 우리는 인간입니다. 우리 모두 다요. 그리고 인간으로서, 우리는 크고 작은 실수를 만들 때가 있습니다. 그래서, 제가 하고 싶은 말은, 우리 모두 다 알로에 님을 위해 여기에서 기다릴 것입니다. 당신이란 사람을 좋아하고, 모든 크고 작은 문제와 고난들을 동반할 사람들 말입니다. 2주 동안 잘 쉬고, 강인하게 있으면 하는 바입니다.\n힘차고 행복하게 돌아오는 날을 손꼽아 기다리고 있겠습니다.",
+    "EN_message": "Hello, Aloe-san. I'm personally not good at writing these thank you letters, but here it goes. Thank you for your hard work. The current situation is rough, and honestly, the timing wasn't that great as well. However, as much as you are an idol (Even if you may be a virtual one), you are still human as well. We all are. And as humans, we make mistakes, both big and small. However, I just want you to know, hey, everybody is here for you. People who like you for who you are, and will continue supporting you through thick and thin. Well, I guess I should say to have a nice rest for two weeks, and don't stay strong.\nI hope to see you back, energetic and full of happiness",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Thalos",
+    "Country": "Canada",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san,\n\nI'm an overseas fan who loved your debut and is eagerly awaiting your return! There are many people who wish to support you, so stay strong and do your best!\n\nWith love from Canada!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "S4M",
+    "Country": "Brazil",
+    "Native_message": "Konbanwa, Aloe-chan! Eu sei que você está em uma situação difícil, e provavelmente está se sentindo culpada e triste. Mas daijobu! Eu sei que você vai sair por cima dessa situação e a gente vai estar esperando seu retorno com grande interesse! Espero que se sinta melhor logo e eu acredito em você. Ganbatte! Saudações do",
+    "EN_message": "Konbanwa, Aloe-chan! I know you are in a hard situation, and probably are feeling guilty and sad. But daijobu! I know you will overcome this situation and we'll be waiting your return with great interest! Hope you feel better soon and I believe in you. Ganbatte! Saudations from ",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "JustAGuyFromTheWeb64",
+    "Country": "Brazil",
+    "Native_message": "Aloe-san, Konbanwa~! Eu não sou muito bom em escrever mensagens de suporte, mas vou tentar o meu melhor!\nEu assistir o seu debut do começo até o fim, me fazendo seu fã de electro no momento que você começou a cantar... A sua voz me deixou de queixo caído! Simplesmente uma voz incrível e cheia de carisma! Você provavelmente está se sentindo mal por tudo que aconteceu, mas tudo bem! Você é forte! Nós estaremos lhe esperando! Ganbatte pequena succubus, você vai ir longe! Saudações de",
+    "EN_message": "Aloe-san, Konbanwa~! I'm kinda not good at writing support_messages, but I'll try my best!\nI have watched ya stream from beginning to end, and ya made me into a fan of electro once ya started singing... Your singing caught me offguard! Simply amazing voice and full of charisma! Ya probably feeling bad about everything that has happened, but no worries! Ya are strong! We will be waiting for ya when ya come back! Ganbatte little succubus, ya gonna go far! Salutations from",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Hyourinmaru",
+    "Country": "France",
+    "Native_message": "Aloe-san, j'ai vraiment apprécié votre chanson et votre voix était incroyable, c'était vraiment agréable. Nous attendons votre retour avec impatience. Soyez forte ! Depuis la France.",
+    "EN_message": "Aloe-san, I really enjoyed your song, your voice was amazing, that was really fun. We look forward to your return. Stay strong ! From France.",
+    "JP_message_(Deepl)": "アロエさんの歌を聴きました。声はすごっかたから歌がとても楽しかった。またお見いできるのを楽しみにしています。頑張ってください！フランスより。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "tini",
+    "Country": "New Zealand",
+    "Native_message": "",
+    "EN_message": "Hi Aloe, I saw your debut and felt so excited by your singing and smug personality  that I couldn't wait to see what you'd post, when this news came up I was really shocked, but I promise to wait for however long it takes till you return. And I'm sure many others do too, I hope you're well both mentally and physically, so take care of your self. Lots of love and until your return\nSalutations from New Zealand \n(note: sorry for the bad Japanese)",
+    "JP_message_(Deepl)": "アロエさん、こんにちは、デビューを見て、その歌声とドヤ顔の性格に興奮して、何を投稿してくれるのか楽しみにしていましたが、このニュースが出た時は本当にショックでしたが、あなたが戻ってくるまで、どんなに時間がかかっても待つことを約束します。そして、他の多くの人もそうだと思いますが、心身ともに元気であることを願っていますので、お体に気をつけてください。たくさんの愛を込めて、あなたの帰りを待っています。\nニュージーランドからの挨拶 \n(注：日本語が悪くてごめんなさい)",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Ardette",
+    "Country": "Spain",
+    "Native_message": "¡Hola, Aloe!\nEstoy muy emocionado por su regreso en 2 semanas. No tuve la oportunidad de ver tu transmisión de debut, pero espero poder ver la segunda, 草\n\nSigo pensando en que has visto tu actuación en videos traducidos y debo decir que eres muy entretenido.\n\nHasta luego Desde España",
+    "EN_message": "Hello, Aloe!\nI'm Very Excited for your return in 2 weeks. I hadnt gotten the chance to watch your debut stream but im hoping ill be able to catch the 2nd one 草\n\nI Continue to think of you having seen your performance in translated videos and i must say your very entertaining!\n\nSee you later From Spain",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Atsuyas",
+    "Country": "France",
+    "Native_message": "",
+    "EN_message": "Yo,\nYour debut stream was fire. I loved both songs you sang and thought your use of auto tune was truly on point. Be it from Japan or overseas, lots of us are waiting for your return so don't worry, we've got your back.\nFrom France.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "こんにちは！アロエちゃんの初配信はかっこよすぎた！歌ってた曲はどちらも大好きだった、オートチューンの使い方が本当に完璧だと思った。日本も海外も、たくさんなファンはアロエちゃんの復帰を待ってるだから、心配しないで、俺たちが応援してる！フランスから。\n"
+  },
+  {
+    "Name": "Peanuts",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san! \nI hope you're doing well. I’m from Overseas. I was really excited to watch your debut stream, and you did great! It must be hard dealing with the situation right now… But no matter what, I hope to see you in the next two weeks! Support from the U.S.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nお元気でお過ごしでしょうか？私は海外から来ました。デビューストリームを見るのが楽しみで仕方がなかったのですが、本当によく頑張ってくれましたね 今は対応が大変でしょうが...何はともあれ、2週間後にはお会いできることを楽しみにしています! アメリカからの応援\n(翻訳機を使っているので、間違いがあったらごめんなさい)",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Tinkomut",
+    "Country": "Hungary-Serbia",
+    "Native_message": "Üdvözlöm, kicsi Aloe. Nincs sok minden mondani valóm, csak annyi hogy mi segíteni fogunk rajtad minden szinten, főleg amikor ilyen nehéz esetekben vagyunk. Nagyon tetszik a kinézeted, és az énekelésed emlékeztet Vocaloid-ra, ami nekem nagyon érdekes! Üdv Magyaroktól és Szerbektől (kettes nemzetű vagyok!)",
+    "EN_message": "Greetings little Aloe. I do not have much words to express, except that we are here for you, and we will support you all the way, especially during these hard times. I really like your appearance, and your singing reminds me of Vocaloid, which I mean in a good way! Support from Hungary and Serbia (I have dual citizenship!)",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Callisto",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Hello, Aloe! \n\nEver since you debuted, you piqued my interest thanks to your singing talent. I admire your level of maturity. It is something that a lot of people in this world including me lacks. I'm not going to say something like \"Don't let the past keep you down.\" or anything similar. I think that it is okay to think about the past as a lesson but know that if it ever bothers you, you have your fans supporting you no matter what. Life is a rollercoaster as they say, it is full of ups, downs and even crazy loops sometimes but all that matters is that you enjoy the ride. We will be awaiting your return!",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。\n\nデビュー当時から歌唱力に興味を持っていました。アロエちゃんの成熟度に感心しています。私を含め、世の中の多くの人に欠けているものだと思います。「過去に負けるな」とか、そういうことを言うつもりはありません。過去を教訓にしてもいいと思うけど、気になることがあったら、何があっても応援してくれるファンがいることを知っておいてほしい。人生はジェットコースターと言われるように、起伏に満ちていて、時にはクレイジーなループもありますが、大切なのは、アロエちゃんが乗り心地を楽しむことです。私たちはアロエちゃんの復帰を待っています!\n",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Emile Louis",
+    "Country": "France",
+    "Native_message": "",
+    "EN_message": "Bonjour Aloe,\n\nI'm an oversea fan from France and I've watched your debut stream (even though I couldn't understand much lol). Thanks to the translations people made of it, I was able to enjoy your personality more and you've become my favorite 5th gen member. You've got a pretty voice and a unique personality. I really don't think you deserve what is happening to you right now but I'm sure you'll be able get back on your feet and become one of the most popular V-tubers. I'm gonna recommend your translated streams and hololive in general to my friends so that they can enjoy that kind of content like I do.\nI'll be patiently waiting for your return !",
+    "JP_message_(Deepl)": "Bonjour Aloe,\n\n私はフランスからの海外ファンで、あなたのデビューストリームを見ました(あまり理解できませんでしたが(笑))。 翻訳していただいたおかげで、あなたの人柄をより楽しむことができて、今では大好きな5th genのメンバーになりました。 声も可愛いし、個性的だし。 今のあなたに起きていることは本当に勿体ないことだと思うけど、きっと立ち直って人気のあるVチューバーの一人になれると信じているよ。 私はあなたの翻訳されたストリームやホロライブを友達に勧めて、彼らが私のようなコンテンツを楽しめるようにするつもりです。\nあなたの復帰を辛抱強く待っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Yeezus",
+    "Country": "United Kingdom",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nHope you are doing well. We will continue to support you always and will be waiting eagerly to welcome you back!\nFor the short ammount of time you appeared in our lives, you have already made a big impact on us! Your career\nhas just begun and there will be more fun times in store for all of us in the future, until then have a good rest.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nお元気でいらっしゃることを願っています。私たちはこれからもずっと応援しています。\nあなたが私たちの生活の中に現れた短い時間のために、あなたはすでに私たちに大きな影響を与えています あなたのキャリア\n始まったばかりですが、これからも楽しい時間が待っていますので、それまではゆっくり休んでください。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Senso",
+    "Country": "Russia",
+    "Native_message": " доброе утро, Алое. Я фанат из России, и я был поражен твоей энергией и энтузиазмом во время твоего дебюта. Мы никогда не знаем, что ждёт нас в будущем, но я точно знаю, что если ты продолжишь двигаться дальше с высоко поднятой головой, ты достигнешь всего, что хочешь. поэтому я желаю тебе приятного дня и хорошего настроения, и я с нетерпением жду тебя обратно ^^",
+    "EN_message": "good morning, Aloe. I am a fan from Russia and I was amazed at your energy and enthusiasm during your debut. We never know what the future holds, but I do know that if you continue to move on with your head held high, you will achieve everything you want. so I wish you a pleasant day and good mood and I look forward to seeing you back ^^",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "meanmule75",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "From the Philippines. When i watched Aloe's stream it was love at first sight. I like her voice and her design. When i heard of the incident\n I said wtf this is too much. I want to support her even more",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Reso ツ",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Helloo Aloe! It's been only a few days since I saw the first stream but I enjoyed it nonetheless. I hope you are doing fine and please know that there's a lot of us who will still continue to support you from now on. During your break, I will do my best to further improve my Japanese so that when you come back I'll be able to help live translating your stream. I wish you the best and may the future be kind to you　(*￣▽￣)b",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "YuukiTS",
+    "Country": "Vietnam",
+    "Native_message": "",
+    "EN_message": "",
+    "JP_message_(Deepl)": "アロエちゃん頑張れ！！！僕の日本語はすごく弱いだけど、メッセージを届けてます。アロエちゃんファイト！！！アロエちゃんは強いから諦めないで！！！。これからも日本語をもっともっと勉強して、アロエちゃんをもっと応援します。僕は頑張るから、アロエちゃんも頑張ってね！！！これからは配信をもっと見てるからよろしくね！！！\nベトナムの魔の友から",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Chicken Man",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Hi Aloe-chan, I know you have had a hectic day and I want to support by sending this postive_message. As the newest generation, I really loved your voice and the songs you sang were fun and great. Keep your head up and you will overcome this trial and grow stronger as a person and Vtuber.  I hope you come back stronger since you have a lot of fans waiting for you. :) Also I don't speak Japanese and I am using a translator",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは、忙しい毎日だったと思いますが、ファンアートで応援しています。新人の私は、アロエちゃんの声が大好きで、歌も楽しくて最高でした。これからも気を引き締めて、この試練を乗り越えて、人としてもVtuberとしても強く成長していってください。たくさんのファンが待っているので、もっと強くなって帰ってきてほしいです :)\nまた、私は日本語が話せないので、翻訳機を使っています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Haz",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe, I’m an overseas fan and just want to say your debut was amazing! I loved how you had the courage to sing on your first appearance and I think that says a lot about you. It gave us a look at who you are, and I for one am excited to see more of you. These moments may be hard but please do your best, and always remember that your fans are here for you!",
+    "JP_message_(Deepl)": "こんにちは、アロエさん、私は海外のファンですが、あなたのデビューは素晴らしかったと言いたいだけです。 初登場で歌う勇気があったことが、あなたのことをよく表していると思います。 あなたがどんな人なのかを見せてくれたので、これからのあなたの活躍に期待しています。 辛い時もあるかもしれませんが、頑張ってください、そしてファンの皆さんがあなたのためにここにいるということをいつも忘れないでください",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Illumi",
+    "Country": "Brazil",
+    "Native_message": "",
+    "EN_message": "Hi Aloe, my appreciation for you cannot be underestimated, i want you to know that we, overseas fans care about you, we are all in a difficult situation and staying strong can be challenging so we just want to welcome you with open arms. ",
+    "JP_message_(Deepl)": "こんにちはアロエさん、あなたへの感謝の気持ちは侮れません。私たち海外のファンは あなたを心配しています困難な状況下では誰もが強靭であり続けることが困難であることを示している手を広げて歓迎したいんだ",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "zaezstarzlight",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Good day aloe, things has escalated pretty quickly and we know you're in tough time but keep strong! We believe in you and appreciate you. Hope these little appreciation letter(?) can make you feel even a little bit better. On top of all those narrow-minded antis, you have a bunch of people genuinely supporting you for who you are right now! We make mistakes, You're human just like the rest of us and you have your own rights. Don't let a single day of backlash ruin your whole life! We will be welcoming your return with lots of support! Peace!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは、物事はあっという間にエスカレートしていて、あなたが大変な時にいるのは知っていますが、気を引き締めてください！私たちは信じています。 私たちはあなたを信じていますし、あなたに感謝しています。 この小さな感謝の手紙(?)が、あなたを少しでも元気にしてくれることを願っています。 心の狭い反感を持つ人たちの上に、今のあなたを純粋に応援してくれる人たちがたくさんいるのです。 私たちは間違いを犯すこともあるし、あなたも他の人と同じように人間だし、あなたにはあなた自身の権利があるのです。 一日の反発で人生を台無しにしないでくださいね。 私たちは、あなたの復帰を、たくさんの応援をして迎えます! ピース!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "RensouhouKII",
+    "Country": "Singapore ",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san,\nOverseas fan from Singapore here. Please know that there are a lot of people supporting you. Please do not give up. Your voice is \"中国語: 津津有味 (lol)\" and we want to hear more of it. Your fans look forward to spamming 「お帰りなさい」 when you are back. ",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nシンガポールからの海外ファンです。たくさんの人が応援していることを知ってください。諦めずに頑張ってください。あなたの声は「中国語：津津有味（草）」で、もっともっと聞きたいです。あなたのファンは、あなたが帰ってきたら「お帰りなさい」とスパムするのを楽しみにしています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Olegase",
+    "Country": "Russia",
+    "Native_message": "Привет, Алоэ! Я твой зарубежный фанат, это было недолгое время с момента нашего знакомства, но я уже влюбился в твой очаровательный голос и успокаивающий смех. Дизайн твоего персонажа захватил моё сердце с первого взгляда, а самодовольная улыбка позволила меня стать твоим верным поклонником. Надеюсь ещё много раза услышать твоё прекрасное пение и забавные разговоры с другими членами Hololive. Посылаю лучи добра от всего сердца! Жду твоего скорейшего возвращения!",
+    "EN_message": "Hello, Aloe! I'm an overseas fan of yours, it wasn't long since we met, but I've already fallen in love with your charming voice and soothing laughter. The design of your character captured my heart at first sight, and the smug smile allowed me to become a loyal fan of yours. I hope to hear many more times your beautiful singing and funny conversations with other Hololive members. Sending beams of goodness from the bottom of my heart! I look forward to your soon return!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。私はあなたの外国人ファンです、お会いして間もないですが、あなたの魅力的な声と癒される笑い声にもう惚れてしまいました。あなたのキャラクターのデザインに一目で心を奪われ、そのドヤ顔であなたの忠実なファンになることができました。皆さんの美しい歌声と、他のホロリブメンバーとの面白い会話を何度も聞きたいと思います。心の底から善意のビームを送っています! 早く帰ってくるのを楽しみにしています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "choong001",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe,\nI'm one of your fan from Malaysia. During your debut i really like how your character have a smug personality and your singing ability  god tier.\nI know that in this two weeks it might be hard for you but don't give up!We the overseas fans will be waiting for your return! \n>.< \n{/}\n( • . •)\n/ > <3",
+    "JP_message_(Deepl)": "アロエさんこんにちは。\n私はマレーシアからのファンの一人です。デビュー当時、あなたのドジっ子な性格と歌唱力は神レベルでした。\nこの2週間は大変だと思いますが、諦めずに頑張ってください！海外のファンの皆さんの復帰をお待ちしています。\n>.< \n{/}\n( • . •)\n/ > <3",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "ReisenInaba",
+    "Country": "China",
+    "Native_message": "阿萝耶酱、你的初配信真是好棒!5期生刚刚新发出了已经很喜欢你的歌声和性格!我只是世界里某一魔友、不过还有好多其他也要当你魔友!我会等你回来向你加油哦！",
+    "EN_message": "",
+    "JP_message_(Deepl)": "アロエちゃん、初配信はとても最高ですよ！5期生はちょうど新リリースされて、アロエちゃんの歌声とキャラクターが大好きです！あたしも世界のただの魔の友です、でも魔の友にもなりたい人は多くがあります！アロエちゃんのこと待っている、頑張って！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Kevinnnn",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe! It must be really tough right now but I know you'll come back stronger than ever! People make mistakes all the time and it's so much harder when there's people trying to bring you down so don't worry about what happened. Donmai! You have so many fans here to support you no matter what so stay strong! Your voice and personality is so lovable and fun I can't wait to watch your content. Take care from Malaysia!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。今は本当につらいでしょうけど、きっと強くなって戻ってくると思いますよ。人はいつでも失敗するものだし、自分を陥れようとしている人がいると、とてもつらいから、気にしないでね。ドンマイ！ファンの人たちがたくさんいるから、何があっても応援してくれるから、がんばってね! あなたの声と人柄がとても愛らしくて楽しいので、コンテンツを見るのが待ち遠しいです。マレーシアからもお元気で!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Subit",
+    "Country": "India",
+    "Native_message": "Namaste aloe\n\nMujhe pata hei ki abhi is waqt kafi kharab chal rahe hein lekin abhi is waqt mein humein tutna nahi hein. Umid hei mein aapko phir sei khusi gaana gate hue sun saku.",
+    "EN_message": "Namaste aloe\n\nI know the times are going bad right now but this is the time to not fall down. Hope I can hear u singing happily again.\n\nJap deepL\nNamaste aloe",
+    "JP_message_(Deepl)": "時代が悪いのは分かっているけど、今は落ち込まないようにする時だよ。 また楽しそうに歌う君の声が聴けるといいな",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Roy Claise",
+    "Country": "Indonesia",
+    "Native_message": "Untuk Mano Aloe-sama saya sebagai fans dari Indonesia mengaharapkan yang terbaik untuk mu dan saya harap bisa dengar nyanyian mu dengan suara indah mu, dan juga smug mu yang sangat lucu itu, salam hangat.",
+    "EN_message": "To Mano Aloe-sama, times are though for you. But us oversea fans are always wants to welcome you with open arms. From your endearing voice and your extreme smug aura, we will love you regardless. Love from a random fan ",
+    "JP_message_(Deepl)": "魔乃アロエ様へ、日本語上手じゃ無いけど。いつも待ってます貴方様のニヤをいつも楽しみます、お歌の声もいつも大好きです。体お大事に、一人のファンから。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Nephilimus",
+    "Country": "Malaysia",
+    "Native_message": "Saya harap Aloe diberi kekuatan untuk terus menjadi vtuber. Sememangnya hidup penuh dengan manusia yang menjijikkan yang akan selalu cuba menjatuhkan kita. Walaubagaimanapun, saya yakin yang kejahatan boleh dikalahkan oleh kebaikan. Jadi saya akan terus menyuarakan sokongan terhadap anda dalam perjuangan ini!",
+    "EN_message": "I hope you'll always have the strength to carry on as a vtuber, Aloe-chan. Life is indeed full of disgusting people who will constantly try to pull us down. However, I strongly belief that good can triumph over evil. So I'll always be supporting you in this fight!",
+    "JP_message_(Deepl)": "アロエちゃんには、いつまでもVtuberとして続けていける強さを持っていてほしいです。人生には嫌な人たちがたくさんいて、私たちの足を引っ張ろうとしてくることもあると思います。でも、私は善は悪に勝つことができると強く信じています。これからもずっと応援しています!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Loki_Magikill",
+    "Country": "Singapore ",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san,\nFirst heard your voice in your debut stream, I don't have the right words to describe how I felt, but it certainly brought joy and gave me the will to live on, knowing there's beautiful things in the world, specifically your amazing singing.\nI am not good with words but all I can say is I'm having your channel page open on my browser, just waiting for your stream.\n#魔の友, the 友 stands for friend, and friends stay together in tough times, supporting each other. Stay strong!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "窒息",
+    "Country": "Singapore-China",
+    "Native_message": "你好，Aloe\n我是来自新加坡的 '魔の友'，被你的首场直播迷住了，你的声音和个性都很迷人。最近发生的事情，你一定很着急。但是，请记住，还有其他的 '魔の友' 在等着你的回归，并且仍然愿意支持你。人有时会犯错，只是需要一个机会来学习，有时人们会忘记这一点。趁着这两周的时间，好好准备一下，争取凯旋而归。我们将期待你的归来!",
+    "EN_message": "Hello Aloe-san,\nI am a '魔の友' from Singapore that has been charmed by your debut live-stream with your amazing voice and personality. You must be anxious due to recent events. However, please remember that there are other '魔の友' waiting for your return and are still willing to support you. People sometimes makes mistakes, they just need a chance to learn from them, sometimes people forget that. Take the two weeks to prepare for a triumphant return. We will be looking forward to your return!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nあなたの素晴らしい声と人柄でデビューライブに魅せられてきたシンガポール出身の魔の友です。最近の出来事で不安な気持ちもあるでしょう。しかし、他にもあなたの復帰を待っている魔の友がいて、あなたを応援していることを忘れないでください。人は時に失敗をすることもありますが、そこから学ぶ機会を与えられるべきです。この2週間をかけて、あなたの凱旋に向けて準備をしてください。あなたの復帰を心待ちにしています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "The_Chainwalker",
+    "Country": "Philippines",
+    "Native_message": "Magandang umaga aloe!\nNaeexcite ako talaga na makita ulit mga streams mo kapag bumalik ka na tas sana lumaki lang lalo channel mo! Bigyan mo sa Hololive ang kasiyahan na gusto namin!",
+    "EN_message": "Hello aloe-chan!\nIm really excited to start seeing your streams once you come back and i really do hope to see your channel grow more! May you bring more fun content to Hololive!\n\nWelcome to the family! Ill continue to support you!",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは！\nあなたが戻ってきたら、あなたのストリームを見られるようになるのを楽しみにしているし、あなたのチャンネルがもっと成長するのを見られることを本当に期待しているよ ホロライブにもっと楽しいコンテンツを持ってきてくれますように\n\n家族にようこそ これからも応援しています！！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Hatsune Mickey",
+    "Country": "Panama",
+    "Native_message": "Aloe-chan, me gustó mucho tu presentación y desde ya diré que esperaré con muchas ansias tu regreso. Deseo tu felicidad y lo mejor para ti, así que te deseo lo mejor de lo mejor en esta difícil situación. Sé que conseguirás triunfar como Vtuber.",
+    "EN_message": "Aloe-chan, I really liked your presentation and from now on I will say that I will look forward to your return. I wish your happiness and the best for you, so I wish you the best of the best in this difficult situation. I know you will succeed as a Vtuber.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "UwU",
+    "Country": "Poland",
+    "Native_message": "Witaj Aloe! Jestem twoim fanem z Polski. Gdy dowiedziałem się o 5 generacji Hololive byłem przeszczęśliwy z tego powodu. Widziałem wszystkie debiuty lecz najbardziej nie mogłem się doczekać twojego debiutu. Masz piękny głos, byłaś bardzo odważna decydując się na śpiew już na pierwszym streamie. W wolnym czasie podejmuje się nauki japońskiego, aby móc cieszyć się jeszcze bardziej oglądając twoje przyszłe streamy. Mam nadzieję że osiągniesz każdy swój cel, ponieważ wiem że wewnątrz jesteś silną osobą. Wiedz, jesteśmy z tobą~!",
+    "EN_message": "Hello, Aloe! I'm a fan of yours from Poland. When I found out about the 5th gen of Hololive, I was happy about it. I saw all the 5th gen debuts, but I was most looking forward to your debut. You have a beautiful voice, you are very brave in deciding to sing on the first stream. In  my free time I will take up learning Japanese so that I can enjoy watching your future streams even more. I hope that you will achieve every goal because I know that inside you are a strong person. We are always with you~! ",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。ポーランドから来たファンです。ホロライブの第5世代のことを知ったときは、嬉しかったです。5th genのデビューは全部見ましたが、あなたのデビューを一番楽しみにしていました。あなたは美しい声を持っています、あなたは最初のストリームで歌うことを決めたのはとても勇気があります。暇なときには日本語を勉強して、これからのストリームをもっと楽しめるようにしたいと思っています。あなたの中には強い人がいると思うので、一つ一つの目標を達成してほしいと思います。私たちはいつもあなたと一緒ですよ～!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Neptune♥Reaper",
+    "Country": "Italy",
+    "Native_message": "Salve Aloe\nHo adorato te e la tua voce dal primo minuto della tua live di debutto.So che ora stai passando è un momento difficile,tutti commettono degli errori sia banali sia gravi, però sappi che io , come molti altri, siamo pronti a braccia aperte ad accoglierti ed a divertirci insieme alle tue live. Non riesco a descrivere parole che vorrei dirti per farti capire quanto ti apprezzo ed adoro.Per questo ti dedico un grande citazione dall'italia che nonostante i problemi causati dal covid piano piano stiamo cercando di rialzarci, come tu nonostante questo avvenimento devi rialzarti e tornare ,anche più forte di prima.\n«Non mi fermo né al primo, né al secondo, né al terzo ostacolo, perché... come dice quell'antico detto della provincia di Chiavari? \"Chi si ferma è perduto!\"»",
+    "EN_message": "Hi Aloe\nI loved you and your voice from the first minute of your debut live.I know that you are going through a trough time, everyone makes mistakes both trivial and serius, but know that I, like many others, are ready with open arms to welcome you and have fun with your lives. I can't describe words that i want to say to let you understand how much I appreciate you and adore you.For this i dedicate a great quote to you from italy that despite the problem caused by covid , slowly we are trying to get up, like you despite this avveniment you have to get up and come back, even strongher than before.\n«I do not stop at the first, nor at the second, nor at the third obstacle, because ... as the ancient saying of the province of Chiavari says?\"He who hesitates is lost!\" »\n\nAmore dall'italia\nLove From italy",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Siuwa",
+    "Country": "China",
+    "Native_message": "阿蘿耶醬，\n\n你現在一定很辛苦吧。但當你在內省自身的同時，也請往外和往前看。你會看到數以萬計的魔友一致發聲支持你。我們很高興你來了，也會引頸以待你的回歸。相應的請你也要期待自己的回歸。到時直播間內無聲的『你回來啦』在你心中的迴響，會是任何體育館都不能及的嘹亮。",
+    "EN_message": "Aloe-chan,\n\nYou must be having a hard time right now. While you are looking inside and reflecting yourself, please also look outside and forward. You will see tens of thousands of friends voicing in unison, in support. We are all glad you're here and are longing for your return. In return, please look forward to your own return stream. The silent voice of 'welcome back' there will echo in your heart, louder than any stadium can.",
+    "JP_message_(Deepl)": "アロエちゃん。\n\n今、大変な思いをしているのではないでしょうか？内面を見て自分を見つめている間に、外に目を向けて前を向いてください。何万人もの友人たちが一致団結して応援の声を上げているのが見えてくるはずです。私たちは皆、あなたがここにいることを嬉しく思い、あなたの帰りを待ち望んでいます。その代わり、あなた自身の帰りの配信を楽しみにしていてください。どんなスタジアムよりも大きな声で、「おかえり」の静かな声が心に響くことでしょう。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "HoshinoAoi",
+    "Country": "Vietnam",
+    "Native_message": "Xin chào Aloe, tôi là fan của bạn từ Việt Nam. Mình rất ấn tượng với stream debut của cậu từ giây phút đầu tiên. Mình rất mong chờ ngày cậu trở lại. Chúng mình sẽ ủng hộ cậu. Best wishes for you.",
+    "EN_message": "",
+    "JP_message_(Deepl)": "ごきげんよう、アロエさん。私はベトナムからのファンです。初配信の最初の瞬間からめっちゃ感動した。あなたの帰りを待っています。私たちはあなたを応援します。あなたの幸せを祈ります。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Lifejacket",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san\nHow are you? Have you been eating and drinking properly? I know it will be hard to feel okay again, so please do your best until then.\nThere are so many people right now wishing for your happiness and safety, and we're all excited for your return. In two weeks, you will see that you are not alone.\nI will look forward to seeing you back, and I hope by then you can show us all what you can do.",
+    "JP_message_(Deepl)": "こんにちは アロエさん\nお元気ですか？ちゃんと食べたり飲んだりしていますか？また元気になるのは難しいと思いますが、それまで頑張ってください。\n今、たくさんの人があなたの幸せと無事を願っていますし、私たちもあなたの復帰を心待ちにしています。2週間後には、あなたは一人ではないことがわかります。\nまたお会いできる日を楽しみにしています！それまでには、あなたができることを見せてくれることを願っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "MomoTomato",
+    "Country": "Hong Kong",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san! Overseas fan from Hong Kong here.\n\nI really enjoyed Aloe-san’s debut stream! Especially when you sang, I really like your voice and I cannot wait for Aloe-san’s singing stream in the future!\n\nIt is unfortunate that such an incident has happened after Aloe-san’s debut, and things must have been really tough for you. But please do not forget that there is always a group of people who have your back, and are constantly supporting Aloe-san.\n\nEven though I do not know the full truth behind what happened, but what I can say is that the past is the past, everyone makes mistakes, gain experience from it, and move on, so please don’t be sad lingering over this!\n\nThe road forward might be rough, but I’m sure after the two weeks suspension Aloe-san will return stronger than ever, after all, what doesn’t kills you makes you stronger, right?\n\nMeanwhile we, 魔の友 will all wait patiently during these two weeks, and I’m sure everyone will be there for a grand return celebration.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "アロエさん、こんにちは。 香港からの海外ファンです。\nアロエさんの初配信は本当に楽しかったです。 特にアロエさんの歌が本当に好きで、また聞ける日が待ち遠しいです。\nアロエさんのデビュー後にこのような事件が起きてしまったのは残念ですし、本当に大変だったと思います。 でも、アロエさんを応援してくれる人がずっとここにいることを忘れないでください。\n私には詳しいことがわかりませんが、過去は過去で、誰もが失敗をして、そこから経験を積んで、前に進んでいくものだと思いますので、悲しまないでくださいね。\nこれからの道のりは険しいかもしれませんが、２週間の活動休止期間を経て、アロエさんはきっと今まで以上に強くなって帰ってくると思います。\nその間、我々魔の友は気長に待っています。"
+  },
+  {
+    "Name": "Jorge | ホルヘ",
+    "Country": "Costa Rica",
+    "Native_message": "Hola aloe! Espero que estes bien durante estas dos semanas de descanso!, vi tu debut en vivo y con mi japones principiante entendia poco pero me encanto!, no dejes que personas malas te hagan daño y sigue adelante que te estare apoyando siempre! ",
+    "EN_message": "Hello Aloe i wait for you in two weeks, i saw your debut in livestream and i liked it, ignore the people who want hurt you and keep going!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。 この2週間のお休みの間に元気でいてほしいです！ライブデビューを見ましたが、大好きでした！悪い人に傷つけられないように、これからもがんばってください！ずっと応援しています！！（笑",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Rahzi",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!! Sending love from the U.S overseas!! I was so hyped for your debut, it lived up to my expectations. I was really hoping to see you start collaborating with the others.. Things may feel like they have spiraled down, but don’t worry as we are here waiting for your return. With the time off, hopefully everything cools down and you can get back to us. We support you and will continue to find ways to cheer you up!! Gambare Aloe-san!!    ",
+    "JP_message_(Deepl)": "アロエさんこんにちは! アメリカから海外に愛を送っています! あなたのデビューに期待していましたが、期待に応えてくれました。 他のメンバーとのコラボも期待していたのですが...。 落ち込んでいるように感じるかもしれませんが、私たちはここであなたの復帰を待っていますのでご安心ください。 オフの間に全てが冷静になって、また私たちの元に戻ってくることを願っています。 これからも応援しています。 ガンバレアロエさん！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Kropek",
+    "Country": "Poland",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nI'm really excited to start seeing your streams once you come back with your amazing voice and personality.\nThese moments may be hard but please do your best, and always remember that your fans are here for you!\nSending love from Poland. ",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nあなたの素晴らしい声と個性が戻ってきたら、あなたのストリームが見られるようになるのが本当に楽しみです。\nこれらの瞬間は難しいかもしれませんが、最善を尽くしてください、そしていつもあなたのファンがあなたのためにここにいることを覚えていてください\nポーランドから愛を送っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "lemonboi",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Aloe-san:\nI am an oversea fan of yours and I definitely can't describe the pain that you have been through. It must have been pretty rough for you for such incident to happen to you after your debut. \n\nHowever, I just want to say that no matter what happens, please remember that your fans which includes me will always give you our full support and be there for you. \n\nMeanwhile, we魔の友 will all look forward for your return in 2 weeks and your streams in the future.",
+    "JP_message_(Deepl)": "アロエさん。\n私はあなたの海外ファンですが、あなたの辛さは言葉では言い表せません。 デビューしてからこんなことになってしまって、大変だったと思いますが、何があっても私を含めたファンの皆さんのことを忘れないでください。 \n\nでも、どんなことがあっても、私を含めたファンの皆さんはいつも全力で応援しているということを忘れないでください。 \n\nそして、魔の友、2週間後の復帰とストリームを楽しみにしています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "ly 5*",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "To Aloe-san:\nQuote from Fred Rogers: “Anything that’s human is mentionable, and anything that is mentionable can be more manageable. When we can talk about our feelings, they become less overwhelming, less upsetting, and less scary. The people we trust with that important talk can help us know that we are not alone.” You are not alone Aloe, fighto.",
+    "JP_message_(Deepl)": "アロエさんへ\nフレッド・ロジャースの言葉。\"人間的なことは何でも言及できるし、言及できることは何でもより管理しやすくなる。自分の感情について話すことができるようになると、それは圧倒されることも、動揺することも、怖さを感じることも少なくなります。その重要な話を信頼している人たちは、私たちは一人ではないことを知ることができます。\" あなたは一人ではありません アロエ、戦い",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Unsinkable Sam",
+    "Country": "Indonesia",
+    "Native_message": "Halo Aloe-chan\n\nkesalahan (blunder)  itu sudah biasa, setiap orang pasti mengalaminya. Jangan terlalu dibawa ke hati, fokus nanti bagaimana kamu menggantinya. Kamu nggak sendirian, ada fans yang membela kamu. Pertama melihat kamu di debut, kamu terlihat energetic dan generic. Tidak sabar lagi  untuk menunggu kehadiranmu untuk 2 pekan kedepan. Nantinya, jangan lupa kolaborasi dengan hololiveID ya !!!",
+    "EN_message": "Hello aloe-chan, First, Mistakes are common to everyone. Don't take it too much personally. Focus on how to replace it later. You are not alone, many fans stand up for you. When I watch your debut, you look energetic and have a generic personality. I can't wait for your revival in the next two weeks. Oh yeah, I'm looking forward to your collab with hololiveID in the future.",
+    "JP_message_(Deepl)": "こんにちはアロエちゃん\n\n\nまず、間違いはすべての人に共通しています。\n個人的に飲みすぎないでください。\n後でそれを交換する方法に焦点を当てます。\nあなたは一人ではありません、多くのファンがあなたのために立ちます。\nデビューを見てみると、元気そうでジェネリックな性格です。\n今後2週間、あなたの復活を待ちきれません。\n\nそうそう、将来のhololiveIDとのコラボレーションを楽しみにしています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Momose-Chan",
+    "Country": "Thailand",
+    "Native_message": "สวัสดีจ้า Aloe จัง ผมดีใจมากเลยนะ ที่ได้ดู เปิดตัวครั้งแรก ของคุณ ทั้งความสดใส ร่าเริงของ Aloe จัง ทำให้ผมมีความสุขมากผมหลงรักคุณตั้งแต่เริ่มเลยล่ะ และการเริ่มด้วยการร้องเพลงนั่นอีกสุดยอดมากเลยล่ะ แต่ในเวลานี้เป็นช่วงที่ลำบากมากๆ ผมอยากให้ Aloe จัง เข้มแข็งเข้าไว้นะ ไม่ว่าจะเจอเรื่องยากลำบากเท่าไหร่ก็ตาม แต่ฟ้าหลังฝนจะนำความสุขมาให้ Aloe-chan อย่างแน่นอน  และผมจะคอยเป็นกำลังใจให้และรอคอยการกลับมาของ Aloe นะ ยิ้มเข้าไว้ สู้ๆนะ รักจาก ประเทศไทย",
+    "EN_message": "Hello, Aloe. I'm really happy to watch your debut, and Aloe's cheerfulness makes me so happy. I fell in love with you right from the start. And starting with singing is amazing. But this is a very difficult time. I want Aloe to stay strong. No matter how difficult it is But the sky after the rain will definitely bring happiness to Aloe-chan, and I will definitely cheer you on and look forward to Aloe's return. Smile, keep fighting. Love from Thailand.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。デビューを見ていて、アロエさんの元気な姿を見ていると、本当に幸せな気持ちになります。私は最初から惚れました。そして、歌からのスタートってすごいですね。でも、今はとても大変な時期です。アロエには強くいてほしい。どんなに辛くても でも、雨上がりの空は必ずアロエちゃんに幸せを運んでくるから、絶対に応援して、アロエちゃんが帰ってくるのを楽しみにしています。笑顔で、戦い続けてください。タイから愛を込めて。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Some72",
+    "Country": "Indonesia",
+    "Native_message": "Halo Aloe-sama, saya \"魔の友\" dari Indonesia. Saya sangat menanti streammu, dan stream pertamamu membuat saya sangat senang dalam waktu-waktu seperti ini, terutama suaramu yang sangat lucu. Saya tidak sabar untuk mendengar lebih banyak. Waktu mendengar tentang waktu istirahatmu, saya merasa sangat sedih, namun saya berharap kamu akan tetap semangat. Hanya ingin mengatakan itu saja, dan mengingatkanmu kalau banyak fansmu yang akan selalu mendukungmu, termasuk saya. Kami akan menunggu~",
+    "EN_message": "Hello Aloe-sama, \"魔の友\" from Indonesia here. I really looking forward for your stream, because your debut makes me really happy during this time, especially your cute singing voice. I can't wait to hear more of them. When I hear about your break, i felt really sad, but i hope you'll stay strong.\nJust want to say that, and remind you that there's a lot of your fans that will give you their support, including me. We'll be waiting~",
+    "JP_message_(Deepl)": "こんいちわアロエさま、インドネシア「魔の友」です。\nこの時期のデビューは本当に幸せな気分にさせてくれます。これからもたくさんの曲が聴けるのが待ち遠しいです。あなたのブレークの話を聞いたとき、私は本当に悲しい気持ちになったけど、これからも頑張ってほしいと思います。\n私を含め、あなたを応援してくれるファンがたくさんいることを忘れないでください。待ってるわ~~",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "mascot12",
+    "Country": "Indonesia",
+    "Native_message": "Sending love from Indonesia :flag_id:\n\nHalo Aloe, apa kabar? Saya khawatir akan keadaanmu. Saya tahu keadaanmu sedang susah, tapi ingat bahwa semua akan baik-baik saja di hari kedepan. Lagu dan suaramu selalu menghiburku. Sekarang, giliranku untuk mendukungmu\n\nSaat hidup berada di titik terendah, solusi satu-satunya adalah naik ke atas. Saya menantikan kedatanganmu kembali.",
+    "EN_message": "Hello Aloe, how are you doing? I am very worried about you. I know things are hard for you right now, but please remember that things will get better in the upcoming days. Your song and voice always cheer me up. It's time for me to support you \n \nWhen life hits rock bottom, the only way to fix it is to go up. I will always support you Aloe. I will look forward for your return",
+    "JP_message_(Deepl)": "アロエさん、こんにちは、お元気ですか？あなたのことをとても心配しています。今は大変だと思いますが、これからの数日で良くなることを覚えておいてください。あなたの歌と声にいつも元気をもらっています。応援する時が来ました \n \n人生がどん底に落ちた時、それを直すには上に行くしかない。いつもアロエさんを応援しています。また戻ってくるのを楽しみにしています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Dino/ヂノ/帝龙",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe, hope you are doing fine on your break. Me and my friend were watching your debut together and we love it. Especially the singing part. Us, oversea fans are waiting for your return! Love from Malaysia.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは、お休み中も元気に過ごしているといいですね。私と私の友人はあなたのデビューを一緒に見ていましたが、私たちはそれが大好きです。特に歌の部分が大好きです。私たち、海外のファンはあなたの復帰を待っています。マレーシアから愛を込めて。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Aizakku",
+    "Country": "Singapore",
+    "Native_message": "",
+    "EN_message": "Yo Aloe, thanks for the amazing debut that you brought to the table. Your singing was unique, especially the use of a vocoder. Everyone make mistakes so don't let it drag you down! Don't let any toxicity affect you as we believe that you deserve a second chance. I personally don't know the full story but we are all here to support you wherever we are. Come back 2 weeks after much stronger, okay? We'll be waiting for you! \n\nLove from Singapore!",
+    "JP_message_(Deepl)": "Yo Aloeさん、素晴らしいデビューをありがとうございます。 あなたの歌声は独特で、特にボコーダーを使っていたのが印象的でした。 誰でも失敗はするものだから、それに足を引っ張られないようにね。 私たちはあなたがセカンドチャンスに値すると信じているので、どんな毒にも影響させないでください。 私は個人的には全容を知りませんが、私たちはどこにいてもあなたをサポートするためにここにいます。 2週間後にはもっと強くなって戻ってきてください。 私たちはあなたを待っています シンガポールから愛を込めて",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Suedama",
+    "Country": "Singapore",
+    "Native_message": "",
+    "EN_message": "Hi aloe chan, hope that all is well on your side. I loved your singing and debut stream so much. Hope that you will stay strong and come out even stronger after these 2 weeks. I will be patiently awaiting your return. Hoping to have more fun together on your future streams. Loves from singapore",
+    "JP_message_(Deepl)": "アロエちゃんこんにちは、お元気でお過ごしでしょうか。 私はあなたの歌声とデビューの流れがとても好きでした。 この2週間の後も、あなたが強くなって、さらに強く出てくることを願っています。 私は辛抱強くあなたの復帰を待っています。 今後のストリームで一緒にもっと楽しい時間を過ごせることを願っています。 シングパオレより愛を込めて",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Hiroki",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Nice day to you Aloe chan, I do hope that you're doing well. I know that everything is not going to plan, but no matter what happens, I will support you. Don't let the people who hate you dictate your life, just be yourself and keep on doing your best because that alone is already enough for me to love and support your work. Take care always and I hope all is well.",
+    "JP_message_(Deepl)": "アロエちゃん、お元気でいてくださいね。何事も計画通りにはいかないと思いますが、何があっても応援しています。あなたを嫌う人に人生を左右されないように、自分らしく頑張ってください。いつも気をつけて、すべてがうまくいくことを願っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Lazier Bear",
+    "Country": "Russia",
+    "Native_message": "",
+    "EN_message": "Hello, Aloe-chan!\nHope you are doing well. Don't let the situation get to you. If you ever feel sad or guilty, remember that there are thousands of fans from all over the world supporting you. Things may be tough, but all bad things come to an end and you will turn over a new page. We will be there to greet you.\nDon't forget to eat healthy, drink water and go outside from time to time.\nWith tons of love from Russia,\nYour fan.",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。\nお元気でお過ごしでしょうか。焦らないでくださいね。もし、あなたが悲しい思いをしたり、罪悪感を感じたりした時は、世界中の何千人ものファンがあなたを応援していることを思い出してください。辛いこともあるかもしれませんが、悪いことはすべて終わり、あなたは新しいページをめくることができます。私たちはあなたを応援しています。\n健康的な食事と水を飲み、たまには外に出ることを忘れないでください。\nロシアからの愛を込めて。\nあなたのファン",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Wally",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe.\nWhen this is all behind us I look forward to your unique music and your smile again.\nNext year this time I want to tune into your anniversary stream and smile for the many good memories we will make.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nこれが終わったら、またあなたのユニークな音楽と笑顔を楽しみにしています。\n来年の今頃は、アニバーサリーストリームを聴きながら、たくさんの良い思い出を作って笑顔でいたいと思います。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "8fu",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe! How are you? Hope you're doing well. I'm really looking forward to your streams but something bad happened. But don't worry, I'll be waiting for you. Show me your brightest smile when you come back.\n\n Selamat maju jaya! Senyum! ",
+    "JP_message_(Deepl)": "こんにちは、アロエです。 お元気ですか？ 元気にしているといいですね。 あなたのストリームをとても楽しみにしていたのですが、何か悪いことが起きてしまいました。 でも心配しないで、待ってるからね。 戻ってきたら、最高の笑顔を見せてください。\n\n Selamat maju jaya! Senyum!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Anonymous Skrubz",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!~ \n\nHope you're doing well, \nwas really excited when I watched your Debut stream. I really was looking forward to your 1st stream because I really liked your voice and the electronic Vocaloid voice. I will be waiting until you come back and stream again! \nRough start as it may be but Things will go smoothly after all of this. \nPlease don't feel down... \nWe're all here, your fans  supporting you!\nWishing  you all the best. \n\n-A Fan\nP.S: \nYour debut stream is the first ever that I've watched from start to finish, I was genuinely curious if you will start making horror movie reviews and recommendations because you like them lol",
+    "JP_message_(Deepl)": "アロエさんこんにちは～。\n\n元気にしているといいですね。\nデビューストリームを見た時は本当に興奮しました。1回目のストリームを楽しみにしていましたが、あなたの声と電子的なボーカロイドの声が大好きでした。また、また、あなたが戻ってくるのを楽しみにしています。 まだまだ荒削りなスタートかもしれませんが、これからは順調に進んでいくと思います。落ち込まないでください...。みんなで応援しています！ファンの皆さん！\n応援しています。\n\n-ファン\n\n追伸 \nあなたのデビューストリームは、私が最初から最後まで見たのは初めてで、あなたが好きだからホラー映画のレビューやお勧めを作り始めるのではないかと純粋に興味を持っていました(笑)",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Shuroki",
+    "Country": "Argentina",
+    "Native_message": "",
+    "EN_message": "Greetings from the other side of the world Aloe! \nThe talent and charm you showed us in your debut stream was amazing, enough to capture the hearts of people all around the globe. \nSo, no matter what happens or how hard the road gets, we will not let you be alone, and we want to see you take the world.\nPlease show us that devilish and lovely smile again.",
+    "JP_message_(Deepl)": "地球の裏側からこんにちは！アロエちゃん。\nデビューストリームで見せてくれた才能と魅力は、世界中の人々の心を掴むのに十分なほど素晴らしいものでした。\nだから、どんなことがあっても、どんなに大変な道のりになっても、私たちはあなたを一人にはさせないし、あなたが世界を連れて行く姿を見たいと思っています。 \nまたあの悪魔のような素敵な笑顔を見せてください。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Pizzafari",
+    "Country": "United Kingdom",
+    "Native_message": "",
+    "EN_message": "Hello from rainy England!\nSorry for my weird Japanese, I don't trust internet translation w\nIf I say anything impolite, I don't mean to.\nI'm not very good at these kinds of heartfelt_messages, but I really hope you're okay. However much negativity you hear, please know that there are a lot of people who believe in and support you. The kaigainiki are all with you, and I've spoken to a lot of nihonniki who still believe in you, so when you return there'll be a lot of smiling faces waiting for you. In the meantime, please stay strong. Then after that, we can have fun in your stream together!\nSee you in two weeks! I'm looking forward to it!\n- Kaigainiki fan",
+    "JP_message_(Deepl)": "雨的なイギリスからこんにちわ！\n変な日本語ごめん、インターネットの翻訳信じられないから自分で書こうとしたｗ\n無礼なこと言えば、つもりじゃない。\nこんな心からメッセージ苦手ですけど、アロエちゃん元気だとほんとにいい。どんな悪さ聞いても、アロエちゃん信じてサポートする人もいっぱいいるとわかってくださいね。海外ニキは誰も味方で、まだアロエさん信じる日本ニキとたくさん喋ったことあって、アロエちゃんが戻る時、きっと笑顔で待ってる魔の友がたくさんいる。その間に頑張ってくださいね。それから、ストリームで一緒に楽しもうね！\nそれじゃ、2週間に会おう！楽しみにしているよ！\nー海外ニキファン",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Fockingweeb",
+    "Country": "Poland",
+    "Native_message": "",
+    "EN_message": "Greeting from across the sea\nI just want to say that I love you and your voice. We're always there for you, no matter what the situation. Can't wait to hear your voice again and enjoy the next stream with you. Hell, it might not even be a bad idea to go to hell.",
+    "JP_message_(Deepl)": "挨拶\nあなたとあなたの声を愛していると言いたいだけです\nどんな状況でも、常にあなたをサポートします。\nまたあなたの声を聞くのを待ちきれないし、次のストリームで一緒に楽しむことができます。\n地獄に行くのも悪くないかもしれない",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Iori",
+    "Country": "Chile",
+    "Native_message": "",
+    "EN_message": "Greetings of this side of the world, i only wanted to say we support you and wanted to view yours streams many more times, view that smug smile we love, well i hope you are well and Good day to you",
+    "JP_message_(Deepl)": "\n世界のこちら側の挨拶、私はただ、私たちはあなたをサポートしていると言いたかったし、あなたのストリームをもっと何度も見たかった、私たちが愛するその笑顔を見て、よく、私はあなたがよく、あなたに良い一日であることを願っています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Uta Utane",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "All of us love you Aloe! I hope you're having a good day. If not, I hope this cheers you up. You mean a lot to all of us and I hope you always remember that.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Yukiharu雪栄",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello, Aloe, Are you having a good day?\nI fell in love with your personality, voice and smug smile, I stayed and watched your debut stream from start to end, and I'm looking forward to all your future streams, I hope you can come back on stage and sing very soon. We miss you, we'll always be waiting for you to come back and suprise us with your beautiful voice. ",
+    "JP_message_(Deepl)": "こんにちは、アロエさん、今日は元気に過ごしていますか？\n私はあなたの人柄と声と笑顔に惚れてしまいました、あなたのデビューストリームを最初から最後まで見ていました。私たちは、あなたが戻ってきて、あなたの美しい声で私たちを驚かせてくれるのをいつも待っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Julius Caёsaя",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "We all love you and we are all waiting for your return and hear you sing.",
+    "JP_message_(Deepl)": "\n私たちはみんなあなたを愛していて、あなたの帰りを待っていて、あなたの歌を聞いています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "anonymous",
+    "Country": "Ukraine",
+    "Native_message": "",
+    "EN_message": "Aloe, hi!\nHeads up, queen, your headphones are falling! Your smug face is very powerful and fills with energy, please don't lose it that easily. The same as I don't want to underestimate you, please don't underestimate us, we are sure that you'll have opportunities to let your heart shine and will be waiting patiently for this to happen. Even if there are unfortunate times for you right now, please look in the future and think more about good things. We are here because we believe that light will defeat the darkness and we will not leave until it becomes so.",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\n気をつけて！クイーン！ヘッドフォンが落ちてる！あなたのドヤ顔はとてもパワフルでエネルギーに満ち溢れていますので、そう簡単には失わないでくださいね。あなたを甘く見たくないのと同じで、私たちを甘く見ないでくださいね、きっとあなたの心を輝かせる機会があると思いますし、そうなるのを辛抱強く待っています。今は不幸なことがあっても、未来に目を向けて、良いことをもっと考えてくださいね。私たちがここにいるのは、光が闇を打ち負かすと信じているからであり、そうなるまで離れません。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "⚡Pr1meJ^⚡",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hey from across the world! Is today a good day? If it isn't, I hope my love can reach you from across the seas to make you feel better! From the beginning of your debut stream, I was wow'd by your super interesting personality and super cute voice, and once you started singing, I knew it was love at first sight! Things probably suck right now, but I think everyone knows that when you come back, it'll be to thousands of loving fans! We'll all be looking forward to two weeks from now, and I hope then we can listen to your amazing singing again! Ganbatte Aloe! ",
+    "JP_message_(Deepl)": "世界中からこんにちは！今日はいい日ですか？そうでなくても、私の愛が海の向こうからあなたに届き、元気になってくれることを願っています! デビュー当初から、超面白い人柄と超可愛い声にびっくりして、歌い出したら一目惚れだと思いました! 今はもうダメかもしれませんが、皆さんも知っていると思いますが、あなたが戻ってくる時は、何千人ものファンの皆さんに愛される時だと思いますよ！！私たちも楽しみにしています。2週間後をみんなで楽しみにしています！その時にまたあなたの素晴らしい歌声を聴けることを願っています！(笑) ガンバッテアロエ!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "RazorNaitor",
+    "Country": "Australia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!! \nSending love from Australia. \nWhen I saw your debut I was very hyped and excited of what’s to come. When you started singing I was instantly in love and I could not wait for more content. \nIt must be really tough right now but don’t worry, I and many others love you and are giving you full support!!\nWhen there is darkness there is light.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "ハローアロエ！ \nオーストラリアから愛を送っています。\nデビューをすごく期待して、やっとアロエちゃんを見たり歌声を聴いたらすぐ気に入りになりました。\n今は本当に大変だと思いますが、心配しないでください、私も他の多の人もあなたを応援していますし！ 闇があれば光もあるだろう。"
+  },
+  {
+    "Name": "Mirrored",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "From the moment you debuted, you didn't didn't just join Hololive, you joined a family. We may have only just met, but us fans are now part of your family too. That's why, we will always support you. Hang in there!",
+    "JP_message_(Deepl)": "デビューの瞬間から、ホロライブに入っただけでわなく、家族に入った。始まったばかりかもしらないんですが、私たちファンはもはや家族の部分になりました。だからずっと応援します。がんばって！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Konata",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nWhen I first saw your debut, I had a feeling that you would become a fun member, not just of 5th Gen, but as a member of the whole hololive group. I was looking forward for you and other 5th gen's funny antics, and I'm still hoping that I could see that! You must be strong and bravely move forward! After all, there is no life without obstacles.\n\nWorry not, if you need help, all you have to do is call for us, and we will 100% assist. Stay strong and keep fighting!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nデビューを見た時は、五弦だけでなく、ホロライブ全体のメンバーとしても楽しいメンバーになってくれそうな予感がしました。 あなたをはじめとする5th GENのお茶目なおちゃめさを楽しみにしていましたし、今でも期待していますよ 強くなって勇気を持って前に進んでください! 結局のところ、障害のない人生はありません。\n\n心配しないで、もし助けが必要ならば、あなたがしなければならないのは、私たちを呼び出すことです、そして私たちは100％支援します。 強いままで、戦い続けてください",
+    "JP_message_(corrected)": "アロエさん、こんにちは。\nデビュー配信を見た時は、５期生のだけではなく、ホロライブ全体のメンバーとしても楽しいメンバーになりそうだといい予感がしました。 アロエさんと５期生のお茶目なところなどを楽しみにしていまして、今でも楽しみにしていますよ。 強くなって勇気を持って前に進んでください！結局のところ、辛い時のない人生はありませんね。\n\n心配しないで、もし助けが必要ならば、私たちファンのみんなを呼び出して、私たちは全力で支援します。 頑張って、闘い続けてください！"
+  },
+  {
+    "Name": "lilscucn",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "ハンバーガーランド（アメリカ）からのこんにちは！歌声はすごいと思ったし、発配信もすごく楽しかったので復帰や今後の配信も楽しみにしてます。\nBurger land loves you aloe"
+  },
+  {
+    "Name": "DrawTheOmega",
+    "Country": "Argentina",
+    "Native_message": "",
+    "EN_message": "Hello from Argentina.\nThere are 12 hours of difference between Japan and Argentina. So I will not always be able to be in the streams, but I look forward to your return.\nI really love your voice, I love it. I hope I can hear you sing again.\nSee you in 2 weeks with a smile",
+    "JP_message_(Deepl)": "アルゼンチンからこんにちは。\n日本とアルゼンチンでは１２時間の違いがあります。だからもしかしたらライブを見に行かないかもしれませんけど、あなたの復帰を楽しみにしています。\n私はあなたの声が本当に大好きです。また歌うのが聞こえたらいいです。\n笑顔で2週間お会いしましょう。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Wonejo",
+    "Country": "Mexico",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-Sama!\nAlthough there's a huge time difference in my country i will always support you, no matter what happens, you have us!, Even on hard days like these, we will wait gladly two weeks for your cute smile.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Anna Borshin",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello, Aloe, I know these are some tough times, and I can’t even imagine what you’re going through, but just know that your fans are going to keep supporting you know matter what ! Especially just western viewers, we will always be right behind you, much love from Texas !!! ",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Nikedou",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nWe know its been hard at these times but we know you are really doing your best to bring your fans good stream contents, I really like how you are a vocaloid type idol which really tickles my idol soul into getting into you more! I hope I can hear you once again singing your favorite songs or even making original songs. I'm looking forward to it!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは!\n今は大変な時期だと思いますが、ファンの皆さんに良いコンテンツを届けるために頑張っていると思いますし、ボーカロイド系のアイドルということで、私のアイドル魂をくすぐるような感じがとても好きです また好きな曲を歌ったり、オリジナル曲を作ったりしている姿が聴けたらいいなと思います。 楽しみにしています!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Kanagiri",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe, i just wanna say that what ever happens there will be us (your fans) that will always support you, since i am still a student i may not be able to support you much,but i want you to know that a lot of us is waiting for your return,and it is not  limited to adults there are also student and other ones that loved you even with just the short time that we all have been together, don't forget that we will be always here to support you. Hope you get back soon. ",
+    "JP_message_(Deepl)": "こんにちはアロエ、私はいつもあなたをサポートしてくれる私たち（あなたのファン）がいると言いたいだけです、私はまだ学生なので、あなたをあまりサポートできないかもしれませんが、あなたにそれをたくさん知ってもらいたいです私たちのあなたの帰りを待っています、それは大人に限らず、私たち全員が一緒になった短い時間でもあなたを愛した学生や他の人もいます、私たちが常にサポートするためにここにいることを忘れないでください君は。すぐに戻ってきてください。\n\nPS：これはグーグル翻訳によって翻訳されただけなので正確さはわかりませんが、主な考えがあなたに届いたといいのですが",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Umaru 星詠み",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-chan!\nHope you are doing well. I really love your voice and your smug smile.  I'm looking forward to hearing you sing again! Whenever you feel sad, remember that there are a lot of people all of the world supporting you. Stay strong, we'll be waiting.",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。\n元気にしているといいですね。あなたの声とドヤ顔が本当に大好きです。 また歌が聴けるのを楽しみにしています。悲しい時はいつでも、世界中のたくさんの人があなたを応援していることを思い出してください。頑張ってください！待ってます",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "nyanpantsuuu~!",
+    "Country": "Germany",
+    "Native_message": "",
+    "EN_message": "Dear Aloe,\nIm eagerly looking forward to the day of your return. On your debut you really worked hard to bring joy to all of us. I truly want to give something back and I hope I can do that with that short_message. \nRest assured that I and many others will support you no matter what, we want to see all of your dreams and goals fulfilled. Im looking forward to many more awesome songs and streams from you.\nWe are one family. We stand together!",
+    "JP_message_(Deepl)": "アロエさんへ\n復帰の日を心待ちにしています。デビューの時は本当に頑張ってみんなに喜びを与えようとしてくれました。この短いメッセージで何かお返しができたらいいなと思っています。\n私や他の多くの人が何があってもあなたを応援しますので安心してください、あなたの夢や目標が全て叶うのを見たいと思います。私はあなたからのもっとたくさんの素晴らしい曲やストリームを楽しみにしています。\n私たちは一つの家族です。私たちは一緒に立っています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Perrine",
+    "Country": "France",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nGreetings from La France ! \nI would like to express my appreciation and gratitude to you. \nYou made me smile and laugh during your debut stream, it was really fun to watch! You got an interesting character design, a lovely voice and a brat personality to pair it with it, It blends well! loving it <3 I really hope that the situation will be better soon! Us overseas fans and Japanese fans are really looking forward to your future streams and with the rest of the members of 5th Gen. Stay strong Aloe! We will support you more from here on out!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nラ・フランスからのご挨拶です この度は感謝と感謝の気持ちを伝えたいと思います。\nデビューストリームでは、私を笑顔にしてくれて、笑わせてくれて、見ていて本当に楽しかったです。面白いキャラクターデザイン、可愛い声、性格の悪さがうまく調和していますね！大好きです！ <3 早く状況が良くなることを願っています 海外のファンも、日本のファンも、これからのストリームを楽しみにしています。 頑張れアロエ これからももっともっと応援しています!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "chrono",
+    "Country": "Australia",
+    "Native_message": "",
+    "EN_message": "",
+    "JP_message_(Deepl)": "アロエさんへ、\nデビューを見て、5期生の中では一番好きと決めました。世界は残酷で、人はあなたの良いところよりも悪行を思い出す傾向があります。人間だから、ミスはする。重要なのは、全部受け取って、反省して、それからまた頑張って。前世は前世、今は今。残酷ですが、同時に世界は優し。批判する人もいるかもしれませんが、世界中からあなたを応援しているファンがたくさんいることを忘れないでください。私たちはあなたの復帰を待っています。待ってます。応援してます。またアロエの配信見たい、歌を聞きたい。だから元気にして。\nオーストラリアのファンからの応援。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "✿Luli Deviluke✧ (-330 Days)",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Aloe, I loved your debut we are here to support you all the way. I want to show my support to you anyway I can so I will do my best to attend your streams when you come back! We want to see you happy and not sad after having a bad first week when you debuted. Don't let the hate get to you when you have alot of supporters backing you up! much love from an oversea fan.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "アロエの初配信は本当に大好きで、ずっと応援するって気持ち伝えたいんです。どうにかサポートしてみせたいと考え、戻る時はできるだけ今後の配信を見ようと！初配信して、すぐに悲しい顔見せることになってしまい、復帰したら笑顔で向きらればと思います。今はアンチの言葉はたくさんあるかもしれませんが、たくさんの推しもいます！応援してます！愛をこめて海外のファンより"
+  },
+  {
+    "Name": "Kyoto Kiranami",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Aloe , since your first debut you have brighten me during my bad time.You got the best singing voice that i could not expect that.I very much like your song and hope you can produce more song in the future.I can't do anything to help you other than giving this_message for you.I hope it will reach you and motivate you to never give up on your life.Looking foward to see you return and amaze us again with your great performance.",
+    "JP_message_(Deepl)": "アロエさん、デビューしてからずっと私の苦手な時期を明るくしてくれましたね。あなたの歌がとても好きで、これからもたくさんの曲を作ってくれることを期待しています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "SrBeagle",
+    "Country": "Costa Rica",
+    "Native_message": "",
+    "EN_message": "Aloe, I really love your debut, your great talent and the way that you express yourself (on stream and twitter). Your existence in Hololive is very important for us, so I wish that you don't discourage yourself for simple error that any other human could do, stay strong. From here in Costa Rica I support you a lot and send you a lot of hugs. Independently of the short time that you shared with us, because it isn't about the quantity of time that you gave to us, but the quality of it :heart: \nI will be waiting for your return. Please take care of yourself. :Fubuki_Cha:\nJP/日本語 [Thanks to ソランSoran for the help with 翻訳 /Translation]",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "アロエちゃんの初配信は本当に好きだった、特に配信中・ツイートでは言葉使いが賢くて好きです。ホロライブのメンバーとしてアロエの存在は私たちにとって大切です。なのであんまり落ち込んでいないで欲しい、誰でも失敗もあるし、頑張ってね！\nコスタリカから応援してます！バーチャル抱っこも送ります！一緒のいる時間は、今は短いけど量より質ってことはありますよね。復帰を待ってます。元気にしてくださいね。"
+  },
+  {
+    "Name": "DTrain",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nYour first stream was amazing! I had a fun time listening to your unique style of singing, the aesthetics of your stream, and your smug yet cute personality. You left a huge impression on me and many others. I hope you are taking care of yourself and doing well. We all make mistakes from time to time, but I can say with confidence that you'll be able to move on from them and grow stronger from this. A lot of people have your back and we will support you to help get your footing back. Stay strong and we hope to see you again soon!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\n初めてのストリームは素晴らしかったですね! あなたの独特の歌い方、ストリームの美学、そしてドヤ顔でキュートな人柄に、楽しく聴かせていただきました。印象に残っているのは、私だけではなく、多くの人にも印象に残っています。お体に気をつけて頑張ってくださいね。誰にでも失敗はつきものですが、きっとそこから乗り越えて強くなっていくと自信を持って言えると思います。多くの人があなたの背中を持っていますし、私たちもあなたが立ち直れるようにサポートしていきます。気を引き締めて、またお会いできる日を楽しみにしています!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Anna Borshin",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello, Aloe, I know these are some tough times, and I can’t even imagine what you’re going through, but just know that your fans are going to keep supporting you know matter what ! Especially just western viewers, we will always be right behind you, much love from Texas !!! <3",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "こんにちは、アロエちゃん。\nアロエちゃんは何感じてるか想像もできなくて、辛い状況だと思いますが。初配信でファンができて、私たち何があっても推ししたいと思います。特に西洋の私たち！ずっと応援しますよ！愛をこめてテキサスより。"
+  },
+  {
+    "Name": "Argonimetris",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Hello Aloe! I loved your streams especially your debut. Please don't be discouraged as your overseas viewers will support you. We will wait for your return and stream again!!\n-Oversea fan",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。私はあなたのストリームが大好きで、特にあなたのデビューが大好きでした。海外の視聴者も応援してくれるので、落胆せずに頑張ってください。またあなたの復帰とストリームを待っています\n-海外ファン",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "ChristianSamurai",
+    "Country": "",
+    "Native_message": "",
+    "EN_message": "Aloe-dono, your smug look is telling me that anything i can do you can do better. You will definitely get through this, don't let this predicament weaken you. I have nothing but prayers and support for you. May God bless you and your career as a hololive member.",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "アロエ様、そのドヤ顔からすると、私にできることすべてアロエ様の方がよりよくこなせます。\nこんな困難もきっと乗り越えられるから、気を落とさずにがんばってください。応援しています。今後のご活躍に期待し、お祈りをささげます。神のご加護がありますように。"
+  },
+  {
+    "Name": "KateLv",
+    "Country": "Latvia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-Sama.\nGreetings from Latvia!\nI loved your debut. Don't stress yourself as us, overseas viewers will support you no matter what. We'll be waiting for your return! ",
+    "JP_message_(Deepl)": "アロエ様こんにちは。\nラトビアからのご挨拶\nあなたのデビューが大好きでした。私たち海外の視聴者は何があっても応援していますので、無理しないでください。お帰りをお待ちしています ",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "MonsterLover(KSawako234)",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe. Just want to tell you that I love your debut. Your personality, how well you interact with other 5th gen members and how we can see your personality to your singing. There are many fans waiting for you. Don't beat yourself up. I can assure you that when you come back, we will be there for you. Greeting you with warm welcomes. Take care of yourself Aloe. We love you. <3 from the Philippines",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "アロエちゃん、こんにちは。 初配信から好きになりました。 正確も、他の5期生との仲のよさも、そして歌から伝わる個性も。 多くのファンがアロエちゃんを待っています。 自分を責めないでください。 アロエちゃんが戻ってきた時には、魔の友が迎えてあげますよ。 温かくお迎えします。 お体に気をつけてください。 大好きです。 フィリピンからのファンより。"
+  },
+  {
+    "Name": "Akamaru",
+    "Country": "Singapore",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-San! I had been looking forward to your debut ever since the announcement of Holofive. Your stream was amazing. I hope you are feeling better! Stay strong and I hope you will come back with the same smug look on your face, sounding better than ever! See you in 2 weeks. Much love from Singapore! <3",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。 ホロファイブの発表以来、あなたのデビューを楽しみにしていました。 ストリームが素晴らしかったです。元気でいてください！ これからもがんばって、今まで以上にいい音を出して、同じようにドヤ顔で帰ってきてくださいね。 2週間後にお会いしましょう。 シンガポールから愛を込めて！<3",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "www",
+    "Country": "Malaysia",
+    "Native_message": "",
+    "EN_message": "Hello Aloe, much love from Malaysia. I really enjoyed your singing during your first debut and I hope to see you shine in the future! There people from all around the world work together for you which is way too wholesome and I hope you will feel its warmth. 加油!! ",
+    "JP_message_(Deepl)": "こんにちは、アロエ、マレーシアから愛を込めて。 デビュー当時のあなたの歌がとても楽しかったので、これからのあなたの活躍に期待しています。 世界中の人たちがあなたのために協力しているというのは、あまりにも健全で、その温かさを感じてほしいと思います。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "RozenKaiser",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-san,\nYour debut was a really fun one. I wish I could see more streams from you in the future. Please don't let any of the negative stuff stop you. We fans are here to support you! So please don't give up. Stand strong and proud!",
+    "JP_message_(Deepl)": "デビューは本当に楽しかったですね これからももっとたくさんのストリームが見られたらいいなと思います。 ネガティブなことは気にせず、ファンは応援しています。 だからあきらめないで。 強く、誇りを持って頑張ってください",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Comet Oblivion",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Hello Aloe!\nGreetings from Texas, USA! :flag_us:\nI hope you’re doing well. I had a wonderful time watching your debut stream and I can’t wait to see more! I know that these may be stressful times for you, but please don’t be discouraged. You have many fans here overseas and around the world who support you and are very excited for your future with Hololive. Take care of yourself and stay strong! I wish you the best of luck and I am looking forward to your return!\nMany hugs, much love <3",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。\nアメリカ・テキサスからのご挨拶です! :flag_us:\nお元気でいてくださいね。 あなたのデビューストリームを見るのがとても楽しかったし、もっと見るのが待ち遠しいわ。 辛いこともあると思いますが、落胆しないでください。 海外にも世界中にもたくさんのファンがいて、あなたを応援してくれていますし、これからのHololiveの活躍にも期待しています。 お体に気をつけて、元気でいてください! あなたの復帰を心待ちにしています!\nたくさんのハグ、たくさんの愛を <3",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Mr.Black_07",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hi Aloe-san!  I hope you're doing well!  Just want to remind you that we, your fans, are eagerly waiting for your return so don't let the negativity get you down.  I really like your debut and I can't wait to see what else you have in store!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは! お元気でいらっしゃることを願っています！ただ、私たちファンはあなたの復帰を心待ちにしています。 私たちファンは、アロエさんの復帰を心待ちにしていますので、ネガティブにならないようにしてくださいね。 私はあなたのデビューがとても気に入っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Kekitus",
+    "Country": "France",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-chan! \nGreetings from France! I was looking forward to your debut since the very first day you were announced, and what a fun debut it was! Your design is one of the cutest, and I love your voice. It left a big smile on my face!\nI know that the times are rough, but know that we all support you in these tiring times. Please, don't be too harsh on yourself, none of us are resenting you for what happened. The people doxing you and harassing you, they are the ones to blame.\n\nI look forward to your return in two weeks! I will keep supporting you in the future!",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。 \nフランスからのご挨拶です! 発表された日からデビューを楽しみにしていました。 あなたのデザインは最高に可愛くて、声も大好きです。 大きな笑顔を残してくれました!\n大変な時もあると思いますが、疲れている時はみんなで応援しています。 私たちの誰もが起こったことのためにあなたを恨んでいるのではない、自分自身にあまりにも厳しいことをしないでください。 あなたを非難しているのは、あなたを非難し、嫌がらせをしている人たちです。\n\n2週間後の復帰を楽しみにしています。 これからも応援しています",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Chomama",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hi Aloe, I hope you doing well!! Don't stress your self.. We love in our deepest love when I first saw you debut I'm so excited in your stream, We all know that you have a rough time now and your work hard.\n\nWe love you and Support till you get back...",
+    "JP_message_(Deepl)": "アロエさん、お元気ですか！？ 自分にストレスをかけないでね。 私たちは、あなたのデビューを初めて見たとき、私はあなたのストリームでとても興奮しています、私たちは皆、あなたが今、荒い時間を持っていることを知っているし、あなたのハードな仕事をしています。\n\n私たちはあなたを愛していますし、あなたが戻るまで応援しています...。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Schwarzer",
+    "Country": "Indonesia",
+    "Native_message": "",
+    "EN_message": "Hi aloe! I hope you are doing well, i had a wonderful time watching your debut stream and can't wait for your future streams. Just don't mind the negative comments and keep moving forward past these days. There are many people that supports you from other countries / continents. We will support you 100%, hope to see you back and healthy!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "1LoveLolis",
+    "Country": "Spain",
+    "Native_message": "",
+    "EN_message": "Hello Aloe. Greetings from Spain. I just wanted to tell you that you're not alone. You have thousands of people that will support you in every way we can. There is a lot of people who loved your debut stream, from all around the world. We're all waiting for you to come back, so don't let harrasers bring you down. We're looking foward to create good memories with your streams, so please take care of us!",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。スペインから来ました。あなたは一人ではないということを伝えたかったのです。何千人もの人たちがあなたを全力でサポートしてくれています 世界中から、あなたのデビューストリームを愛してくれた人たちがたくさんいます。私たちはみんなあなたの復帰を待っているから、ハラスメントに負けないでね。皆さんのストリームで良い思い出を作っていきたいと思っていますので、よろしくお願いします。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "TakaRex519",
+    "Country": "America",
+    "Native_message": "",
+    "EN_message": "Aloe-chan, hello from America!  I hope you're having a good day! After watching your debut live, I instantly fell in love, and I'm very excited to see what kinds of things you do as a member of Hololive! You have a great voice, and I really liked how you used vocal effects with your singing. I look forward to supporting you and hearing more songs too! Also, I'm sorry to hear about what's happened. You may have made a mistake, but that's okay. Everyone makes mistakes, and I think it's very respectable that you took responsibility for it. Please know that we Manotomo all over the world will continue to support you no matter what, and you'll definitely come back even stronger than before! -A proud Manotomo <3",
+    "JP_message_(Deepl)": "\n",
+    "JP_message_(corrected)": "アロエちゃん、アメリカからこんにちは \n今日も元気に過ごしていますか! デビューライブを見て一瞬で好きになってしまいましたが、Hololiveのメンバーとしてどんなことをしていくのか、とても楽しみです 。声も素敵だし、ボーカルのエフェクトを使った歌い方もとても気に入りました。応援していますし、これからもたくさんの曲を聴けるのを楽しみにしています!\nあと、今回の件は残念でしたね。ミスをしてしまったかもしれませんが、それはそれでいいんです。間違いは誰にでもあることですし、その責任を取ったことはとても立派なことだと思います。何があっても、私たち魔の友、世界中の魔の友は応援しています。\n-誇り高き魔の友<3"
+  },
+  {
+    "Name": "YuuKi D. Blazer997",
+    "Country": "Italy",
+    "Native_message": "",
+    "EN_message": "Hi Aloe! Greetings from Italy! Both my english and japanese are terrible, but I'll try my best! First of all, thank you so much for your debut and for joining Hololive and the Vtuber world! I loved your first stream a lot, especially when you singed \"Happy Sinthetizer\" (I hope the name is correct) and i could see that you putted a lot of effort to prepare the whole stream! I'll await your return with joy! (｡･ω･｡)ﾉ♡",
+    "JP_message_(Deepl)": "アロエさん、こんにちは。 イタリアから来ました。 英語zも日本語も下手ですが、頑張ります! まず最初に、デビューとHololiveとVtuberの世界に参加してくれてありがとうございます 私はあなたの最初のストリームがとても好きでした。特に「Happy Sintethizer」（名前が正しいといいのですが）を歌ったときは、ストリーム全体の準備にかなりの努力をしているのがわかりました。 またのお帰りを心待ちにしています (。・ω・。)ノ♡。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Aloe Love!",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Hi, Aloe-chan! I fell in love with you, your voice, and your singing after hearing Happy Synthesizer. Waiting for a time when Aloe-chan do a full cover of ECHO. Waiting patiently for your return. Don't let all the hate get in to you. Your fans are supporting you. ALOE LOVE!",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。\nハッピーシンセサイザーを聴いて、アロエちゃんの声と歌声に惚れました。アロエちゃんがECHOのフルカバーをする時を待っています。\nアロエちゃんが帰ってくる時を待っています。憎しみに負けないでください。ファンのみんなはあなたを応援しています。\nALOE LOVE! (アロエラブ！)",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "deegeetal",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Greetings from the Philippines! I loved your debut, and I look forward to all your upcoming streams once you return. Never forget, there's a lot of people around the world continuing to support you. Keep doing your best!",
+    "JP_message_(Deepl)": "",
+    "JP_message_(corrected)": "フィリピンからこんにちは！初配信大好きでした。そして今後の配信も楽しみにしてます。忘れないでね、世界中でアロエを応援してるファンがたくさんいます。頑張ってください！"
+  },
+  {
+    "Name": "SaquenmeDePeru",
+    "Country": "Peru",
+    "Native_message": "",
+    "EN_message": "Hi from Peru Aloe!!!\nI hope you can solve all your problems and be happy, don't trouble for this things, the entire community follow and support you from our countries, in South and North America, Europe, Asia and the entire world you have people who worry for you and is happy when you are too, all of us wait you return whit a smile in our faces, because you are very important for this comunity!!!",
+    "JP_message_(Deepl)": "ペルーのアロエからこんにちは！私はあなたがすべての問題を解決し、幸せになることができることを願っています。私はあなたがすべての問題を解決し、幸せになることができることを願っています、このことのために苦労しないでください、コミュニティ全体がフォローし、私たちの国からあなたをサポートしています、南と北アメリカ、ヨーロッパ、アジア、全世界では、あなたのために心配し、あなたがあまりにもあるときに幸せである人々を持っています、私たちのすべては、あなたがこのコミュニティにとって非常に重要であるため、私たちの顔に笑顔であなたが戻ってくるのを待っています!",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "DonAngelRubio",
+    "Country": "Spain",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-chan, \nI think your debut was the best of the 5th generation, I really enjoyed it and I admire you a lot... you were brave enough to sing twice in your debut!!!\nWe are waiting for you with tons of love.",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは。\nデビューは5代目の中で一番良かったと思います、本当に楽しかったし、尊敬します...デビューで2回も歌うなんて勇気がありましたね!\n沢山の愛を込めて待っています。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "TheRandox",
+    "Country": "Argentina",
+    "Native_message": "",
+    "EN_message": "Hi, Aloe-chan! I'm writing to you from Argentina. Due to the time difference between my country and yours (12 hours less), it's a bit complicated for me to watch your live videos scheduled in the afternoon/evening there, but that's not a big problem. I loved your version of \"Happy Synthesizer\", you have an excellent voice to sing. In fact, I want to tell you that you should come back with all your energy recharged and that nobody should stop you from what you like to do the most, you have a great future ahead of you. Finally, two sentences: \"A stumble is not a fall\", and \"Whoever learns from his falls, has not made a mistake\". I patiently await your return! Good luck, Aloe-chan!",
+    "JP_message_(Deepl)": "アロエちゃん、こんにちは！ アルゼンチンからお手紙を書いています。私の国とあなたの国との時差（12時間の差）があるので、午後や夜に予定されているあなたのライブを見るのは少し複雑なのですが、大きな問題ではありません。私はハッピーシンセサイザーのあなたのバージョンを愛していました、あなたは素晴らしい歌声を持っています。実際、私はあなたに、すべてのエネルギーを充電して戻ってくるべきであり、誰もあなたが最も好きなことからあなたを止めるべきではないことを伝えたい、あなたはあなたの前に素晴らしい未来を持っています。最後に二文。「つまずきは転ぶことではない」「転んだことから学ぶ者は間違いを犯していない」。あなたの帰りを待っています。アロエちゃん、頑張ってね。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "ThreeDigit",
+    "Country": "-",
+    "Native_message": "",
+    "EN_message": "Greetings, Aloe-sama. I'm absolutely in love with you and your voice. I look forward to documenting your progress and being there as a proud manotomo for when you have attained your goal of becoming an accomplished singer in the future. Please come back soon, I can't wait to hear you sing more.",
+    "JP_message_(Deepl)": "アロエ様、ご挨拶。私はあなたとあなたの声が大好きです。あなたが将来、歌手になるという目標を達成した時のために、あなたの成長を記録し、誇りに思っているマノトモとしてそこにいることを楽しみにしています。またすぐに戻ってきてください。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Spica",
+    "Country": "Bolivia",
+    "Native_message": "",
+    "EN_message": "Hello from Bolivia Aloe-san!\nI was really happy watching your debut, specially to know the way you prepared it that day, enjoyable, absolutely friendly and lovable, indeed cause the time difference between countries I'm not be able to be watching all streams but for sure I will be watching your archive for that days. I know for sure you will accomplish all of your goals, and we'll be giving you our support and encouragement always! See you soon Aloe-san!",
+    "JP_message_(Deepl)": "ボリビアのアロエさんからこんにちは\nデビューを見ていて本当に嬉しかったです。特に、あの日の準備の仕方を知ることができて、とても楽しかったです。あなたの目標は必ず達成されると思いますので、これからも応援しています。2週間に会おう！",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "KyleDeBRUH",
+    "Country": "Philippines",
+    "Native_message": "",
+    "EN_message": "Hello Aloe-sama,i hope you are doing well in there and i am not that good on making these types of_messages but i want to say that we will wait for you and continue to support you i cant wait to see you sing again in your following streams, Stay strong! uwu",
+    "JP_message_(Deepl)": "頑張っていることを願っていますし、私はこのようなタイプのメッセージを作るのが得意ではありませんが、私たちはあなたを待っていると言いたいのです。",
+    "JP_message_(corrected)": ""
+  },
+  {
+    "Name": "Jyagaimo",
+    "Country": "Chile",
+    "Native_message": "hola aloe-chan\nTe envió este mensaje desde Chile \nSolo quería decirte que tu debut fue increíble, valio la pena la espera\nTu voz es de verdad hermosa, te recomiendo seguir cantando, puedes llegar muy lejos \nNo dejes que esto te haga sufrir demasiado\nEres fuerte ^^\nSiempre tendrás todo mi apoyo y el de muchos mas \nSolo hay que esquivar los obstáculos que nos pone la vida\nTe estaré esperando para cuando vuelvas ^^",
+    "EN_message": "hi aloe-chan\nHe sent you this_message from Chile \nI just wanted to tell you that your debut was amazing, worth the wait\nYour voice is really beautiful, I recommend you to keep singing, you can go very far \nDon't let this make you suffer too much\nYou are strong ^^\nYou will always have my full support and that of many others \nWe just have to avoid the obstacles that life puts in our way\nI'll be waiting for you when you get back ^^",
+    "JP_message_(Deepl)": "ハローアロエちゃん\n彼はチリからこのメッセージを送ってきた あなたのデビューは素晴らしいものだったと伝えたかったのですが、待った甲斐がありました。\nあなたの声は本当に美しいです、私はあなたが歌い続けることをお勧めします、あなたは非常に遠くに行くことができます。\nこれで苦しくならないように\n強いですね^^。\nあなたには常に私と他の多くの人々の全面的な支援があります。\n私たちはただ人生が私たちの道に置く障害を回避する必要があります。\n帰ってきたら待ってるからね^^。",
+    "JP_message_(corrected)": ""
+  }
+ ]
