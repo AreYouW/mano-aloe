@@ -70,35 +70,47 @@ function MessageCard(props) {
   )
 }
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
+
 export default function MessageCardSection(props) {
   const { data } = props
+  const classes = useStyles()
 
   return (
-    <Grid
-      container
-      direction="row"
-      justify="center"
-      alignItems="flex-start"
-      spacing={3}
-      overflow="auto"
-    >
-      {data.map((data, idx) => {
-        const messageObj = {
-          "original" : data.Native_message,
-          "en": data.EN_message,
-          "jp": data.JP_message_Deepl,
-          "jp_corrected": data.JP_message_corrected
-        }
-        return (
-          <Grid key={'Message' + idx} item>
-            <MessageCard
-              name={data.Name}
-              country={data.Country}
-              messageObj={messageObj}
-            />
-          </Grid>
-        )
-      })}
-    </Grid>
+    <div className={classes.root}>
+      <Grid
+        container
+        justify="center"
+        alignItems="flex-start"
+        spacing={3}
+      >
+        {data.map((data, idx) => {
+          const messageObj = {
+            "original" : data.Native_message,
+            "en": data.EN_message,
+            "jp": data.JP_message_Deepl,
+            "jp_corrected": data.JP_message_corrected
+          }
+          return (
+            <Grid key={'Message' + idx} item xs className={classes.paper}>
+              <MessageCard
+                name={data.Name}
+                country={data.Country}
+                messageObj={messageObj}
+              />
+            </Grid>
+          )
+        })}
+      </Grid>
+    </div>
   )
 }
