@@ -122,13 +122,6 @@ MessageCardSection.propTypes = {
       JP_message_corrected: PropTypes.string,
       Name: PropTypes.string.isRequired,
       Country: PropTypes.string.isRequired,
-      // data: PropTypes.shape({
-      // }).isRequired,
-      /*
-      not sure if idx is required
-      I glanced over Grid's API and the key prop where idx is used is not there
-      */
-      // idx: PropTypes.any.required,
     }),
   ),
 };
