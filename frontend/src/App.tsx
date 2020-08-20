@@ -1,7 +1,4 @@
 import React from "react";
-import Navbar from './components/Navbar'
-import AloeHeartIcon from './assets/AloeHeartIcon.png'
-import './App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -9,6 +6,14 @@ import {
   RouteComponentProps,
   Switch
 } from "react-router-dom";
+import Navbar from './components/Navbar'
+import AloeHeartIcon from './assets/AloeHeartIcon.png'
+
+import HomePage from './pages/Home'
+import AboutPage from './pages/About'
+import LatestNewsPage from './pages/LatestAloeMano'
+import MapPage from './pages/Map'
+import './App.css';
 
 export default function App() {
   return (
@@ -23,35 +28,19 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/map">
-            <Map />
+            <MapPage />
           </Route>
           <Route path="/latest">
-            <Latest />
+            <LatestNewsPage />
           </Route>
           <Route path="/about">
-            <About />
+            <AboutPage />
           </Route>
           <Route path="/">
-            <Home />
+            <HomePage />
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Map() {
-  return <h2>MAP</h2>;
-}
-
-function Latest() {
-  return <h2>LATEST</h2>
 }
