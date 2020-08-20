@@ -23,16 +23,13 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/map">
-            <About />
+            <Map />
           </Route>
           <Route path="/latest">
-            <About />
+            <Latest />
           </Route>
           <Route path="/about">
             <About />
-          </Route>
-          <Route path="/users">
-            <Users />
           </Route>
           <Route path="/">
             <Home />
@@ -49,10 +46,6 @@ function Home() {
 
 function About() {
   return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 function Map() {
