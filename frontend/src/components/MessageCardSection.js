@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Container} from '@material-ui/core' // MessageCardSection
 import { Typography, Card, CardActions, IconButton, CardActionArea, CardContent } from '@material-ui/core' // MessageCard
@@ -72,19 +69,8 @@ function MessageCard(props) {
   )
 }
 
-proptypes-check
-MessageCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  messageObj: PropTypes.shape({
-    original: PropTypes.string.isRequired,
-    jp: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
 export default function MessageCardSection(props) {
   const { data } = props
-  const classes = useSectionStyles()
 
   return (
     <Grid container justify="center" spacing={3}>
@@ -108,14 +94,3 @@ export default function MessageCardSection(props) {
     </Grid>
   )
 }
-
-MessageCardSection.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      Native_message: PropTypes.string.isRequired,
-      JP_message_Deepl: PropTypes.string.isRequired,
-      Name: PropTypes.string.isRequired,
-      Country: PropTypes.string.isRequired,
-    }),
-  ),
-};
