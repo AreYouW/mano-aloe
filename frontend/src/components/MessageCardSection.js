@@ -26,7 +26,7 @@ function switchLangRender(props) {
 const useCardStyles = makeStyles({
   root: {
     minWidth: 380,
-    maxWidth: 400,
+    maxWidth: 380,
     backgroundImage: `url(${CardStyling2})`,
     backgroundRepeat: 'no-repeat',
     backgroundColor: "#fd418d"
