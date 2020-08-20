@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Container} from '@material-ui/core' // MessageCardSection
 import { Typography, Card, CardActions, IconButton, CardActionArea, CardContent } from '@material-ui/core' // MessageCard
+
 import EnglandFlagImg from '../assets/united_kingdom_great_britain.png'
 import JapanFlagImg from '../assets/ICON_RESIZED-Flag_of_Japan.svg.png'
 import LanguageIcon from '@material-ui/icons/Language';
-import CardStyling1 from '../assets/card1.png' 
+import CardStyling1 from '../assets/card1.png'
 
 function switchLangRender(props) {
+  // console.log(props);
   const { lang, messageObj } = props
   switch(lang) {
     case 'jp':
@@ -64,6 +69,17 @@ function MessageCard(props) {
   )
 }
 
+MessageCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  messageObj: PropTypes.shape({
+    original: PropTypes.string,
+    en: PropTypes.string,
+    jp: PropTypes.string,
+    jp_corrected: PropTypes.string,
+  }).isRequired,
+};
+
 export default function MessageCardSection(props) {
   const { data } = props
   
@@ -96,3 +112,23 @@ export default function MessageCardSection(props) {
     </Container>
   )
 }
+
+MessageCardSection.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      Native_message: PropTypes.string,
+      EN_message: PropTypes.string,
+      JP_message_Deepl: PropTypes.string,
+      JP_message_corrected: PropTypes.string,
+      Name: PropTypes.string.isRequired,
+      Country: PropTypes.string.isRequired,
+      // data: PropTypes.shape({
+      // }).isRequired,
+      /*
+      not sure if idx is required
+      I glanced over Grid's API and the key prop where idx is used is not there
+      */
+      // idx: PropTypes.any.required,
+    }),
+  ),
+};
