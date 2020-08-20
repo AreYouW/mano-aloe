@@ -16,7 +16,9 @@ import InfoIcon from '@material-ui/icons/Info';
 import MapIcon from '@material-ui/icons/Map';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 
-import ManoAloeGif from '../assets/AloeiconsBIG.gif'
+import ManoAloeGif from '../assets/AloeiconsBIG.gif';
+import TwitterIcon from '../assets/twitterIcon.svg';
+import YoutubeIcon from '../assets/youtubeIcon.svg';
 
 // Required forwardRef to use Third Party Routing Library (react-router-dom)
 function ListItemLink(props) {
@@ -81,6 +83,12 @@ export default function ButtonAppBar() {
           <ListItemLink to="/about" icon={() => <InfoIcon /> }  primary="About" />
           <ListItemLink to="/game" icon={() => <SportsEsportsIcon /> } primary="Latest" />
           <ListItemLink to="/map" icon={() => <MapIcon /> } primary="Map" />
+          <IconButton edge="start" style={{backgroundColor: "#fd418d", padding: "8px", marginRight: "6px"}} aria-label="twitter" href="https://twitter.com/manoaloe" target="_blank">
+            <img src={TwitterIcon} alt="twitter" title="Twitter page" />
+          </IconButton>
+          <IconButton edge="end" style={{backgroundColor: "#fd418d", padding: "8px"}} aria-label="youtube" href="https://www.youtube.com/channel/UCgZuwn-O7Szh9cAgHqJ6vjw" target="_blank">
+            <img src={YoutubeIcon} alt="youtube" title="Youtube channel" />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>
