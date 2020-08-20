@@ -54,7 +54,7 @@ export default function ButtonAppBar() {
             { link: '/', iconFunc: () => <MapIcon /> },
           ].map((obj, idx) => {
             return (
-              <IconButton style={{color:"inherit"}}>
+              <IconButton key={idx} style={{color:"inherit"}}>
                 <Button target="_blank" href="http://www.google.com/">{obj.iconFunc()}</Button>
               </IconButton>
             )
