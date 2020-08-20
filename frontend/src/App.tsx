@@ -10,7 +10,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <div>
+    <div style={{backgroundColor: "#29222f"}}>
       <header className="App-header">
         <img className="background-img" src={AloeBackground} alt="Aloe Background" />
         <Grid container justify="center" spacing={0}>
