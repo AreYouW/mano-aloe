@@ -6,6 +6,20 @@ from main.server.models import Message, MessageSchema
 messages_schema = MessageSchema(many=True)
 message_schema = MessageSchema()
 
+class MessageListRangeResource(Resource):
+    def get(self, lower, upper):
+        """Gets a range of messages on the server"""
+        if int(lower) < 1:
+            return {'status': 'fail', 'messages': 'Invalid index: ' + str(lower)}, 400
+        if int(lower) > int(upper):
+            return {'status': 'fail', 'messages': 'Upper range cannot be less than lower range: ' + str(lower) + '>' + str(upper)}, 400
+        messages = Message.query.filter(Message.messageID >= int(lower)).filter(Message.messageID <= int(upper))
+        
+        if not messages:
+            return {'status': 'fail', 'messages': 'Out of range: ' + str(lower) +' - ' + str(upper) + ' does not exist'}, 404
+
+        messages = messages_schema.dump(messages)
+        return {'status': 'success', 'messages': messages}, 200
 
 class MessageListResource(Resource):
     def get(self):
@@ -44,7 +58,6 @@ class MessageListResource(Resource):
         db.session.commit()
 
         return {'status': 'success', 'message': 'Message successfully created'}, 201
-
 
 class MessageResource(Resource):
     def get(self, messageID):
