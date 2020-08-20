@@ -1,14 +1,20 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Container} from '@material-ui/core' // MessageCardSection
 import { Typography, Card, CardActions, IconButton, CardActionArea, CardContent } from '@material-ui/core' // MessageCard
+
 import EnglandFlagImg from '../assets/united_kingdom_great_britain.png'
 import JapanFlagImg from '../assets/ICON_RESIZED-Flag_of_Japan.svg.png'
 import LanguageIcon from '@material-ui/icons/Language';
 import CardStyling1 from '../assets/card1.png'
 import CardStyling2 from '../assets/card2.png'
 
+
 function switchLangRender(props) {
+  // console.log(props);
   const { lang, messageObj } = props
   switch(lang) {
     case 'jp':
@@ -66,10 +72,15 @@ function MessageCard(props) {
   )
 }
 
-const useSectionStyles = makeStyles({
-  root: {
-  }
-});
+proptypes-check
+MessageCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  messageObj: PropTypes.shape({
+    original: PropTypes.string.isRequired,
+    jp: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default function MessageCardSection(props) {
   const { data } = props
@@ -97,3 +108,14 @@ export default function MessageCardSection(props) {
     </Grid>
   )
 }
+
+MessageCardSection.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      Native_message: PropTypes.string.isRequired,
+      JP_message_Deepl: PropTypes.string.isRequired,
+      Name: PropTypes.string.isRequired,
+      Country: PropTypes.string.isRequired,
+    }),
+  ),
+};

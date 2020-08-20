@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { ListItemIcon, ListItemText } from '@material-ui/core';
@@ -35,6 +36,12 @@ function ListItemLink(props) {
     </IconButton>
   );
 }
+
+ListItemLink.propTypes = {
+  icon: PropTypes.func.isRequired,
+  to: PropTypes.string.isRequired,
+  primary: PropTypes.string,
+};
 
 
 const useStyles = makeStyles((theme) => ({
