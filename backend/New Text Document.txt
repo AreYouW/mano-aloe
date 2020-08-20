@@ -1,0 +1,5 @@
+pip install -r requirements.txt
+manage.py db init
+manage.py db migrate
+manage.py create_db
+manage.py runserver
