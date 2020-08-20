@@ -20,7 +20,7 @@ function switchLangRender(props) {
   }
 }
 
-const useStyles = makeStyles({
+const useCardStyles = makeStyles({
   root: {
     maxWidth: 400,
     backgroundImage: `url(${CardStyling2})`,
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 });
 
 function MessageCard(props) {
-  const classes = useStyles();
+  const classes = useCardStyles();
   const { name, country, messageObj } = props
   const [lang, setLang] = React.useState("jp");
   const handleCardClick = () => {
@@ -66,35 +66,34 @@ function MessageCard(props) {
   )
 }
 
+const useSectionStyles = makeStyles({
+  root: {
+  }
+});
+
 export default function MessageCardSection(props) {
   const { data } = props
-  
+  const classes = useSectionStyles()
+
   return (
-    <Container>
-      <h1>CARD SECTION</h1>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={0}>
-            {data.map((data, idx) => {
-              const messageObj = {
-                "original" : data.Native_message,
-                "en": data.EN_message,
-                "jp": data.JP_message_Deepl,
-                "jp_corrected": data.JP_message_corrected
-              }
-              return (
-                <Grid key={'Message' + idx} item xs={4}>
-                  <MessageCard
-                    name={data.Name}
-                    country={data.Country}
-                    messageObj={messageObj}
-                  />
-                </Grid>
-              )
-            })}
+    <Grid container justify="center" spacing={3}>
+      {data.map((data, idx) => {
+        const messageObj = {
+          "original" : data.Native_message,
+          "en": data.EN_message,
+          "jp": data.JP_message_Deepl,
+          "jp_corrected": data.JP_message_corrected
+        }
+        return (
+          <Grid key={'Message' + idx} item xs={4}>
+            <MessageCard
+              name={data.Name}
+              country={data.Country}
+              messageObj={messageObj}
+            />
           </Grid>
-        </Grid>
-      </Grid>
-    </Container>
+        )
+      })}
+    </Grid>
   )
 }
