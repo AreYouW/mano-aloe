@@ -39,7 +39,7 @@ const useCardStyles = makeStyles({
 function MessageCard(props) {
   const classes = useCardStyles();
   const { name, country, messageObj } = props
-  const [lang, setLang] = React.useState("jp");
+  const [lang, setLang] = React.useState("original");
   const handleCardClick = () => {
     console.log(messageObj)
   }
