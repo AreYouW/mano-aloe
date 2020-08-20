@@ -2,6 +2,11 @@ body {
   background-color: #282c34;
 }
 
+.wrapperOverlay {
+  margin-top:"-30vw";
+  text-align: "center";  
+}
+
 .background-img {
   width: 100%;
   height: 100%;
