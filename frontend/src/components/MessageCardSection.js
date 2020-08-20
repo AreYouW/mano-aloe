@@ -5,7 +5,8 @@ import { Typography, Card, CardActions, IconButton, CardActionArea, CardContent 
 import EnglandFlagImg from '../assets/united_kingdom_great_britain.png'
 import JapanFlagImg from '../assets/ICON_RESIZED-Flag_of_Japan.svg.png'
 import LanguageIcon from '@material-ui/icons/Language';
-import CardStyling1 from '../assets/card1.png' 
+import CardStyling1 from '../assets/card1.png'
+import CardStyling2 from '../assets/card2.png'
 
 function switchLangRender(props) {
   const { lang, messageObj } = props
@@ -19,11 +20,12 @@ function switchLangRender(props) {
   }
 }
 
-const useStyles = makeStyles({
+const useCardStyles = makeStyles({
   root: {
     maxWidth: 400,
-    backgroundImage: `url(${CardStyling1})`,
-    backgroundRepeat: 'no-repeat'
+    backgroundImage: `url(${CardStyling2})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: "#fd418d"
   },
   media: {
     height: 650,
@@ -31,7 +33,7 @@ const useStyles = makeStyles({
 });
 
 function MessageCard(props) {
-  const classes = useStyles();
+  const classes = useCardStyles();
   const { name, country, messageObj } = props
   const [lang, setLang] = React.useState("jp");
   const handleCardClick = () => {
@@ -64,35 +66,34 @@ function MessageCard(props) {
   )
 }
 
+const useSectionStyles = makeStyles({
+  root: {
+  }
+});
+
 export default function MessageCardSection(props) {
   const { data } = props
-  
+  const classes = useSectionStyles()
+
   return (
-    <Container>
-      <h1>CARD SECTION</h1>
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={0}>
-            {data.map((data, idx) => {
-              const messageObj = {
-                "original" : data.Native_message,
-                "en": data.EN_message,
-                "jp": data.JP_message_Deepl,
-                "jp_corrected": data.JP_message_corrected
-              }
-              return (
-                <Grid key={'Message' + idx} item xs={4}>
-                  <MessageCard
-                    name={data.Name}
-                    country={data.Country}
-                    messageObj={messageObj}
-                  />
-                </Grid>
-              )
-            })}
+    <Grid container justify="center" spacing={3}>
+      {data.map((data, idx) => {
+        const messageObj = {
+          "original" : data.Native_message,
+          "en": data.EN_message,
+          "jp": data.JP_message_Deepl,
+          "jp_corrected": data.JP_message_corrected
+        }
+        return (
+          <Grid key={'Message' + idx} item xs={4}>
+            <MessageCard
+              name={data.Name}
+              country={data.Country}
+              messageObj={messageObj}
+            />
           </Grid>
-        </Grid>
-      </Grid>
-    </Container>
+        )
+      })}
+    </Grid>
   )
 }
