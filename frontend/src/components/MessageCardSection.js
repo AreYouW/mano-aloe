@@ -5,7 +5,8 @@ import { Typography, Card, CardActions, IconButton, CardActionArea, CardContent 
 import EnglandFlagImg from '../assets/united_kingdom_great_britain.png'
 import JapanFlagImg from '../assets/ICON_RESIZED-Flag_of_Japan.svg.png'
 import LanguageIcon from '@material-ui/icons/Language';
-import CardStyling1 from '../assets/card1.png' 
+import CardStyling1 from '../assets/card1.png'
+import CardStyling2 from '../assets/card2.png'
 
 function switchLangRender(props) {
   const { lang, messageObj } = props
@@ -22,8 +23,9 @@ function switchLangRender(props) {
 const useStyles = makeStyles({
   root: {
     maxWidth: 400,
-    backgroundImage: `url(${CardStyling1})`,
-    backgroundRepeat: 'no-repeat'
+    backgroundImage: `url(${CardStyling2})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: "#fd418d"
   },
   media: {
     height: 650,
