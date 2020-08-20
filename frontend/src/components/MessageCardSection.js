@@ -25,6 +25,7 @@ function switchLangRender(props) {
 
 const useCardStyles = makeStyles({
   root: {
+    minWidth: 380,
     maxWidth: 400,
     backgroundImage: `url(${CardStyling2})`,
     backgroundRepeat: 'no-repeat',
@@ -73,7 +74,14 @@ export default function MessageCardSection(props) {
   const { data } = props
 
   return (
-    <Grid container justify="center" spacing={3}>
+    <Grid
+      container
+      direction="row"
+      justify="center"
+      alignItems="flex-start"
+      spacing={3}
+      overflow="auto"
+    >
       {data.map((data, idx) => {
         const messageObj = {
           "original" : data.Native_message,
@@ -82,7 +90,7 @@ export default function MessageCardSection(props) {
           "jp_corrected": data.JP_message_corrected
         }
         return (
-          <Grid key={'Message' + idx} item xs={4}>
+          <Grid key={'Message' + idx} item>
             <MessageCard
               name={data.Name}
               country={data.Country}
