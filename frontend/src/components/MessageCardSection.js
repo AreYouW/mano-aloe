@@ -10,8 +10,6 @@ import CardStyling1 from '../assets/card1.png'
 function switchLangRender(props) {
   const { lang, messageObj } = props
   switch(lang) {
-    case 'en':
-      return <Typography variant="h5" component="h2">{messageObj.en}</Typography>
     case 'jp':
       return <Typography variant="h5" component="h2">{messageObj.jp}</Typography>
     case 'original':
@@ -44,9 +42,6 @@ function MessageCard(props) {
   return (
     <Card className={classes.root}>
       <CardActions>
-        <IconButton onClick={() => setLang("en")}>
-          <img src={EnglandFlagImg} alt="England Flag" classes={classes.iconSize} /> 
-        </IconButton>
         <IconButton onClick={() => setLang("jp")}>
           <img src={JapanFlagImg} alt="Japan Flag" classes={classes.iconSize} /> 
         </IconButton>
