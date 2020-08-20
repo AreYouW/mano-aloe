@@ -73,10 +73,8 @@ MessageCard.propTypes = {
   name: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
   messageObj: PropTypes.shape({
-    original: PropTypes.string,
-    en: PropTypes.string,
-    jp: PropTypes.string,
-    jp_corrected: PropTypes.string,
+    original: PropTypes.string.isRequired,
+    jp: PropTypes.string.isRequired,
   }).isRequired,
 };
 
@@ -116,10 +114,8 @@ export default function MessageCardSection(props) {
 MessageCardSection.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      Native_message: PropTypes.string,
-      EN_message: PropTypes.string,
-      JP_message_Deepl: PropTypes.string,
-      JP_message_corrected: PropTypes.string,
+      Native_message: PropTypes.string.isRequired,
+      JP_message_Deepl: PropTypes.string.isRequired,
       Name: PropTypes.string.isRequired,
       Country: PropTypes.string.isRequired,
     }),
