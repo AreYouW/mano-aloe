@@ -35,13 +35,7 @@
       column-count: 2;
   }
 }
-@media (min-width: 960px) {
-  .parent {
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-  }
-}
+
 @media (min-width: 1100px) {
   .parent {
       -webkit-column-count: 3;
