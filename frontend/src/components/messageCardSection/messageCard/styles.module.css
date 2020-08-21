@@ -1,6 +1,6 @@
 .root {
     max-width: 400px;
-    background-image: url(../../../assets/card2.png);
+    background-image: url("../../../assets/card2.png");
     background-repeat: no-repeat;
     background-color: #fd418d;
 }
