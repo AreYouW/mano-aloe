@@ -2,6 +2,10 @@ body {
   background-color: #282c34;
 }
 
+.wrapper-overlay {
+  margin: -50vh;
+}
+
 .background-img {
   width: 100%;
   height: 100%;
