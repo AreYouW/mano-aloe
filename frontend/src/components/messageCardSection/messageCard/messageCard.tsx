@@ -3,14 +3,15 @@ import {Card, CardActionArea, CardActions, CardContent, IconButton, Typography} 
 import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
 import LanguageIcon from "@material-ui/icons/Language";
 import {Message} from "../../../models/message";
+import CardStyle2 from "../../../assets/card2.png";
 
 import CSS from 'csstype';
 
 const rootStyles: CSS.Properties = {
-  backgroundImage: "url('../../../assets/card2.png')",
-  backgroundRepeat: "no-repeat",
-  backgroundColor: "#fd418d"
+    backgroundImage: `url(${CardStyle2})`,
+    backgroundRepeat: "no-repeat"
 };
+
 const cardStyles: CSS.Properties = {
     height: "650px"
 }
