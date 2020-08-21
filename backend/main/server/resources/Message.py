@@ -50,7 +50,7 @@ class MessageListResource(Resource):
             return {'status': 'fail', 'message': 'Message already exists'}, 400
 
         message = Message(orig_msg=data.get('orig_msg'),
-                          jp_msg=data.get('jp_msg'),
+                          tl_msg=data.get('tl_msg'),
                           country=data.get('country'),
                           username=data.get('username'))
 
