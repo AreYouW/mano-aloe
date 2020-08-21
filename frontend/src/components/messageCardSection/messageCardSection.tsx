@@ -32,11 +32,9 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
                 region: data.Country
               }
               return (
-                <ul>
-                  <li>
+                <div className="card-parent">
                   <MessageCard message={message} cardStyleNum={(idx % 3)} />
-                  </li>
-                </ul>
+                </div>
               )
             })}
         </div>

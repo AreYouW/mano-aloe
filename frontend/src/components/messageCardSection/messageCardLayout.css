@@ -11,7 +11,7 @@
   column-gap: 15px;
   column-fill: auto;
 }
-ul {
+.card-parent {
   display: inline-block;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
@@ -21,12 +21,7 @@ ul {
   width:100%;
   margin:5px;
 }
-ul li, h5 {
-  font: 12px/18px Arial, sans-serif;
-  color: #333;
-  margin: 0;
-  list-style-type:none;
-}
+
 @media (min-width: 420px) {
   .parent {
       -webkit-column-count: 1;
