@@ -51,7 +51,7 @@ class MessageListResource(Resource):
 
         message = Message(orig_msg=data.get('orig_msg'),
                           jp_msg=data.get('jp_msg'),
-                          region=data.get('region'),
+                          country=data.get('country'),
                           username=data.get('username'))
 
         db.session.add(message)
