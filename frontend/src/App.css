@@ -2,9 +2,8 @@ body {
   background-color: #282c34;
 }
 
-.wrapperOverlay {
-  margin-top: -30vw;
-  text-align: center;
+.wrapper-overlay {
+  margin: -50vh;
 }
 
 .background-img {
@@ -19,11 +18,12 @@ body {
 
 /* width and height are set to maintain original Youtube dimensions */
 .video-tag-left {
-  float: left;
   position: absolute;
   z-index: 1000;
-  width: 30.57vw;
-  height: 17.19vw;
+  left: 5vw;
+  top: 20%;
+  width: 42.798vw;
+  height: 24.066vw;
 }
 
 .logo-tag-right {

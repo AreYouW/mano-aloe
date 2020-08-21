@@ -2,8 +2,18 @@ import React from "react";
 import {Card, CardActionArea, CardActions, CardContent, IconButton, Typography} from "@material-ui/core";
 import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
 import LanguageIcon from "@material-ui/icons/Language";
-import styles from "./styles.module.css";
 import {Message} from "../../../models/message";
+
+import CSS from 'csstype';
+
+const rootStyles: CSS.Properties = {
+  backgroundImage: "url('../../../assets/card2.png')",
+  backgroundRepeat: "no-repeat",
+  backgroundColor: "#fd418d"
+};
+const cardStyles: CSS.Properties = {
+    height: "650px"
+}
 
 interface MessageCardProps {
     message: Message;
@@ -22,7 +32,7 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     state: MessageCardState = {
-        currentLanguage: 'jp'
+        currentLanguage: 'original'
     }
 
     private getCurrentLanguage(): string {
@@ -52,10 +62,10 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
 
         return (
-            <Card className={styles.root}>
+            <Card style={rootStyles}>
                 <CardActions>
                     <IconButton onClick={() => this.setCurrentLanguage("jp")}>
-                        <img src={JapanFlagImg} alt="Japan Flag" className={styles.iconSize} />
+                        <img src={JapanFlagImg} alt="Japan Flag" />
                     </IconButton>
                     <IconButton onClick={() => this.setCurrentLanguage("original")}>
                         <LanguageIcon fontSize="large" />
