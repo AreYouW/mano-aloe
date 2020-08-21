@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid } from '@material-ui/core' // MessageCardSection
 import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
 import "./messageCardLayout.css"
