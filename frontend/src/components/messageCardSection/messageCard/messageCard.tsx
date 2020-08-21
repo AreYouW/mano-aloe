@@ -63,8 +63,10 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
             backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
             margin: "0",
-            listStyleType: "none"
+            listStyleType: "none",
+            objectFit:"fill"
         };
 
         return (
