@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core' // MessageCardSection
 import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
+import "./messageCardLayout.css"
 
 interface MessageCardSectionProps {
   data: any
@@ -20,23 +21,26 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
   }
 
   render() {
-
     return (
-        <Grid container justify="center" spacing={3}>
-          {this.data.map((data: { Native_message: any; JP_message_Deepl: any; Name: any; Country: any; }, idx: string) => {
-            const message: Message = {
-              orig_msg : data.Native_message,
-              jp_msg: data.JP_message_Deepl,
-              username: data.Name,
-              region: data.Country
-            }
-            return (
-                <Grid key={'Message' + idx} item xs={4}>
-                  <MessageCard message={message}/>
-                </Grid>
-            )
-          })}
-        </Grid>
+      <div className="wrapper">
+        <div className="parent">
+          {this.data.map((data: { Native_message: any; JP_message_Deepl: any; Name: any; Country: any; }, idx: number) => {
+              const message: Message = {
+                orig_msg : data.Native_message,
+                jp_msg: data.JP_message_Deepl,
+                username: data.Name,
+                region: data.Country
+              }
+              return (
+                <ul>
+                  <li>
+                  <MessageCard message={message} cardStyleNum={(idx % 3)} />
+                  </li>
+                </ul>
+              )
+            })}
+        </div>
+      </div>
     )
   }
 }
