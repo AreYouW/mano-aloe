@@ -48,14 +48,20 @@ export default function ButtonAppBar() {
           </Typography>
 
           {[
-            { link: '/', iconFunc: () => <HomeIcon /> },
-            { link: 'https://github.com/AreYouW/mano-aloe', iconFunc: () => <InfoIcon /> },
-            { link: '/', iconFunc: () => <SportsEsportsIcon /> },
-            { link: '/', iconFunc: () => <MapIcon /> },
+            { externalLink: false, link: '/', iconFunc: () => <HomeIcon /> },
+            { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', iconFunc: () => <InfoIcon /> },
+            { externalLink: false, link: '/', iconFunc: () => <SportsEsportsIcon /> },
+            { externalLink: false, link: '/', iconFunc: () => <MapIcon /> },
           ].map((obj, idx) => {
+            let button;
+            if (obj.externalLink) {
+              button = <Button target="_blank" rel="noopener noreferrer" href={obj.link}>{obj.iconFunc()}</Button>;
+            } else {
+              button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
+            }
             return (
-              <IconButton key={idx} style={{color:"inherit"}}>
-                <Button target="_blank" href="http://www.google.com/">{obj.iconFunc()}</Button>
+              <IconButton style={{color:"inherit"}}>
+                { button }
               </IconButton>
             )
           })}
