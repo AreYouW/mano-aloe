@@ -62,12 +62,12 @@ class MessageListResource(Resource):
 class MessageResource(Resource):
     def get(self, messageID):
         """"Get a message by message ID"""
-        message = Message.query.filter_by(messageID=messageID).first()
+        message = Message.query.filter_by(messageID=messageID)
 
         if not message:
             return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
 
-        message = message_schema.dump(message)
+        message = messages_schema.dump(message)
         return {'status': 'success', 'message': message}, 200
 
     def delete(self, messageID):
