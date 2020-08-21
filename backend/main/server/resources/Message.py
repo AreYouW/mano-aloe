@@ -1,12 +1,13 @@
 from flask_restful import Resource
 from flask import request
-from main.server import db
+from main.server import db, cache
 from main.server.models import Message, MessageSchema
 
 messages_schema = MessageSchema(many=True)
 message_schema = MessageSchema()
 
 class MessageListRangeResource(Resource):
+    @cache.cached(timeout=100)
     def get(self, lower, upper):
         """Gets a range of messages on the server"""
         if int(lower) < 1:
@@ -22,6 +23,7 @@ class MessageListRangeResource(Resource):
         return {'status': 'success', 'messages': messages}, 200
 
 class MessageListResource(Resource):
+    @cache.cached(timeout=100)
     def get(self):
         """Gets all messages on the server"""
         messages = Message.query.all()
@@ -60,6 +62,7 @@ class MessageListResource(Resource):
         return {'status': 'success', 'message': 'Message successfully created'}, 201
 
 class MessageResource(Resource):
+    @cache.cached(timeout=100)
     def get(self, messageID):
         """"Get a message by message ID"""
         message = Message.query.filter_by(messageID=messageID).first()
