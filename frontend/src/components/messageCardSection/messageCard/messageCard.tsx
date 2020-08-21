@@ -22,7 +22,7 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     state: MessageCardState = {
-        currentLanguage: 'jp'
+        currentLanguage: 'original'
     }
 
     private getCurrentLanguage(): string {
@@ -55,7 +55,7 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
             <Card className={styles.root}>
                 <CardActions>
                     <IconButton onClick={() => this.setCurrentLanguage("jp")}>
-                        <img src={JapanFlagImg} alt="Japan Flag" className={styles.iconSize} />
+                        <img src={JapanFlagImg} alt="Japan Flag" />
                     </IconButton>
                     <IconButton onClick={() => this.setCurrentLanguage("original")}>
                         <LanguageIcon fontSize="large" />
