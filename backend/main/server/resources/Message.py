@@ -1,10 +1,17 @@
 from flask_restful import Resource
 from flask import request
-from main.server import db, cache
+from main.server import db, cache, app
 from main.server.models import Message, MessageSchema
 
 messages_schema = MessageSchema(many=True)
 message_schema = MessageSchema()
+
+
+@app.after_request
+def add_header(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 
 class MessageListRangeResource(Resource):
     @cache.cached(timeout=100)
