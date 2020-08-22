@@ -58,6 +58,14 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     render() {
         const handleCardClick = () => {
             console.log(this.message)
+            switch (this.getCurrentLanguage()) {
+                case "jp":
+                    this.setCurrentLanguage("original")
+                    break;
+                case "original":
+                    this.setCurrentLanguage("jp")
+                    break;
+            }
         }
         const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
 
