@@ -9,7 +9,7 @@ export default class ManoAloeService {
     }
 
     public getMessage(messageID: number): Promise<Message|null> {
-        return window.fetch(this.apiURL + 'messages/' + messageID)
+        return fetch(this.apiURL + 'messages/' + messageID)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -17,13 +17,12 @@ export default class ManoAloeService {
                 return apiResponse.messages[0];
             })
             .catch((error: Error) => {
-                console.error(error);
-								return null;
+                throw error;
             });
     }
 
     public getAllMessages(): Promise<Message[]> {
-       return window.fetch(this.apiURL + 'messages')
+       return fetch(this.apiURL + 'messages')
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -31,13 +30,12 @@ export default class ManoAloeService {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
-               console.error(error);
-							 return []
+                throw error;
             })
     }
 
     public getMessages(from: number, to: number): Promise<Message[]> {
-        return window.fetch(this.apiURL + 'messages/range/' + from + '/' + to)
+        return fetch(this.apiURL + 'messages/range/' + from + '/' + to)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -45,8 +43,7 @@ export default class ManoAloeService {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
-                console.error(error);
-								return [];
+                throw error;
             })
     }
 }
