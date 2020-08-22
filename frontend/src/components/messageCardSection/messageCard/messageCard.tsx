@@ -3,6 +3,7 @@ import {Card, CardActionArea, CardActions, CardContent, IconButton, Typography} 
 import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
 import LanguageIcon from "@material-ui/icons/Language";
 import {Message} from "../../../models/message";
+import LazyLoad from "react-lazyload";
 
 import CSS from 'csstype';
 
@@ -61,27 +62,29 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
 
         return (
-            <Card style={rootStyles}>
-                <CardActions>
-                    <IconButton onClick={() => this.setCurrentLanguage("jp")}>
-                        <img src={JapanFlagImg} alt="Japan Flag" />
-                    </IconButton>
-                    <IconButton onClick={() => this.setCurrentLanguage("original")}>
-                        <LanguageIcon fontSize="large" />
-                    </IconButton>
-                </CardActions>
-                <CardActionArea onClick={handleCardClick}>
-                    <CardContent>
-                        { messageText }
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {this.message.username}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {this.message.country}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+            <LazyLoad once height={650} offset={4000}>
+                <Card style={rootStyles}>
+                    <CardActions>
+                        <IconButton onClick={() => this.setCurrentLanguage("jp")}>
+                            <img src={JapanFlagImg} alt="Japan Flag" />
+                        </IconButton>
+                        <IconButton onClick={() => this.setCurrentLanguage("original")}>
+                            <LanguageIcon fontSize="large" />
+                        </IconButton>
+                    </CardActions>
+                    <CardActionArea onClick={handleCardClick}>
+                        <CardContent>
+                            { messageText }
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {this.message.username}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                                {this.message.country}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            </LazyLoad>
         )
     }
 }
