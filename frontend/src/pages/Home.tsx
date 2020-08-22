@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container'
 import MessageCardSection from '../components/messageCardSection/messageCardSection'
 import {Message} from "../models/message";
 import ManoAloeService from "../controllers/mano-aloe.service";
+import SessionService from "../services/session.service";
 
 export interface HomePageProps {
 
@@ -22,7 +23,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   }
 
   state: HomePageState = {
-    loading: false,
+    loading: true,
     messages: []
   }
 
@@ -31,23 +32,32 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   }
 
   private getData(): void {
-    this.manoAloeService.getAllMessages()
+    const cachedMessages: Message[] = SessionService.getMessages();
+    if (cachedMessages.length) {
+      this.setState({loading: false, messages: cachedMessages});
+    } else {
+      this.manoAloeService.getAllMessages()
         .then((messages: Message[]) => {
+          SessionService.saveMessages(messages);
           this.setState({loading: false, messages});
         })
+        .catch((error: Error) => {
+          console.error(error);
+        })
+    }
   }
 
   renderMessageCardSection() {
     return (
-        <MessageCardSection data={this.state.messages}/>
+      <MessageCardSection data={this.state.messages}/>
     )
   }
 
   render() {
     return (
-        <Container className="wrapper-overlay">
-          {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()} // TODO
-        </Container>
+      <Container className="wrapper-overlay">
+        {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()} // TODO
+      </Container>
     )
   }
 }

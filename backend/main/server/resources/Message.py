@@ -15,6 +15,11 @@ def add_header(response):
     response.headers['Access-Control-Allow-Headers'] = 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
     return response
 
+class MessageCount(Resource):
+    @cache.cached(timeout=100)
+    def get(self):
+        """Gets the number of messages available on the server"""
+        return {'status': 'success', 'count': Message.query.count()}, 200
 
 class MessageListRangeResource(Resource):
     @cache.cached(timeout=100)
@@ -30,6 +35,9 @@ class MessageListRangeResource(Resource):
             return {'status': 'fail', 'messages': 'Out of range: ' + str(lower) +' - ' + str(upper) + ' does not exist'}, 404
 
         messages = messages_schema.dump(messages)
+
+        if not Message.query.filter_by(messageID=upper).first():    #the last item in the range
+            return {'status': 'success', 'messages': messages}, 206 #Partial Content Served
         return {'status': 'success', 'messages': messages}, 200
 
 class MessageListResource(Resource):
@@ -38,6 +46,9 @@ class MessageListResource(Resource):
         """Gets all messages on the server"""
         messages = Message.query.all()
         messages = messages_schema.dump(messages)
+        
+        if not messages:
+            return {'status': 'success', 'messages': messages}, 206 #Partial Content Served
 
         return {'status': 'success', 'messages': messages}, 200
 
@@ -77,7 +88,7 @@ class MessageResource(Resource):
         """"Get a message by message ID"""
         message = Message.query.filter_by(messageID=messageID)
 
-        if not message:
+        if not message.first():
             return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
 
         message = messages_schema.dump(message)

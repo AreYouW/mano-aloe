@@ -1,6 +1,13 @@
 import {Message} from "./message";
 
-export interface ApiResponse {
+interface BaseResponse {
     status: string;
+}
+
+export interface MessageResponse extends BaseResponse {
     messages: Message[];
+}
+
+export interface CountResponse extends BaseResponse {
+    count: number;
 }

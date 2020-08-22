@@ -1,24 +1,23 @@
 import {Message} from "../models/message";
-import {ApiResponse} from "../models/response";
-const fetch = require('node-fetch');
+import {CountResponse, MessageResponse} from "../models/response";
 
 export default class ManoAloeService {
     private readonly apiURL: string;
 
     constructor() {
-        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:69420';
+        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:42069';
     }
 
-    public getMessage(messageID: number): Promise<Message> {
+    public getMessage(messageID: number): Promise<Message|null> {
         return fetch(this.apiURL + 'messages/' + messageID)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages[0];
             })
             .catch((error: Error) => {
-                console.error(error);
+                throw error;
             });
     }
 
@@ -27,11 +26,11 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
-               console.error(error);
+                throw error;
             })
     }
 
@@ -40,11 +39,24 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
-                console.error(error);
+                throw error;
+            })
+    }
+
+    public getMessageCount(): Promise<number> {
+        return fetch(this.apiURL + 'messages/count')
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: CountResponse) => {
+                return apiResponse.count;
+            })
+            .catch((error: Error) => {
+                throw error;
             })
     }
 }
