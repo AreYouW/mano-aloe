@@ -1,9 +1,9 @@
 import { Region } from "./region";
 
 export interface Message {
-    messageID?: number;
+    messageID: number;
     orig_msg: string;
-    jp_msg: string | null;
-    region: Region | null;
-    username: string | null;
+    jp_msg: string;
+    region: Region;
+    username: string;
 }
