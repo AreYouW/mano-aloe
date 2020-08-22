@@ -1,7 +1,7 @@
 from main.server import app, db, ma
 from marshmallow import fields
 
-class Artwork(db.Model):
+class Gallery(db.Model):
     __tablename__ = 'GALLERY'
     artworkID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     artworkLink = db.Column(db.String(2048), nullable=False)
@@ -15,6 +15,12 @@ class Artwork(db.Model):
         self.username = username
         self.title = title
 
+class GallerySchema(ma.Schema):
+    gameID = fields.Integer()
+    gameLink = fields.String(required=True)
+    gitLink = fields.String(required=False)
+    title = fields.String(required=True)
+
 class Games(db.Model):
     __tablename__ = 'GAMES'
     gameID = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -26,6 +32,12 @@ class Games(db.Model):
         self.gameLink = gameLink
         self.gitLink = gitLink
         self.title = title
+
+class GameSchema(ma.Schema):
+    gameID = fields.Integer()
+    gameLink = fields.String(required=True)
+    gitLink = fields.String(required=False)
+    title = fields.String(required=True)
 
 class Message(db.Model):
     __tablename__ = 'MESSAGES'
