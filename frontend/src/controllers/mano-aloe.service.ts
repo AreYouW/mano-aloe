@@ -22,7 +22,7 @@ export default class ManoAloeService {
             });
     }
 
-    async getAllMessages(): Promise<Message[]> {
+    public getAllMessages(): Promise<Message[]> {
        return fetch(this.apiURL + 'messages')
             .then((res: { json: () => any; }) => {
                 return res.json();
@@ -35,7 +35,7 @@ export default class ManoAloeService {
             })
     }
 
-    async getMessages(from: number, to: number): Promise<Message[]> {
+    public getMessages(from: number, to: number): Promise<Message[]> {
         return fetch(this.apiURL + 'messages/range/' + from + '/' + to)
             .then((res: { json: () => any; }) => {
                 return res.json();
