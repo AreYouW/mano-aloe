@@ -1,6 +1,5 @@
 import {Message} from "../models/message";
 import {ApiResponse} from "../models/response";
-const fetch = require('node-fetch');
 
 export default class ManoAloeService {
     private readonly apiURL: string;
@@ -9,8 +8,8 @@ export default class ManoAloeService {
         this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:69420';
     }
 
-    public getMessage(messageID: number): Promise<Message> {
-        return fetch(this.apiURL + 'messages/' + messageID)
+    public getMessage(messageID: number): Promise<Message|null> {
+        return window.fetch(this.apiURL + 'messages/' + messageID)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -19,11 +18,12 @@ export default class ManoAloeService {
             })
             .catch((error: Error) => {
                 console.error(error);
+								return null;
             });
     }
 
     public getAllMessages(): Promise<Message[]> {
-       return fetch(this.apiURL + 'messages')
+       return window.fetch(this.apiURL + 'messages')
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -32,11 +32,12 @@ export default class ManoAloeService {
             })
             .catch((error: Error) => {
                console.error(error);
+							 return []
             })
     }
 
     public getMessages(from: number, to: number): Promise<Message[]> {
-        return fetch(this.apiURL + 'messages/range/' + from + '/' + to)
+        return window.fetch(this.apiURL + 'messages/range/' + from + '/' + to)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
@@ -45,6 +46,7 @@ export default class ManoAloeService {
             })
             .catch((error: Error) => {
                 console.error(error);
+								return [];
             })
     }
 }
