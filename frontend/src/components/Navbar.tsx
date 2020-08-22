@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
               button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
             }
             return (
-              <IconButton style={{color:"inherit"}}>
+              <IconButton key={idx} style={{color:"inherit"}}>
                 { button }
               </IconButton>
             )
