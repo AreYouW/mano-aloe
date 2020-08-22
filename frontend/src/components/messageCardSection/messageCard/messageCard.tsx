@@ -12,18 +12,13 @@ import CSS from 'csstype';
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
-const enum DisplayedLanguage {
-    Original,
-    Japanese,
-}
-
 interface MessageCardProps {
     message: Message;
     cardStyleNum: number;
 }
 
 interface MessageCardState {
-    currentLanguage: DisplayedLanguage;
+    currentLanguage: string;
 }
 
 export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
@@ -37,22 +32,26 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original
+        currentLanguage: 'original'
     }
 
-    private getCurrentLanguage(): DisplayedLanguage {
+    private getCurrentLanguage(): string {
         return this.state.currentLanguage;
     }
 
-    private setCurrentLanguage(language: DisplayedLanguage): void {
+    private setCurrentLanguage(language: string): void {
         this.setState({currentLanguage: language});
     }
 
-    private renderMessage(language: DisplayedLanguage, message: Message): JSX.Element {
-        if (language === DisplayedLanguage.Japanese) {
-            return <Typography variant="h5" component="h2">{message.tl_msg}</Typography>
+    private renderMessage(language: string, message: Message): JSX.Element {
+        switch(language) {
+            case 'jp':
+                return <Typography variant="h5" component="h2">{message.tl_msg}</Typography>
+            case 'original':
+                return <Typography>{message.orig_msg}</Typography>
+            default:
+                return <Typography variant="h5" component="h2">{message.tl_msg}</Typography>
         }
-        return <Typography>{message.orig_msg}</Typography>
     }
 
     render() {
@@ -74,10 +73,10 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
             <LazyLoad once height={650} offset={4000}>
                 <Card style={rootStyles}>
                     <CardActions>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
+                        <IconButton onClick={() => this.setCurrentLanguage("jp")}>
                             <img src={JapanFlagImg} alt="Japan Flag" />
                         </IconButton>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Original)}>
+                        <IconButton onClick={() => this.setCurrentLanguage("original")}>
                             <LanguageIcon fontSize="large" />
                         </IconButton>
                     </CardActions>
