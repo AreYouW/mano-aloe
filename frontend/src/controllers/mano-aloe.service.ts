@@ -6,7 +6,7 @@ export default class ManoAloeService {
     private readonly apiURL: string;
 
     constructor() {
-        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:6969';
+        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:69420';
     }
 
     public getMessage(messageID: number): Promise<Message> {
