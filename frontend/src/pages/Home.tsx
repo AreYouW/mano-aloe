@@ -35,6 +35,9 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         .then((messages: Message[]) => {
           this.setState({loading: false, messages});
         })
+        .catch((error: Error) => {
+          console.error(error);
+        })
   }
 
   renderMessageCardSection() {
