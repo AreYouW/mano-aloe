@@ -1,6 +1,31 @@
 from main.server import app, db, ma
 from marshmallow import fields
 
+class Artwork(db.Model):
+    __tablename__ = 'GALLERY'
+    artworkID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    artworkLink = db.Column(db.String(2048), nullable=False)
+    artistLink = db.Column(db.String(2048), nullable=True)
+    username = db.Column(db.String(64), nullable=True)
+    title = db.Column(db.String(64), nullable=True)
+
+    def __init__(self, artworkLink, username, title, artistLink):
+        self.artworkLink = artworkLink
+        self.artistLink = artistLink
+        self.username = username
+        self.title = title
+
+class Games(db.Model):
+    __tablename__ = 'GAMES'
+    gameID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    gameLink = db.Column(db.String(2048), nullable=False)
+    gitLink = db.Column(db.String(2048), nullable=True)
+    title = db.Column(db.String(64), nullable=False)
+
+    def __init__(self, gameLink, gitLink, title):
+        self.gameLink = gameLink
+        self.gitLink = gitLink
+        self.title = title
 
 class Message(db.Model):
     __tablename__ = 'MESSAGES'
