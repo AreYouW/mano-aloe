@@ -1,11 +1,13 @@
 import {Message} from "./message";
 
-export interface MessageResponse {
+interface BaseResponse {
     status: string;
+}
+
+export interface MessageResponse extends BaseResponse {
     messages: Message[];
 }
 
-export interface CountResponse {
-    status: string;
+export interface CountResponse extends BaseResponse {
     count: number;
 }
