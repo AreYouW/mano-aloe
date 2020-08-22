@@ -33,8 +33,6 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   private getData(): void {
     this.manoAloeService.getAllMessages()
         .then((messages: Message[]) => {
-          console.log('message:');
-          console.log(messages);
           this.setState({loading: false, messages});
         })
   }
