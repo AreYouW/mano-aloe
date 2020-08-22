@@ -15,7 +15,7 @@ export default function App() {
         <img className="background-img" src={AloeBackground} alt="Aloe Background" />
         <Grid container justify="center" spacing={0}>
           <Grid item xs={10} style={{textAlign:"center" }}>
-            <iframe title="iframe" className="video-tag-left" src="https://www.youtube.com/embed/4ZvmV2JNOoA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
+            <iframe title="Mano Aloe Fanmade Video" className="video-tag-left" src="https://www.youtube.com/embed/4ZvmV2JNOoA" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
           </Grid>
           <Grid item xs={2}>
             <img className="logo-tag-right App-logo" src={AloeHeartIcon} alt="logo" />
