@@ -6,20 +6,20 @@ class Message(db.Model):
     __tablename__ = 'MESSAGES'
     messageID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     orig_msg = db.Column(db.String(2048), nullable=False)
-    jp_msg = db.Column(db.String(2048), nullable=True)
-    region = db.Column(db.String(2), nullable=True)
+    tl_msg = db.Column(db.String(2048), nullable=True)
+    country = db.Column(db.String(2), nullable=True)
     username = db.Column(db.String(64), nullable=True)
 
-    def __init__(self, orig_msg, jp_msg, region, username):
+    def __init__(self, orig_msg, tl_msg, country, username):
         self.orig_msg = orig_msg
-        self.jp_msg = jp_msg
-        self.region = region
+        self.tl_msg = tl_msg
+        self.country = country 
         self.username = username
 
 
 class MessageSchema(ma.Schema):
     messageID = fields.Integer()
     orig_msg = fields.String(required=True)
-    jp_msg = fields.String(required=False)
-    region = fields.String(required=False)
+    tl_msg = fields.String(required=False)
+    country = fields.String(required=False)
     username = fields.String(required=False)

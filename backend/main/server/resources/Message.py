@@ -1,12 +1,23 @@
 from flask_restful import Resource
 from flask import request
-from main.server import db
+from main.server import db, cache, app
 from main.server.models import Message, MessageSchema
 
 messages_schema = MessageSchema(many=True)
 message_schema = MessageSchema()
 
+
+@app.after_request
+def add_header(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Credentials'] = 'true'
+    response.headers['Access-Control-Allow-Methods'] = 'GET,HEAD,OPTIONS,POST,PUT'
+    response.headers['Access-Control-Allow-Headers'] = 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
+    return response
+
+
 class MessageListRangeResource(Resource):
+    @cache.cached(timeout=100)
     def get(self, lower, upper):
         """Gets a range of messages on the server"""
         if int(lower) < 1:
@@ -22,6 +33,7 @@ class MessageListRangeResource(Resource):
         return {'status': 'success', 'messages': messages}, 200
 
 class MessageListResource(Resource):
+    @cache.cached(timeout=100)
     def get(self):
         """Gets all messages on the server"""
         messages = Message.query.all()
@@ -50,8 +62,8 @@ class MessageListResource(Resource):
             return {'status': 'fail', 'message': 'Message already exists'}, 400
 
         message = Message(orig_msg=data.get('orig_msg'),
-                          jp_msg=data.get('jp_msg'),
-                          region=data.get('region'),
+                          tl_msg=data.get('tl_msg'),
+                          country=data.get('country'),
                           username=data.get('username'))
 
         db.session.add(message)
@@ -60,14 +72,15 @@ class MessageListResource(Resource):
         return {'status': 'success', 'message': 'Message successfully created'}, 201
 
 class MessageResource(Resource):
+    @cache.cached(timeout=100)
     def get(self, messageID):
         """"Get a message by message ID"""
-        message = Message.query.filter_by(messageID=messageID).first()
+        message = Message.query.filter_by(messageID=messageID)
 
         if not message:
             return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
 
-        message = message_schema.dump(message)
+        message = messages_schema.dump(message)
         return {'status': 'success', 'message': message}, 200
 
     def delete(self, messageID):
