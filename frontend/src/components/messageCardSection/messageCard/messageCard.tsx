@@ -16,7 +16,7 @@ const cardStyles: CSS.Properties = {
     height: "650px"
 }
 
-const enum DisplayedLanguage {
+enum DisplayedLanguage {
     Original,
     Japanese,
 }
