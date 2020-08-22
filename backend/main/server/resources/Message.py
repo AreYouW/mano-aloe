@@ -35,6 +35,9 @@ class MessageListRangeResource(Resource):
             return {'status': 'fail', 'messages': 'Out of range: ' + str(lower) +' - ' + str(upper) + ' does not exist'}, 404
 
         messages = messages_schema.dump(messages)
+
+        if not Message.query.filter_by(messageID=upper).first():    #the last item in the range
+            return {'status': 'success', 'messages': messages}, 206 #Partial Content Served
         return {'status': 'success', 'messages': messages}, 200
 
 class MessageListResource(Resource):
@@ -43,6 +46,9 @@ class MessageListResource(Resource):
         """Gets all messages on the server"""
         messages = Message.query.all()
         messages = messages_schema.dump(messages)
+        
+        if not messages[0]:
+            return {'status': 'success', 'messages': messages}, 204 #No Content Served
 
         return {'status': 'success', 'messages': messages}, 200
 
@@ -82,7 +88,7 @@ class MessageResource(Resource):
         """"Get a message by message ID"""
         message = Message.query.filter_by(messageID=messageID)
 
-        if not message:
+        if not message.first():
             return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
 
         message = messages_schema.dump(message)
