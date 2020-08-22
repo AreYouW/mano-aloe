@@ -44,7 +44,6 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     private renderMessage(language: string, message: Message): JSX.Element {
-        // console.log(props);
         switch(language) {
             case 'jp':
                 return <Typography variant="h5" component="h2">{message.jp_msg}</Typography>
