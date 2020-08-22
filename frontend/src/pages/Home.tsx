@@ -22,7 +22,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   }
 
   state: HomePageState = {
-    loading: false,
+    loading: true,
     messages: []
   }
 
