@@ -47,8 +47,8 @@ class MessageListResource(Resource):
         messages = Message.query.all()
         messages = messages_schema.dump(messages)
         
-        if not messages[0]:
-            return {'status': 'success', 'messages': messages}, 204 #No Content Served
+        if not messages:
+            return {'status': 'success', 'messages': messages}, 206 #No Content Served
 
         return {'status': 'success', 'messages': messages}, 200
 
