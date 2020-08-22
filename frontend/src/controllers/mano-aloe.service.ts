@@ -1,5 +1,5 @@
 import {Message} from "../models/message";
-import {ApiResponse} from "../models/response";
+import {CountResponse, MessageResponse} from "../models/response";
 
 export default class ManoAloeService {
     private readonly apiURL: string;
@@ -13,7 +13,7 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages[0];
             })
             .catch((error: Error) => {
@@ -26,7 +26,7 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
@@ -39,7 +39,7 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: ApiResponse) => {
+            .then((apiResponse: MessageResponse) => {
                 return apiResponse.messages;
             })
             .catch((error: Error) => {
@@ -52,8 +52,8 @@ export default class ManoAloeService {
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((count: number) => {
-                return count;
+            .then((apiResponse: CountResponse) => {
+                return apiResponse.count;
             })
             .catch((error: Error) => {
                 throw error;
