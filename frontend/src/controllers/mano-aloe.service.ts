@@ -5,7 +5,7 @@ export default class ManoAloeService {
     private readonly apiURL: string;
 
     constructor() {
-        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:69420';
+        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:42069';
     }
 
     public getMessage(messageID: number): Promise<Message|null> {
@@ -41,6 +41,19 @@ export default class ManoAloeService {
             })
             .then((apiResponse: ApiResponse) => {
                 return apiResponse.messages;
+            })
+            .catch((error: Error) => {
+                throw error;
+            })
+    }
+
+    public getMessageCount(): Promise<number> {
+        return fetch(this.apiURL + 'messages/count')
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((count: number) => {
+                return count;
             })
             .catch((error: Error) => {
                 throw error;
