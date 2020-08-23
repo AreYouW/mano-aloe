@@ -4,6 +4,7 @@ import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
 import LanguageIcon from "@material-ui/icons/Language";
 import {Message} from "../../../models/message";
 import LazyLoad from "react-lazyload";
+import "./messageCard.css";
 
 import CSS from 'csstype';
 
@@ -62,8 +63,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
 
         return (
-            <LazyLoad once height={650} offset={4000}>
-                <Card style={rootStyles}>
+            <LazyLoad once height={650} offset={0}>
+                <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
                     <CardActions>
                         <IconButton onClick={() => this.setCurrentLanguage("jp")}>
                             <img src={JapanFlagImg} alt="Japan Flag" />
