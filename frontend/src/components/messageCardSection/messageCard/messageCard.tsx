@@ -11,6 +11,8 @@ import "./messageCard.css";
 
 import CSS from 'csstype';
 
+import './messageCard.css';
+
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
 enum DisplayedLanguage {
@@ -60,20 +62,14 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const handleCardClick = () => {
             console.log(this.message)
         }
-        const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
         // need to leave styling here, so I can decide background image based on props
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            margin: "0",
-            listStyleType: "none",
-            objectFit:"fill"
         };
 
         return (
             <LazyLoad once height={650} offset={0}>
-                <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
+                {/* <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
                     <CardActions>
                         <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
                             <img src={JapanFlagImg} alt="Japan Flag" />
@@ -93,7 +89,16 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
                             </Typography>
                         </CardContent>
                     </CardActionArea>
-                </Card>
+                </Card> */}
+
+                <div className="message-card" style={{...rootStyles, animation: "fadeIn 1s"}}>
+                    <div className="message-card-text" style={{}}>
+                        <span style={{display: "inline-block"}}>{this.message.tl_msg}</span>
+                    </div>
+                    <div className="message-card-text" style={{}}>
+                        <span style={{display: "inline-block"}}>{this.message.orig_msg}</span>
+                    </div>
+                </div>
             </LazyLoad>
         )
     }
