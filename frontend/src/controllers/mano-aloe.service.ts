@@ -5,7 +5,7 @@ export default class ManoAloeService {
     private readonly apiURL: string;
 
     constructor() {
-        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'localhost:42069';
+        this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'http://localhost:5000/api/';
     }
 
     public getMessage(messageID: number): Promise<Message|null> {
@@ -22,7 +22,8 @@ export default class ManoAloeService {
     }
 
     public getAllMessages(): Promise<Message[]> {
-       return fetch(this.apiURL + 'messages')
+        console.log(this.apiURL)
+        return fetch(this.apiURL + 'messages')
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
