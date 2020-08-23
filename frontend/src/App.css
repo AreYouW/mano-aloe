@@ -2,6 +2,13 @@ body {
   background-color: #282c34;
 }
 
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
 .wrapper-overlay {
   margin: -50vh;
 }
@@ -48,6 +55,8 @@ body {
   background-position: center;
   background-size: cover;
   margin-bottom: 15%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
 }
 
 .App-link {
