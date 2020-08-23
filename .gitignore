@@ -289,3 +289,7 @@ cython_debug/
 nbbuild/
 nbdist/
 .nb-gradle/
+
+# Python venv (Windows)
+backend/Scripts
+backend/pyvenv.cfg
