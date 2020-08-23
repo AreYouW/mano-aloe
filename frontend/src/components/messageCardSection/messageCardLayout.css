@@ -9,7 +9,8 @@
   -moz-column-gap: 10px;
   -moz-column-fill: auto;
   column-gap: 15px;
-  column-fill: auto;
+  column-width: auto;
+  column-fill: balance;
 }
 .card-parent {
   display: inline-block;

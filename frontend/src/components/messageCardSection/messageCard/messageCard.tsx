@@ -7,6 +7,7 @@ import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
 import LazyLoad from "react-lazyload";
+import "./messageCard.css";
 
 import CSS from 'csstype';
 
@@ -71,8 +72,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         };
 
         return (
-            <LazyLoad once height={650} offset={4000}>
-                <Card style={rootStyles}>
+            <LazyLoad once height={650} offset={0}>
+                <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
                     <CardActions>
                         <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
                             <img src={JapanFlagImg} alt="Japan Flag" />

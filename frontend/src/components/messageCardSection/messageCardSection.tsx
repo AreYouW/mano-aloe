@@ -4,6 +4,8 @@ import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
 import './messageCardLayout.css'
 
+import './messageCardLayout.css';
+
 interface MessageCardSectionProps {
   data: Message[]
 }
@@ -22,14 +24,12 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
 
   render() {
     return (
-      <div className="wrapper">
-        <div className="parent">
-          {this.data.map((message: Message, idx: number) => {
+      <div className="parent">
+        {this.data.map((message: Message, idx: number) => {
           return (
-          <MessageCard message={message} cardStyleNum={idx%3}/>
+            <MessageCard key={idx} message={message} cardStyleNum={idx%3}/>
           )
-          })}
-        </div>
+        })}
       </div>
     )
   }
