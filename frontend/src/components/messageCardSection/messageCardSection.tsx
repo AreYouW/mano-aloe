@@ -25,7 +25,7 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
           {this.data.map((message: Message, idx: number) => {
             return (
                 <Grid key={'Message' + idx} item xs={4}>
-                  <MessageCard message={message}/>
+                  <MessageCard message={message} cardStyleNum={idx%3}/>
                 </Grid>
             )
           })}
