@@ -1,8 +1,7 @@
 import React from 'react';
-import { Grid } from '@material-ui/core' // MessageCardSection
 import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
-import './messageCardLayout.css'
+import './messageCardLayout.css';
 
 import './messageCardLayout.css';
 
@@ -24,12 +23,10 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
 
   render() {
     return (
-      <div className="parent">
-        {this.data.map((message: Message, idx: number) => {
-          return (
-            <MessageCard key={idx} message={message} cardStyleNum={idx%3}/>
-          )
-        })}
+      <div className="messages-section">
+        {this.data.map((message: Message, idx: number) =>
+          <MessageCard key={message.messageID} message={message} cardStyleNum={idx%3}/>
+        )}
       </div>
     )
   }
