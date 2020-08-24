@@ -70,7 +70,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
             animation: (this.state.isVisible ? "fadeIn 0.5s" : ""),
-            opacity: (this.state.isVisible ? 1 : 0)
+            opacity: (this.state.isVisible ? 1 : 0),
+            color: `white`,
         };
 
         return (
