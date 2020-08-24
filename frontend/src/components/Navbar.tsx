@@ -37,7 +37,6 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar style={{marginLeft:"5vw", marginRight: "5vw"}}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
