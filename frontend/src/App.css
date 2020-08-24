@@ -9,10 +9,6 @@ body {
   }
 }
 
-.wrapper-overlay {
-  margin: -50vh;
-}
-
 /* width and height are set to maintain original Youtube dimensions */
 .video-tag-left {
   position: absolute;

@@ -14,6 +14,8 @@ interface MessageCardSectionState {
 
 }
 
+const COLUMN_COUNT = 4;
+
 export default class MessageCardSection extends React.Component<MessageCardSectionProps, MessageCardSectionState> {
   private data: Message[];
 
@@ -24,12 +26,10 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
 
   render() {
     return (
-      <div className="parent">
-        {this.data.map((message: Message, idx: number) => {
-          return (
-            <MessageCard key={idx} message={message} cardStyleNum={idx%3}/>
-          )
-        })}
+      <div className="messages-section">
+        {this.data.map((message: Message, idx: number) =>
+          <MessageCard key={message.messageID} message={message} cardStyleNum={idx%3}/>
+        )}
       </div>
     )
   }

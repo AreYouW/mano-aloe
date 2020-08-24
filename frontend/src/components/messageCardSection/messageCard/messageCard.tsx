@@ -68,38 +68,41 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         };
 
         return (
-            <LazyLoad once height={650} offset={0}>
-                {/* <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
-                    <CardActions>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
-                            <img src={JapanFlagImg} alt="Japan Flag" />
-                        </IconButton>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Original)}>
-                            <LanguageIcon fontSize="large" />
-                        </IconButton>
-                    </CardActions>
-                    <CardActionArea onClick={handleCardClick}>
-                        <CardContent>
-                            { messageText }
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {this.message.username}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {this.message.country}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card> */}
+            // <LazyLoad once height={650} offset={0}>
+                // {/* <Card style={{...rootStyles, animation: "fadeIn 1s"}}>
+                //     <CardActions>
+                //         <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
+                //             <img src={JapanFlagImg} alt="Japan Flag" />
+                //         </IconButton>
+                //         <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Original)}>
+                //             <LanguageIcon fontSize="large" />
+                //         </IconButton>
+                //     </CardActions>
+                //     <CardActionArea onClick={handleCardClick}>
+                //         <CardContent>
+                //             { messageText }
+                //             <Typography gutterBottom variant="h5" component="h2">
+                //                 {this.message.username}
+                //             </Typography>
+                //             <Typography variant="body2" color="textSecondary" component="p">
+                //                 {this.message.country}
+                //             </Typography>
+                //         </CardContent>
+                //     </CardActionArea>
+                // </Card> */}
 
-                <div className="message-card" style={{...rootStyles, animation: "fadeIn 1s"}}>
-                    <div className="message-card-text" style={{}}>
-                        <span style={{display: "inline-block"}}>{this.message.tl_msg}</span>
-                    </div>
-                    <div className="message-card-text" style={{}}>
-                        <span style={{display: "inline-block"}}>{this.message.orig_msg}</span>
+                <div className="message-card" style={rootStyles}>
+                    <div className="message-card-text-container">
+                        <div className="message-card-text" style={{}}>
+                            <div>{this.message.orig_msg}</div>
+                        </div>
+                        <div className="message-card-text" style={{opacity: "0"}}>
+                            <div>{this.message.tl_msg}</div>
+                        </div>
+                        <div className="clear"></div>
                     </div>
                 </div>
-            </LazyLoad>
+            // </LazyLoad>
         )
     }
 }

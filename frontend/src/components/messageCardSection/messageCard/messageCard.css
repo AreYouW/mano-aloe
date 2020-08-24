@@ -8,27 +8,41 @@
 }
 
 .message-card {
-    display: inline-block;
+    --card-text-width: 400px;
 
-    width: 100%;
-    min-height: 100px;
-
-    padding: 10px;
-
+    display: block;
     position: relative;
-
-    margin-bottom: 1rem;
-
+    width: auto;
+    min-height: 100px;
     overflow: hidden;
 
-    list-style-type: none;
-    object-fit: fill;
-
+    margin: 0 auto;
+    
     background-repeat: no-repeat;
     background-size: cover;
+    
+    list-style-type: none;
+    object-fit: fill;
+}
+
+.message-card:not(last-child) {
+    margin-bottom: 1rem;
+}
+
+.message-card-text-container {
+    width: var(--card-text-width);
+    margin: 10px auto;
+}
+
+.message-card-text-container > .clear {
+    clear: both;
 }
 
 .message-card-text {
-    display: block;
-    top: 0;
+    width: 0;
+    float: left;
+}
+
+.message-card-text > div {
+    width: var(--card-text-width);
 }
