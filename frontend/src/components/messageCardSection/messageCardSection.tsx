@@ -1,8 +1,7 @@
 import React from 'react';
-import { Grid } from '@material-ui/core' // MessageCardSection
 import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
-import './messageCardLayout.css'
+import './messageCardLayout.css';
 
 import './messageCardLayout.css';
 
@@ -13,8 +12,6 @@ interface MessageCardSectionProps {
 interface MessageCardSectionState {
 
 }
-
-const COLUMN_COUNT = 4;
 
 export default class MessageCardSection extends React.Component<MessageCardSectionProps, MessageCardSectionState> {
   private data: Message[];

@@ -1,9 +1,9 @@
-import React from 'react'
-import div from '@material-ui/core/Container'
-import MessageCardSection from '../components/messageCardSection/messageCardSection'
+import React from 'react';
+import MessageCardSection from '../components/messageCardSection/messageCardSection';
 import {Message} from "../models/message";
 import ManoAloeService from "../controllers/mano-aloe.service";
 import SessionService from "../services/session.service";
+import './Home.css'
 
 export interface HomePageProps {
 
@@ -55,7 +55,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 
   render() {
     return (
-      <div className="wrapper-overlay" style={{padding: "0 2rem"}}>
+      <div className="wrapper-overlay">
         {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()} // TODO
       </div>
     )
