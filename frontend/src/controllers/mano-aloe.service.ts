@@ -1,11 +1,26 @@
 import {Message} from "../models/message";
-import {CountResponse, MessageResponse} from "../models/response";
+import {CountResponse, GalleryResponse, GamesResponse, MessageResponse} from "../models/response";
+import {Game} from "../models/game";
+import {Artwork} from "../models/artwork";
 
 export default class ManoAloeService {
     private readonly apiURL: string;
 
     constructor() {
         this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'http://localhost:5000/api/';
+    }
+
+    private getCount(functionality: string): Promise<number> {
+        return fetch(this.apiURL + functionality + '/count')
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: CountResponse) => {
+                return apiResponse.count;
+            })
+            .catch((error: Error) => {
+                throw error;
+            })
     }
 
     public getMessage(messageID: number): Promise<Message|null> {
@@ -22,7 +37,6 @@ export default class ManoAloeService {
     }
 
     public getAllMessages(): Promise<Message[]> {
-        console.log(this.apiURL)
         return fetch(this.apiURL + 'messages')
             .then((res: { json: () => any; }) => {
                 return res.json();
@@ -49,15 +63,40 @@ export default class ManoAloeService {
     }
 
     public getMessageCount(): Promise<number> {
-        return fetch(this.apiURL + 'messages/count')
+        return this.getCount('messages');
+    }
+
+    public getAllGames(): Promise<Game[]> {
+        return fetch(this.apiURL + 'games')
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
-            .then((apiResponse: CountResponse) => {
-                return apiResponse.count;
+            .then((apiResponse: GamesResponse) => {
+                return apiResponse.games;
             })
             .catch((error: Error) => {
                 throw error;
             })
+    }
+
+    public getGamesCount(): Promise<number> {
+        return this.getCount('games');
+    }
+
+    public getGallery(): Promise<Artwork[]> {
+        return fetch(this.apiURL + 'gallery')
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: GalleryResponse) => {
+                return apiResponse.gallery;
+            })
+            .catch((error: Error) => {
+                throw error;
+            })
+    }
+
+    public getGalleryCount(): Promise<number> {
+        return this.getCount('gallery');
     }
 }
