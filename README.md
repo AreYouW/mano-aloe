@@ -27,10 +27,17 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Matthew Valencia - Message card designs and Fan Art
 - BaronVonSheep
 - RavenTengu - Fan Art
+- .grofA - 3D Textures
+- Kukie-Nyan
+- ソーランSoran
+- Killrodx - Fan Art
 
 ### Audio Team
 
 - RavenTengu
+- Apoptosis - Audio asset feedback
+- Pizzafari/Hælendleof Loc - Game music and Sound design
+- Cheese Singles In Your Area - Game BGM
 
 ### Game Team
 
@@ -42,6 +49,18 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Cixiny
 - RavenTengu
 - ZanyDreamer - Mano Aloe's Halloween Adventure
+- Apoptosis - Level Design and Playtesting
+- Pizzafari/Hælendleof Loc - Game music, Testing
+- King of Ferrets - Aloe Snake, Games Project Manager
+- 2ndAdventureGaming - Bento Box Game
+- Despair - Game tester
+- Senpai - Game tester
+- Ashkanz - Programming advice, Document Manager, Idea factory, Bugfixing
+- #Huntv3334
+- SparkiL
+- Huzzah
+- Cheese Singles In Your Area - Game BGM
+- Schrodinger - Game testing
 
 ### Moderation Team
 
@@ -52,6 +71,12 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Senpai
 - VintageGhost
 - Nephilimus
+- RazorNaitor	- Organizer
+- Arvenn
+- Splinter - Discussion channel moderation
+- Necrosis - Channel moderation
+- The\_Chainwalker - Planning, Community engagement, Server banner, Message relay
+- Atsuyas - Asset management, processing and scripting
 
 ### Moral Support
 
@@ -68,6 +93,18 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Jesse Zong
 - Zapple
 - BaronVonSheep
+- Olegase - Writing messages of support every day
+- myrial
+- Callisto
+- Lucas Yeo
+- Callme\_Luthfi
+- #Huntv3334
+- SparkiL
+- RazorNaitor
+- Arvenn
+- Huzzah - says 'Huzzah' a lot
+- Schrodinger
+- Atsuyas
 
 ### Secretaries
 
@@ -81,6 +118,8 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Ashichuu
 - ChronosK
 - ソーランSoran - daily translation of messages
+- kurapan
+- Atsuyas
 
 ### Twitter Team
 
@@ -91,6 +130,10 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Tweeter
 - Mr.Mech
 - BaronVonSheep
+- myrial
+- Lucas Yeo
+- Callme\_Luthfi
+- Arvenn
 
 ### Video Production Team
 
@@ -99,6 +142,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Blindreaper
 - Disty - Render work
 - BadGrammar - Modeling and Texturing
+- .grofA - 3D Textures and Modeling
 
 ### Website Team
 
@@ -108,7 +152,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Rhyolite
 - AreYouW - Heavy backend development and Frontend contributions
 - Ringo - Lots of frontend work
-
+- DuongTyler - Small bits of backend work, helped coordinate with other teams
 
 ### Writing Team
 
@@ -116,6 +160,9 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Mr.Mech
 - Steve
 - @drunkycrunky - Unofficial server historian, did "A lot of sh*t"
+- Atsuyas
+
+_and many many more..._
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
