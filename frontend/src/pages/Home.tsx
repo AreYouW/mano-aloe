@@ -32,8 +32,8 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   }
 
   private getData(): void {
-    const cachedMessages: Message[] = SessionService.getMessages();
-    if (cachedMessages.length) {
+    const cachedMessages: Message[] | null = SessionService.getMessages();
+    if (cachedMessages && cachedMessages.length) {
       this.setState({loading: false, messages: cachedMessages});
     } else {
       this.manoAloeService.getAllMessages()
