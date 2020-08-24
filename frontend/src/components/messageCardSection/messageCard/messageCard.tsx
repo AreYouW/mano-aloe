@@ -1,17 +1,11 @@
 import React from "react";
-import {Card, CardActionArea, CardActions, CardContent, IconButton, Typography} from "@material-ui/core";
-import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
-import LanguageIcon from "@material-ui/icons/Language";
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
-import LazyLoad from "react-lazyload";
 import "./messageCard.css";
 
 import CSS from 'csstype';
-
-import './messageCard.css';
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
