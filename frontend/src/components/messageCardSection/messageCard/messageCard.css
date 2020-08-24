@@ -17,6 +17,8 @@
     overflow: hidden;
 
     margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 10px;
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,13 +27,9 @@
     object-fit: fill;
 }
 
-.message-card:not(last-child) {
-    margin-bottom: 1rem;
-}
-
 .message-card-text-container {
     width: var(--card-text-width);
-    margin: 10px auto;
+    margin: 0 auto;
 }
 
 .message-card-text-container > .clear {
@@ -41,8 +39,18 @@
 .message-card-text {
     width: 0;
     float: left;
+    opacity: 0;
+}
+
+.message-card-text.active-message {
+    opacity: 1;
 }
 
 .message-card-text > div {
     width: var(--card-text-width);
+}
+
+.message-card-footer {
+    margin-top: 10px;
+    text-align: right;
 }
