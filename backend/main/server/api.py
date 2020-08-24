@@ -3,7 +3,7 @@ from flask_restful import Api
 
 
 from main.server.resources.Message import MessageListResource, MessageResource, MessageListRangeResource, MessageCount
-from main.server.resources.Game import GameCount
+from main.server.resources.Game import GameCount, GameListResource
 from main.server.resources.Gallery import GalleryCount, GalleryListResource
 
 # Api Blueprint
@@ -19,6 +19,7 @@ api.add_resource(MessageListRangeResource, '/messages/range/<lower>/<upper>')
 api.add_resource(MessageCount, '/messages/count')
 
 ## Games
+api.add_resource(GameListResource, '/games')
 api.add_resource(GameCount, '/games/count')
 
 ## Gallery

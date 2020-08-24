@@ -27,12 +27,10 @@ class GalleryListResource(Resource):
         gallery = Gallery.query.all()
         gallery = gallery_schema.dump(gallery)
 
-        print(gallery)
-        
         if not gallery:
-            return {'status': 'success', 'gallery': gallery}, 206 #Partial Content Served
+            return {'status': 'success', 'gallery': gallery}, 206 #Partial Content Served, the other status code never loads
 
-        return {'status': 'success', 'messages': gallery}, 200
+        return {'status': 'success', 'gallery': gallery}, 200
 
     def post(self):
         """Add Artwork"""
@@ -41,19 +39,19 @@ class GalleryListResource(Resource):
         if not json_data:
             return {'status': 'fail', 'message': 'No input data'}, 400
 
-        errors = gallery_schema.validate(json_data)
+        errors = artwork_schema.validate(json_data)
 
         if errors:
             return {'status': 'fail', 'message': 'Error handling request'}, 422
 
-        data = gallery_schema.load(json_data)
+        data = artwork_schema.load(json_data)
 
-        message = Message.query.filter_by(orig_msg=data.get('artworkLink')).first()
+        message = Gallery.query.filter_by(artworkLink=data.get('artworkLink')).first()
 
         if message:
             return {'status': 'fail', 'message': 'Artwork already exists'}, 400
 
-        message = Message(artworkLink=data.get('artworkLink'),
+        message = Gallery(artworkLink=data.get('artworkLink'),
                           artistLink=data.get('artistLink'),
                           username=data.get('username'),
                           title=data.get('title'))
@@ -61,5 +59,5 @@ class GalleryListResource(Resource):
         db.session.add(message)
         db.session.commit()
 
-        return {'status': 'success', 'message': 'Message successfully created'}, 201
+        return {'status': 'success', 'message': 'Artwork entry successfully created'}, 201
 

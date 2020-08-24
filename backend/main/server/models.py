@@ -16,10 +16,12 @@ class Gallery(db.Model):
         self.title = title
 
 class GallerySchema(ma.Schema):
-    gameID = fields.Integer()
-    gameLink = fields.String(required=True)
-    gitLink = fields.String(required=False)
-    title = fields.String(required=True)
+    artworkID =     fields.Integer()
+    artworkLink =   fields.String(required=True)
+    artistLink =    fields.String(required=False)
+    username =      fields.String(required=True)
+    title =         fields.String(required=False)
+
 
 class Games(db.Model):
     __tablename__ = 'GAMES'
@@ -27,17 +29,20 @@ class Games(db.Model):
     gameLink = db.Column(db.String(2048), nullable=False)
     gitLink = db.Column(db.String(2048), nullable=True)
     title = db.Column(db.String(64), nullable=False)
+    description = db.Column(db.String(256), nullable=True)
 
-    def __init__(self, gameLink, gitLink, title):
+    def __init__(self, gameLink, gitLink, title, description):
         self.gameLink = gameLink
         self.gitLink = gitLink
         self.title = title
+        self.description = description
 
 class GameSchema(ma.Schema):
     gameID = fields.Integer()
     gameLink = fields.String(required=True)
     gitLink = fields.String(required=False)
     title = fields.String(required=True)
+    description = fields.String(required=False)
 
 class Message(db.Model):
     __tablename__ = 'MESSAGES'
