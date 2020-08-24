@@ -1,5 +1,5 @@
 // From https://gist.github.com/evolkmann/740d24889c509c08484a8ff72af5dd64
-export enum Region {
+export enum Country {
   AF,
   AX,
   AL,
