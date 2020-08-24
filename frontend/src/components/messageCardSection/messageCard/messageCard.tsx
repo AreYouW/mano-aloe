@@ -48,11 +48,11 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     private toggleCurrentLanguage(): void {
-        this.setState(state => { return {
+        this.setState(state => ({
             currentLanguage: state.currentLanguage === DisplayedLanguage.Original
                 ? DisplayedLanguage.Japanese
                 : DisplayedLanguage.Original
-        }});
+        }));
     }
 
     render() {
