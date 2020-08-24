@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from 'classnames';
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
@@ -64,11 +65,15 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         return (
             <div className="message-card" style={rootStyles}>
                 <div className="message-card-text-container">
-                    <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Original && "active-message"}`}>
+                    <div className={classNames("message-card-text", {
+                        "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
+                    })}>
                         <div>{this.message.orig_msg}</div>
                     </div>
                     {this.message.tl_msg.length > 0 &&
-                        <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Japanese && "active-message"}`}>
+                        <div className={classNames("message-card-text", {
+                            "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                        })}>
                             <div>{this.message.tl_msg}</div>
                         </div>
                     }
