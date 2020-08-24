@@ -1,4 +1,6 @@
 import React from "react";
+import VisibilitySensor from "react-visibility-sensor";
+
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
@@ -21,6 +23,7 @@ interface MessageCardProps {
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
+    isVisible: boolean;
 }
 
 export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
@@ -36,7 +39,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original
+        currentLanguage: DisplayedLanguage.Original,
+        isVisible: true
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -45,6 +49,12 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
 
     private setCurrentLanguage(language: DisplayedLanguage): void {
         this.setState({currentLanguage: language});
+    }
+
+    private setVisibility(isVisible: boolean) : void {
+        if (isVisible !== this.state.isVisible) {
+            this.setState({isVisible});
+        }
     }
 
     private toggleCurrentLanguage(): void {
@@ -59,30 +69,38 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         // need to leave styling here, so I can decide background image based on props
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
+            animation: (this.state.isVisible ? "fadeIn 0.5s" : ""),
+            opacity: (this.state.isVisible ? 1 : 0)
         };
 
         return (
-            <div className="message-card" style={rootStyles}>
-                <div className="message-card-text-container">
-                    <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Original && "active-message"}`}>
-                        <div>{this.message.orig_msg}</div>
+            <VisibilitySensor
+                onChange={(isVisible) => this.setVisibility(isVisible)}
+                partialVisibility
+                intervalDelay={200}
+            >
+                <div className="message-card" style={rootStyles}>
+                    <div className="message-card-text-container">
+                        <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Original && "active-message"}`}>
+                            <div>{this.message.orig_msg}</div>
+                        </div>
+                        {this.message.tl_msg &&
+                            <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Japanese && "active-message"}`}>
+                                <div>{this.message.tl_msg}</div>
+                            </div>
+                        }
+                        <div className="clear"></div>
                     </div>
-                    {this.message.tl_msg &&
-                        <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Japanese && "active-message"}`}>
-                            <div>{this.message.tl_msg}</div>
+                    <div className="message-card-footer">
+                        {this.message.username} {this.message.country}
+                    </div>
+                    {this.message.tl_msg && 
+                        <div className="message-card-translate" onClick={this.toggleCurrentLanguage}>
+                            transleet botan
                         </div>
                     }
-                    <div className="clear"></div>
                 </div>
-                <div className="message-card-footer">
-                    {this.message.username} {this.message.country}
-                </div>
-                {this.message.tl_msg && 
-                    <div className="message-card-translate" onClick={this.toggleCurrentLanguage}>
-                        transleet botan
-                    </div>
-                }
-            </div>
+            </VisibilitySensor>
         )
     }
 }
