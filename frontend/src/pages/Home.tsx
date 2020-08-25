@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageCardSection from '../components/messageCardSection/messageCardSection';
 import {Message} from "../models/message";
+import {toCountry} from "../models/country";
 import ManoAloeService from "../controllers/mano-aloe.service";
 import SessionService from "../services/session.service";
 import './Home.css'
@@ -38,6 +39,9 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     } else {
       this.manoAloeService.getAllMessages()
         .then((messages: Message[]) => {
+          for (let message of messages) {
+            message.country = toCountry(message.country as string);
+          }
           SessionService.saveMessages(messages);
           this.setState({loading: false, messages});
         })
