@@ -6,6 +6,7 @@
     width: auto;
     min-height: 100px;
     overflow: hidden;
+		border-radius: 15px;
 
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -23,6 +24,7 @@
     margin: 0 auto;
 
     font-size: 16px;
+    padding-top: 20%;
 }
 
 .message-card-text-container > .clear {
@@ -48,4 +50,9 @@
 .message-card-footer {
     margin-top: 10px;
     text-align: right;
+}
+
+.message-card-translate {
+		width: 40px;
+		height: 40px;
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import classNames from 'classnames';
+import VisibilitySensor from "react-visibility-sensor";
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
+import {ReactComponent as TranslateBotan} from "../../../assets/translateIcon.svg";
 import "./messageCard.css";
 
 import CSS from 'csstype';
@@ -22,6 +24,7 @@ interface MessageCardProps {
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
+    isVisible: boolean;
 }
 
 export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
@@ -37,7 +40,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original
+        currentLanguage: DisplayedLanguage.Original,
+        isVisible: true
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -46,6 +50,12 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
 
     private setCurrentLanguage(language: DisplayedLanguage): void {
         this.setState({currentLanguage: language});
+    }
+
+    private setVisibility(isVisible: boolean) : void {
+        if (isVisible !== this.state.isVisible) {
+            this.setState({isVisible});
+        }
     }
 
     private toggleCurrentLanguage(): void {
@@ -60,34 +70,43 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         // need to leave styling here, so I can decide background image based on props
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
+            animation: (this.state.isVisible ? "fadeIn 0.5s" : ""),
+            opacity: (this.state.isVisible ? 1 : 0),
+            color: `white`,
         };
 
+        const hasTlMsg = this.message.tl_msg.length > 0;
+
         return (
-            <div className="message-card" style={rootStyles}>
-                <div className="message-card-text-container">
-                    <div className={classNames("message-card-text", {
-                        "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
-                    })}>
-                        <div>{this.message.orig_msg}</div>
-                    </div>
-                    {this.message.tl_msg.length > 0 &&
+            <VisibilitySensor
+                onChange={(isVisible) => this.setVisibility(isVisible)}
+                partialVisibility
+                intervalDelay={200}
+            >
+                <div className="message-card" style={rootStyles}>
+                    <div className="message-card-text-container">
                         <div className={classNames("message-card-text", {
-                            "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                            "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
                         })}>
-                            <div>{this.message.tl_msg}</div>
+                            <div>{this.message.orig_msg}</div>
                         </div>
-                    }
-                    <div className="clear"></div>
-                </div>
-                <div className="message-card-footer">
-                    {this.message.username} {this.message.country}
-                </div>
-                {this.message.tl_msg.length > 0 && 
-                    <div className="message-card-translate" onMouseDown={this.toggleCurrentLanguage}>
-                        transleet botan
+                        {hasTlMsg &&
+                            <div className={classNames("message-card-text", {
+                                "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                            })}>
+                                <div>{this.message.tl_msg}</div>
+                            </div>
+                        }
+                        <div className="clear"></div>
                     </div>
-                }
-            </div>
+                    <div className="message-card-footer">
+                        {this.message.username} {this.message.country}
+                    </div>
+                    {hasTlMsg &&
+                        <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
+                    }
+                </div>
+            </VisibilitySensor>
         )
     }
 }
