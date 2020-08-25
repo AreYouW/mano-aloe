@@ -15,11 +15,12 @@
     width: auto;
     min-height: 100px;
     overflow: hidden;
-		border-radius: 15px;
+    border-radius: 15px;
 
     margin: 0 auto;
     margin-bottom: 1rem;
     padding: 10px;
+    padding-top: 5rem;
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -62,6 +63,6 @@
 }
 
 .message-card-translate {
-		width: 40px;
-		height: 40px;
+    width: 40px;
+    height: 40px;
 }
