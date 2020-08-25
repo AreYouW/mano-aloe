@@ -1,14 +1,15 @@
 import React from "react";
+import CSS from 'csstype';
 import classNames from 'classnames';
 import VisibilitySensor from "react-visibility-sensor";
-import {Message} from "../../../models/message";
+import { Country } from "../../../models/country";
+import { Message } from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
-import {ReactComponent as TranslateBotan} from "../../../assets/translateIcon.svg";
+import { ReactComponent as TranslateBotan } from "../../../assets/translateIcon.svg";
 import "./messageCard.css";
 
-import CSS from 'csstype';
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
@@ -27,13 +28,32 @@ interface MessageCardState {
     isVisible: boolean;
 }
 
+function countryCodeToFlag(code: Country): string {
+    // Offset between Latin uppercase A-Z and Regional Indicator Symbols A-Z
+    const RI_OFFSET = 0x1F1A5;
+
+    if (code.length !== 2) return "";
+    
+    let first = code.charCodeAt(0);
+    if (first < 0x41 && first > 0x5A) return "";
+    first += RI_OFFSET;
+
+    let second = code.charCodeAt(1);
+    if (second < 0x41 && second > 0x5A) return "";
+    second += RI_OFFSET;
+
+    return String.fromCodePoint(first, second);
+}
+
 export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
     private readonly message: Message;
     private readonly cardStyleNum: number;
+    private readonly flag: string;
 
     constructor(props: MessageCardProps) {
         super(props);
         this.message = props.message;
+        this.flag = countryCodeToFlag(props.message.country);
         this.cardStyleNum = props.cardStyleNum;
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
@@ -100,7 +120,7 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
                         <div className="clear"></div>
                     </div>
                     <div className="message-card-footer">
-                        {this.message.username} {this.message.country}
+                        {this.message.username} {this.flag}
                     </div>
                     {hasTlMsg &&
                         <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
