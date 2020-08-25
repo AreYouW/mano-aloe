@@ -1,6 +1,5 @@
 import React from "react";
 import AloeHeartIcon from './assets/AloeHeartIcon.png'
-import AloeBackground from './assets/background.svg'
 
 import Grid from '@material-ui/core/Grid'
 
