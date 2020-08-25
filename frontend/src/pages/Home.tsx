@@ -53,13 +53,29 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 
   renderMessageCardSection() {
     return (
-      <MessageCardSection data={this.state.messages}/>
+			<div>
+				<div className="video-container">
+					<iframe title="Mano Aloe Fanmade Video" className="video-tag" src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
+					<div className="video-description-container">
+						<div className="video-description">
+							<h1>A Message from the Community:</h1>
+							ipsum lorem asfkjdsgn dv jdfklsvmfd vdsfv dfmvodfi s rvemfo vsmkvmsoidfm vdfvd fbvmdvk dsmk
+						</div>
+						<div className="video-links">
+							test
+						</div>
+					</div>
+				</div>
+				<div className="wrapper-overlay">
+					<MessageCardSection data={this.state.messages}/>
+				</div>
+			</div>
     )
   }
 
   render() {
     return (
-      <div className="wrapper-overlay">
+      <div className="home-root">
         {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()} // TODO
       </div>
     )

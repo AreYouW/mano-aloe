@@ -2,21 +2,9 @@ body {
   background-color: #282c34;
 }
 
-/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-
-/* width and height are set to maintain original Youtube dimensions */
-.video-tag-left {
-  position: absolute;
-  z-index: 1000;
-  left: 5vw;
-  top: 20%;
-  width: 42.798vw;
-  height: 24.066vw;
+.title {
+	background: #000;
+  background-attachment: fixed;
 }
 
 .logo-tag-right {
@@ -27,7 +15,7 @@ body {
   z-index: 1000;
 }
 
-.App-root {
+.main {
 	background-image: url(./assets/App-root-bg.svg);
 	background-color: "#29222f";
 }
@@ -44,7 +32,7 @@ body {
 }
 
 .App-header {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +43,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-bottom: 15%;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
 }
