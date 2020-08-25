@@ -48,10 +48,10 @@ export default function ButtonAppBar() {
           </Typography>
 
           {[
-            { externalLink: false, link: '/', iconFunc: () => <HomeIcon /> },
-            { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', iconFunc: () => <InfoIcon /> },
-            { externalLink: false, link: '/', iconFunc: () => <SportsEsportsIcon /> },
-            { externalLink: false, link: '/', iconFunc: () => <MapIcon /> },
+            { externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon /> },
+            { externalLink: false, link: '/', altText: "Games", iconFunc: () => <SportsEsportsIcon /> },
+            { externalLink: false, link: '/', altText: "Artwork", iconFunc: () => <MapIcon /> },
+            { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', altText: "github", iconFunc: () => <InfoIcon /> },
           ].map((obj, idx) => {
             let button;
             if (obj.externalLink) {
@@ -59,8 +59,16 @@ export default function ButtonAppBar() {
             } else {
               button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
             }
+            // For accessibility purposes
+            let buttonAltText, buttonAltTypography;
+            if (obj.altText) {
+              buttonAltText = obj.altText
+            } else {
+              buttonAltText = ""
+            }
+              buttonAltTypography = <Typography variant="srOnly">{ obj.altText }</Typography>;
             return (
-              <IconButton key={idx} style={{color:"inherit"}}>
+              <IconButton key={idx} style={{color:"inherit"}} aria-label={ buttonAltText }>
                 { button }
               </IconButton>
             )
