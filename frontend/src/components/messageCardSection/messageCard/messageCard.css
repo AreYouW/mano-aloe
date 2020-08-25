@@ -31,7 +31,9 @@
 .message-card-text-container {
     width: var(--card-text-width);
     margin: 0 auto;
-		padding-top: 20%;
+
+    font-size: 16px;
+    padding-top: 20%;
 }
 
 .message-card-text-container > .clear {

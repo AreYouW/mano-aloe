@@ -1,6 +1,6 @@
 import React from "react";
+import classNames from 'classnames';
 import VisibilitySensor from "react-visibility-sensor";
-
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
@@ -75,6 +75,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
             color: `white`,
         };
 
+        const hasTlMsg = this.message.tl_msg.length > 0;
+
         return (
             <VisibilitySensor
                 onChange={(isVisible) => this.setVisibility(isVisible)}
@@ -83,11 +85,15 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
             >
                 <div className="message-card" style={rootStyles}>
                     <div className="message-card-text-container">
-                        <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Original && "active-message"}`}>
+                        <div className={classNames("message-card-text", {
+                            "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
+                        })}>
                             <div>{this.message.orig_msg}</div>
                         </div>
-                        {this.message.tl_msg &&
-                            <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Japanese && "active-message"}`}>
+                        {hasTlMsg &&
+                            <div className={classNames("message-card-text", {
+                                "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                            })}>
                                 <div>{this.message.tl_msg}</div>
                             </div>
                         }
@@ -96,8 +102,8 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
                     <div className="message-card-footer">
                         {this.message.username} {this.message.country}
                     </div>
-                    {this.message.tl_msg && 
-												<TranslateBotan className="message-card-translate" onClick={this.toggleCurrentLanguage} />
+                    {hasTlMsg &&
+                        <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
                     }
                 </div>
             </VisibilitySensor>
