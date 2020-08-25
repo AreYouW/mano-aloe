@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Lato', 'Sawarabi Gothic', 'Cairo', 'Prompt', 'Noto Sans', sans-serif;
+  font-family: Lato,  Cairo, Prompt ;
+  /*these three cause layout problems in chrome, requires further investigation*/
+  /*Sawarabi Gothic, Noto Sans, sans-serif*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
