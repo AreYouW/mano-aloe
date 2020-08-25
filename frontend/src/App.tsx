@@ -1,5 +1,6 @@
 import React from "react";
 import AloeHeartIcon from './assets/AloeHeartIcon.png'
+import AloeBackground from './assets/background.svg'
 
 import Grid from '@material-ui/core/Grid'
 
@@ -9,7 +10,7 @@ import './App.css';
 
 export default function App() {
   return (
-    <div style={{backgroundColor: "#29222f"}}>
+    <div className="App-root">
       <header className="App-header">
         <Grid container justify="center" spacing={0}>
           <Grid item xs={10} style={{textAlign:"center" }}>
