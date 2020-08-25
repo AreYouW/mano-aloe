@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button'
 
@@ -37,7 +36,6 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar style={{marginLeft:"5vw", marginRight: "5vw"}}>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -48,10 +46,10 @@ export default function ButtonAppBar() {
           </Typography>
 
           {[
-            { externalLink: false, link: '/', iconFunc: () => <HomeIcon /> },
-            { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', iconFunc: () => <InfoIcon /> },
-            { externalLink: false, link: '/game', iconFunc: () => <SportsEsportsIcon /> },
-            { externalLink: false, link: '/art', iconFunc: () => <MapIcon /> },
+            { externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon /> },
+            { externalLink: false, link: '/game', altText: "Games", iconFunc: () => <SportsEsportsIcon /> },
+            { externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <MapIcon /> },
+            { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', altText: "github", iconFunc: () => <InfoIcon /> },
           ].map((obj, idx) => {
             let button;
             if (obj.externalLink) {
@@ -59,8 +57,16 @@ export default function ButtonAppBar() {
             } else {
               button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
             }
+            // For accessibility purposes
+            let buttonAltText, buttonAltTypography;
+            if (obj.altText) {
+              buttonAltText = obj.altText
+            } else {
+              buttonAltText = ""
+            }
+              buttonAltTypography = <Typography variant="srOnly">{ obj.altText }</Typography>;
             return (
-              <IconButton key={idx} style={{color:"inherit"}}>
+              <IconButton key={idx} style={{color:"inherit"}} aria-label={ buttonAltText }>
                 { button }
               </IconButton>
             )
