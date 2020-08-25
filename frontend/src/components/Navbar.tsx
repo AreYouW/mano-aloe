@@ -47,8 +47,8 @@ export default function ButtonAppBar() {
 
           {[
             { externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon /> },
-            { externalLink: false, link: '/', altText: "Games", iconFunc: () => <SportsEsportsIcon /> },
-            { externalLink: false, link: '/', altText: "Artwork", iconFunc: () => <MapIcon /> },
+            { externalLink: false, link: '/game', altText: "Games", iconFunc: () => <SportsEsportsIcon /> },
+            { externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <MapIcon /> },
             { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', altText: "github", iconFunc: () => <InfoIcon /> },
           ].map((obj, idx) => {
             let button;
