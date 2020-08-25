@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import VisibilitySensor from "react-visibility-sensor";
 import { Country } from "../../../models/country";
 import { Message } from "../../../models/message";
-import CardStyle1 from "../../../assets/card1.png";
+import CardStyle1 from "../../../assets/card1.svg";
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
 import { ReactComponent as TranslateBotan } from "../../../assets/translateIcon.svg";
