@@ -1,12 +1,12 @@
 import React from "react";
-import {Card, CardActionArea, CardActions, CardContent, IconButton, Typography} from "@material-ui/core";
-import JapanFlagImg from "../../../assets/ICON_RESIZED-Flag_of_Japan.svg.png";
-import LanguageIcon from "@material-ui/icons/Language";
+import VisibilitySensor from "react-visibility-sensor";
+
 import {Message} from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.png"
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
-import LazyLoad from "react-lazyload";
+import {ReactComponent as TranslateBotan} from "../../../assets/translateIcon.svg";
+import "./messageCard.css";
 
 import CSS from 'csstype';
 
@@ -24,6 +24,7 @@ interface MessageCardProps {
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
+    isVisible: boolean;
 }
 
 export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
@@ -34,10 +35,13 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         super(props);
         this.message = props.message;
         this.cardStyleNum = props.cardStyleNum;
+
+        this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original
+        currentLanguage: DisplayedLanguage.Original,
+        isVisible: true
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -48,52 +52,55 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         this.setState({currentLanguage: language});
     }
 
-    private renderMessage(language: DisplayedLanguage, message: Message): JSX.Element {
-        if (language === DisplayedLanguage.Japanese) {
-            return <Typography variant="h5" component="h2">{message.tl_msg}</Typography>
+    private setVisibility(isVisible: boolean) : void {
+        if (isVisible !== this.state.isVisible) {
+            this.setState({isVisible});
         }
-        return <Typography>{message.orig_msg}</Typography>
+    }
+
+    private toggleCurrentLanguage(): void {
+        this.setState(state => ({
+            currentLanguage: state.currentLanguage === DisplayedLanguage.Original
+                ? DisplayedLanguage.Japanese
+                : DisplayedLanguage.Original
+        }));
     }
 
     render() {
-        const handleCardClick = () => {
-            console.log(this.message)
-        }
-        const messageText = this.renderMessage(this.getCurrentLanguage(), this.message);
         // need to leave styling here, so I can decide background image based on props
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            margin: "0",
-            listStyleType: "none",
-            objectFit:"fill"
+            animation: (this.state.isVisible ? "fadeIn 0.5s" : ""),
+            opacity: (this.state.isVisible ? 1 : 0),
+            color: `white`,
         };
 
         return (
-            <LazyLoad once height={650} offset={4000}>
-                <Card style={rootStyles}>
-                    <CardActions>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Japanese)}>
-                            <img src={JapanFlagImg} alt="Japan Flag" />
-                        </IconButton>
-                        <IconButton onClick={() => this.setCurrentLanguage(DisplayedLanguage.Original)}>
-                            <LanguageIcon fontSize="large" />
-                        </IconButton>
-                    </CardActions>
-                    <CardActionArea onClick={handleCardClick}>
-                        <CardContent>
-                            { messageText }
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {this.message.username}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {this.message.country}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </LazyLoad>
+            <VisibilitySensor
+                onChange={(isVisible) => this.setVisibility(isVisible)}
+                partialVisibility
+                intervalDelay={200}
+            >
+                <div className="message-card" style={rootStyles}>
+                    <div className="message-card-text-container">
+                        <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Original && "active-message"}`}>
+                            <div>{this.message.orig_msg}</div>
+                        </div>
+                        {this.message.tl_msg &&
+                            <div className={`message-card-text ${this.state.currentLanguage === DisplayedLanguage.Japanese && "active-message"}`}>
+                                <div>{this.message.tl_msg}</div>
+                            </div>
+                        }
+                        <div className="clear"></div>
+                    </div>
+                    <div className="message-card-footer">
+                        {this.message.username} {this.message.country}
+                    </div>
+                    {this.message.tl_msg && 
+												<TranslateBotan className="message-card-translate" onClick={this.toggleCurrentLanguage} />
+                    }
+                </div>
+            </VisibilitySensor>
         )
     }
 }
