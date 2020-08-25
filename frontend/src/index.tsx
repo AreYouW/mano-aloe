@@ -1,4 +1,5 @@
 import React from 'react';
+import 'intersection-observer';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
