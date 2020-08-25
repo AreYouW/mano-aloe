@@ -26,7 +26,6 @@ interface MessageCardProps {
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
-    inViewport: boolean;
 }
 
 function countryCodeToFlag(code: Country): string {
@@ -61,8 +60,7 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original,
-        inViewport: this.props.inViewport
+        currentLanguage: DisplayedLanguage.Original
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -79,12 +77,6 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                 ? DisplayedLanguage.Japanese
                 : DisplayedLanguage.Original
         }));
-    }
-
-    componentDidUpdate() {
-        if (this.state.inViewport !== this.props.inViewport) {
-            this.setState({inViewport: this.props.inViewport});
-        }
     }
 
     render() {
