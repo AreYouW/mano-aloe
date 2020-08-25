@@ -1,7 +1,7 @@
 import React from "react";
 import CSS from 'csstype';
 import classNames from 'classnames';
-import VisibilitySensor from "react-visibility-sensor";
+import handleViewport from 'react-in-viewport';
 import { Country } from "../../../models/country";
 import { Message } from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.svg";
@@ -21,11 +21,12 @@ enum DisplayedLanguage {
 interface MessageCardProps {
     message: Message;
     cardStyleNum: number;
+    inViewport: boolean;
 }
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
-    isVisible: boolean;
+    inViewport: boolean;
 }
 
 function countryCodeToFlag(code: Country): string {
@@ -45,7 +46,7 @@ function countryCodeToFlag(code: Country): string {
     return String.fromCodePoint(first, second);
 }
 
-export default class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
+class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardState> {
     private readonly message: Message;
     private readonly cardStyleNum: number;
     private readonly flag: string;
@@ -61,7 +62,7 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
 
     state: MessageCardState = {
         currentLanguage: DisplayedLanguage.Original,
-        isVisible: true
+        inViewport: this.props.inViewport
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -72,12 +73,6 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         this.setState({currentLanguage: language});
     }
 
-    private setVisibility(isVisible: boolean) : void {
-        if (isVisible !== this.state.isVisible) {
-            this.setState({isVisible});
-        }
-    }
-
     private toggleCurrentLanguage(): void {
         this.setState(state => ({
             currentLanguage: state.currentLanguage === DisplayedLanguage.Original
@@ -86,45 +81,48 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         }));
     }
 
+    componentDidUpdate() {
+        if (this.state.inViewport !== this.props.inViewport) {
+            this.setState({inViewport: this.props.inViewport});
+        }
+    }
+
     render() {
         // need to leave styling here, so I can decide background image based on props
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
-            opacity: (this.state.isVisible ? 1 : 0),
+            opacity: (this.props.inViewport ? 1 : 0),
         };
 
         const hasTlMsg = this.message.tl_msg.length > 0;
 
         return (
-            <VisibilitySensor
-                onChange={(isVisible) => this.setVisibility(isVisible)}
-                partialVisibility
-                intervalDelay={200}
-            >
-                <div className="message-card" style={rootStyles}>
-                    <div className="message-card-text-container">
-                        <div className={classNames("message-card-text", {
-                            "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
-                        })}>
-                            <div>{this.message.orig_msg}</div>
-                        </div>
-                        {hasTlMsg &&
-                            <div className={classNames("message-card-text", {
-                                "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
-                            })}>
-                                <div>{this.message.tl_msg}</div>
-                            </div>
-                        }
-                        <div className="clear"></div>
-                    </div>
-                    <div className="message-card-footer">
-                        {this.message.username} {this.flag}
+            <div className="message-card" style={rootStyles}>
+                <div className="message-card-text-container">
+                    <div className={classNames("message-card-text", {
+                        "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
+                    })}>
+                        <div>{this.message.orig_msg}</div>
                     </div>
                     {hasTlMsg &&
-                        <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
+                        <div className={classNames("message-card-text", {
+                            "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                        })}>
+                            <div>{this.message.tl_msg}</div>
+                        </div>
                     }
+                    <div className="clear"></div>
                 </div>
-            </VisibilitySensor>
+                <div className="message-card-footer">
+                    {this.message.username} {this.flag}
+                </div>
+                {hasTlMsg &&
+                    <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
+                }
+            </div>
         )
     }
 }
+
+const MessageCard = handleViewport(MessageCardPrivate);
+export default MessageCard;
