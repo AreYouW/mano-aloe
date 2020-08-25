@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import VisibilitySensor from "react-visibility-sensor";
 import { Country } from "../../../models/country";
 import { Message } from "../../../models/message";
-import CardStyle1 from "../../../assets/card1.png"
+import CardStyle1 from "../../../assets/card1.png";
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
 import { ReactComponent as TranslateBotan } from "../../../assets/translateIcon.svg";
@@ -91,7 +91,6 @@ export default class MessageCard extends React.Component<MessageCardProps, Messa
         const rootStyles: CSS.Properties = {
             backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
             opacity: (this.state.isVisible ? 1 : 0),
-            color: `white`,
         };
 
         const hasTlMsg = this.message.tl_msg.length > 0;
