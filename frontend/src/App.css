@@ -27,6 +27,11 @@ body {
   z-index: 1000;
 }
 
+.App-root {
+	background-image: url(./assets/App-root-bg.svg);
+	background-color: "#29222f";
+}
+
 .App-logo {
   height: 20vmin;
   pointer-events: none;
