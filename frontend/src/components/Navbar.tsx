@@ -51,9 +51,9 @@ export default function ButtonAppBar() {
           ].map((obj, idx) => {
             let button;
             if (obj.externalLink) {
-              button = <Button target="_blank" rel="noopener noreferrer" href={obj.link}>{obj.iconFunc()}</Button>;
+              button = <Button target="_blank" rel="noopener noreferrer" href={obj.link} style={{color:"#ffffff"}}>{obj.iconFunc()}</Button>;
             } else {
-              button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
+              button = <Button href={obj.link} style={{color:"#ffffff"}}>{obj.iconFunc()}</Button>;
             }
             // For accessibility purposes
             let buttonAltText, buttonAltTypography;
