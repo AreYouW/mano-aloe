@@ -18,10 +18,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {
-    opacity: 0.7,
-    backgroundBlendMode: "normal,luminosity",
-    backdropFilter: 'blur(5px)',
-    boxShadow: '3px 6px 20px rgba(104,102,255,.44), -3px -6px 10px hsla(0,0%,100%,.6)'
+    backgroundColor: '#29222f',
+    boxShadow: '0px 5px 50px 0px rgba(0, 0, 0, 0.2)',
   },
   menuButton: {
     marginRight: theme.spacing(2),
