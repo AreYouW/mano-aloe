@@ -50,8 +50,8 @@ export default function ButtonAppBar() {
           {[
             { externalLink: false, link: '/', iconFunc: () => <HomeIcon /> },
             { externalLink: true, link: 'https://github.com/AreYouW/mano-aloe', iconFunc: () => <InfoIcon /> },
-            { externalLink: false, link: '/', iconFunc: () => <SportsEsportsIcon /> },
-            { externalLink: false, link: '/', iconFunc: () => <MapIcon /> },
+            { externalLink: false, link: '/game', iconFunc: () => <SportsEsportsIcon /> },
+            { externalLink: false, link: '/art', iconFunc: () => <MapIcon /> },
           ].map((obj, idx) => {
             let button;
             if (obj.externalLink) {
