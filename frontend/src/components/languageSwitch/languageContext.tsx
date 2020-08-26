@@ -8,5 +8,6 @@ export interface LanguageContextValue {
 
 export const LanguageContext = React.createContext<LanguageContextValue>({
     language: DisplayedLanguage.Original,
-    toggleLanguage: () => {}
+    toggleLanguage: () => {
+    }
 });

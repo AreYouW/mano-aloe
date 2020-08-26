@@ -17,7 +17,7 @@ export default class ArtworkCard extends React.Component<ArtworkCardProps, Artwo
     render() {
         return (
             <div className="artwork-card">
-                
+
             </div>
         )
     }

@@ -23,7 +23,7 @@ export default class ManoAloeService {
             })
     }
 
-    public getMessage(messageID: number): Promise<Message|null> {
+    public getMessage(messageID: number): Promise<Message | null> {
         return fetch(this.apiURL + 'messages/' + messageID)
             .then((res: { json: () => any; }) => {
                 return res.json();

@@ -2,13 +2,13 @@ import React from "react";
 import CSS from 'csstype';
 import classNames from 'classnames';
 import handleViewport from 'react-in-viewport';
-import { Country } from "../../../models/country";
-import { Message } from "../../../models/message";
-import CardStyle1 from "../../../assets/card1.svg";
-import CardStyle2 from "../../../assets/card2.png";
-import CardStyle3 from "../../../assets/card3.png";
+import {Country} from "../../../models/country";
+import {Message} from "../../../models/message";
+import CardStyle1 from "../../../assets/cards/card1.svg";
+import CardStyle2 from "../../../assets/cards/card2.png";
+import CardStyle3 from "../../../assets/cards/card3.png";
 import DisplayedLanguage from "../../../models/language";
-import { ReactComponent as TranslateBotan } from "../../../assets/translateIcon.svg";
+import {ReactComponent as TranslateBotan} from "../../../assets/icons/translateIcon.svg";
 import "./messageCard.css";
 
 
@@ -31,7 +31,7 @@ function countryCodeToFlag(code: Country): string {
     const RI_OFFSET = 0x1F1A5;
 
     if (code.length !== 2) return "";
-    
+
     let first = code.charCodeAt(0);
     if (first < 0x41 && first > 0x5A) return "";
     first += RI_OFFSET;
@@ -60,14 +60,6 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
     state: MessageCardState = {
         currentLanguage: this.props.language,
         globalLanguage: this.props.language
-    }
-
-    private getCurrentLanguage(): DisplayedLanguage {
-        return this.state.currentLanguage;
-    }
-
-    private setCurrentLanguage(language: DisplayedLanguage): void {
-        this.setState({currentLanguage: language});
     }
 
     private toggleCurrentLanguage(): void {
@@ -102,19 +94,19 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                         <div>{this.message.orig_msg}</div>
                     </div>
                     {hasTlMsg &&
-                        <div className={classNames("message-card-text", {
-                            "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
-                        })}>
-                            <div>{this.message.tl_msg}</div>
-                        </div>
+                    <div className={classNames("message-card-text", {
+                        "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                    })}>
+                        <div>{this.message.tl_msg}</div>
+                    </div>
                     }
-                    <div className="clear"></div>
+                    <div className="clear"/>
                 </div>
                 <div className="message-card-footer">
                     {this.message.username} {this.flag}
                 </div>
                 {hasTlMsg &&
-                    <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
+                <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage}/>
                 }
             </div>
         )
