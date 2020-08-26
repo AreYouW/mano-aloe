@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from 'react-router-dom';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import AloeHeartIcon from './assets/AloeHeartIcon.png'
+import ScrollDownIcon from './assets/arrow-down.png';
 
 import Navbar from './components/Navbar'
 import HomePage from './pages/Home'
@@ -52,7 +54,9 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                 </p>
               </div>
             </div>
-    
+            <AnchorLink offset='100' href='#home'>
+              <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button" />
+            </AnchorLink>
             </header>
           </div>
             <Navbar />

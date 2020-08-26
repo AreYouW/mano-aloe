@@ -59,9 +59,11 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 					<iframe title="Mano Aloe Fanmade Video" className="video-tag" src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
 				</div>
 				<div className="separator"/>
-				<div className="wrapper-overlay">
-					<MessageCardSection data={this.state.messages}/>
-				</div>
+        <section id='home'>
+          <div className="wrapper-overlay">
+            <MessageCardSection data={this.state.messages}/>
+          </div>
+        </section>
 			</div>
     )
   }
