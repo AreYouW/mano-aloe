@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -51,9 +52,9 @@ export default function ButtonAppBar() {
           ].map((obj, idx) => {
             let button;
             if (obj.externalLink) {
-              button = <Button target="_blank" rel="noopener noreferrer" href={obj.link}>{obj.iconFunc()}</Button>;
+              button = <Button target="_blank" rel="noopener noreferrer" href={obj.link} style={{color:"#ffffff"}}>{obj.iconFunc()}</Button>;
             } else {
-              button = <Button href={obj.link}>{obj.iconFunc()}</Button>;
+              button = <Link to={obj.link}><Button style={{color:"#ffffff"}}>{obj.iconFunc()}</Button></Link>;
             }
             // For accessibility purposes
             let buttonAltText, buttonAltTypography;

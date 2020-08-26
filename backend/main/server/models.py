@@ -1,6 +1,19 @@
 from main.server import app, db, ma
 from marshmallow import fields
 
+
+class User(db.Model):
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), nullable=False, unique=True)
+    password = db.Column(db.String(200), nullable=False)
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+
 class Gallery(db.Model):
     __tablename__ = 'GALLERY'
     artworkID = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -15,12 +28,13 @@ class Gallery(db.Model):
         self.username = username
         self.title = title
 
+
 class GallerySchema(ma.Schema):
-    artworkID =     fields.Integer()
-    artworkLink =   fields.String(required=True)
-    artistLink =    fields.String(required=False)
-    username =      fields.String(required=True)
-    title =         fields.String(required=False)
+    artworkID = fields.Integer()
+    artworkLink = fields.String(required=True)
+    artistLink = fields.String(required=False)
+    username = fields.String(required=True)
+    title = fields.String(required=False)
 
 
 class Games(db.Model):
@@ -37,12 +51,14 @@ class Games(db.Model):
         self.title = title
         self.description = description
 
+
 class GameSchema(ma.Schema):
     gameID = fields.Integer()
     gameLink = fields.String(required=True)
     gitLink = fields.String(required=False)
     title = fields.String(required=True)
     description = fields.String(required=False)
+
 
 class Message(db.Model):
     __tablename__ = 'MESSAGES'
@@ -55,7 +71,7 @@ class Message(db.Model):
     def __init__(self, orig_msg, tl_msg, country, username):
         self.orig_msg = orig_msg
         self.tl_msg = tl_msg
-        self.country = country 
+        self.country = country
         self.username = username
 
 
