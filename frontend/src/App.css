@@ -1,101 +1,101 @@
 body {
-  background-color: #282c34;
+    background-color: #282c34;
 }
 
 .community-message-card {
-	background-image: url(./assets/card2.png);
-	background-size: cover;
-	padding: 15px;
-	border-radius: 15px;
-	margin: 15px;
-	margin-top: 2rem;
-	width: 50%;
+    background-image: url(assets/cards/card2.png);
+    background-size: cover;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px;
+    margin-top: 2rem;
+    width: 50%;
 
-	background-color: #dc4087;
-	color: #fff;
-	font-size: 25px;
+    background-color: #dc4087;
+    color: #fff;
+    font-size: 25px;
 }
 
 @media (max-width: 900px) {
-	.community-message-card {
-		width: 90%;
-	}
+    .community-message-card {
+        width: 90%;
+    }
 }
 
 @media (min-width: 900px) {
-	.community-message-card {
-		position: absolute;
-		left: 5vw;
-	}
+    .community-message-card {
+        position: absolute;
+        left: 5vw;
+    }
 }
 
 .community-message-header {
-	padding-top: 10%;
-	content: center;
-	text-align: center;
+    padding-top: 10%;
+    justify-content: center;
+    text-align: center;
 }
 
 .community-message-body {
-	padding: 20px;
+    padding: 20px;
 }
 
 .separator {
-	height: 40px;
-	width: 100%;
-	background-color: #dc4087;
+    height: 40px;
+    width: 100%;
+    background-color: #dc4087;
 }
 
 .logo-tag-right {
-  float: right;
-  position: absolute;
-  right: 5vmin;
-  top: 20%;
-  z-index: 1000;
+    float: right;
+    position: absolute;
+    right: 5vmin;
+    top: 20%;
+    z-index: 1000;
 }
 
 .main {
-	background-image: url(./assets/App-root-bg.svg);
-	background-color: "#29222f";
-  background-attachment: fixed;
+    background-image: url(assets/backgrounds/App-root-bg.svg);
+    background-color: #29222f;
+    background-attachment: fixed;
 }
 
 .App-logo {
-  height: 20vmin;
-  pointer-events: none;
+    height: 20vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  background-image: url(./assets/bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    background-image: url(assets/backgrounds/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 

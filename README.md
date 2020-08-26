@@ -153,6 +153,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - AreYouW - Heavy backend development and Frontend contributions
 - Ringo - Lots of frontend work
 - DuongTyler - Small bits of backend work, helped coordinate with other teams
+- Laska - frontend shenanigans
 
 ### Writing Team
 

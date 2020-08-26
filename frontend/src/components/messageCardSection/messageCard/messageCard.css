@@ -53,13 +53,13 @@
 
 .message-card-footer {
     margin-top: 10px;
-		float: right;
+    float: right;
     text-align: right;
 }
 
 .message-card-translate {
-	/*the translate button properties*/
-		float: left;
+    /*the translate button properties*/
+    float: left;
     width: 40px;
     height: 40px;
 }
