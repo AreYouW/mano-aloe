@@ -54,14 +54,6 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
   renderMessageCardSection() {
     return (
 			<div>
-				<div className="community-message-card">
-					<h1 className="community-message-header">A Community Message for Aloe</h1>
-					<div className="community-message-body">
-						<p>
-							Dear Aloe, in celebration of your return, we've organized a community full of amazing fans to show our support! On behalf of everybody from the M.A.S.S. community, welcome back!
-						</p>
-					</div>
-				</div>
 				<div className="separator"/>
 				<div className="video-container">
 					<iframe title="Mano Aloe Fanmade Video" className="video-tag" src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>

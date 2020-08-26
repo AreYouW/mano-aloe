@@ -1,28 +1,3 @@
-.community-message-card {
-	background-image: url(../assets/card2.png);
-	background-size: cover;
-	position: absolute;
-	top: 40vh;
-	left: 5vw;
-	padding: 15px;
-	border-radius: 15px;
-
-	background-color: #dc4087;
-	color: #fff;
-	font-size: 25px;
-}
-
-.community-message-header {
-	padding-top: 10%;
-	content: center;
-	text-align: center;
-}
-
-.community-message-body {
-	max-width: 45vw;
-	padding: 20px;
-}
-
 .video-container {
 	width: 100%;
  	box-sizing: border-box;

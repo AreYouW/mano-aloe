@@ -2,26 +2,48 @@ body {
   background-color: #282c34;
 }
 
+.community-message-card {
+	background-image: url(./assets/card2.png);
+	background-size: cover;
+	padding: 15px;
+	border-radius: 15px;
+	margin: 15px;
+	margin-top: 2rem;
+	width: 50%;
+
+	background-color: #dc4087;
+	color: #fff;
+	font-size: 25px;
+}
+
+@media (max-width: 900px) {
+	.community-message-card {
+		width: 100%;
+		
+	}
+}
+
+@media (min-width: 900px) {
+	.community-message-card {
+		position: absolute;
+		left: 5vw;
+	}
+}
+
+.community-message-header {
+	padding-top: 10%;
+	content: center;
+	text-align: center;
+}
+
+.community-message-body {
+	padding: 20px;
+}
+
 .separator {
 	height: 40px;
 	width: 100%;
 	background-color: #dc4087;
-}
-
-.title {
-	position: relative;
-	top: 15px;
-	left: 15px;
-	font-size: 50px;
-	padding: 10px;
-	background: #581e77;
-}
-
-.title-wrapper {
-	position: absolute;
-	background: #29222f;
-	left: 0;
-	top: 20%;
 }
 
 .logo-tag-right {
