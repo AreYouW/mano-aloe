@@ -4,7 +4,7 @@
 	column-count: 1;
 	column-gap: 1rem;
 }
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
 	.messages-section {
 		column-count: 2;
 	}

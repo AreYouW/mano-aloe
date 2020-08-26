@@ -13,11 +13,15 @@ export default function App() {
     <main className="main">
       <div>
         <header className="App-header">
-					<div className="title-wrapper">
-						<div className="title">
-							Mano Aloe Support Squad [M.A.S.S.]
-						</div>
+					<div className="community-message-card">
+					<h1 className="community-message-header">A Community Message for Aloe</h1>
+					<div className="community-message-body">
+						<p>
+							Dear Aloe, in celebration of your return, we've organized a community full of amazing fans to show our support! On behalf of everybody from the M.A.S.S. community, welcome back!
+						</p>
 					</div>
+				</div>
+
         </header>
       </div>
         <Navbar />

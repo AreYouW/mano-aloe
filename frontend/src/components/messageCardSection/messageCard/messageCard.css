@@ -27,8 +27,8 @@
     width: var(--card-text-width);
     margin: 0 auto;
 
-    font-size: 16px;
-    padding-top: 20%;
+    font-size: 24px;
+    padding-top: 25%;
 }
 
 .message-card-text-container > .clear {
@@ -53,10 +53,13 @@
 
 .message-card-footer {
     margin-top: 10px;
+		float: right;
     text-align: right;
 }
 
 .message-card-translate {
+	/*the translate button properties*/
+		float: left;
     width: 40px;
     height: 40px;
 }
