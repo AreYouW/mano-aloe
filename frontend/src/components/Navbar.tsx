@@ -13,6 +13,7 @@ import MapIcon from '@material-ui/icons/Map';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 
 import ManoAloeGif from '../assets/AloeiconsBIG.gif'
+import LanguageSwitchButton from './languageSwitchSection/languageSwitch';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,6 +71,7 @@ export default function ButtonAppBar() {
               </IconButton>
             )
           })}
+          <LanguageSwitchButton/>
         </Toolbar>
       </AppBar>
     </div>
