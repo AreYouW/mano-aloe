@@ -53,6 +53,16 @@ body {
     z-index: 1000;
 }
 
+.anchor-link {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  transition: "all 0.25s ease";
+}
+
 .main {
     background-image: url(assets/backgrounds/App-root-bg.svg);
     background-color: #29222f;
