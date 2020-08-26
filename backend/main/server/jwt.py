@@ -4,6 +4,7 @@ from main.server.models import User
 from passlib.hash import pbkdf2_sha256
 from datetime import timedelta
 
+
 def authenticate(username, password):
     user = User.query.filter_by(username=username).first()
     if user and pbkdf2_sha256.verify(password, user.password):

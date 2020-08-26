@@ -7,7 +7,6 @@ class BaseConfig:
     SECRET_KEY = os.getenv('SECRET_KEY', 'totallysecretkey')
     DEBUG = False
     TESTING = False
-    BCRYPT_LOG_ROUNDS = 4
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
                               'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -25,5 +24,3 @@ class TestingConfig(BaseConfig):
                               'sqlite:///' + os.path.join(basedir, 'app.testing.db')
 
 
-class ProductionConfig(BaseConfig):
-    BCRYPT_LOG_ROUNDS = 13
