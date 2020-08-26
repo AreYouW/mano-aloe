@@ -5,7 +5,7 @@
 	background-attachment: fixed;
 }
 
-@media (max-width: 600px)
+@media (max-width: 900px)
 {
 	.video-container {
 		height: 50vh;
