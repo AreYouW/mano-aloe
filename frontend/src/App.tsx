@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import { Route, Switch } from 'react-router-dom';
+import React from "react";
+import {Route, Switch} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import AloeHeartIcon from './assets/AloeHeartIcon.png'
 import ScrollDownIcon from './assets/arrow-down.png';
 
 import Navbar from './components/navbar'
@@ -41,33 +40,35 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
         this.setState({language: SessionService.getLanguage() as DisplayedLanguage});
     }
 
-  render() {
-    return (
-      <LanguageContext.Provider value={this.state}>
-        <main className="main">
-          <div>
-            <header className="App-header">
-              <div className="community-message-card">
-              <h1 className="community-message-header">A Community Message for Aloe</h1>
-              <div className="community-message-body">
-                <p>
-                  Dear Aloe, in celebration of your return, we've organized a community full of amazing fans to show our support! On behalf of everybody from the M.A.S.S. community, welcome back!
-                </p>
-              </div>
-            </div>
-            <AnchorLink offset='100' href='#home'>
-              <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button" />
-            </AnchorLink>
-            </header>
-          </div>
-            <Navbar />
-            <Switch>
-              <Route path='/' component={HomePage} exact />
-              <Route path='/game' component={GamePage} />
-              <Route path='/art' component={ArtPage} />
-            </Switch>
-        </main>
-      </LanguageContext.Provider>
-    );
-  }
+    render() {
+        return (
+            <LanguageContext.Provider value={this.state}>
+                <main className="main">
+                    <div>
+                        <header className="App-header">
+                            <div className="community-message-card">
+                                <h1 className="community-message-header">A Community Message for Aloe</h1>
+                                <div className="community-message-body">
+                                    <p>
+                                        Dear Aloe, in celebration of your return, we've organized a community full of
+                                        amazing fans to show our support! On behalf of everybody from the M.A.S.S.
+                                        community, welcome back!
+                                    </p>
+                                </div>
+                            </div>
+                            <AnchorLink offset='100' href='#home'>
+                                <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
+                            </AnchorLink>
+                        </header>
+                    </div>
+                    <Navbar/>
+                    <Switch>
+                        <Route path='/' component={HomePage} exact/>
+                        <Route path='/game' component={GamePage}/>
+                        <Route path='/art' component={ArtPage}/>
+                    </Switch>
+                </main>
+            </LanguageContext.Provider>
+        );
+    }
 }

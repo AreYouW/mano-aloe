@@ -62,9 +62,11 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                             allowFullScreen/>
                 </div>
                 <div className="separator"/>
-                <div className="wrapper-overlay">
-                    <MessageCardSection data={this.state.messages}/>
-                </div>
+                <section id='home'>
+                    <div className="wrapper-overlay">
+                        <MessageCardSection data={this.state.messages}/>
+                    </div>
+                </section>
             </div>
         )
     }
@@ -72,7 +74,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()}
+                {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()} // TODO
             </div>
         )
     }
