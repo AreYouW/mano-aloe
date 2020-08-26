@@ -16,6 +16,7 @@ def identity(payload):
     return User.query.get(user_id)
 
 
+app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['SECRET_KEY'] = 'change_this_on_live'  # will change on upload
 
 # Allows tokens to be valid for longer
