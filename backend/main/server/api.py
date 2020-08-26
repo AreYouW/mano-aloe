@@ -1,7 +1,6 @@
 from flask import Blueprint
 from flask_restful import Api
 
-
 from main.server.resources.Message import MessageListResource, MessageResource, MessageListRangeResource, MessageCount
 from main.server.resources.Game import GameCount, GameListResource
 from main.server.resources.Gallery import GalleryCount, GalleryListResource
@@ -12,16 +11,16 @@ api = Api(api_bp)
 
 # Routes
 
-## Messages
+# Messages
 api.add_resource(MessageListResource, '/messages')
 api.add_resource(MessageResource, '/messages/<messageID>')
 api.add_resource(MessageListRangeResource, '/messages/range/<lower>/<upper>')
 api.add_resource(MessageCount, '/messages/count')
 
-## Games
+# Games
 api.add_resource(GameListResource, '/games')
 api.add_resource(GameCount, '/games/count')
 
-## Gallery
+# Gallery
 api.add_resource(GalleryListResource, '/gallery')
 api.add_resource(GalleryCount, '/gallery/count')

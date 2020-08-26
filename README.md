@@ -1,4 +1,4 @@
-# Mano Aloe Messages of support website 
+# Mano Aloe Messages of support website
 
 Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)](https://discord.gg/Y4BBfyM) discord server
 
@@ -148,7 +148,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 
 - Kyuubei - Web Design
 - Jesse Zong - Frontend Website Designer
-- Zapple - Script Building and Backend Development
+- Zapple - Backend Development & Frontend contributions
 - Rhyolite
 - AreYouW - Heavy backend development and Frontend contributions
 - Ringo - Lots of frontend work
