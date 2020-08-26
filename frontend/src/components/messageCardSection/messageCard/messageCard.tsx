@@ -107,11 +107,11 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                         <div>{this.message.orig_msg}</div>
                     </div>
                     {this.hasTlMsg &&
-                        <div className={classNames("message-card-text", {
-                            "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
-                        })}>
-                            <div>{this.message.tl_msg}</div>
-                        </div>
+                    <div className={classNames("message-card-text", {
+                        "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
+                    })}>
+                        <div>{this.message.tl_msg}</div>
+                    </div>
                     }
                     <div className="clear"/>
                 </div>
@@ -119,7 +119,7 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                     {this.message.username} {this.flag}
                 </div>
                 {this.hasTlMsg &&
-                    <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
+                <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
                 }
             </div>
         )
