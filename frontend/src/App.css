@@ -2,9 +2,26 @@ body {
   background-color: #282c34;
 }
 
+.separator {
+	height: 40px;
+	width: 100%;
+	background-color: #dc4087;
+}
+
 .title {
-	background: #000;
-  background-attachment: fixed;
+	position: relative;
+	top: 15px;
+	left: 15px;
+	font-size: 50px;
+	padding: 10px;
+	background: #581e77;
+}
+
+.title-wrapper {
+	position: absolute;
+	background: #29222f;
+	left: 0;
+	top: 20%;
 }
 
 .logo-tag-right {
@@ -18,6 +35,7 @@ body {
 .main {
 	background-image: url(./assets/App-root-bg.svg);
 	background-color: "#29222f";
+  background-attachment: fixed;
 }
 
 .App-logo {
@@ -59,3 +77,4 @@ body {
     transform: rotate(360deg);
   }
 }
+

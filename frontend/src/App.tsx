@@ -13,8 +13,10 @@ export default function App() {
     <main className="main">
       <div>
         <header className="App-header">
-					<div className="title">
-						FOO
+					<div className="title-wrapper">
+						<div className="title">
+							Mano Aloe Support Squad [M.A.S.S.]
+						</div>
 					</div>
         </header>
       </div>
