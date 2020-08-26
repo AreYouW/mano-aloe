@@ -1,3 +1,43 @@
-.wrapper-overlay {
-    padding: 0 2rem;
+.video-description-container {
+	height: 100%;
+	width: 40%;
+	color: white;
+	float: left;
 }
+
+.video-description {
+	padding: 2rem;
+}
+
+.video-container {
+	background-image: url(../assets/video-container-bg.svg);
+	background-size: cover;
+	background-color: #000000;
+	padding: 15px;
+	width: 100%;
+ 	box-sizing: border-box;
+	height: 75vh;
+	background-attachment: fixed;
+}
+
+@media (max-width: 600px)
+{
+	.video-container {
+		height: 50vh;
+	}
+}
+
+.video-tag{
+  width: 60%;
+	height: 90%;
+	padding-top: 2%;
+	float: left;
+}
+
+@media (max-width: 400px) {
+	.video-tag-left {
+		width: 100%;
+		height: 100%;
+	}
+}
+
