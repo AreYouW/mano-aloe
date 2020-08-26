@@ -24,3 +24,5 @@ class TestingConfig(BaseConfig):
                               'sqlite:///' + os.path.join(basedir, 'app.testing.db')
 
 
+class ProductionConfig(BaseConfig):
+    LIVE = True
