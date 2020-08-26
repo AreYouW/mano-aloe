@@ -1,6 +1,6 @@
 import React from 'react';
-import MessageCardSection from '../components/messageCardSection/messageCardSection';
-import {Artwork} from "../models/artwork";
+import GallerySection from '../components/gallerySection/gallerySection';
+import { Artwork } from "../models/artwork";
 import ManoAloeService from "../controllers/mano-aloe.service";
 import SessionService from "../services/session.service";
 import './Art.css'
@@ -32,21 +32,31 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
   }
 
   private getData(): void {
-    return
+    const cachedArtworks: Artwork[] | null = SessionService.getGallery();
+    if (cachedArtworks && cachedArtworks.length) {
+      this.setState({loading: false, artworks: cachedArtworks});
+    } else {
+      this.manoAloeService.getGallery()
+        .then((artworks: Artwork[]) => {
+          SessionService.saveGallery(artworks);
+          this.setState({loading: false, artworks});
+        })
+        .catch((error: Error) => {
+          console.error(error);
+        })
+    }
   }
 
-  renderMessageCardSection() {
-     return (
-        <div>
-          ART PAGE UNDER CONSTRUCTION
-        </div>
-     )
+  renderGallerySection() {
+    return (
+      <GallerySection data={this.state.artworks}/>
+    )
   }
 
   render() {
     return (
       <div className="wrapper-overlay">
-        ART PAGE
+        {this.state.loading ? 'Loading Placeholder' : this.renderGallerySection()}
       </div>
     )
   }
