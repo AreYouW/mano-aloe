@@ -1,6 +1,7 @@
 import {Message} from "../models/message";
 import {Artwork} from "../models/artwork";
 import {Game} from "../models/game";
+import DisplayedLanguage from "../models/language";
 
 export default class SessionService {
     private static saveInCache<T>(key: string, object: T): void {
@@ -8,8 +9,8 @@ export default class SessionService {
         localStorage.setItem(key, JSON.stringify(object));
     }
 
-    private static getFromCache<T>(key: string): T | null {
-        if (SessionService.reloadRequired()) {
+    private static getFromCache<T>(key: string, validate = true): T | null {
+        if (validate && SessionService.reloadRequired()) {
             SessionService.clearCache();
         }
         const objectString = localStorage.getItem(key);
@@ -66,6 +67,14 @@ export default class SessionService {
 
     public static getGames(): Game[] | null {
         return SessionService.getFromCache<Game[]>('games');
+    }
+
+    public static saveLanguage(language: DisplayedLanguage): void {
+        SessionService.saveInCache<DisplayedLanguage>('language', language);
+    }
+
+    public static getLanguage(): DisplayedLanguage | null {
+        return SessionService.getFromCache<DisplayedLanguage>('language', false);
     }
 
     public static clearCache(): void {

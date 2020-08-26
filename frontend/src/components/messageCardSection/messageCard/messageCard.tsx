@@ -7,26 +7,23 @@ import { Message } from "../../../models/message";
 import CardStyle1 from "../../../assets/card1.svg";
 import CardStyle2 from "../../../assets/card2.png";
 import CardStyle3 from "../../../assets/card3.png";
+import DisplayedLanguage from "../../../models/language";
 import { ReactComponent as TranslateBotan } from "../../../assets/translateIcon.svg";
 import "./messageCard.css";
 
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
-enum DisplayedLanguage {
-    Original,
-    Japanese,
-}
-
 interface MessageCardProps {
     message: Message;
     cardStyleNum: number;
     inViewport: boolean;
+    language: DisplayedLanguage;
 }
 
 interface MessageCardState {
     currentLanguage: DisplayedLanguage;
-    inViewport: boolean;
+    globalLanguage: DisplayedLanguage;
 }
 
 function countryCodeToFlag(code: Country): string {
@@ -61,8 +58,8 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
     }
 
     state: MessageCardState = {
-        currentLanguage: DisplayedLanguage.Original,
-        inViewport: this.props.inViewport
+        currentLanguage: this.props.language,
+        globalLanguage: this.props.language
     }
 
     private getCurrentLanguage(): DisplayedLanguage {
@@ -82,8 +79,8 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
     }
 
     componentDidUpdate() {
-        if (this.state.inViewport !== this.props.inViewport) {
-            this.setState({inViewport: this.props.inViewport});
+        if (this.state.globalLanguage !== this.props.language) {
+            this.setState({globalLanguage: this.props.language, currentLanguage: this.props.language});
         }
     }
 
