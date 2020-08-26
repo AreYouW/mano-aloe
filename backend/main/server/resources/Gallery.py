@@ -2,6 +2,7 @@ from flask_restful import Resource
 from flask import request
 from main.server import db, cache, app
 from main.server.models import Gallery, GallerySchema
+from flask_jwt import jwt_required
 
 artwork_schema = GallerySchema()
 gallery_schema = GallerySchema(many=True)
@@ -37,6 +38,7 @@ class GalleryListResource(Resource):
 
         return {'status': 'success', 'gallery': gallery}, 200
 
+    @jwt_required()
     def post(self):
         """Add Artwork"""
         json_data = request.get_json(force=True)

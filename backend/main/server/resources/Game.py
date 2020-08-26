@@ -2,6 +2,8 @@ from flask_restful import Resource
 from flask import request
 from main.server import db, cache, app
 from main.server.models import Games, GameSchema
+from flask_jwt import jwt_required
+
 
 games_schema = GameSchema(many=True)
 game_schema = GameSchema()
@@ -29,6 +31,7 @@ class GameListResource(Resource):
 
         return {'status': 'success', 'games': games}, 200
 
+    @jwt_required()
     def post(self):
         """Add Game"""
         json_data = request.get_json(force=True)
