@@ -5,6 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
+		z-index: 1;
 
     box-sizing: border-box;
     padding: 0 5vw;
