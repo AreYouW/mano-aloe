@@ -33,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar() {
     const classes = useStyles();
 
+    const button = {
+        width: 64,
+        height: 64,
+        padding: 0,
+        color: '#ffffff'
+    };
+
     return (
         <div className={classes.root}>
             <AppBar position="fixed" className={classes.appBar}>
@@ -56,27 +63,25 @@ export default function ButtonAppBar() {
                         },
                         {externalLink: false, link: '/', altText: "Language Switch", iconFunc: () => <LanguageSwitchButton/>}
                     ].map((obj, idx) => {
-                        let button;
-                        if (obj.externalLink) {
-                            button = <Button target="_blank" rel="noopener noreferrer" href={obj.link}
-                                             style={{color: "#ffffff"}}>{obj.iconFunc()}</Button>;
-                        } else {
-                            button =
-                                <Link to={obj.link}><Button style={{color: "#ffffff"}}>{obj.iconFunc()}</Button></Link>;
-                        }
                         // For accessibility purposes
-                        let buttonAltText, buttonAltTypography;
-                        if (obj.altText) {
-                            buttonAltText = obj.altText
+                        let buttonAltText = (obj.altText ?? "");
+                        if (obj.externalLink) {
+                            return (
+                                <IconButton target="_blank" rel="noopener noreferrer" href={obj.link}
+                                    key={idx} style={button} aria-label={buttonAltText}
+                                >
+                                    {obj.iconFunc()}
+                                </IconButton>
+                            );
                         } else {
-                            buttonAltText = ""
+                            return (
+                                <Link to={obj.link}>
+                                    <IconButton key={idx} style={button} aria-label={buttonAltText}>
+                                        {obj.iconFunc()}
+                                    </IconButton>
+                                </Link>
+                            );
                         }
-                        buttonAltTypography = <Typography variant="srOnly">{obj.altText}</Typography>;
-                        return (
-                            <IconButton key={idx} style={{color: "inherit"}} aria-label={buttonAltText}>
-                                {button}
-                            </IconButton>
-                        )
                     })}
                 </Toolbar>
             </AppBar>
