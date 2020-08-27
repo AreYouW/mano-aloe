@@ -47,6 +47,7 @@ body {
 
 @media (max-width: 900px) {
     .community-message-card {
+				margin-top: 25vh;
         width: 90%;
     }
 }
@@ -84,7 +85,7 @@ body {
 
 .anchor-link {
   position: absolute;
-  bottom: 22%;
+  bottom: 18%;
   left: 0;
   right: 0;
   margin: auto;
@@ -92,7 +93,7 @@ body {
   transition: "all 0.25s ease";
 }
 
-@media (max-height: 800px) {
+@media (max-height: 900px) {
 		/*If we can't get the damn thing to stay off card text, just hide the thing*/
 		.anchor-link {
 				opacity: 0;
