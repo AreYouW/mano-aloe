@@ -16,6 +16,13 @@ body {
     font-size: 25px;
 }
 
+@media (max-height: 800px) {
+		/*Handle mobile layouts since everything is freaking tiny*/
+		.community-message-card {
+				margin-top: 12vh;
+		}
+}
+
 @media (max-width: 900px) {
     .community-message-card {
         width: 90%;
@@ -61,6 +68,13 @@ body {
   margin: auto;
 
   transition: "all 0.25s ease";
+}
+
+@media (max-height: 800px) {
+		/*If we can't get the damn thing to stay off card text, just hide the thing*/
+		.anchor-link {
+				opacity: 0;
+		}
 }
 
 .main {
