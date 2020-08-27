@@ -78,6 +78,10 @@ export default class SessionService {
     }
 
     public static clearCache(): void {
+        let languageInCache = this.getLanguage();
         localStorage.clear();
+        if (languageInCache !== null) {
+            this.saveLanguage(languageInCache);
+        }
     }
 }
