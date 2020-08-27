@@ -54,6 +54,7 @@ export default function ButtonAppBar() {
                             altText: "github",
                             iconFunc: () => <InfoIcon/>
                         },
+                        {externalLink: false, link: '/', altText: "Language Switch", iconFunc: () => <LanguageSwitchButton/>}
                     ].map((obj, idx) => {
                         let button;
                         if (obj.externalLink) {
@@ -77,7 +78,6 @@ export default function ButtonAppBar() {
                             </IconButton>
                         )
                     })}
-                    <LanguageSwitchButton/>
                 </Toolbar>
             </AppBar>
         </div>

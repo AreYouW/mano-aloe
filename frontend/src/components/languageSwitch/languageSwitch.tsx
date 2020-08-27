@@ -1,18 +1,14 @@
 import React from 'react';
-import DisplayedLanguage from '../../models/language';
 import {LanguageContext, LanguageContextValue} from "./languageContext";
+
+import TranslateIcon from '@material-ui/icons/Translate';
 
 export default function LanguageSwitchButton() {
     return (
         <LanguageContext.Consumer>
-            {(value: LanguageContextValue) => {
-                const {language, toggleLanguage} = value;
-                return (
-                    <div className="language-switch-button" onClick={toggleLanguage}>
-                        {language === DisplayedLanguage.Original ? "EN" : "JP"}
-                    </div>
-                );
-            }}
+            {(value: LanguageContextValue) => 
+                <TranslateIcon onClick={value.toggleLanguage}/>
+            }
         </LanguageContext.Consumer>
     )
 }
