@@ -23,7 +23,7 @@ export default class GallerySection extends React.Component<GallerySectionProps,
         return (
             <div className="gallery-section">
                 {this.data.map((artwork: Artwork) =>
-                    <ArtworkCard key={artwork.artworkID}/>
+                    <ArtworkCard key={artwork.artworkID} artwork={artwork} />
                 )}
             </div>
         )
