@@ -23,6 +23,12 @@
     transition: all 0.4s ease;
 }
 
+@media (max-width: 500px) {
+	.message-card {
+		--card-text-width: 300px;
+	}
+}
+
 .message-card-text-container {
     width: var(--card-text-width);
     margin: 0 auto;

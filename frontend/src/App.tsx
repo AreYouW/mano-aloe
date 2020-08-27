@@ -44,6 +44,7 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
         return (
             <LanguageContext.Provider value={this.state}>
                 <main className="main">
+                    <Navbar/>
                     <div>
                         <header className="App-header">
                             <div className="community-message-card">
@@ -61,7 +62,6 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                             </AnchorLink>
                         </header>
                     </div>
-                    <Navbar/>
                     <Switch>
                         <Route path='/' component={HomePage} exact/>
                         <Route path='/game' component={GamePage}/>
