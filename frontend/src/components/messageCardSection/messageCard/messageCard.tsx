@@ -58,6 +58,11 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
     }
+    
+    state: MessageCardState = {
+        currentLanguage: this.props.language,
+        globalLanguage: this.props.language
+    }
 
     private toggleCurrentLanguage(): void {
         this.setState(state => ({
