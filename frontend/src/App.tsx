@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch, withRouter, RouteComponentProps} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import ScrollDownIcon from './assets/arrow-down.png';
 
@@ -13,9 +13,11 @@ import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
 import DisplayedLanguage from "./models/language";
 
-class App extends React.Component<RouteComponentProps, LanguageContextValue> {
+interface AppProps { }
 
-    constructor(props: RouteComponentProps) {
+export default class App extends React.Component<AppProps, LanguageContextValue> {
+
+    constructor(props: AppProps) {
         super(props);
     }
 
@@ -36,15 +38,8 @@ class App extends React.Component<RouteComponentProps, LanguageContextValue> {
         }
         this.setState({language: SessionService.getLanguage() as DisplayedLanguage});
     }
-    
-    // componentDidUpdate(prevProps: AppProps) {
-    //     if (this.props.location !== prevProps.location) {
-
-    //     }
-    // }
 
     render() {
-        console.log(window.location.pathname);
         return (
             <LanguageContext.Provider value={this.state}>
                 <main className="main">
@@ -60,11 +55,9 @@ class App extends React.Component<RouteComponentProps, LanguageContextValue> {
                                     </p>
                                 </div>
                             </div>
-                            {this.props.location.pathname === "/" &&
-                            <AnchorLink offset='100' href='#home'>
+                            <AnchorLink offset='100' href='#anchor'>
                                 <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
                             </AnchorLink>
-                            }
                         </header>
                     </div>
                     <Navbar/>
@@ -78,5 +71,3 @@ class App extends React.Component<RouteComponentProps, LanguageContextValue> {
         );
     }
 }
-
-export default withRouter(App);
