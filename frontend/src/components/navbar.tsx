@@ -5,7 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button'
 
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
@@ -61,7 +60,6 @@ export default function ButtonAppBar() {
                             altText: "github",
                             iconFunc: () => <InfoIcon/>
                         },
-                        {externalLink: false, link: '/', altText: "Language Switch", iconFunc: () => <LanguageSwitchButton/>}
                     ].map((obj, idx) => {
                         // For accessibility purposes
                         let buttonAltText = (obj.altText ?? "");
@@ -83,6 +81,7 @@ export default function ButtonAppBar() {
                             );
                         }
                     })}
+                    <LanguageSwitchButton/>
                 </Toolbar>
             </AppBar>
         </div>
