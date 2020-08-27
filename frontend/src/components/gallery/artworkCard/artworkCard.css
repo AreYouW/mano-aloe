@@ -1,1 +1,30 @@
+.artwork-card {
+    width: 100%;
+    overflow: auto;
+    box-sizing: border-box;
 
+    border-radius: 15px;
+
+    padding: 10px;
+
+    background-color: #581e77;
+
+    color: white;
+}
+
+.artwork-card-img {
+    height: var(--card-size);
+}
+
+.artwork-card-footer {
+    margin: 0 20px;
+}
+
+.artwork-card-footer > .title {
+    font-size: 1.75rem;
+}
+
+.artwork-card-footer > .artist {
+    text-align: right;
+    margin-top: 10px;
+}

@@ -79,9 +79,13 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
 
     render() {
         return (
-            <div className="game-container center">
-                {this.state.renderGame ? this.renderGame() : this.renderPlaceholder()}
-            </div>
+            <section id='anchor'>
+               <div className="wrapper-overlay">
+								 <div className="game-container center">
+										{this.state.renderGame ? this.renderGame() : this.renderPlaceholder()}
+								</div>
+               </div>
+            </section>
         )
     }
 }

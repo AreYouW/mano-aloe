@@ -56,7 +56,7 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                     </p>
                                 </div>
                             </div>
-                            <AnchorLink offset='100' href='#home'>
+                            <AnchorLink offset='100' href='#anchor'>
                                 <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
                             </AnchorLink>
                         </header>

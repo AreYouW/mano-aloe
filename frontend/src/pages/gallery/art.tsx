@@ -55,9 +55,11 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
 
     render() {
         return (
-            <div className="wrapper-overlay">
-                {this.state.loading ? 'Loading Placeholder' : this.renderGallerySection()}
-            </div>
+            <section id='anchor'>
+                <div className="wrapper-overlay">
+                    {this.state.loading ? 'Loading Placeholder' : this.renderGallerySection()}
+                </div>
+            </section>
         )
     }
 }

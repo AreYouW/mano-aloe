@@ -43,20 +43,22 @@ function countryCodeToFlag(code: Country): string {
     return String.fromCodePoint(first, second);
 }
 
-class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardState> {
+class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
     private readonly message: Message;
     private readonly cardStyleNum: number;
     private readonly flag: string;
+    private readonly hasTlMsg: boolean;
 
     constructor(props: MessageCardProps) {
         super(props);
         this.message = props.message;
         this.flag = countryCodeToFlag(props.message.country);
         this.cardStyleNum = props.cardStyleNum;
+        this.hasTlMsg = this.message.tl_msg.length > 0;
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
     }
-
+    
     state: MessageCardState = {
         currentLanguage: this.props.language,
         globalLanguage: this.props.language
@@ -70,9 +72,19 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
         }));
     }
 
+    componentWillMount() {
+        this.setState({
+            currentLanguage: this.hasTlMsg ?  this.props.language : DisplayedLanguage.Original,
+            globalLanguage: this.props.language
+        });
+    }
+
     componentDidUpdate() {
         if (this.state.globalLanguage !== this.props.language) {
-            this.setState({globalLanguage: this.props.language, currentLanguage: this.props.language});
+            this.setState({
+                currentLanguage: this.hasTlMsg ?  this.props.language : DisplayedLanguage.Original,
+                globalLanguage: this.props.language
+            });
         }
     }
 
@@ -83,8 +95,6 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
             opacity: (this.props.inViewport ? 1 : 0),
         };
 
-        const hasTlMsg = this.message.tl_msg.length > 0;
-
         return (
             <div className="message-card" style={rootStyles}>
                 <div className="message-card-text-container">
@@ -93,7 +103,7 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                     })}>
                         <div>{this.message.orig_msg}</div>
                     </div>
-                    {hasTlMsg &&
+                    {this.hasTlMsg &&
                     <div className={classNames("message-card-text", {
                         "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
                     })}>
@@ -105,13 +115,12 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
                 <div className="message-card-footer">
                     {this.message.username} {this.flag}
                 </div>
-                {hasTlMsg &&
-                <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage}/>
+                {this.hasTlMsg &&
+                <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
                 }
             </div>
         )
     }
 }
 
-const MessageCard = handleViewport(MessageCardPrivate);
-export default MessageCard;
+export default handleViewport(MessageCard);

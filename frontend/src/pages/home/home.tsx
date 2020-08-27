@@ -62,7 +62,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                             allowFullScreen/>
                 </div>
                 <div className="separator"/>
-                <section id='home'>
+                <section id='anchor'>
                     <div className="wrapper-overlay">
                         <MessageCardSection data={this.state.messages}/>
                     </div>
