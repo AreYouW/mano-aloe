@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, withRouter, RouteComponentProps} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import ScrollDownIcon from './assets/arrow-down.png';
 
@@ -13,12 +13,9 @@ import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
 import DisplayedLanguage from "./models/language";
 
-interface AppProps {
-}
+class App extends React.Component<RouteComponentProps, LanguageContextValue> {
 
-export default class App extends React.Component<AppProps, LanguageContextValue> {
-
-    constructor(props: AppProps) {
+    constructor(props: RouteComponentProps) {
         super(props);
     }
 
@@ -39,8 +36,15 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
         }
         this.setState({language: SessionService.getLanguage() as DisplayedLanguage});
     }
+    
+    // componentDidUpdate(prevProps: AppProps) {
+    //     if (this.props.location !== prevProps.location) {
+
+    //     }
+    // }
 
     render() {
+        console.log(window.location.pathname);
         return (
             <LanguageContext.Provider value={this.state}>
                 <main className="main">
@@ -56,9 +60,11 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                     </p>
                                 </div>
                             </div>
+                            {this.props.location.pathname === "/" &&
                             <AnchorLink offset='100' href='#home'>
                                 <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
                             </AnchorLink>
+                            }
                         </header>
                     </div>
                     <Navbar/>
@@ -72,3 +78,5 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
         );
     }
 }
+
+export default withRouter(App);
