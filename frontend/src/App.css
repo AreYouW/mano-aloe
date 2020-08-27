@@ -54,13 +54,13 @@ body {
 }
 
 .anchor-link {
-  position: absolute;
-  bottom: 22%;
-  left: 0;
-  right: 0;
-  margin: auto;
+    position: absolute;
+    bottom: 22%;
+    left: 0;
+    right: 0;
+    margin: auto;
 
-  transition: "all 0.25s ease";
+    transition: all 0.25s ease;
 }
 
 .main {
