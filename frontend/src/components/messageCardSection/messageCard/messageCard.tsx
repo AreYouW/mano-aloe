@@ -43,7 +43,7 @@ function countryCodeToFlag(code: Country): string {
     return String.fromCodePoint(first, second);
 }
 
-class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardState> {
+class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
     private readonly message: Message;
     private readonly cardStyleNum: number;
     private readonly flag: string;
@@ -123,5 +123,4 @@ class MessageCardPrivate extends React.Component<MessageCardProps, MessageCardSt
     }
 }
 
-const MessageCard = handleViewport(MessageCardPrivate);
-export default MessageCard;
+export default handleViewport(MessageCard);
