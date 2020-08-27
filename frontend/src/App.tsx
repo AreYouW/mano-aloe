@@ -13,7 +13,8 @@ import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
 import DisplayedLanguage from "./models/language";
 
-interface AppProps { }
+interface AppProps {
+}
 
 export default class App extends React.Component<AppProps, LanguageContextValue> {
 
