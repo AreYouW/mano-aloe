@@ -45,7 +45,7 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                 gameLink: new URL(game.gameLink),
             } as Game
         });
-        this.setState({games: mappedGames, loading: false});
+        // this.setState({games: mappedGames, loading: false});
     }
 
     render() {
