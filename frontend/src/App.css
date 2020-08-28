@@ -2,6 +2,28 @@ body {
     background-color: #282c34;
 }
 
+.notice-container {
+		background-image: url(assets/cards/card2.png);
+		background-size: cover;
+    border-radius: 15px;
+		text-align: center;
+		margin: 2rem;
+		max-width: 800px;
+}
+
+.notice-center {
+    display: flex;
+		justify-content: center;
+}
+
+.notice-content {
+		padding: 2rem;
+		padding-top: 15%;
+		font-size: 20px;
+		color: #fff;
+		text-decoration: none;
+}
+
 .community-message-card {
     background-image: url(assets/cards/card2.png);
     background-size: cover;
@@ -16,8 +38,16 @@ body {
     font-size: 25px;
 }
 
+@media (max-height: 800px) {
+		/*Handle mobile layouts since everything is freaking tiny*/
+		.community-message-card {
+				margin-top: 12vh;
+		}
+}
+
 @media (max-width: 900px) {
     .community-message-card {
+				margin-top: 25vh;
         width: 90%;
     }
 }
@@ -61,6 +91,13 @@ body {
     margin: auto;
 
     transition: all 0.25s ease;
+}
+
+@media (max-height: 900px) {
+		/*If we can't get the damn thing to stay off card text, just hide the thing*/
+		.anchor-link {
+				opacity: 0;
+		}
 }
 
 .main {

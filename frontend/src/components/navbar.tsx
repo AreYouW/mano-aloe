@@ -13,8 +13,8 @@ import './navbar.css';
 export default function ButtonAppBar() {
     return (
         <header className="navbar">
-            <img src={ManoAloeGif} alt="Mano Aloe GIF" style={{maxWidth: "50px", maxHeight: "50px"}}/>
-            <div className="title">魔の友 (Manotomo)</div>
+            <img className="icon-button" src={ManoAloeGif} alt="Mano Aloe GIF"/>
+            <div className="title">魔の友から、アロエへ</div>
             <div className="icons">
                 {[
                     {externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon/>},

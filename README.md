@@ -31,6 +31,9 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Kukie-Nyan
 - ソーランSoran
 - Killrodx - Fan Art
+- Warabii
+- Plus0ne - Fan Art, Fan Animation, Osu! Skin
+- Zidan3 - Game asset creation in "Ma No Tomo"
 
 ### Audio Team
 
@@ -61,6 +64,8 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Huzzah
 - Cheese Singles In Your Area - Game BGM
 - Schrodinger - Game testing
+- Saitô - Aloe's Bento Shop Game Dev
+- Zidan3 - Game asset creation (boss room) in "Ma No Tomo"
 
 ### Moderation Team
 
@@ -105,6 +110,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Huzzah - says 'Huzzah' a lot
 - Schrodinger
 - Atsuyas
+- Saitô
 
 ### Secretaries
 
@@ -120,6 +126,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - ソーランSoran - daily translation of messages
 - kurapan
 - Atsuyas
+- Hyourinmaru
 
 ### Twitter Team
 
@@ -134,6 +141,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Lucas Yeo
 - Callme\_Luthfi
 - Arvenn
+- Saitô
 
 ### Video Production Team
 
@@ -150,10 +158,11 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Jesse Zong - Frontend Website Designer
 - Zapple - Backend Development & Frontend contributions
 - Rhyolite
-- AreYouW - Heavy backend development and Frontend contributions
+- AreYouW - Heavy backend development and Frontend contributions, system administration
 - Ringo - Lots of frontend work
-- DuongTyler - Small bits of backend work, helped coordinate with other teams
-- Laska - frontend shenanigans
+- DuongTyler - Backend work and small frontend contributions, helped coordinate with other teams, system administartion
+- Laska - Frontend shenanigans
+- Kuroni - Frontend development
 
 ### Writing Team
 

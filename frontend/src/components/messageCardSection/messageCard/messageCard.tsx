@@ -10,6 +10,7 @@ import CardStyle3 from "../../../assets/cards/card3.png";
 import DisplayedLanguage from "../../../models/language";
 import {ReactComponent as TranslateBotan} from "../../../assets/icons/translateIcon.svg";
 import "./messageCard.css";
+import { Twemoji } from 'react-emoji-render';
 
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
@@ -113,7 +114,8 @@ class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
                     <div className="clear"/>
                 </div>
                 <div className="message-card-footer">
-                    {this.message.username} {this.flag}
+                    {this.message.username} 
+                    <Twemoji text={this.flag} />
                 </div>
                 {this.hasTlMsg &&
                 <TranslateBotan className="message-card-translate" onMouseDown={this.toggleCurrentLanguage} />
