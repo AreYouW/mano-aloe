@@ -1,7 +1,7 @@
 import React from "react";
 import BaseCard, {BaseCardProps, BaseCardState} from "./../../shared/baseCard/baseCard";
 import {Game} from "../../../models/game";
-import { ExternalLink } from "../../../models/url";
+import {ExternalLink, linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";
@@ -48,7 +48,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     }
 
     checkIfThumbnailPresent(): boolean {
-        return this.props.object.thumbnail.toString() !== "";
+        return linkToString(this.props.object.thumbnail) !== "";
     }
 
     renderThumbnailPlaceholder(): JSX.Element {
@@ -64,7 +64,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
             <div className="game-thumbnail">
                 {this.checkIfThumbnailPresent() ?
                     this.renderThumbnailPlaceholder() :
-                    <img alt={this.props.object.gameLink.toString()} src={this.props.object.thumbnail.toString()}/>
+                    <img alt={linkToString(this.props.object.gameLink)} src={linkToString(this.props.object.thumbnail)}/>
                 }
             </div>
         )
