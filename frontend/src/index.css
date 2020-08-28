@@ -9,3 +9,15 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+    color: white;
+    text-decoration-line: underline;
+    text-decoration-color: rgba(255, 255, 255, 0);
+
+    transition: all 0.1s ease;
+}
+
+a:hover {
+    text-decoration-color: rgba(255, 255, 255, 1);
+}
