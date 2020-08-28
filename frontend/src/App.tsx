@@ -55,6 +55,9 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                         we've organized a site full of messages that your fans have sent you!
                                         On behalf of every Manotomo out there, welcome back!
                                     </p>
+                                    <p>アロエさん、カムバックのお祝いに。
+                                        ファンからのメッセージを集めたサイトを作りました。
+                                        魔の友の代表として、おかえりなさい！</p>
                                 </div>
                             </div>
                             <AnchorLink offset='100' href='#anchor'>
