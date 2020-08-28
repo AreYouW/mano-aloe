@@ -51,9 +51,9 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                 <h1 className="community-message-header">A Community Message for Aloe</h1>
                                 <div className="community-message-body">
                                     <p>
-                                        Dear Aloe, in celebration of your return, we've organized a community full of
-                                        amazing fans to show our support! On behalf of everybody from the M.A.S.S.
-                                        community, welcome back!
+                                        Dear Aloe, in celebration of your return,
+                                        we've organized a site full of messages that your fans have sent you!
+                                        On behalf of every Manotomo out there, welcome back!
                                     </p>
                                 </div>
                             </div>
