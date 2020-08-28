@@ -4,6 +4,18 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 
 ## Contributors
 
+### Website Team
+
+- Kyuubei - Web Design
+- Jesse Zong - Frontend Website Designer
+- Zapple - Backend Development & Frontend contributions
+- Rhyolite
+- AreYouW - Heavy backend development and Frontend contributions, system administration
+- Ringo - Lots of frontend work
+- DuongTyler - Backend work and small frontend contributions, helped coordinate with other teams, system administartion
+- Laska - Frontend shenanigans
+- Kuroni - Frontend development
+
 ### Artwork Team
 
 - Akatadaiyo - Game character design (manotomo slime)
@@ -34,6 +46,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Warabii
 - Plus0ne - Fan Art, Fan Animation, Osu! Skin
 - Zidan3 - Game asset creation in "Ma No Tomo"
+- Porukana - Art assets for Aloe Bento game
 
 ### Audio Team
 
@@ -151,18 +164,6 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Disty - Render work
 - BadGrammar - Modeling and Texturing
 - .grofA - 3D Textures and Modeling
-
-### Website Team
-
-- Kyuubei - Web Design
-- Jesse Zong - Frontend Website Designer
-- Zapple - Backend Development & Frontend contributions
-- Rhyolite
-- AreYouW - Heavy backend development and Frontend contributions, system administration
-- Ringo - Lots of frontend work
-- DuongTyler - Backend work and small frontend contributions, helped coordinate with other teams, system administartion
-- Laska - Frontend shenanigans
-- Kuroni - Frontend development
 
 ### Writing Team
 
