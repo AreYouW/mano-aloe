@@ -1,6 +1,7 @@
 import React from "react";
 import BaseCard, {BaseCardProps, BaseCardState} from "./../../shared/baseCard/baseCard";
 import {Game} from "../../../models/game";
+import { ExternalLink } from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";
@@ -45,15 +46,15 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
         this.setState({renderGame: !this.state.renderGame})
     }
 
-    renderGameThumbnail(url: URL) {
+    renderGameThumbnail(url: ExternalLink) {
         return(
             //for when the thumbnail will be available
-            // <img alt={this.props.object.gameLink.toString()} src={this.props.object.thumbnail.toString()}/>
+            // <img alt={linkToString(this.props.object.gameLink)} src={linkToString(this.props.object.thumbnail)}/>
             <div className="game-placeholder"/>
         )
     }
 
-    renderGameWindow(gameURl: URL): JSX.Element {
+    renderGameWindow(gameURl: ExternalLink): JSX.Element {
         return(
             <GameWindow gameURL={gameURl} close={this.toggleGame.bind(this)}/>
         )

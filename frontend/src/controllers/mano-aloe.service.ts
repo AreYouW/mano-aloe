@@ -1,7 +1,7 @@
-import {Message} from "../models/message";
+import {Message, messageFromJson} from "../models/message";
 import {CountResponse, GalleryResponse, GamesResponse, MessageResponse} from "../models/response";
-import {Game} from "../models/game";
-import {Artwork} from "../models/artwork";
+import {Game, gameFromJson} from "../models/game";
+import {Artwork, artworkFromJson} from "../models/artwork";
 
 export default class ManoAloeService {
     private readonly apiURL: string;
@@ -23,13 +23,13 @@ export default class ManoAloeService {
             })
     }
 
-    public getMessage(messageID: number): Promise<Message | null> {
+    public getMessage(messageID: number): Promise<Message> {
         return fetch(this.apiURL + 'messages/' + messageID)
             .then((res: { json: () => any; }) => {
                 return res.json();
             })
             .then((apiResponse: MessageResponse) => {
-                return apiResponse.messages[0];
+                return messageFromJson(apiResponse.messages[0]);
             })
             .catch((error: Error) => {
                 throw error;
@@ -42,7 +42,7 @@ export default class ManoAloeService {
                 return res.json();
             })
             .then((apiResponse: MessageResponse) => {
-                return apiResponse.messages;
+                return apiResponse.messages.map(messageFromJson);
             })
             .catch((error: Error) => {
                 throw error;
@@ -55,7 +55,7 @@ export default class ManoAloeService {
                 return res.json();
             })
             .then((apiResponse: MessageResponse) => {
-                return apiResponse.messages;
+                return apiResponse.messages.map(messageFromJson);
             })
             .catch((error: Error) => {
                 throw error;
@@ -72,7 +72,7 @@ export default class ManoAloeService {
                 return res.json();
             })
             .then((apiResponse: GamesResponse) => {
-                return apiResponse.games;
+                return apiResponse.games.map(gameFromJson);
             })
             .catch((error: Error) => {
                 throw error;
@@ -89,7 +89,7 @@ export default class ManoAloeService {
                 return res.json();
             })
             .then((apiResponse: GalleryResponse) => {
-                return apiResponse.gallery;
+                return apiResponse.gallery.map(artworkFromJson);
             })
             .catch((error: Error) => {
                 throw error;

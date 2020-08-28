@@ -2,9 +2,10 @@ import React from 'react';
 import './game.css'
 import {IconButton} from "@material-ui/core";
 import {Cancel} from "@material-ui/icons";
+import { linkToString, ExternalLink } from '../../models/url';
 
 export interface GameWindowProps {
-    gameURL: URL;
+    gameURL: ExternalLink;
     close: () => void;
 }
 
@@ -20,7 +21,7 @@ export default class GameWindow extends React.Component<GameWindowProps, GameWin
 
     renderGame(): JSX.Element {
         return (
-            <iframe className="game-tag" src={this.props.gameURL.toString()}/>
+            <iframe className="game-tag" src={linkToString(this.props.gameURL)}/>
         )
     }
 
