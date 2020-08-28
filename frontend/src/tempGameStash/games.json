@@ -1,14 +1,6 @@
 [
   {
     "gameID": "1",
-    "title": "ManoSnek",
-    "description": "The classic Snake, with bonus features and more succubi. Defend yourself with song and collect as big a train of Manotomo as you can!",
-    "thumbnail": "https://kingofferrets.github.io/ManoSnek/",
-    "gitLink": "https://kingofferrets.github.io/ManoSnek/",
-    "gameLink": "https://kingofferrets.github.io/ManoSnek/"
-  },
-  {
-    "gameID": "3",
     "title": "Journey To Hololive",
     "description": "Help Aloe to leave the demonic realm and reach her goal of joining Hololive. It is a thorny path, but with your support she may just make it to the end.",
     "thumbnail": "https://iskorsukov.github.io/JourneyToHololive/",
@@ -17,10 +9,27 @@
   },
   {
     "gameID": "2",
+    "title": "Mano O Mano",
+    "description": "Help Aloe serve as many tasty bento boxes as you can in the Aloe's Bento Shop!",
+    "thumbnail": "https://jinkiyoshi.github.io/MOMWebGLBuild/",
+    "gitLink": "https://jinkiyoshi.github.io/MOMWebGLBuild/",
+    "gameLink": "https://jinkiyoshi.github.io/MOMWebGLBuild/"
+  },
+  {
+    "gameID": "3",
+    "title": "ManoSnek",
+    "description": "The classic Snake, with bonus features and more succubi. Defend yourself with song and collect as big a train of Manotomo as you can!",
+    "thumbnail": "https://kingofferrets.github.io/ManoSnek/",
+    "gitLink": "https://kingofferrets.github.io/ManoSnek/",
+    "gameLink": "https://kingofferrets.github.io/ManoSnek/"
+  },
+  {
+    "gameID": "4",
     "title": "Aloe's Bento Shop",
     "description": "Help Aloe serve as many tasty bento boxes as you can in the Aloe's Bento Shop!",
     "thumbnail": "https://xxareo.github.io/",
     "gitLink": "https://xxareo.github.io/",
     "gameLink": "https://xxareo.github.io/"
   }
+
 ]
