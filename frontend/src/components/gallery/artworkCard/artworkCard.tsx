@@ -1,7 +1,14 @@
 import React from 'react';
+import classNames from 'classnames';
 import handleViewport from 'react-in-viewport';
 import { Artwork } from '../../../models/artwork';
 import './artworkCard.css';
+
+enum ImageLoadingState {
+    NotLoaded,
+    Loading,
+    Loaded,
+}
 
 interface ArtworkCardProps {
     artwork: Artwork,
@@ -9,30 +16,45 @@ interface ArtworkCardProps {
 }
 
 interface ArtworkCardState {
-    image: string,
+    loadingState: ImageLoadingState,
 }
 
 class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
     private readonly artwork: Artwork;
+    private imageElement: HTMLImageElement;
 
     constructor(props: ArtworkCardProps) {
         super(props);
         this.artwork = props.artwork;
+        this.imageElement = document.createElement("img");
+
+        this.imageLoaded = this.imageLoaded.bind(this);
     }
 
     state: ArtworkCardState = {
-        image: "",
+        loadingState: ImageLoadingState.NotLoaded,
+    }
+
+    private imageLoaded() {
+        this.setState({
+            loadingState: ImageLoadingState.Loaded,
+        });
+
+        this.imageElement.removeEventListener("load", this.imageLoaded);
     }
 
     private setImage() {
-        if (this.props.inViewport && this.state.image === "") {
+        if (this.props.inViewport && this.state.loadingState === ImageLoadingState.NotLoaded) {
+            this.imageElement.src = this.artwork.artworkLink.toString();
+            this.imageElement.addEventListener("load", this.imageLoaded);
+
             this.setState({
-                image: this.artwork.artworkLink.toString(),
+                loadingState: ImageLoadingState.Loading,
             });
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.setImage();
     }
 
@@ -41,16 +63,25 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
     }
 
     render() {
+        const hasLoaded = this.state.loadingState === ImageLoadingState.Loaded;
+        const artworkLink = this.artwork.artworkLink.toString();
+        const backgroundImage = hasLoaded ? `url("${artworkLink}")` : "none";
+
         return (
             <div className="artwork-card">
                 <div className="artwork-card-img">
-                    {/* <div className="placeholder"></div> */}
-                    <div className="image" style={{
-                        backgroundImage: this.state.image === "" ? "none" : `url("${this.state.image}")`,
-                    }}></div>
+                    <div className="effects" style={{ backgroundImage }}></div>
+                    <div className={classNames("placeholder", {
+                        "loaded": hasLoaded,
+                    })}></div>
+                    <div className={classNames("image", {
+                        "loaded": hasLoaded,
+                    })}>
+                        <img src={hasLoaded ? artworkLink : ""} alt={this.artwork.title} />
+                    </div>
                 </div>
                 <div className="artwork-card-footer">
-                    <div className="title"><a href={this.artwork.artworkLink.toString()}>{this.artwork.title}</a></div>
+                    <div className="title">{this.artwork.title}</div>
                     <div className="artist"><a href={this.artwork.artistLink.toString()}>{this.artwork.username}</a></div>
                 </div>
             </div>
