@@ -11,7 +11,7 @@
 }
 
 .artwork-card-img {
-    height: var(--card-size);
+    height: var(--card-height);
     position: relative;
 }
 
