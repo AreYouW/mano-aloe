@@ -99,13 +99,13 @@ class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
         return (
             <div className="message-card" style={rootStyles}>
                 <div className="message-card-text-container">
-                    <div className={classNames("message-baseCard-text", {
+                    <div className={classNames("message-card-text", {
                         "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
                     })}>
                         <div>{this.message.orig_msg}</div>
                     </div>
                     {this.hasTlMsg &&
-                    <div className={classNames("message-baseCard-text", {
+                    <div className={classNames("message-card-text", {
                         "active-message": this.state.currentLanguage === DisplayedLanguage.Japanese,
                     })}>
                         <div>{this.message.tl_msg}</div>
