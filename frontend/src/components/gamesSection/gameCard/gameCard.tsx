@@ -4,7 +4,8 @@ import {Game} from "../../../models/game";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";
-import {PlayCircleOutline} from "@material-ui/icons";
+import {Camera, Image, ImageRounded, PlayCircleOutline} from "@material-ui/icons";
+import Icon from "@material-ui/core/Icon";
 
 export interface GameCardProps extends BaseCardProps<Game> {
 }
@@ -45,17 +46,32 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
         this.setState({renderGame: !this.state.renderGame})
     }
 
-    renderGameThumbnail(url: URL) {
-        return(
-            //for when the thumbnail will be available
-            // <img alt={this.props.object.gameLink.toString()} src={this.props.object.thumbnail.toString()}/>
-            <div className="game-placeholder"/>
+    checkIfThumbnailPresent(): boolean {
+        return this.props.object.thumbnail.toString() !== "";
+    }
+
+    renderThumbnailPlaceholder(): JSX.Element {
+        return (
+            <div className="game-thumbnail-placeholder center">
+                <ImageRounded style={{fontSize: 50, color: 'white'}}/>
+            </div>
         )
     }
 
-    renderGameWindow(gameURl: URL): JSX.Element {
+    renderGameThumbnail(): JSX.Element {
+        return (
+            <div className="game-thumbnail">
+                {this.checkIfThumbnailPresent() ?
+                    this.renderThumbnailPlaceholder() :
+                    <img alt={this.props.object.gameLink.toString()} src={this.props.object.thumbnail.toString()}/>
+                }
+            </div>
+        )
+    }
+
+    renderGameWindow(): JSX.Element {
         return(
-            <GameWindow gameURL={gameURl} close={this.toggleGame.bind(this)}/>
+            <GameWindow gameURL={this.props.object.gameLink} close={this.toggleGame.bind(this)}/>
         )
     }
 
@@ -68,10 +84,10 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
                         <PlayCircleOutline style={{fontSize: 50, color: 'white'}}/>
                     </IconButton>
                 </div>
-                {this.renderGameThumbnail(this.props.object.thumbnail)}
+                {this.renderGameThumbnail()}
                 <div className="game-description">{this.props.object.description}</div>
                 {this.state.renderGame ?
-                    this.renderGameWindow(this.props.object.gameLink) :
+                    this.renderGameWindow() :
                     <div/>}
             </div>
         )
