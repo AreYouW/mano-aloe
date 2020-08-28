@@ -1,11 +1,12 @@
 import React from "react";
 import BaseCard, {BaseCardProps, BaseCardState} from "./../../shared/baseCard/baseCard";
 import {Game} from "../../../models/game";
-import { ExternalLink } from "../../../models/url";
+import {ExternalLink, linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";
-import {PlayCircleOutline} from "@material-ui/icons";
+import {Camera, Image, ImageRounded, PlayCircleOutline} from "@material-ui/icons";
+import Icon from "@material-ui/core/Icon";
 
 export interface GameCardProps extends BaseCardProps<Game> {
 }
@@ -46,17 +47,32 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
         this.setState({renderGame: !this.state.renderGame})
     }
 
-    renderGameThumbnail(url: ExternalLink) {
-        return(
-            //for when the thumbnail will be available
-            // <img alt={linkToString(this.props.object.gameLink)} src={linkToString(this.props.object.thumbnail)}/>
-            <div className="game-placeholder"/>
+    checkIfThumbnailPresent(): boolean {
+        return linkToString(this.props.object.thumbnail) !== "";
+    }
+
+    renderThumbnailPlaceholder(): JSX.Element {
+        return (
+            <div className="game-thumbnail-placeholder center">
+                <ImageRounded style={{fontSize: 50, color: 'white'}}/>
+            </div>
         )
     }
 
-    renderGameWindow(gameURl: ExternalLink): JSX.Element {
+    renderGameThumbnail(): JSX.Element {
+        return (
+            <div className="game-thumbnail">
+                {this.checkIfThumbnailPresent() ?
+                    this.renderThumbnailPlaceholder() :
+                    <img alt={linkToString(this.props.object.gameLink)} src={linkToString(this.props.object.thumbnail)}/>
+                }
+            </div>
+        )
+    }
+
+    renderGameWindow(): JSX.Element {
         return(
-            <GameWindow gameURL={gameURl} close={this.toggleGame.bind(this)}/>
+            <GameWindow gameURL={this.props.object.gameLink} close={this.toggleGame.bind(this)}/>
         )
     }
 
@@ -69,10 +85,10 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
                         <PlayCircleOutline style={{fontSize: 50, color: 'white'}}/>
                     </IconButton>
                 </div>
-                {this.renderGameThumbnail(this.props.object.thumbnail)}
+                {this.renderGameThumbnail()}
                 <div className="game-description">{this.props.object.description}</div>
                 {this.state.renderGame ?
-                    this.renderGameWindow(this.props.object.gameLink) :
+                    this.renderGameWindow() :
                     <div/>}
             </div>
         )
