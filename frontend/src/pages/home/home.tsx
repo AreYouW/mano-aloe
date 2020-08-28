@@ -65,7 +65,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 								<div className="notice-center">
 									<div className="notice-container">
 										<a href="https://manoaloe.jetri.co">
-											<div className="notice-content">Check out dragonjet's site for more messages!</div>
+											<div className="notice-content">Check out dragonjet's site too!</div>
 										</a>
 									</div>
 								</div>
@@ -77,7 +77,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 								<div className="notice-center">
 									<div className="notice-container">
 										<div className="notice-content">
-											Those were all the messages we managed to collect, but there were many more sent your way! Please check <a href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> and <a href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> on Twitter, or visit <a href="https://manoaloe.jetri.co/">dragonjet</a>'s site for the rest!
+											Those were all the messages we managed to collect, but there were many more sent your way! Please check <a href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> and <a href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> on Twitter, or visit <a href="https://manoaloe.jetri.co/">dragonjet</a>'s site!
 										</div>
 									</div>
 								</div>
@@ -88,7 +88,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()}
+                {this.state.loading ? 'Now Loading...' : this.renderMessageCardSection()}
             </div>
         )
     }
