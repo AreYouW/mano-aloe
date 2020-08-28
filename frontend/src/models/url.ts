@@ -14,7 +14,3 @@ export function stringToLink(link: string): ExternalLink {
 export function linkToString(link: ExternalLink): string {
     return link?.toString() ?? "";
 }
-
-export function linktoUrl(link: ExternalLink): URL {
-    return link ?? new URL("#", window.location.href);
-}
