@@ -1,26 +1,23 @@
-import {Message} from "./message";
-import {Game} from "./game";
-import {Artwork} from "./artwork";
+import {MessageJson} from "./message";
+import {GameJson} from "./game";
+import {ArtworkJson} from "./artwork";
 
 interface BaseResponse {
     status: string;
 }
 
 export interface MessageResponse extends BaseResponse {
-    messages: Message[];
+    messages: MessageJson[];
 }
 
 export interface GamesResponse extends BaseResponse {
-    games: Game[];
+    games: GameJson[];
 }
 
 export interface GalleryResponse extends BaseResponse {
-    gallery: Artwork[];
+    gallery: ArtworkJson[];
 }
 
 export interface CountResponse extends BaseResponse {
     count: number;
 }
-
-
-

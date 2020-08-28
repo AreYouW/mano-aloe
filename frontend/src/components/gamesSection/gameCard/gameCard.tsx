@@ -1,6 +1,7 @@
 import React from "react";
 import BaseCard, {BaseCardProps, BaseCardState} from "./../../shared/baseCard/baseCard";
 import {Game} from "../../../models/game";
+import { ExternalLink } from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";

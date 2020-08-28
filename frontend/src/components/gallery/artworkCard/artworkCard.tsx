@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import handleViewport from 'react-in-viewport';
 import { Artwork } from '../../../models/artwork';
 import './artworkCard.css';
+import { linkToString } from '../../../models/url';
 
 enum ImageLoadingState {
     NotLoaded,
@@ -45,7 +46,7 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
 
     private setImage() {
         if (this.props.inViewport && this.state.loadingState === ImageLoadingState.NotLoaded) {
-            this.imageElement.src = this.artwork.artworkLink.toString();
+            this.imageElement.src = linkToString(this.artwork.artworkLink);
             this.imageElement.addEventListener("load", this.imageLoaded);
 
             this.setState({
@@ -64,7 +65,7 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
 
     render() {
         const hasLoaded = this.state.loadingState === ImageLoadingState.Loaded;
-        const artworkLink = this.artwork.artworkLink.toString();
+        const artworkLink = linkToString(this.artwork.artworkLink);
         const backgroundImage = hasLoaded ? `url("${artworkLink}")` : "none";
 
         return (
@@ -82,7 +83,7 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
                 </div>
                 <div className="artwork-card-footer">
                     <div className="title">{this.artwork.title}</div>
-                    <div className="artist"><a href={this.artwork.artistLink.toString()}>{this.artwork.username}</a></div>
+                    <div className="artist"><a href={linkToString(this.artwork.artistLink)}>{this.artwork.username}</a></div>
                 </div>
             </div>
         )
