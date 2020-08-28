@@ -1,8 +1,15 @@
 .gallery-section {
-    --card-size: 550px;
+    --card-height: 550px;
+    --card-width: var(--card-height);
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--card-size), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
     grid-gap: 1rem;
     gap: 1rem;
+}
+
+@media (max-width: 650px) {
+    .gallery-section {
+        --card-width: 100%;
+    }
 }
