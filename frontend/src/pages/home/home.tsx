@@ -88,7 +88,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                {this.state.loading ? 'Loading Placeholder' : this.renderMessageCardSection()}
+                {this.state.loading ? 'Now Loading...' : this.renderMessageCardSection()}
             </div>
         )
     }
