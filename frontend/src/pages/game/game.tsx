@@ -51,7 +51,15 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
     render() {
         return (
             <section id='anchor'>
+                <div className="separator"/>
                 <div className="wrapper-overlay">
+                    <div className="notice-center">
+                        <div className="notice-container">
+                            <div className="notice-content">
+                                ATTENTION!!! WORK IN PROGRESS!!!
+                            </div>
+                        </div>
+                    </div>
                     <GameSection data={this.state.games}/>
                 </div>
             </section>

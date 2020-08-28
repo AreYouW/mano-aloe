@@ -56,6 +56,14 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
     render() {
         return (
             <section id='anchor'>
+                <div className="separator"/>
+                <div className="notice-center">
+                    <div className="notice-container">
+                        <div className="notice-content">
+                            ATTENTION!!! WORK IN PROGRESS!!!
+                        </div>
+                    </div>
+                </div>
                 <div className="wrapper-overlay">
                     {this.state.loading ? 'Loading Placeholder' : this.renderGallerySection()}
                 </div>
