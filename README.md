@@ -24,7 +24,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - DrawTheOmega - Fan Art
 - Plus0ne - Fan Art and Animation
 - Kyuubei - Artwork for the web team
-- Matthew Valencia - Message card designs and Fan Art
+- Hiroki - Message card designs and Fan Art
 - BaronVonSheep
 - RavenTengu - Fan Art
 - .grofA - 3D Textures
@@ -88,7 +88,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - TakaRex519
 - DrawTheOmega
 - Kyuubei
-- Matthew Valencia
+- Hiroki
 - Senpai - Headpats
 - VintageGhost
 - Nephilimus
@@ -132,7 +132,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 
 - DrawTheOmega
 - Kyuubei
-- Matthew Valencia
+- Hiroki
 - Nephilimus
 - Tweeter
 - Mr.Mech
