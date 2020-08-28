@@ -1,5 +1,5 @@
 import React from 'react';
-import {LanguageContext, LanguageContextValue} from "../../languageSwitch/languageContext";
+import {LanguageContext, LanguageContextValue} from "../../../components/languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
 
 export interface BaseSectionProps<T> {

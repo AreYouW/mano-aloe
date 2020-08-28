@@ -4,7 +4,9 @@ import {Message} from "../../models/message";
 import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './home.css'
+import './home.css';
+import Spinner from "../../shared/components/spinner/spinner";
+import {CSSTransition} from "react-transition-group";
 
 export interface HomePageProps {
 
@@ -25,7 +27,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
 
     state: HomePageState = {
         loading: true,
-        messages: []
+        messages: [],
     }
 
     componentDidMount() {
@@ -62,26 +64,33 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                             allowFullScreen/>
                 </div>
                 <div className="separator"/>
-								<div className="notice-center">
-									<div className="notice-container">
-										<a href="https://manoaloe.jetri.co">
-											<div className="notice-content">Check out dragonjet's site too!</div>
-										</a>
-									</div>
-								</div>
+                <div className="notice-center">
+                    <div className="notice-container">
+                        <a href="https://manoaloe.jetri.co">
+                            <div className="notice-content">Check out dragonjet's site too!</div>
+                        </a>
+                    </div>
+                </div>
                 <section id='anchor'>
                     <div className="wrapper-overlay">
                         <MessageCardSection data={this.state.messages}/>
                     </div>
                 </section>
-								<div className="notice-center">
-									<div className="notice-container">
-										<div className="notice-content">
-                                            <p>Those were all the messages we managed to collect, but there were many more sent your way! Please check <a href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> and <a href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> on Twitter, or visit <a href="https://manoaloe.jetri.co/">dragonjet</a>'s site!</p>
-                                            <p>これがすべての取集したメッセージですが、他にもたくさん送りましたよ！<a href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> と <a href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> をツイッターでチェックしてくださいね！ そして<a href="https://manoaloe.jetri.co/">dragonjet</a>のサイトでもメッセージが収集してあります！</p>
-										</div>
-									</div>
-								</div>
+                <div className="notice-center">
+                    <div className="notice-container">
+                        <div className="notice-content">
+                            <p>Those were all the messages we managed to collect, but there were many more sent your
+                                way! Please check <a
+                                    href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> and <a
+                                    href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> on
+                                Twitter, or visit <a href="https://manoaloe.jetri.co/">dragonjet</a>'s site!</p>
+                            <p>これがすべての取集したメッセージですが、他にもたくさん送りましたよ！<a
+                                href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> と <a
+                                href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> をツイッターでチェックしてくださいね！
+                                そして<a href="https://manoaloe.jetri.co/">dragonjet</a>のサイトでもメッセージが収集してあります！</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -89,7 +98,15 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                {this.state.loading ? 'Now Loading...' : this.renderMessageCardSection()}
+                <CSSTransition
+                    in={this.state.loading}
+                    timeout={300}
+                    classNames="animation"
+                    unmountOnExit
+                >
+                    <Spinner/>
+                </CSSTransition>
+                {this.state.loading ? <Spinner/> : this.renderMessageCardSection()}
             </div>
         )
     }

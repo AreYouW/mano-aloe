@@ -1,4 +1,4 @@
-import BaseSection, {BaseSectionProps, BaseSectionState} from "../shared/baseSection/baseSection";
+import BaseSection, {BaseSectionProps, BaseSectionState} from "../../shared/components/baseSection/baseSection";
 import {Game} from "../../models/game";
 import DisplayedLanguage from "../../models/language";
 import React from "react";
