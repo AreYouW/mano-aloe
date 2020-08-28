@@ -56,7 +56,12 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                     <div className="notice-center">
                         <div className="notice-container">
                             <div className="notice-content">
+                                <p>
                                 ATTENTION!!! WORK IN PROGRESS!!!
+                                </p>
+                                <p>
+                                ゲームはまだ開発中です。
+                                </p>
                             </div>
                         </div>
                     </div>
