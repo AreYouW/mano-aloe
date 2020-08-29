@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Switch} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import ScrollDownIcon from './assets/arrow-down.png';
+import ScrollDownIcon from './assets/miscellaneous/arrow-down.png';
 
 import Navbar from './components/navbar'
 import HomePage from './pages/home/home'
