@@ -13,7 +13,7 @@ body {
 
 .notice-center {
     display: flex;
-		justify-content: center;
+    justify-content: center;
 }
 
 .notice-content {
