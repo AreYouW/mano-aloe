@@ -1,17 +1,18 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import {Route, Switch} from 'react-router-dom';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import ScrollDownIcon from './assets/miscellaneous/arrow-down.png';
 
-import Navbar from './components/navbar'
-import HomePage from './pages/home/home'
-import GamePage from './pages/game/game'
-import ArtPage from './pages/gallery/art'
+import Navbar from './components/navbar';
 import './App.css';
 
 import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
 import DisplayedLanguage from "./models/language";
+
+const HomePage = lazy(() => import('./pages/home/home'));
+const GamePage = lazy(() => import('./pages/game/game'));
+const ArtPage = lazy(() => import('./pages/gallery/art'));
 
 interface AppProps {
 }
@@ -65,11 +66,13 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                             </AnchorLink>
                         </header>
                     </div>
-                    <Switch>
-                        <Route path='/' component={HomePage} exact/>
-                        <Route path='/game' component={GamePage}/>
-                        <Route path='/art' component={ArtPage}/>
-                    </Switch>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Switch>
+                            <Route path='/' component={HomePage} exact/>
+                            <Route path='/game' component={GamePage}/>
+                            <Route path='/art' component={ArtPage}/>
+                        </Switch>
+                    </Suspense>
                 </main>
             </LanguageContext.Provider>
         );
