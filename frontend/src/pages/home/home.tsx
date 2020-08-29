@@ -5,6 +5,7 @@ import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
 import './home.css';
+import '../../shared/animation/fade.css'
 import Spinner from "../../shared/components/spinner/spinner";
 import {CSSTransition} from "react-transition-group";
 
@@ -106,7 +107,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 >
                     <Spinner/>
                 </CSSTransition>
-                {this.state.loading ? <Spinner/> : this.renderMessageCardSection()}
+                {/*{this.state.loading ? <Spinner/> : this.renderMessageCardSection()}*/}
             </div>
         )
     }
