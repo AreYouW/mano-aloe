@@ -76,3 +76,10 @@
 .artwork-card-footer > .artist {
     margin-top: 10px;
 }
+
+@media (max-width: 500px) {
+    .artwork-card-img > .effects {
+        display: none;
+        filter: none;
+    }
+}
