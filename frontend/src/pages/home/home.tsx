@@ -5,9 +5,8 @@ import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
 import './home.css';
-import '../../shared/animation/fade.css'
 import Spinner from "../../shared/components/spinner/spinner";
-import {CSSTransition} from "react-transition-group";
+import Fade from "../../shared/animation/fade";
 
 export interface HomePageProps {
 
@@ -99,15 +98,8 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                <CSSTransition
-                    in={this.state.loading}
-                    timeout={300}
-                    classNames="animation"
-                    unmountOnExit
-                >
-                    <Spinner/>
-                </CSSTransition>
-                {/*{this.state.loading ? <Spinner/> : this.renderMessageCardSection()}*/}
+                <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
+                {this.renderMessageCardSection()}
             </div>
         )
     }

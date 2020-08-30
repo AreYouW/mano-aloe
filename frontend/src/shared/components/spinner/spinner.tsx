@@ -13,7 +13,6 @@ export default class Spinner extends React.Component<SpinnerProps, SpinnerState>
         super(props);
     }
 
-
     render(): JSX.Element {
         return (
             <div>
@@ -22,5 +21,4 @@ export default class Spinner extends React.Component<SpinnerProps, SpinnerState>
             </div>
         )
     }
-
 }
