@@ -1,0 +1,23 @@
+.base-section {
+    column-width: auto;
+    column-count: 1;
+    column-gap: 1rem;
+}
+
+@media (min-width: 900px) {
+    .base-section {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1500px) {
+    .base-section {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1900px) {
+    .base-section {
+        column-count: 4;
+    }
+}

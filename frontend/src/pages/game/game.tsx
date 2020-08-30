@@ -1,7 +1,7 @@
 import React from 'react';
 import {Game} from "../../models/game";
 import ManoAloeService from "../../controllers/mano-aloe.service";
-import '../../components/gamesSection/game.css'
+import '../../components/gamesSection/gameSection.css'
 import games from './../../tempGameStash/games.json'
 import GameSection from "../../components/gamesSection/gameSection";
 

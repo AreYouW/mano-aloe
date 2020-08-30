@@ -1,5 +1,5 @@
 import React from 'react';
-import './game.css'
+import './gameSection.css'
 import {IconButton} from "@material-ui/core";
 import {Cancel} from "@material-ui/icons";
 import { linkToString, ExternalLink } from '../../models/url';
