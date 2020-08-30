@@ -3,31 +3,31 @@
     "gameID": "1",
     "title": "Journey To Hololive",
     "description": "Help Aloe to leave the demonic realm and reach her goal of joining Hololive. It is a thorny path, but with your support she may just make it to the end.",
-    "thumbnail": "https://iskorsukov.github.io/JourneyToHololive/",
+    "thumbnail": "",
     "gitLink": "https://iskorsukov.github.io/JourneyToHololive/",
     "gameLink": "https://iskorsukov.github.io/JourneyToHololive/"
   },
   {
     "gameID": "2",
-    "title": "Mano O Mano",
-    "description": "Help Aloe serve as many tasty bento boxes as you can in the Aloe's Bento Shop!",
-    "thumbnail": "https://jinkiyoshi.github.io/MOMWebGLBuild/",
-    "gitLink": "https://jinkiyoshi.github.io/MOMWebGLBuild/",
-    "gameLink": "https://jinkiyoshi.github.io/MOMWebGLBuild/"
+    "title": "Ma No Tomo",
+    "description": "A 2D Puzzle Platformer with an exciting twist! Solve puzzles! Unlock amazing fanart! Challenge yourself and finish the game within the fastest possible time!",
+    "thumbnail": "https://cdn.discordapp.com/attachments/748891493330190377/749627379323764736/MaNoTomoGameThumbnail.JPG",
+    "gitLink": "https://jinkiyoshi.github.io/MaNoTomoGame/",
+    "gameLink": "https://jinkiyoshi.github.io/MaNoTomoGame/"
   },
   {
     "gameID": "3",
     "title": "ManoSnek",
-    "description": "The classic Snake, with bonus features and more succubi. Defend yourself with song and collect as big a train of Manotomo as you can!",
-    "thumbnail": "https://kingofferrets.github.io/ManoSnek/",
+    "description": "The classic Snake, with bonus features and more succubi. Collect as many manotomo as you can, and protect yourself from devilish fireballs with the power of music!",
+    "thumbnail": "https://cdn.discordapp.com/attachments/745482444748226671/749662808337154176/IMG_6174.JPG",
     "gitLink": "https://kingofferrets.github.io/ManoSnek/",
     "gameLink": "https://kingofferrets.github.io/ManoSnek/"
   },
   {
     "gameID": "4",
     "title": "Aloe's Bento Shop",
-    "description": "Help Aloe serve as many tasty bento boxes as you can in the Aloe's Bento Shop!",
-    "thumbnail": "https://xxareo.github.io/",
+    "description": "Help Aloe serve as many tasty bento boxes as you can in Aloe's Bento Shop!",
+    "thumbnail": "",
     "gitLink": "https://xxareo.github.io/",
     "gameLink": "https://xxareo.github.io/"
   }

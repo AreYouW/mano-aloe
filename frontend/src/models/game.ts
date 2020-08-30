@@ -3,7 +3,7 @@ import { stringToLink, ExternalLink, linkToString } from "./url";
 export interface Game {
     gameID: number;
     title: string;
-    thumbnail: ExternalLink;
+    thumbnail: string;
     description: string;
     gitLink: ExternalLink;
     gameLink: ExternalLink;
@@ -23,7 +23,7 @@ export function gameFromJson(json: GameJson): Game {
     return {
         gameID,
         title,
-        thumbnail: stringToLink(thumbnail),
+        thumbnail: thumbnail,
         description,
         gitLink: stringToLink(gitLink),
         gameLink: stringToLink(gameLink),
@@ -35,7 +35,7 @@ export function gameToJson(game: Game): GameJson {
     return {
         gameID,
         title,
-        thumbnail: linkToString(thumbnail),
+        thumbnail: thumbnail,
         description,
         gitLink: linkToString(gitLink),
         gameLink: linkToString(gameLink),

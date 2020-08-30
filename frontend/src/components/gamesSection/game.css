@@ -22,9 +22,15 @@
 
 .button-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 13%;
+    padding-top: 20%;
+    padding-left: 2%;
+}
+
+.button-right {
+    display: flex;
+    align-items: flex-end;
 }
 
 .game-text {
@@ -32,7 +38,8 @@
 }
 
 .game-description {
-    width: 400px;
+    max-width: 45vw;
+    min-width: 300px;
     margin: 0 auto;
     font-size: 20px;
     padding-top: 5%;
@@ -46,13 +53,35 @@
 }
 
 .game-thumbnail {
-    height: 30vh;
+    width: 100%;
     border-radius: 10px;
 }
 
-.game-thumbnail-placeholder {
-    height: 100%;
+.game-thumbnail-wrapper {
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
+    height: 100%;
+    max-width: 45vw;
+    max-height: 100%;
+}
+
+.gamecard-wrapper {
+    width: 45vw;
+}
+
+@media (max-width: 900px) {
+    .game-thumbnail-wrapper {
+        max-width: 80vw;
+    }
+    .gamecard-wrapper {
+        width: 90vw;
+    }
+}
+
+.game-thumbnail-placeholder {
+    width: 100%;
+    height: 50vh;
     background-color: black;
     border-radius: 10px;
     opacity: 0.5;
@@ -86,8 +115,12 @@
     opacity: 0.5;
 }
 
-.center {
+.game-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+    align-items: flex-start;
+    overflow: auto;
+    height: 100%;
 }
