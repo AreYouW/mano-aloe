@@ -86,7 +86,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
             <div>
                 <div className="button-row">
                     <div className="game-text">{this.props.object.title}</div>
-                    <div className="button-left">
+                    <div className="button-right">
                         <IconButton onClick={this.toggleGame}>
                             <PlayCircleOutline style={{fontSize: 50, color: 'white'}}/>
                         </IconButton>
