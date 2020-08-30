@@ -30,14 +30,17 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
 
     static getDerivedStateFromProps(props: FadeProps, state: FadeState): FadeState {
         let newState: FadeState = {
-            show: true,
+            show: state.show,
             style: {
                 opacity: state.style.opacity,
                 transition: state.style.transition
             }
         };
-        if(!props.mounted)
+        if(!props.mounted) {
             newState.style.opacity = 0;
+            return newState;
+        }
+        newState.show = true;
         return newState;
     }
 
@@ -71,6 +74,6 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     }
 
     render() {
-        return this.state.show && this.renderFade();
+        return this.state.show ? this.renderFade() : <div/>;
     }
 }
