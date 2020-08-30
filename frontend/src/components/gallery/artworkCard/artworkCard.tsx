@@ -71,7 +71,6 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
         return (
             <div className="artwork-card">
                 <div className="artwork-card-img">
-                    <div className="effects" style={{ backgroundImage }}></div>
                     <div className={classNames("placeholder", {
                         "loaded": hasLoaded,
                     })}></div>
