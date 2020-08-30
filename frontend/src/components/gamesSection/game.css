@@ -22,9 +22,15 @@
 
 .button-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 13%;
+    padding-top: 20%;
+    padding-left: 2%;
+}
+
+.button-left {
+    display: flex;
+    align-items: flex-end;
 }
 
 .game-text {

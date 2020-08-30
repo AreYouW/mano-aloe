@@ -5,7 +5,7 @@ import {ExternalLink, linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import './../game.css'
 import {IconButton} from "@material-ui/core";
-import {Camera, Image, ImageRounded, PlayCircleOutline} from "@material-ui/icons";
+import {Camera, Image, ImageRounded, PlayCircleOutline, Launch} from "@material-ui/icons";
 import Icon from "@material-ui/core/Icon";
 
 export interface GameCardProps extends BaseCardProps<Game> {
@@ -47,6 +47,10 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
         this.setState({renderGame: !this.state.renderGame})
     }
 
+    launchGameNewWindow(gameURL: string): void {
+        window.open(gameURL)
+    }
+
     checkIfThumbnailPresent(): boolean {
         return linkToString(this.props.object.thumbnail) !== "";
     }
@@ -77,13 +81,19 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     }
 
     renderGame(): JSX.Element {
+        const gameUrl = linkToString(this.props.object.gameLink);
         return (
             <div>
                 <div className="button-row">
                     <div className="game-text">{this.props.object.title}</div>
-                    <IconButton onClick={this.toggleGame}>
-                        <PlayCircleOutline style={{fontSize: 50, color: 'white'}}/>
-                    </IconButton>
+                    <div className="button-left">
+                        <IconButton onClick={this.toggleGame}>
+                            <PlayCircleOutline style={{fontSize: 50, color: 'white'}}/>
+                        </IconButton>
+                        <IconButton onClick={() => this.launchGameNewWindow(gameUrl)}>
+                            <Launch style={{fontSize: 50, color: 'white'}}/>
+                        </IconButton>
+                    </div>
                 </div>
                 {this.renderGameThumbnail()}
                 <div className="game-description">{this.props.object.description}</div>
