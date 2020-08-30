@@ -45,7 +45,15 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                 gameLink: new URL(game.gameLink),
             } as Game
         });
-        // this.setState({games: mappedGames, loading: false});
+        // TODO Comment out after
+        this.setState({games: mappedGames, loading: false});
+    }
+
+
+    renderGameSection() {
+        return (
+            <GameSection data={this.state.games}/>
+        )
     }
 
     render() {
@@ -65,7 +73,7 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                             </div>
                         </div>
                     </div>
-                    <GameSection data={this.state.games}/>
+                    {this.state.loading ? 'Loading...' : this.renderGameSection()}
                 </div>
             </section>
         )
