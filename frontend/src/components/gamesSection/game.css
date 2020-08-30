@@ -7,6 +7,7 @@
     left: 0;
     display: flex;
     flex-direction: column;
+    padding:5%;
 }
 
 .game-background {
@@ -86,8 +87,12 @@
     opacity: 0.5;
 }
 
-.center {
+.game-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1em;
+    align-items: flex-start;
+    overflow: auto;
+    height: 100%;
 }
