@@ -1,7 +1,7 @@
 import React from 'react';
 import {LanguageContext, LanguageContextValue} from "../../languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
-import '../../messageCardSection/messageCardLayout.css';
+import '../../gamesSection/game.css';
 
 export interface BaseSectionProps<T> {
     data: T[]
@@ -24,7 +24,8 @@ export default abstract class BaseSection<T> extends React.Component<BaseSection
                 {(value: LanguageContextValue) => {
                     const {language} = value;
                     return (
-                        <div className="messages-section">
+                        // Only games using this common class right now
+                        <div className="game-section">
                             {this.props.data.map((object: T, idx: number) => {
                                     return this.renderCard(object, idx % 3, language)
                                 }
