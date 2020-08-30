@@ -76,14 +76,6 @@ body {
     background-color: #dc4087;
 }
 
-.logo-tag-right {
-    float: right;
-    position: absolute;
-    right: 5vmin;
-    top: 20%;
-    z-index: 1000;
-}
-
 .anchor-link {
   position: absolute;
   bottom: 18%;

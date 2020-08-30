@@ -4,7 +4,7 @@ import CSS from "csstype";
 import CardStyle1 from "../../../assets/cards/card1.svg";
 import CardStyle2 from "../../../assets/cards/card2.png";
 import CardStyle3 from "../../../assets/cards/card3.png";
-import '../../messageCardSection/messageCard/messageCard.css';
+import './../../../components/messageCardSection/messageCard/messageCard.css';
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 

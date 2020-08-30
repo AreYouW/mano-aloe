@@ -1,5 +1,5 @@
 import React from "react";
-import BaseCard, {BaseCardProps, BaseCardState} from "./../../shared/baseCard/baseCard";
+import BaseCard, {BaseCardProps, BaseCardState} from "../../../shared/components/baseCard/baseCard";
 import {Game} from "../../../models/game";
 import {ExternalLink, linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";

@@ -1,7 +1,7 @@
 import React from 'react';
-import {LanguageContext, LanguageContextValue} from "../../languageSwitch/languageContext";
+import {LanguageContext, LanguageContextValue} from "../../../components/languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
-import '../../gamesSection/game.css';
+import './../../../components/gamesSection/game.css';
 
 export interface BaseSectionProps<T> {
     data: T[]
