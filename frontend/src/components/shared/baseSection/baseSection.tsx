@@ -1,6 +1,7 @@
 import React from 'react';
 import {LanguageContext, LanguageContextValue} from "../../languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
+import '../../messageCardSection/messageCardLayout.css';
 
 export interface BaseSectionProps<T> {
     data: T[]
