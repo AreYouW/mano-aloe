@@ -52,7 +52,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     }
 
     checkIfThumbnailPresent(): boolean {
-        return linkToString(this.props.object.thumbnail) !== "";
+        return this.props.object.thumbnail !== "";
     }
 
     renderThumbnailPlaceholder(): JSX.Element {
@@ -65,10 +65,10 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
 
     renderGameThumbnail(): JSX.Element {
         return (
-            <div className="game-thumbnail">
+            <div className="game-thumbnail-wrapper">
                 {this.checkIfThumbnailPresent() ?
-                    this.renderThumbnailPlaceholder() :
-                    <img alt={linkToString(this.props.object.gameLink)} src={linkToString(this.props.object.thumbnail)}/>
+                    <img className="game-thumbnail" alt={linkToString(this.props.object.gameLink)} src={this.props.object.thumbnail}/> :
+                    this.renderThumbnailPlaceholder()
                 }
             </div>
         )
@@ -83,7 +83,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     renderGame(): JSX.Element {
         const gameUrl = linkToString(this.props.object.gameLink);
         return (
-            <div>
+            <div className="gamecard-wrapper">
                 <div className="button-row">
                     <div className="game-text">{this.props.object.title}</div>
                     <div className="button-right">

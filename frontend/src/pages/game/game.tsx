@@ -40,7 +40,7 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                 gameID: parseInt(game.gameID),
                 title: game.title,
                 description: game.description,
-                thumbnail: new URL(game.thumbnail),
+                thumbnail: game.thumbnail,
                 gitLink: new URL(game.gitLink),
                 gameLink: new URL(game.gameLink),
             } as Game
