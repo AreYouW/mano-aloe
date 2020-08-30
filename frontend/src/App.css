@@ -3,12 +3,12 @@ body {
 }
 
 .notice-container {
-		background-image: url(assets/cards/card2.png);
-		background-size: cover;
+	background-image: url(assets/cards/card2.png);
+	background-size: cover;
     border-radius: 15px;
-		text-align: center;
-		margin: 2rem;
-		max-width: 800px;
+	text-align: center;
+	margin: 2rem;
+	max-width: 800px;
 }
 
 .notice-center {
@@ -17,11 +17,11 @@ body {
 }
 
 .notice-content {
-		padding: 2rem;
-		padding-top: 15%;
-		font-size: 20px;
-		color: #fff;
-		text-decoration: none;
+	padding: 2rem;
+	padding-top: 15%;
+	font-size: 20px;
+	color: #fff;
+	text-decoration: none;
 }
 
 .community-message-card {
@@ -39,29 +39,30 @@ body {
 }
 
 @media (max-height: 800px) {
-		/*Handle mobile layouts since everything is freaking tiny*/
-		.community-message-card {
-				margin-top: 12vh;
-		}
+	/*Handle mobile layouts since everything is freaking tiny*/
+	.community-message-card {
+		margin-top: 12vh;
+	}
 }
 
 @media (max-width: 900px) {
     .community-message-card {
-				margin-top: 25vh;
+		margin-top: 25vh;
         width: 90%;
     }
 }
 
 @media (min-width: 900px) {
     .community-message-card {
-        position: absolute;
-        left: 5vw;
+        position: relative;
+        left: -20vw;
     }
 }
 
 .community-message-header {
-    padding-top: 10%;
+    padding-top: 14%;
     justify-content: center;
+    font-size: 40px;
     text-align: center;
 }
 
@@ -86,10 +87,10 @@ body {
 }
 
 @media (max-height: 900px) {
-		/*If we can't get the damn thing to stay off card text, just hide the thing*/
-		.anchor-link {
-				opacity: 0;
-		}
+	/*If we can't get the damn thing to stay off card text, just hide the thing*/
+	.anchor-link {
+		opacity: 0;
+	}
 }
 
 .main {

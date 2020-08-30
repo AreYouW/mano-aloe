@@ -57,10 +57,10 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                         <div className="notice-container">
                             <div className="notice-content">
                                 <p>
-                                ATTENTION!!! WORK IN PROGRESS!!!
+                                Work in Progress! Game devs are still hard at work! Check back in a few days.
                                 </p>
                                 <p>
-                                ゲームはまだ開発中です。
+                                ゲームはまだ開発中です。ゲームデベロッパーは仕事に精を出しています！数日後、またチェックしてくださいね。
                                 </p>
                             </div>
                         </div>
