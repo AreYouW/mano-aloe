@@ -21,7 +21,7 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     }
 
     state: FadeState ={
-        show: true,
+        show: this.props.mounted,
         style: {
             opacity: 0,
             transition: 'all 2s ease',
