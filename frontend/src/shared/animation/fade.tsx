@@ -8,7 +8,6 @@ interface FadeProps {
 interface FadeState {
     show: boolean;
     style :{
-        fontSize: number,
         opacity: number,
         transition: string
     }
@@ -25,7 +24,6 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     state: FadeState ={
         show: true,
         style: {
-            fontSize: 60,
             opacity: 0,
             transition: 'all 2s ease',
         }
@@ -43,7 +41,6 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     unMountStyle(): void {
         this.setState({
             style: {
-                fontSize: 60,
                 opacity: 0,
                 transition: 'all 1s ease',
             }
@@ -53,7 +50,6 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     mountStyle(): void {
         this.setState({
             style: {
-                fontSize: 60,
                 opacity: 1,
                 transition: 'all 1s ease',
             }
