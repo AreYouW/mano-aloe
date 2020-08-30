@@ -18,7 +18,6 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         super(props);
         this.transitionEnd = this.transitionEnd.bind(this);
         this.mountStyle = this.mountStyle.bind(this);
-        this.unMountStyle = this.unMountStyle.bind(this);
     }
 
     state: FadeState ={
@@ -29,31 +28,26 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         }
     }
 
-    componentWillReceiveProps(newProps: FadeProps): void {
-        if(!newProps.mounted)
-            return this.unMountStyle();
-        this.setState({
-            show: true
-        })
-        setTimeout(this.mountStyle, 10);
-    }
-
-    unMountStyle(): void {
-        this.setState({
+    static getDerivedStateFromProps(props: FadeProps, state: FadeState): FadeState {
+        let newState: FadeState = {
+            show: true,
             style: {
-                opacity: 0,
-                transition: 'all 1s ease',
+                opacity: state.style.opacity,
+                transition: state.style.transition
             }
-        })
+        };
+        if(!props.mounted)
+            newState.style.opacity = 0;
+        return newState;
     }
 
     mountStyle(): void {
-        this.setState({
-            style: {
-                opacity: 1,
-                transition: 'all 1s ease',
-            }
-        })
+            this.setState({
+                style: {
+                    opacity: 1,
+                    transition: 'all 1s ease',
+                }
+            })
     }
 
     componentDidMount(): void {

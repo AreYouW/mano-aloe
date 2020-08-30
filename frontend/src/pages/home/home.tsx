@@ -49,6 +49,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 })
                 .catch((error: Error) => {
                     console.error(error);
+                    this.setState({loading: false});
                 })
         }
     }
