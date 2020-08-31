@@ -52,13 +52,11 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                 <h1 className="community-message-header">A Community Message for Aloe</h1>
                                 <div className="community-message-body">
                                     <p>
-                                        Dear Aloe, in celebration of your return,
-                                        we've organized a site full of messages that your fans have sent you!
-                                        On behalf of every Manotomo out there, welcome back!
+                                        Dear Aloe, thank you for everything. While it may have been but for a short while, we appreciate every little thing you've given us. We wish you the best of luck going forward.
                                     </p>
-                                    <p>アロエさん、カムバックのお祝いに。
-                                        ファンからのメッセージを集めたサイトを作りました。
-                                        魔の友の代表として、おかえりなさい！</p>
+                                    <p>
+                                        親愛なるアロエ様、いろいろありがとうございます。短い間ではありましたが、一つ一つのことに感謝しています。今後のご活躍をお祈りしております。
+                                    </p>
                                 </div>
                             </div>
                             <AnchorLink offset='100' href='#anchor'>
