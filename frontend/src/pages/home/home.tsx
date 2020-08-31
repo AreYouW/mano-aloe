@@ -100,7 +100,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
+                {/*<Fade mounted={this.state.loading} childComponent={<Spinner/>}/>*/}
                 {this.state.loading ? <div/> : this.renderMessageCardSection()}
             </div>
         )
