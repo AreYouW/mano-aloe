@@ -1,7 +1,7 @@
 import React from 'react';
 import {Game} from "../../models/game";
 import ManoAloeService from "../../controllers/mano-aloe.service";
-import '../../components/gamesSection/game.css'
+import '../../components/gamesSection/gameSection.css'
 import games from './../../tempGameStash/games.json'
 import GameSection from "../../components/gamesSection/gameSection";
 
@@ -65,7 +65,9 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                             </div>
                         </div>
                     </div>
-                    <GameSection data={this.state.games}/>
+                    <div className="game-section">
+                        <GameSection data={this.state.games}/>
+                    </div>
                 </div>
             </section>
         )

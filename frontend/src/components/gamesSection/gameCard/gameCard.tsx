@@ -1,12 +1,12 @@
 import React from "react";
 import BaseCard, {BaseCardProps, BaseCardState} from "../../../shared/components/baseCard/baseCard";
 import {Game} from "../../../models/game";
-import {ExternalLink, linkToString} from "../../../models/url";
+import {linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";
-import './../game.css'
 import {IconButton} from "@material-ui/core";
 import {Camera, Image, ImageRounded, PlayCircleOutline, Launch} from "@material-ui/icons";
-import Icon from "@material-ui/core/Icon";
+import '../gameSection.css'
+import './gameCard.css'
 
 export interface GameCardProps extends BaseCardProps<Game> {
 }
@@ -58,14 +58,14 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     renderThumbnailPlaceholder(): JSX.Element {
         return (
             <div className="game-thumbnail-placeholder center">
-                <ImageRounded style={{fontSize: 50, color: 'white'}}/>
+                <ImageRounded className="game-thumbnail-placeholder-icon" style={{fontSize: 50, color: 'white'}}/>
             </div>
         )
     }
 
     renderGameThumbnail(): JSX.Element {
         return (
-            <div className="game-thumbnail-wrapper">
+            <div className="game-thumbnail-container">
                 {this.checkIfThumbnailPresent() ?
                     <img className="game-thumbnail" alt={linkToString(this.props.object.gameLink)} src={this.props.object.thumbnail}/> :
                     this.renderThumbnailPlaceholder()
@@ -83,7 +83,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     renderGame(): JSX.Element {
         const gameUrl = linkToString(this.props.object.gameLink);
         return (
-            <div className="gamecard-wrapper">
+            <div>
                 <div className="button-row">
                     <div className="game-text">{this.props.object.title}</div>
                     <div className="button-right">
