@@ -1,6 +1,6 @@
-import {Message} from "../models/message";
-import {Artwork} from "../models/artwork";
-import {Game} from "../models/game";
+import {Message, MessageJson, messageFromJson, messageToJson} from "../models/message";
+import {Artwork, ArtworkJson, artworkFromJson, artworkToJson} from "../models/artwork";
+import {Game, GameJson, gameFromJson, gameToJson} from "../models/game";
 import DisplayedLanguage from "../models/language";
 
 export default class SessionService {
@@ -45,28 +45,33 @@ export default class SessionService {
     }
 
     public static saveMessages(messages: Message[]): void {
-        SessionService.saveInCache<Message[]>('messages', messages);
+        let json = messages.map(messageToJson);
+        SessionService.saveInCache<MessageJson[]>('messages', json);
     }
 
     public static getMessages(): Message[] | null {
-        return SessionService.getFromCache<Message[]>('messages');
-
+        let messages = SessionService.getFromCache<MessageJson[]>('messages');
+        return messages?.map(messageFromJson) ?? null;
     }
 
     public static saveGallery(gallery: Artwork[]): void {
-        SessionService.saveInCache<Artwork[]>('gallery', gallery);
+        let json = gallery.map(artworkToJson);
+        SessionService.saveInCache<ArtworkJson[]>('gallery', json);
     }
 
     public static getGallery(): Artwork[] | null {
-        return SessionService.getFromCache<Artwork[]>('gallery');
+        let artworks = SessionService.getFromCache<ArtworkJson[]>('gallery');
+        return artworks?.map(artworkFromJson) ?? null;
     }
 
     public static saveGames(games: Game[]): void {
-        SessionService.saveInCache<Game[]>('games', games);
+        let json = games.map(gameToJson);
+        SessionService.saveInCache<GameJson[]>('games', json);
     }
 
     public static getGames(): Game[] | null {
-        return SessionService.getFromCache<Game[]>('games');
+        let games = SessionService.getFromCache<GameJson[]>('games');
+        return games?.map(gameFromJson) ?? null;
     }
 
     public static saveLanguage(language: DisplayedLanguage): void {

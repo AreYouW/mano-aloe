@@ -1,0 +1,25 @@
+.base-card {
+    --card-text-width: 400px;
+
+    display: block;
+    position: relative;
+    width: auto;
+    min-height: 100px;
+    min-width: 330px;
+    overflow: auto;
+    border-radius: 15px;
+
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 10px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+
+    list-style-type: none;
+    object-fit: fill;
+
+    transition: all 0.4s ease;
+}

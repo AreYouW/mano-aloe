@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
-import MapIcon from '@material-ui/icons/Map';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import ManoAloeGif from '../assets/miscellaneous/AloeiconsBIG.gif'
+import ManoAloeGif from '../assets/miscellaneous/Aloeicon.gif'
 import LanguageSwitchButton from './languageSwitch/languageSwitch';
 
 import './navbar.css';
@@ -13,13 +13,13 @@ import './navbar.css';
 export default function ButtonAppBar() {
     return (
         <header className="navbar">
-            <img src={ManoAloeGif} alt="Mano Aloe GIF" style={{maxWidth: "50px", maxHeight: "50px"}}/>
-            <div className="title">魔の友 (Manotomo)</div>
+            <img className="icon-button" src={ManoAloeGif} alt="Mano Aloe GIF"/>
+            <div className="title">魔の友から、アロエへ</div>
             <div className="icons">
                 {[
                     {externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon/>},
                     {externalLink: false, link: '/game', altText: "Games", iconFunc: () => <SportsEsportsIcon/>},
-                    {externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <MapIcon/>},
+                    {externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <PhotoLibraryIcon/>},
                     {
                         externalLink: true,
                         link: 'https://github.com/AreYouW/mano-aloe',

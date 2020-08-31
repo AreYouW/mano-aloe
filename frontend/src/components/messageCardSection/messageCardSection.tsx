@@ -11,15 +11,23 @@ interface MessageCardSectionProps {
 }
 
 interface MessageCardSectionState {
-
+    data: Message[]
 }
 
 export default class MessageCardSection extends React.Component<MessageCardSectionProps, MessageCardSectionState> {
-    private data: Message[];
 
     constructor(props: MessageCardSectionProps) {
         super(props);
-        this.data = props.data;
+    }
+
+    state: MessageCardSectionState = {
+        data: this.props.data
+    }
+
+    static getDerivedStateFromProps(props: MessageCardSectionProps, state: MessageCardSectionState): MessageCardSectionState {
+        return {
+            data: props.data
+        };
     }
 
     render() {
@@ -29,7 +37,7 @@ export default class MessageCardSection extends React.Component<MessageCardSecti
                     const {language} = value;
                     return (
                         <div className="messages-section">
-                            {this.data.map((message: Message, idx: number) =>
+                            {this.state.data.map((message: Message, idx: number) =>
                                 <MessageCard key={message.messageID} message={message} cardStyleNum={idx % 3}
                                              language={language}/>
                             )}
