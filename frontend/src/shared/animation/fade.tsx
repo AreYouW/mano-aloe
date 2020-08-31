@@ -7,7 +7,7 @@ interface FadeProps {
 
 interface FadeState {
     show: boolean;
-    style :{
+    style: {
         opacity: number,
         transition: string
     }
@@ -45,12 +45,12 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
     }
 
     mountStyle(): void {
-            this.setState({
-                style: {
-                    opacity: 1,
-                    transition: 'all 1.5s ease',
-                }
-            })
+        this.setState({
+            style: {
+                opacity: 1,
+                transition: 'all 1s ease',
+            }
+        })
     }
 
     componentDidMount(): void {
