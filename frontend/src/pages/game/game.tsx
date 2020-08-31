@@ -65,7 +65,9 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
                             </div>
                         </div>
                     </div>
-                    <GameSection data={this.state.games}/>
+                    <div className="game-section">
+                        <GameSection data={this.state.games}/>
+                    </div>
                 </div>
             </section>
         )
