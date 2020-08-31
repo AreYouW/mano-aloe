@@ -48,7 +48,7 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
             this.setState({
                 style: {
                     opacity: 1,
-                    transition: 'all 1s ease',
+                    transition: 'all 1.5s ease',
                 }
             })
     }
