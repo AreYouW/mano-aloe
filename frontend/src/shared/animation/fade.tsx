@@ -20,7 +20,7 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         this.mountStyle = this.mountStyle.bind(this);
     }
 
-    state: FadeState ={
+    state: FadeState = {
         show: this.props.mounted,
         style: {
             opacity: 0,
