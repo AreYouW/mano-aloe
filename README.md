@@ -34,6 +34,12 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Warabii
 - Plus0ne - Fan Art, Fan Animation, Osu! Skin
 - Zidan3 - Game asset creation in "Ma No Tomo"
+- Porukana - Art assets for Aloe Bento game
+- DistantHistory
+- F.Soulstar - Smug Aloe and Cheerful Debiru artworks
+- Naelyan
+- Kanagiri
+- Duck
 
 ### Audio Team
 
@@ -66,6 +72,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Schrodinger - Game testing
 - Saitô - Aloe's Bento Shop Game Dev
 - Zidan3 - Game asset creation (boss room) in "Ma No Tomo"
+- CinnamonMatcha - Playtesting and translations
 
 ### Moderation Team
 
@@ -111,6 +118,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - Schrodinger
 - Atsuyas
 - Saitô
+- Naelyan
 
 ### Secretaries
 
@@ -127,6 +135,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 - kurapan
 - Atsuyas
 - Hyourinmaru
+- CinnamonMatcha
 
 ### Twitter Team
 
