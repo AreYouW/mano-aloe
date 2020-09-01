@@ -18,6 +18,7 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         super(props);
         this.transitionEnd = this.transitionEnd.bind(this);
         this.mountStyle = this.mountStyle.bind(this);
+        this.unMountStyle = this.unMountStyle.bind(this);
     }
 
     state: FadeState = {
@@ -28,20 +29,23 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         }
     }
 
-    static getDerivedStateFromProps(props: FadeProps, state: FadeState): FadeState {
-        let newState: FadeState = {
-            show: state.show,
-            style: {
-                opacity: state.style.opacity,
-                transition: state.style.transition
-            }
-        };
-        if(!props.mounted) {
-            newState.style.opacity = 0;
-            return newState;
+    componentDidUpdate(prevProps: Readonly<FadeProps>, prevState: Readonly<FadeState>): void {
+        if (this.state.style.opacity === 0 && this.props.mounted && !this.state.show) {
+            this.mountComponent();
+            setTimeout(this.mountStyle, 10);
         }
-        newState.show = true;
-        return newState;
+        if (this.state.style.opacity === 1 && !this.props.mounted && this.state.show) {
+            this.unMountStyle();
+        }
+    }
+
+    unMountStyle(): void {
+        this.setState({
+            style: {
+                opacity: 0,
+                transition: 'all 1s ease',
+            }
+        })
     }
 
     mountStyle(): void {
@@ -53,15 +57,17 @@ export default class Fade extends React.Component<FadeProps, FadeState> {
         })
     }
 
-    componentDidMount(): void {
-        setTimeout(this.mountStyle, 10);
+    mountComponent(): void {
+        this.setState({show: true});
+    }
+
+    unMountComponent(): void {
+        this.setState({show: false});
     }
 
     transitionEnd(): void{
         if(!this.props.mounted){
-            this.setState({
-                show: false
-            })
+            setTimeout(this.unMountComponent.bind(this), 1000);
         }
     }
 

@@ -86,7 +86,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                     </div>
                 </div>
                     <div className="wrapper-overlay">
-                        <MessageCardSection data={this.state.messages}/>
+                        {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
                     </div>
                 <div className="notice-center">
                     <div className="notice-container">
@@ -110,8 +110,8 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     render() {
         return (
             <div className="home-root">
-                {/*<Fade mounted={this.state.loading} childComponent={<Spinner/>}/>*/}
-                {this.state.loading ? <div/> : this.renderMessageCardSection()}
+                <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
+                {this.renderMessageCardSection()}
             </div>
         )
     }
