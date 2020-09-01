@@ -76,21 +76,17 @@ body {
     background-color: #dc4087;
 }
 
+
 .anchor-link {
   position: absolute;
-  bottom: 18%;
+  /*make smaller than separator*/
+  height: 35px;
+  width: 35px;
   left: 0;
   right: 0;
   margin: auto;
 
   transition: "all 0.25s ease";
-}
-
-@media (max-height: 900px) {
-	/*If we can't get the damn thing to stay off card text, just hide the thing*/
-	.anchor-link {
-		opacity: 0;
-	}
 }
 
 .main {

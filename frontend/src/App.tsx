@@ -1,7 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import {Route, Switch} from 'react-router-dom';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import ScrollDownIcon from './assets/miscellaneous/arrow-down.png';
 
 import Navbar from './components/navbar';
 import './App.css';
@@ -59,9 +57,6 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                                     </p>
                                 </div>
                             </div>
-                            <AnchorLink offset='100' href='#anchor'>
-                                <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
-                            </AnchorLink>
                         </header>
                     </div>
                     <Suspense fallback={<div>Loading...</div>}>
