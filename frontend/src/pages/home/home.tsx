@@ -7,6 +7,8 @@ import SessionService from "../../services/session.service";
 import './home.css';
 import Spinner from "../../shared/components/spinner/spinner";
 import Fade from "../../shared/animation/fade";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import ScrollDownIcon from '../../assets/miscellaneous/arrow-down.png';
 
 export interface HomePageProps {
 
@@ -58,26 +60,34 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     renderMessageCardSection() {
         return (
             <div>
-                <div className="separator"/>
+                <div className="separator">
+                    <AnchorLink offset='100' href='#video-anchor'>
+                        <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
+                    </AnchorLink>
+                </div>
                 <div className="video-container">
+                    <section id='video-anchor'/>
                     <iframe title="Mano Aloe Fanmade Video" className="video-tag"
                             src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen/>
                 </div>
-                <div className="separator"/>
+                <div className="separator">
+                    <AnchorLink offset='100' href='#message-anchor'>
+                        <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
+                    </AnchorLink>
+                </div>
                 <div className="notice-center">
                     <div className="notice-container">
+                        <section id='message-anchor'/>
                         <a href="https://manoaloe.jetri.co">
                             <div className="notice-content">Check out dragonjet's site too!</div>
                         </a>
                     </div>
                 </div>
-                <section id='anchor'>
                     <div className="wrapper-overlay">
                         <MessageCardSection data={this.state.messages}/>
                     </div>
-                </section>
                 <div className="notice-center">
                     <div className="notice-container">
                         <div className="notice-content">
