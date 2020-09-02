@@ -14,7 +14,7 @@ export default function ButtonAppBar() {
     return (
         <header className="navbar">
             <img className="icon-button" src={ManoAloeGif} alt="Mano Aloe GIF"/>
-            <div className="title">魔の友から、アロエへ</div>
+            <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[
                     {externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon/>},
