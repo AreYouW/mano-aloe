@@ -3,7 +3,7 @@
     "gameID": "1",
     "title": "Journey To Hololive",
     "description": "Help Aloe to leave the demonic realm and reach her goal of joining Hololive. It is a thorny path, but with your support she may just make it to the end.",
-    "thumbnail": "",
+    "thumbnail": "https://cdn.discordapp.com/attachments/745009759417008159/748647433315024916/1.png",
     "gitLink": "https://iskorsukov.github.io/JourneyToHololive/",
     "gameLink": "https://iskorsukov.github.io/JourneyToHololive/"
   },
@@ -27,7 +27,7 @@
     "gameID": "4",
     "title": "Aloe's Bento Shop",
     "description": "Help Aloe serve as many tasty bento boxes as you can in Aloe's Bento Shop!",
-    "thumbnail": "",
+    "thumbnail": "https://cdn.discordapp.com/attachments/748671362494628011/748671381167669379/thumbnail.PNG",
     "gitLink": "https://xxareo.github.io/",
     "gameLink": "https://xxareo.github.io/"
   }
