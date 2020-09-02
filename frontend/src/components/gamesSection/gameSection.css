@@ -58,7 +58,8 @@
     opacity: 0.5;
 }
 
-.game-section {
+/*Need this for consistent rendering in base-section*/
+.game-section-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
