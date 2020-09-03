@@ -6,6 +6,7 @@
     width: auto;
     min-height: 100px;
     min-width: 330px;
+    max-width: 45vw;
     overflow: auto;
     border-radius: 15px;
 
