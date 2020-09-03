@@ -59,7 +59,7 @@
 }
 
 /*Need this for consistent rendering in base-section*/
-.game-section-container {
+.game-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
