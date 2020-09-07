@@ -3,7 +3,6 @@ import GallerySection from '../../components/gallery/gallerySection';
 import {Artwork} from "../../models/artwork";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './art.css'
 
 export interface ArtPageProps {
 
@@ -49,7 +48,7 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
 
     renderGallerySection() {
         return (
-            <GallerySection data={this.state.artworks}/>
+            <GallerySection customSectionStyle={"gallery-section"} data={this.state.artworks}/>
         )
     }
 

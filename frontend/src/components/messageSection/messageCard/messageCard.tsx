@@ -11,20 +11,16 @@ import DisplayedLanguage from "../../../models/language";
 import {ReactComponent as TranslateBotan} from "../../../assets/icons/translateIcon.svg";
 import "./messageCard.css";
 import { Twemoji } from 'react-emoji-render';
+import BaseCard, {BaseCardProps, BaseCardState} from "../../../shared/components/baseCard/baseCard";
 
 
 const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
 
-interface MessageCardProps {
-    message: Message;
-    cardStyleNum: number;
+interface MessageCardProps extends BaseCardProps<Message>{
     inViewport: boolean;
-    language: DisplayedLanguage;
 }
 
-interface MessageCardState {
-    currentLanguage: DisplayedLanguage;
-    globalLanguage: DisplayedLanguage;
+interface MessageCardState extends BaseCardState{
 }
 
 function countryCodeToFlag(code: Country): string {
@@ -44,25 +40,18 @@ function countryCodeToFlag(code: Country): string {
     return String.fromCodePoint(first, second);
 }
 
-class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
+class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> {
     private readonly message: Message;
-    private readonly cardStyleNum: number;
     private readonly flag: string;
     private readonly hasTlMsg: boolean;
 
     constructor(props: MessageCardProps) {
         super(props);
-        this.message = props.message;
-        this.flag = countryCodeToFlag(props.message.country);
-        this.cardStyleNum = props.cardStyleNum;
+        this.message = props.object;
+        this.flag = countryCodeToFlag(props.object.country);
         this.hasTlMsg = this.message.tl_msg.length > 0;
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
-    }
-    
-    state: MessageCardState = {
-        currentLanguage: this.props.language,
-        globalLanguage: this.props.language
     }
 
     private toggleCurrentLanguage(): void {
@@ -89,15 +78,12 @@ class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
         }
     }
 
-    render() {
-        // need to leave styling here, so I can decide background image based on props
+    renderMessage() {
         const rootStyles: CSS.Properties = {
-            backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
             opacity: (this.props.inViewport ? 1 : 0),
         };
-
         return (
-            <div className="message-card" style={rootStyles}>
+            <div style={rootStyles}>
                 <div className="message-card-text-container">
                     <div className={classNames("message-card-text", {
                         "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
@@ -114,7 +100,7 @@ class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
                     <div className="clear"/>
                 </div>
                 <div className="message-card-footer">
-                    {this.message.username} 
+                    {this.message.username}
                     <Twemoji text={this.flag} />
                 </div>
                 {this.hasTlMsg &&
@@ -122,6 +108,10 @@ class MessageCard extends React.Component<MessageCardProps, MessageCardState> {
                 }
             </div>
         )
+    }
+
+    render() {
+        return this.renderCard(this.renderMessage());
     }
 }
 

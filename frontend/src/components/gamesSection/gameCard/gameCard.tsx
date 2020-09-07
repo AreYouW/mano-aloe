@@ -4,7 +4,7 @@ import {Game} from "../../../models/game";
 import {linkToString} from "../../../models/url";
 import GameWindow from "./../gameWindow";
 import {IconButton} from "@material-ui/core";
-import {Camera, Image, ImageRounded, PlayCircleOutline, Launch} from "@material-ui/icons";
+import {ImageRounded, PlayCircleOutline, Launch} from "@material-ui/icons";
 import '../gameSection.css'
 import './gameCard.css'
 

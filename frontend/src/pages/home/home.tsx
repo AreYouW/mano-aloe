@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageCardSection from '../../components/messageCardSection/messageCardSection';
+import MessageCardSection from '../../components/messageSection/messageSection';
 import {Message} from "../../models/message";
 import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
