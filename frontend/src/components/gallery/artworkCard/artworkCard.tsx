@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import handleViewport from 'react-in-viewport';
 import { Artwork } from '../../../models/artwork';
 import './artworkCard.css';
 import { linkToString } from '../../../models/url';
+import BaseCard, {BaseCardProps, BaseCardState} from "../../../shared/components/baseCard/baseCard";
 
 enum ImageLoadingState {
     NotLoaded,
@@ -11,22 +11,20 @@ enum ImageLoadingState {
     Loaded,
 }
 
-interface ArtworkCardProps {
-    artwork: Artwork,
-    inViewport: boolean,
+interface ArtworkCardProps extends BaseCardProps<Artwork> {
 }
 
-interface ArtworkCardState {
+interface ArtworkCardState extends BaseCardState {
     loadingState: ImageLoadingState,
 }
 
-class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
+export default class ArtworkCard extends BaseCard<Artwork, ArtworkCardProps, ArtworkCardState> {
     private readonly artwork: Artwork;
     private imageElement: HTMLImageElement;
 
     constructor(props: ArtworkCardProps) {
         super(props);
-        this.artwork = props.artwork;
+        this.artwork = props.object;
         this.imageElement = document.createElement("img");
 
         this.imageLoaded = this.imageLoaded.bind(this);
@@ -34,6 +32,9 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
 
     state: ArtworkCardState = {
         loadingState: ImageLoadingState.NotLoaded,
+        inViewport: false,
+        currentLanguage: this.props.language,
+        globalLanguage: this.props.language,
     }
 
     private imageLoaded() {
@@ -45,7 +46,7 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
     }
 
     private setImage() {
-        if (this.props.inViewport && this.state.loadingState === ImageLoadingState.NotLoaded) {
+        if (this.state.inViewport && this.state.loadingState === ImageLoadingState.NotLoaded) {
             this.imageElement.src = linkToString(this.artwork.artworkLink);
             this.imageElement.addEventListener("load", this.imageLoaded);
 
@@ -63,7 +64,7 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
         this.setImage();
     }
 
-    render() {
+    renderArtwork(): JSX.Element {
         const hasLoaded = this.state.loadingState === ImageLoadingState.Loaded;
         const artworkLink = linkToString(this.artwork.artworkLink);
         const backgroundImage = hasLoaded ? `url("${artworkLink}")` : "none";
@@ -71,13 +72,14 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
         return (
             <div className="artwork-card">
                 <div className="artwork-card-img">
+                    <div className="effects" style={{backgroundImage}}/>
                     <div className={classNames("placeholder", {
                         "loaded": hasLoaded,
-                    })}></div>
+                    })}/>
                     <div className={classNames("image", {
                         "loaded": hasLoaded,
                     })}>
-                        <img src={hasLoaded ? artworkLink : ""} alt={this.artwork.title} />
+                        <img src={hasLoaded ? artworkLink : ""} className="game-thumbnail" alt={this.artwork.title} />
                     </div>
                 </div>
                 <div className="artwork-card-footer">
@@ -87,6 +89,10 @@ class ArtworkCard extends React.Component<ArtworkCardProps, ArtworkCardState> {
             </div>
         )
     }
+
+    render() {
+        return this.renderCard(this.renderArtwork());
+    }
 }
 
-export default handleViewport(ArtworkCard, { rootMargin: "0px 0px 250px 0px" }, { disconnectOnLeave: true });
+// export default handleViewport(ArtworkCard, { rootMargin: "0px 0px 250px 0px" }, { disconnectOnLeave: true });

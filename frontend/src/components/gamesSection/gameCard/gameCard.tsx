@@ -27,11 +27,12 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
         touched: false,
         renderGame: false,
         currentLanguage: this.props.language,
-        globalLanguage: this.props.language
+        globalLanguage: this.props.language,
+        inViewport: false
     }
 
     toggleTouched = () => {
-        this.setState(prevState => ({
+        this.setState((prevState: GameCardState) => ({
             touched: !prevState.touched
         }));
     }

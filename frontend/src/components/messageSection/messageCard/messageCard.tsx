@@ -13,11 +13,7 @@ import "./messageCard.css";
 import { Twemoji } from 'react-emoji-render';
 import BaseCard, {BaseCardProps, BaseCardState} from "../../../shared/components/baseCard/baseCard";
 
-
-const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
-
 interface MessageCardProps extends BaseCardProps<Message>{
-    inViewport: boolean;
 }
 
 interface MessageCardState extends BaseCardState{
@@ -40,7 +36,7 @@ function countryCodeToFlag(code: Country): string {
     return String.fromCodePoint(first, second);
 }
 
-class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> {
+export default class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> {
     private readonly message: Message;
     private readonly flag: string;
     private readonly hasTlMsg: boolean;
@@ -55,7 +51,7 @@ class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> 
     }
 
     private toggleCurrentLanguage(): void {
-        this.setState(state => ({
+        this.setState((state: MessageCardState) => ({
             currentLanguage: state.currentLanguage === DisplayedLanguage.Original
                 ? DisplayedLanguage.Japanese
                 : DisplayedLanguage.Original
@@ -79,11 +75,8 @@ class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> 
     }
 
     renderMessage() {
-        const rootStyles: CSS.Properties = {
-            opacity: (this.props.inViewport ? 1 : 0),
-        };
         return (
-            <div style={rootStyles}>
+            <div>
                 <div className="message-card-text-container">
                     <div className={classNames("message-card-text", {
                         "active-message": this.state.currentLanguage === DisplayedLanguage.Original,
@@ -114,5 +107,3 @@ class MessageCard extends BaseCard<Message, MessageCardProps, MessageCardState> 
         return this.renderCard(this.renderMessage());
     }
 }
-
-export default handleViewport(MessageCard);

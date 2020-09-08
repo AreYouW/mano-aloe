@@ -20,6 +20,6 @@ export default class MessageSection extends BaseSection<Message> {
     }
 
     renderCard(object: Message, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
-        return <MessageCard key={object.messageID} message={object} cardStyleNum={id % 3} language={language}/>;
+        return <MessageCard key={object.messageID} object={object} cardStyleNum={id % 3} language={language}/>;
     }
 }

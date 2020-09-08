@@ -17,6 +17,6 @@ export default class GallerySection extends BaseSection<Artwork> {
     }
 
     renderCard(object: Artwork, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
-        return <ArtworkCard key={object.artworkID} artwork={object} />;
+        return <ArtworkCard cardStyleNum={id % 3} key={object.artworkID} object={object} language={language}/>;
     }
 }

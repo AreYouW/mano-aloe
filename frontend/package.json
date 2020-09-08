@@ -10,6 +10,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-transition-group": "^4.4.0",
+    "@types/react-visibility-sensor": "^5.1.0",
     "classnames": "^2.2.6",
     "cra-template-typescript": "1.0.3",
     "csstype": "^3.0.2",
@@ -22,6 +23,7 @@
     "react-in-viewport": "^1.0.0-alpha.14",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-visibility-sensor": "^5.1.1",
     "typescript": "^3.9.7"
   },
   "scripts": {
