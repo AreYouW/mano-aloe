@@ -5,8 +5,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import ManoAloeGif from '../assets/miscellaneous/Aloeicon.gif'
-import LanguageSwitchButton from './languageSwitch/languageSwitch';
+import ManoAloeGif from '../../assets/miscellaneous/Aloeicon.gif'
+import LanguageSwitchButton from '../languageSwitch/languageSwitch';
 
 import './navbar.css';
 

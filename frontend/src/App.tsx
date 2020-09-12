@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import {Route, Switch} from 'react-router-dom';
 
-import Navbar from './components/navbar';
+import Navbar from './components/navigation/navbar';
 import './App.css';
 
 import SessionService from "./services/session.service";
