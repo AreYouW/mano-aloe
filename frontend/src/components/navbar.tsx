@@ -17,9 +17,18 @@ export default function ButtonAppBar() {
             <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[
-                    {externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon/>},
-                    {externalLink: false, link: '/game', altText: "Games", iconFunc: () => <SportsEsportsIcon/>},
-                    {externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <PhotoLibraryIcon/>},
+                    {   externalLink: false,
+                        link: '/',
+                        altText: "Home",
+                        iconFunc: () => <HomeIcon/>},
+                    {   externalLink: false,
+                        link: '/game',
+                        altText: "Games",
+                        iconFunc: () => <SportsEsportsIcon/>},
+                    {   externalLink: false,
+                        link: '/art',
+                        altText: "Artwork",
+                        iconFunc: () => <PhotoLibraryIcon/>},
                     {
                         externalLink: true,
                         link: 'https://github.com/AreYouW/mano-aloe',
