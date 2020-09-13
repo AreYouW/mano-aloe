@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 import Navbar from './components/navigation/navbar';
 import './App.css';
@@ -61,7 +61,10 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                     </div>
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
-                            <Route path='/' component={HomePage} exact/>
+                            <Route exact path='/'>
+                                <Redirect to="/home" />
+                            </Route>
+                            <Route path='/home' component={HomePage}/>
                             <Route path='/game' component={GamePage}/>
                             <Route path='/art' component={ArtPage}/>
                         </Switch>
