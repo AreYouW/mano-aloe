@@ -47,7 +47,7 @@ export default function ButtonAppBar() {
                     if (obj.externalLink) {
                         return (
                             <IconButton target="_blank" rel="noopener noreferrer" href={obj.link}
-                                key={idx} className="button" aria-label={buttonAltText}
+                                key={idx} className="button inactive-page-icon" aria-label={buttonAltText}
                             >
                                 {obj.iconFunc()}
                             </IconButton>
