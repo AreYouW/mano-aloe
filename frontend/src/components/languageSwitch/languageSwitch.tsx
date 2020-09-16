@@ -4,8 +4,8 @@ import DisplayedLanguage from '../../models/language';
 
 import IconButton from '@material-ui/core/IconButton';
 
-var buttonStyleActive = {width: 64, height: 64, padding: 0, color: '#ffffff'}
-var buttonStyleInactive = {width: 64, height: 64, padding: 0, color: '#ffffff', opacity: '40%'}
+var buttonStyleActive = {width: 64, height: 64, padding: 0, color: '#ffffff'};
+var buttonStyleInactive = {...buttonStyleActive, opacity: '40%'};
 
 export default function LanguageSwitchButton() {
     return (
