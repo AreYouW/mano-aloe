@@ -58,11 +58,11 @@
 
 
 .inactive-page-icon {
-    opacity: 4.0;
+    opacity: 0.4;
     text-decoration: none;
 }
 
 .active-page-icon {
-    opacity: 100%;
+    opacity: 1;
     text-decoration: none;
   }
