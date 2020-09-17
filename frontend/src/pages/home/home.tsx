@@ -7,8 +7,10 @@ import SessionService from "../../services/session.service";
 import './home.css';
 import Spinner from "../../shared/components/spinner/spinner";
 import Fade from "../../shared/animation/fade";
+
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import ScrollDownIcon from '../../assets/miscellaneous/arrow-down.png';
+import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import IconButton from '@material-ui/core/IconButton';
 
 export interface HomePageProps {
 
@@ -61,8 +63,8 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         return (
             <div>
                 <div className="separator">
-                    <AnchorLink offset='100' href='#video-anchor'>
-                        <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
+                    <AnchorLink offset='120' href='#video-anchor'>
+                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
                     </AnchorLink>
                 </div>
                 <div className="video-container">
@@ -74,7 +76,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 </div>
                 <div className="separator">
                     <AnchorLink offset='100' href='#message-anchor'>
-                        <img className="anchor-link" src={ScrollDownIcon} alt="scroll down button"/>
+                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
                     </AnchorLink>
                 </div>
                 <div className="notice-center">

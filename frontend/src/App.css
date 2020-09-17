@@ -80,6 +80,7 @@ body {
 .anchor-link {
   position: absolute;
   /*make smaller than separator*/
+  padding-top: 1px;
   height: 35px;
   width: 35px;
   left: 0;
