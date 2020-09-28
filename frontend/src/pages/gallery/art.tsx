@@ -57,14 +57,6 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
         return (
             <section id='anchor'>
                 <div className="separator"/>
-                <div className="notice-center">
-                    <div className="notice-container">
-                        <div className="notice-content">
-                            <p>Fan Art video coming soon!</p>
-                            <p>ファンから自作のビデオがもうすぐ出ます!</p>
-                        </div>
-                    </div>
-                </div>
                 <div className="wrapper-overlay">
                     {this.state.loading ? 'Loading...' : this.renderGallerySection()}
                 </div>
