@@ -63,47 +63,12 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         return (
             <div>
                 <div className="separator">
-                    <AnchorLink offset='120' href='#video-anchor'>
-                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
-                    </AnchorLink>
-                </div>
-                <div className="video-container">
-                    <section id='video-anchor'/>
-                    <iframe title="Mano Aloe Fanmade Video" className="video-tag"
-                            src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen/>
-                </div>
-                <div className="separator">
                     <AnchorLink offset='100' href='#message-anchor'>
                         <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
                     </AnchorLink>
                 </div>
-                <div className="notice-center">
-                    <div className="notice-container">
-                        <section id='message-anchor'/>
-                        <a href="https://manoaloe.jetri.co">
-                            <div className="notice-content">Check out dragonjet's site too!</div>
-                        </a>
-                    </div>
-                </div>
-                    <div className="wrapper-overlay">
-                        {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
-                    </div>
-                <div className="notice-center">
-                    <div className="notice-container">
-                        <div className="notice-content">
-                            <p>Those were all the messages we managed to collect, but there were many more sent your
-                                way! Please check <a
-                                    href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> and <a
-                                    href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> on
-                                Twitter, or visit <a href="https://manoaloe.jetri.co/">dragonjet</a>'s site!</p>
-                            <p>これがすべての取集したメッセージですが、他にもたくさん送りましたよ！<a
-                                href="https://twitter.com/hashtag/%E3%82%A2%E3%83%AD%E3%82%A8Worldwide?src=hashtag">#アロエWorldwide</a> と <a
-                                href="https://twitter.com/hashtag/Global%E3%82%A2%E3%83%AD%E3%82%A8?src=hashtag">#Globalアロエ</a> をツイッターでチェックしてくださいね！
-                                そして<a href="https://manoaloe.jetri.co/">dragonjet</a>のサイトでもメッセージが収集してあります！</p>
-                        </div>
-                    </div>
+                <div className="wrapper-overlay">
+                    {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
                 </div>
             </div>
         )
