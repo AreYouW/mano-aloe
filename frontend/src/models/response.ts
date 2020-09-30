@@ -21,3 +21,7 @@ export interface GalleryResponse extends BaseResponse {
 export interface CountResponse extends BaseResponse {
     count: number;
 }
+
+export interface JWTResponse extends BaseResponse {
+    access_token: string;
+}

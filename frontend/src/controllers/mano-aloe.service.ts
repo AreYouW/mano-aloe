@@ -1,12 +1,14 @@
 import {Message, messageFromJson} from "../models/message";
-import {CountResponse, GalleryResponse, GamesResponse, MessageResponse} from "../models/response";
+import {CountResponse, GalleryResponse, GamesResponse, MessageResponse, JWTResponse} from "../models/response";
 import {Game, gameFromJson} from "../models/game";
 import {Artwork, artworkFromJson} from "../models/artwork";
 
 export default class ManoAloeService {
+    private readonly baseURL: string;
     private readonly apiURL: string;
 
     constructor() {
+        this.baseURL = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : 'http://localhost:5000/';
         this.apiURL = process.env.REACT_APP_API ? process.env.REACT_APP_API : 'http://localhost:5000/api/';
     }
 
@@ -98,5 +100,29 @@ export default class ManoAloeService {
 
     public getGalleryCount(): Promise<number> {
         return this.getCount('gallery');
+    }
+
+    public async login(username: string, password: string): Promise<string> {
+        return fetch(
+            this.baseURL + "auth",
+            {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            }).then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: JWTResponse) => {
+                return apiResponse.access_token;
+            })
+            .catch((error: Error) => {
+                throw error;
+            })
     }
 }

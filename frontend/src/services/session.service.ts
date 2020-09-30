@@ -89,4 +89,17 @@ export default class SessionService {
             this.saveLanguage(languageInCache);
         }
     }
+    
+    public static saveToken(token: string): void {
+        SessionService.saveTimestamp();
+        sessionStorage.setItem('jwt token', token);
+    }
+
+    public static getLoginToken(): string|null {
+        return sessionStorage.getItem('jwt token');
+    }
+
+    public static removeLoginToken(): void {
+        sessionStorage.removeItem('jwt token')
+    }
 }
