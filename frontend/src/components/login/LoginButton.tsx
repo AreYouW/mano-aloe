@@ -147,7 +147,7 @@ export default function LoginButton() {
             {isLogin ?
                 <>
                     <Button className={"button" + classes.loggedInButton + ' active-page-icon'} aria-label="login" onClick={handleOpen}>
-                        <small className={classes.username}>Nael</small>
+                        <small className={classes.username}>Username</small>
                         <AccountCircle style={{ color: "#FFFF" }} />
                     </Button>
 
