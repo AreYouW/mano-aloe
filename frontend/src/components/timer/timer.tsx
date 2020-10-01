@@ -2,22 +2,18 @@ import React, { Component, useState, useEffect } from 'react'
 
 import './timer.css';
 
-interface AppProps {
-}
-
-interface Countdown {
+interface Countdown 
+{
     days:       number;
     hours:      number;
     minutes:    number;
     seconds:    number;
 }
 
-class Timer extends Component {
+class Timer extends Component 
+{
 
-    constructor(props: AppProps) {
-        super(props);
-    }
-
+    timerid: any;
     state = {
         days: 0,
         hours: 0,
@@ -25,28 +21,44 @@ class Timer extends Component {
         seconds: 0,
         update: () => this.calcTime()
     };
-    
-    calcTime(): Countdown {
+
+    constructor(props: any) 
+    {
+        super(props);
+    }
+
+    componentDidMount(): void 
+    {
+        this.timerid = setInterval(() => {
+            this.calcTime();
+            this.setState(this.state);
+        }, 1000);
+    }
+
+    componentDidUnmount(): void 
+    {
+        clearInterval(this.timerid);
+    }
+
+    calcTime(): Countdown 
+    {
         const diff = +new Date(`10/18/2020`) - +new Date();
         if (diff > 0)
         {
-            this.state.days=       Math.floor( diff / (1000 * 60 * 60 * 24));
-            this.state.hours=      Math.floor((diff / (1000 * 60 * 60)) % 24);
-            this.state.minutes=    Math.floor((diff / 1000 / 60) % 60);
-            this.state.seconds=    Math.floor((diff / 1000) % 60);
+            this.state.days     =   Math.floor( diff / (1000 * 60 * 60 * 24));
+            this.state.hours    =   Math.floor((diff / (1000 * 60 * 60)) % 24);
+            this.state.minutes  =   Math.floor((diff / 1000 / 60) % 60);
+            this.state.seconds  =   Math.floor((diff / 1000) % 60);
         }
         return this.state;
     }
 
-    //setState({calcTime()});
-
     render()
     {
-        let t = this.calcTime();
-        console.log(t);
         return (
             <div>
-                {t.days} DAYS, {t.hours} HOURS, {t.minutes} MINUTES AND {t.seconds} SECONDS
+                <button onClick={() => this.setState(this.state)}>test</button>
+                {this.state.days} DAYS, {this.state.hours} HOURS, {this.state.minutes} MINUTES AND {this.state.seconds} SECONDS
             </div>
         );
     }

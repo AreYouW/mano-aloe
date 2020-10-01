@@ -62,11 +62,6 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     renderMessageCardSection() {
         return (
             <div>
-                <div className="separator">
-                    <AnchorLink offset='100' href='#message-anchor'>
-                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
-                    </AnchorLink>
-                </div>
                 <div className="wrapper-overlay">
                     {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
                 </div>
