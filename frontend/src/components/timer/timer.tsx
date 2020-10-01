@@ -1,8 +1,8 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { Component } from 'react'
 
 import './timer.css';
 
-interface Countdown 
+interface TimerState 
 {
     days:       number;
     hours:      number;
@@ -10,18 +10,22 @@ interface Countdown
     seconds:    number;
 }
 
-class Timer extends Component 
+interface TimerProps {
+    date: string;
+}
+
+class Timer extends Component<TimerProps, TimerState>
 {
 
     timerid: any;
-    state: Countdown = {
+    state: TimerState= {
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0
     };
 
-    constructor(props: any) 
+    constructor(props: TimerProps) 
     {
         super(props);
     }
@@ -29,7 +33,7 @@ class Timer extends Component
     componentDidMount(): void 
     {
         this.timerid = setInterval(() => {
-            this.calcTime();
+            this.updateTime();
             this.setState(this.state);
         }, 1000);
     }
@@ -39,9 +43,10 @@ class Timer extends Component
         clearInterval(this.timerid);
     }
 
-    calcTime(): Countdown 
+    updateTime(): void
     {
-        const diff = +new Date(`10/18/2020`) - +new Date();
+        console.log(this.props);
+        const diff = +new Date(this.props.date) - +new Date();
         if (diff > 0)
         {
             this.state.days     =   Math.floor( diff / (1000 * 60 * 60 * 24));
@@ -49,14 +54,12 @@ class Timer extends Component
             this.state.minutes  =   Math.floor((diff / 1000 / 60) % 60);
             this.state.seconds  =   Math.floor((diff / 1000) % 60);
         }
-        return this.state;
     }
 
     render()
     {
         return (
             <div>
-                <button onClick={() => this.setState(this.state)}>test</button>
                 {this.state.days} DAYS, {this.state.hours} HOURS, {this.state.minutes} MINUTES AND {this.state.seconds} SECONDS
             </div>
         );

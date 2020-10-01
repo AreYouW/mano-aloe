@@ -46,7 +46,7 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
             <LanguageContext.Provider value={this.state}>
                 <main className="main">
                     <Navbar/>
-                    <Timer />
+                    <Timer date="10/18/2020" />
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path='/'>
