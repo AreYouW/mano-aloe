@@ -14,12 +14,11 @@ class Timer extends Component
 {
 
     timerid: any;
-    state = {
+    state: Countdown = {
         days: 0,
         hours: 0,
         minutes: 0,
-        seconds: 0,
-        update: () => this.calcTime()
+        seconds: 0
     };
 
     constructor(props: any) 
