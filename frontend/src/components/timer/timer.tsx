@@ -45,7 +45,6 @@ class Timer extends Component<TimerProps, TimerState>
 
     updateTime(): void
     {
-        console.log(this.props);
         const diff = +new Date(this.props.date) - +new Date();
         if (diff > 0)
         {
