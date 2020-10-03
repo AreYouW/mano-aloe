@@ -86,10 +86,6 @@ class ArchiveResource(Resource):
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
         Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        if archiveID == 'random':
-            size = Archive.query.count()
-            archiveID = random.randint(1, size)
-
         archive = Archive.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
@@ -113,3 +109,18 @@ class ArchiveResource(Resource):
         archive.delete()
         db.session.commit()
         return {'status': 'sucess', 'message': 'Archive Deleted'}, 200
+
+
+class ArchiveRandomResource(Resource):
+    @cache.cached(timeout=60 * 60 * 24)
+    def get(self, who):
+        """"Get a random archive link"""
+        if who != 'coco' and who != 'haachama':
+            return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
+        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
+
+        archiveID = random.randint(1, Archive.query.count())
+
+        archive = Archive.query.filter_by(archiveID=archiveID)
+        archive = archives_schema.dump(archive)
+        return {'status': 'success', 'archive': archive}, 200
