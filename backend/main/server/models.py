@@ -81,3 +81,26 @@ class MessageSchema(ma.Schema):
     tl_msg = fields.String(required=False)
     country = fields.String(required=False)
     username = fields.String(required=False)
+
+
+class ArchiveCoco(db.Model):
+    __tablename__ = 'COCO'
+    archiveID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    archiveURL = db.Column(db.String(11), nullable=False)
+
+    def __init__(self, archiveURL):
+        self.archiveURL = archiveURL
+
+
+class ArchiveHaachama(db.Model):
+    __tablename__ = 'HAACHAMA'
+    archiveID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    archiveURL = db.Column(db.String(11), nullable=False)
+
+    def __init__(self, archiveURL):
+        self.archiveURL = archiveURL
+
+
+class ArchiveSchema(ma.Schema):
+    archiveID = fields.Integer()
+    archiveURL = fields.String(required=True)
