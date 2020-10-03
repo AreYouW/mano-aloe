@@ -92,7 +92,7 @@ class ArchiveResource(Resource):
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
 
         archive = archives_schema.dump(archive)
-        return {'status': 'success', 'archive': archive}, 200
+        return {'status': 'success', 'archives': archive}, 200
 
     @jwt_required()
     def delete(self, who, archiveID):
@@ -123,4 +123,4 @@ class ArchiveRandomResource(Resource):
 
         archive = Archive.query.filter_by(archiveID=archiveID)
         archive = archives_schema.dump(archive)
-        return {'status': 'success', 'archive': archive}, 200
+        return {'status': 'success', 'archives': archive}, 200

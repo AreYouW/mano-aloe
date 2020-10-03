@@ -1,7 +1,8 @@
 import {Message, messageFromJson} from "../models/message";
-import {CountResponse, GalleryResponse, GamesResponse, MessageResponse} from "../models/response";
+import {CountResponse, GalleryResponse, GamesResponse, MessageResponse, ArchiveResponse} from "../models/response";
 import {Game, gameFromJson} from "../models/game";
 import {Artwork, artworkFromJson} from "../models/artwork";
+import {Archive, archiveFromJson} from "../models/archive";
 
 export default class ManoAloeService {
     private readonly apiURL: string;
@@ -98,5 +99,52 @@ export default class ManoAloeService {
 
     public getGalleryCount(): Promise<number> {
         return this.getCount('gallery');
+    }
+    
+    public getArchive(who: string, archiveID: number): Promise<Archive> {
+        return fetch(this.apiURL + 'archives/' + who + '/' + archiveID)
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: ArchiveResponse) => {
+                return archiveFromJson(apiResponse.archives[0]);
+            })
+            .catch((error: Error) => {
+                throw error;
+            });
+    }
+
+    public getAllArchives(who: string): Promise<Archive[]> {
+        return fetch(this.apiURL + 'archives/' + who)
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: ArchiveResponse) => {
+                return apiResponse.archives.map(archiveFromJson);
+            })
+            .catch((error: Error) => {
+                throw error;
+            })
+    }
+
+    /**
+     * This is for querying a random archive from API
+     * @param who
+     */
+    public getRandomArchive(who: string): Promise<Archive> {
+        return fetch(this.apiURL + 'archives/' + who + '/random')
+            .then((res: { json: () => any; }) => {
+                return res.json();
+            })
+            .then((apiResponse: ArchiveResponse) => {
+                return archiveFromJson(apiResponse.archives[0]);
+            })
+            .catch((error: Error) => {
+                throw error;
+            });
+    }
+
+    public getArchiveCount(who: string): Promise<number> {
+        return this.getCount('archives/' + who);
     }
 }

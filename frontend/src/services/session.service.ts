@@ -1,6 +1,7 @@
 import {Message, MessageJson, messageFromJson, messageToJson} from "../models/message";
 import {Artwork, ArtworkJson, artworkFromJson, artworkToJson} from "../models/artwork";
 import {Game, GameJson, gameFromJson, gameToJson} from "../models/game";
+import {Archive, ArchiveJson, archiveFromJson, archiveToJson} from "../models/archive";
 import DisplayedLanguage from "../models/language";
 
 export default class SessionService {
@@ -80,6 +81,30 @@ export default class SessionService {
 
     public static getLanguage(): DisplayedLanguage | null {
         return SessionService.getFromCache<DisplayedLanguage>('language', false);
+    }
+
+    public static saveArchives(archives: Archive[], who: string): void {
+        let json = archives.map(archiveToJson);
+        SessionService.saveInCache<ArchiveJson[]>('archives' + who, json);
+    }
+
+    public static getArchives(who: string): Archive[] | null {
+        let archives = SessionService.getFromCache<ArchiveJson[]>('archives' + who);
+        return archives?.map(archiveFromJson) ?? null;
+    }
+
+    /**
+     * This is for generating a random archive locally
+     * @param who 
+     */
+    public static getRandomArchive(who: string): Archive | null {
+        let archives = SessionService.getFromCache<ArchiveJson[]>('archives' + who);
+        if (!archives) {
+            return null;
+        } else {
+            let index = Math.floor(Math.random() * archives.length);
+            return archives[index];
+        }
     }
 
     public static clearCache(): void {
