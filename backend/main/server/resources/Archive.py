@@ -3,6 +3,7 @@ from flask import request
 from main.server import db, cache, app
 from main.server.models import ArchiveCoco, ArchiveHaachama, ArchiveSchema
 from flask_jwt import jwt_required
+import random
 
 archives_schema = ArchiveSchema(many=True)
 archive_schema = ArchiveSchema()
@@ -41,9 +42,9 @@ class ArchiveListResource(Resource):
         archives = archives_schema.dump(archives)
 
         if not archives:
-            return {'status': 'success', 'messages': archives}, 206  # Partial Content Served
+            return {'status': 'success', 'archives': archives}, 206  # Partial Content Served
 
-        return {'status': 'success', 'messages': archives}, 200
+        return {'status': 'success', 'archives': archives}, 200
 
     @jwt_required()
     def post(self, who):
@@ -85,13 +86,17 @@ class ArchiveResource(Resource):
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
         Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
+        if archiveID == 'random':
+            size = Archive.query.count()
+            archiveID = random.randint(1, size)
+
         archive = Archive.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
 
         archive = archives_schema.dump(archive)
-        return {'status': 'success', 'message': archive}, 200
+        return {'status': 'success', 'archive': archive}, 200
 
     @jwt_required()
     def delete(self, who, archiveID):

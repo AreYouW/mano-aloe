@@ -4,7 +4,7 @@ from flask_restful import Api
 from main.server.resources.Message import MessageListResource, MessageResource, MessageListRangeResource, MessageCount
 from main.server.resources.Game import GameCount, GameListResource
 from main.server.resources.Gallery import GalleryCount, GalleryListResource
-from main.server.resources.Message import ArchiveListResource, ArchiveResource, ArchiveCount
+from main.server.resources.Archive import ArchiveListResource, ArchiveResource, ArchiveCount
 
 # Api Blueprint
 api_bp = Blueprint('api', __name__)
