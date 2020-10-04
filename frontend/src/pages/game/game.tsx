@@ -32,8 +32,6 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
         this.getData();
     }
 
-
-
     private getData(): void {
         const mappedGames: Game[] =  games.map((game: { gameID: string; title: string; description: string; thumbnail: string; gitLink: string; gameLink: string; }, idx) => {
             return {

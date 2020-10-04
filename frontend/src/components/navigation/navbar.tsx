@@ -1,12 +1,12 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import ManoAloeGif from '../assets/miscellaneous/Aloeicon.gif'
-import LanguageSwitchButton from './languageSwitch/languageSwitch';
+import ManoAloeGif from '../../assets/miscellaneous/Aloeicon.gif'
+import LanguageSwitchButton from '../languageSwitch/languageSwitch';
 
 import './navbar.css';
 
@@ -17,9 +17,24 @@ export default function ButtonAppBar() {
             <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[
-                    {externalLink: false, link: '/', altText: "Home", iconFunc: () => <HomeIcon/>},
-                    {externalLink: false, link: '/game', altText: "Games", iconFunc: () => <SportsEsportsIcon/>},
-                    {externalLink: false, link: '/art', altText: "Artwork", iconFunc: () => <PhotoLibraryIcon/>},
+                    {
+                        externalLink: false,
+                        link: '/home',
+                        altText: "Home",
+                        iconFunc: () => <HomeIcon/>
+                    },
+                    {
+                        externalLink: false,
+                        link: '/game',
+                        altText: "Games",
+                        iconFunc: () => <SportsEsportsIcon/>
+                    },
+                    {
+                        externalLink: false,
+                        link: '/art',
+                        altText: "Artwork",
+                        iconFunc: () => <PhotoLibraryIcon/>
+                    },
                     {
                         externalLink: true,
                         link: 'https://github.com/AreYouW/mano-aloe',
@@ -32,18 +47,18 @@ export default function ButtonAppBar() {
                     if (obj.externalLink) {
                         return (
                             <IconButton target="_blank" rel="noopener noreferrer" href={obj.link}
-                                key={idx} className="button" aria-label={buttonAltText}
+                                key={idx} className="button inactive-page-icon" aria-label={buttonAltText}
                             >
                                 {obj.iconFunc()}
                             </IconButton>
                         );
                     } else {
                         return (
-                            <Link to={obj.link}>
+                            <NavLink to={obj.link} className='inactive-page-icon' activeClassName='active-page-icon'>
                                 <IconButton key={idx} className="button" aria-label={buttonAltText}>
                                     {obj.iconFunc()}
                                 </IconButton>
-                            </Link>
+                            </NavLink>
                         );
                     }
                 })}

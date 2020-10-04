@@ -25,6 +25,9 @@ const COUNTRY_LIST = [
 export type Country = typeof COUNTRY_LIST[number] | "";
 
 export function toCountry(str: string): Country {
+    if (str === "UK") {
+        return "GB";
+    }
     for (let c of COUNTRY_LIST) {
         if (str === c)
             return str;

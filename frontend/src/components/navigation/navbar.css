@@ -55,3 +55,14 @@
 	max-height: 50px;
 	border-radius: 50%;
 }
+
+
+.inactive-page-icon {
+    opacity: 0.4;
+    text-decoration: none;
+}
+
+.active-page-icon {
+    opacity: 1;
+    text-decoration: none;
+  }
