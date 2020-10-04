@@ -31,7 +31,7 @@ class ArchiveCount(Resource):
     def get(self, who):
         """Gets the number of archives available"""
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         return {'status': 'success', 'count': archiveTable.query.count()}, 200
@@ -42,7 +42,7 @@ class ArchiveListResource(Resource):
     def get(self, who):
         """Gets all archive links"""
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         archives = archiveTable.query.all()
@@ -57,7 +57,7 @@ class ArchiveListResource(Resource):
     def post(self, who):
         """Add archive link"""
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         json_data = request.get_json(force=True)
@@ -90,7 +90,7 @@ class ArchiveResource(Resource):
     def get(self, who, archiveID):
         """Get an archive by archive ID"""
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         archive = archiveTable.query.filter_by(archiveID=archiveID)
@@ -105,7 +105,7 @@ class ArchiveResource(Resource):
     def delete(self, who, archiveID):
         """Delete an archive by ID"""
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         archive = archiveTable.query.filter_by(archiveID=archiveID)
@@ -120,9 +120,10 @@ class ArchiveResource(Resource):
 
 class ArchiveRandomResource(Resource):
     def get(self, who):
-        """Get a random archive link"""
+        """Get a random archive link."""
+        # The source of randomness is the order of the database. The code only pulls consecutive IDs from the database.
         archiveTable = tableConversion(who)
-        if archiveTable is None:
+        if not archiveTable:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         size = archiveTable.query.count()

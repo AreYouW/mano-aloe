@@ -86,6 +86,7 @@ class MessageSchema(ma.Schema):
 class ArchiveCoco(db.Model):
     __tablename__ = 'COCO'
     archiveID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    # We are not actually storing URLs, but the 11-character Youtube IDs
     archiveURL = db.Column(db.String(11), nullable=False)
 
     def __init__(self, archiveURL):
@@ -95,6 +96,7 @@ class ArchiveCoco(db.Model):
 class ArchiveHaachama(db.Model):
     __tablename__ = 'HAACHAMA'
     archiveID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    # We are not actually storing URLs, but the 11-character Youtube IDs
     archiveURL = db.Column(db.String(11), nullable=False)
 
     def __init__(self, archiveURL):

@@ -3,11 +3,12 @@ import CSS from "csstype";
 
 import SessionService from "../../services/session.service";
 import ManoAloeService from "../../controllers/mano-aloe.service";
-import {Archive} from "../../models/archive";
+import {Archive, archiveFromJson, ArchiveJson} from "../../models/archive";
 import "./archiveSection.css";
 
 interface ArchiveCardProps {
     who: string;
+    fallback: string;
     style: CSS.Properties;
 }
 
@@ -30,9 +31,11 @@ export default class ArchiveCard extends React.Component<ArchiveCardProps, Archi
         const { who } = this.props;
         this.manoAloeService.getRandomArchive(who)
             .then((randomArchive: Archive) => {
-                this.setState({ archive: randomArchive })
+                this.setState({ archive: randomArchive });
             })
             .catch((error: Error) => {
+                const fallbackArchiveJson: ArchiveJson = { archiveID: 0, archiveURL: this.props.fallback };
+                this.setState({ archive: archiveFromJson(fallbackArchiveJson) });
                 console.log(error);
             });
     }
