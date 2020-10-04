@@ -1,0 +1,17 @@
+.video-container {
+    width: 100%;
+    box-sizing: border-box;
+    height: 75vh;
+    background-attachment: fixed;
+}
+
+@media (max-width: 900px) {
+    .video-container {
+        height: 50vh;
+    }
+}
+
+.video-tag {
+    width: 50%;
+    height: 100%;
+}
