@@ -127,10 +127,6 @@ export default class ManoAloeService {
             })
     }
 
-    /**
-     * This is for querying a random archive from API
-     * @param who
-     */
     public getRandomArchive(who: string): Promise<Archive> {
         return fetch(this.apiURL + 'archives/' + who + '/random')
             .then((res: { json: () => any; }) => {

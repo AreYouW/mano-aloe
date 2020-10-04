@@ -93,20 +93,6 @@ export default class SessionService {
         return archives?.map(archiveFromJson) ?? null;
     }
 
-    /**
-     * This is for generating a random archive locally
-     * @param who 
-     */
-    public static getRandomArchive(who: string): Archive | null {
-        let archives = SessionService.getFromCache<ArchiveJson[]>('archives' + who);
-        if (!archives) {
-            return null;
-        } else {
-            let index = Math.floor(Math.random() * archives.length);
-            return archives[index];
-        }
-    }
-
     public static clearCache(): void {
         let languageInCache = this.getLanguage();
         localStorage.clear();

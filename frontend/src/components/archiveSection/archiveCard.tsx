@@ -26,24 +26,6 @@ export default class ArchiveCard extends React.Component<ArchiveCardProps, Archi
         archive: null
     };
 
-    private loadArchiveFromLocal(): void {
-        const { who } = this.props;
-        const randomArchive = SessionService.getRandomArchive(who);
-        if (randomArchive) {
-            this.setState({ archive: randomArchive });
-        } else {
-            this.manoAloeService.getAllArchives(who)
-                .then((archives: Archive[]) => {
-                    SessionService.saveArchives(archives, who);
-                    const randomArchive = SessionService.getRandomArchive(who);
-                    this.setState({ archive: randomArchive });
-                })
-                .catch((error: Error) => {
-                    console.log(error);
-                });
-        }
-    }
-
     private loadArchiveFromAPI(): void {
         const { who } = this.props;
         this.manoAloeService.getRandomArchive(who)
