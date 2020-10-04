@@ -59,7 +59,7 @@ export default class GameCard extends BaseCard<Game, GameCardProps, GameCardStat
     renderThumbnailPlaceholder(): JSX.Element {
         return (
             <div className="game-thumbnail-placeholder center">
-                <ImageRounded className="game-thumbnail-placeholder-icon" style={{fontSize: 50, color: 'white'}}/>
+                <ImageRounded className="absolute-center" style={{fontSize: 50, color: 'white'}}/>
             </div>
         )
     }

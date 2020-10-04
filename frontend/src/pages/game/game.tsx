@@ -4,6 +4,7 @@ import ManoAloeService from "../../controllers/mano-aloe.service";
 import '../../components/gamesSection/gameSection.css'
 import games from './../../tempGameStash/games.json'
 import GameSection from "../../components/gamesSection/gameSection";
+import '../../shared/globalStyles/global.css'
 
 export interface GamePageProps {
 
