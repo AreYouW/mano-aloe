@@ -54,6 +54,3 @@ export default class BaseCard<T, P extends BaseCardProps<T>, S extends BaseCardS
         );
     }
 }
-
-// export default handleViewport(BaseCard);
-
