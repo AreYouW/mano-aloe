@@ -3,7 +3,7 @@ from flask import request
 from main.server import db, cache, app
 from main.server.models import ArchiveCoco, ArchiveHaachama, ArchiveSchema
 from flask_jwt import jwt_required
-import random
+import datetime
 
 archives_schema = ArchiveSchema(many=True)
 archive_schema = ArchiveSchema()
@@ -18,27 +18,34 @@ def add_header(response):
         'Access-Control-Allow-Headers'] = 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers'
     return response
 
+def tableConversion(who):
+    if who == "coco":
+        return ArchiveCoco
+    elif who == "haachama":
+        return ArchiveHaachama
+    else:
+        return None
 
 class ArchiveCount(Resource):
     @cache.cached(timeout=100)
     def get(self, who):
         """Gets the number of archives available"""
-        if who != 'coco' and who != 'haachama':
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        return {'status': 'success', 'count': Archive.query.count()}, 200
+        return {'status': 'success', 'count': archive.query.count()}, 200
 
 
 class ArchiveListResource(Resource):
     @cache.cached(timeout=100)
     def get(self, who):
         """Gets all archive links"""
-        if who != 'coco' and who != 'haachama':
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        archives = Archive.query.all()
+        archives = archive.query.all()
         archives = archives_schema.dump(archives)
 
         if not archives:
@@ -49,9 +56,9 @@ class ArchiveListResource(Resource):
     @jwt_required()
     def post(self, who):
         """Add archive link"""
-        if who != 'coco' and who != 'haachama':
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
         json_data = request.get_json(force=True)
 
@@ -65,28 +72,28 @@ class ArchiveListResource(Resource):
 
         data = archive_schema.load(json_data)
 
-        archive = Archive.query.filter_by(archiveURL=data.get('archiveURL')).first()
+        archive = archive.query.filter_by(archiveURL=data.get('archiveURL')).first()
 
         if archive:
-            return {'status': 'fail', 'message': 'Archive already exists'}, 400
+            return {'status': 'fail', 'message': 'archive already exists'}, 400
 
-        archive = Archive(archiveURL=data.get('archiveURL'))
+        archive = archive(archiveURL=data.get('archiveURL'))
 
         db.session.add(archive)
         db.session.commit()
 
-        return {'status': 'success', 'message': 'Archive successfully created'}, 201
+        return {'status': 'success', 'message': 'archive successfully created'}, 201
 
 
 class ArchiveResource(Resource):
     @cache.cached(timeout=100)
     def get(self, who, archiveID):
-        """"Get an archive by archive ID"""
-        if who != 'coco' and who != 'haachama':
+        """Get an archive by archive ID"""
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        archive = Archive.query.filter_by(archiveID=archiveID)
+        archive = archive.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
@@ -97,30 +104,31 @@ class ArchiveResource(Resource):
     @jwt_required()
     def delete(self, who, archiveID):
         """Delete an archive by ID"""
-        if who != 'coco' and who != 'haachama':
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        archive = Archive.query.filter_by(archiveID=archiveID)
+        archive = archive.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
 
         archive.delete()
         db.session.commit()
-        return {'status': 'sucess', 'message': 'Archive Deleted'}, 200
+        return {'status': 'sucess', 'message': 'archive Deleted'}, 200
 
 
 class ArchiveRandomResource(Resource):
-    @cache.cached(timeout=60 * 60 * 24)
     def get(self, who):
-        """"Get a random archive link"""
-        if who != 'coco' and who != 'haachama':
+        """Get a random archive link"""
+        archive = tableConversion(who)
+        if archive is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
-        Archive = ArchiveCoco if who == 'coco' else ArchiveHaachama
 
-        archiveID = random.randint(1, Archive.query.count())
+        size = archive.query.count()
+        daysPassed = (datetime.date.today() - datetime.date(2020, 10, 4)).days
+        archiveID = daysPassed % size + 1
 
-        archive = Archive.query.filter_by(archiveID=archiveID)
+        archive = archive.query.filter_by(archiveID=archiveID)
         archive = archives_schema.dump(archive)
         return {'status': 'success', 'archives': archive}, 200
