@@ -1,22 +1,31 @@
 import React from 'react';
 import {Artwork} from '../../models/artwork';
 import ArtworkCard from './artworkCard/artworkCard';
-import BaseSection, {BaseSectionProps, BaseSectionState} from "../../shared/components/baseSection/baseSection";
-import DisplayedLanguage from "../../models/language";
+import './gallerySection.css';
 
-interface GallerySectionProps extends BaseSectionProps<Artwork> {
+interface GallerySectionProps {
+    data: Artwork[],
 }
 
-interface GallerySectionState extends BaseSectionState {
+interface GallerySectionState {
+
 }
 
-export default class GallerySection extends BaseSection<Artwork> {
+export default class GallerySection extends React.Component<GallerySectionProps, GallerySectionState> {
+    private data: Artwork[];
 
     constructor(props: GallerySectionProps) {
         super(props);
+        this.data = props.data;
     }
 
-    renderCard(object: Artwork, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
-        return <ArtworkCard cardStyleNum={id % 3} key={object.artworkID} object={object} language={language}/>;
+    render() {
+        return (
+            <div className="gallery-section">
+                {this.data.map((artwork: Artwork) =>
+                    <ArtworkCard key={artwork.artworkID} artwork={artwork} />
+                )}
+            </div>
+        )
     }
 }

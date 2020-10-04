@@ -48,7 +48,7 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
 
     renderGallerySection() {
         return (
-            <GallerySection customSectionStyle={"gallery-section"} data={this.state.artworks}/>
+            <GallerySection data={this.state.artworks}/>
         )
     }
 
