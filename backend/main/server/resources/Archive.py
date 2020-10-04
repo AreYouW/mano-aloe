@@ -30,22 +30,22 @@ class ArchiveCount(Resource):
     @cache.cached(timeout=100)
     def get(self, who):
         """Gets the number of archives available"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
-        return {'status': 'success', 'count': archive.query.count()}, 200
+        return {'status': 'success', 'count': archiveTable.query.count()}, 200
 
 
 class ArchiveListResource(Resource):
     @cache.cached(timeout=100)
     def get(self, who):
         """Gets all archive links"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
-        archives = archive.query.all()
+        archives = archiveTable.query.all()
         archives = archives_schema.dump(archives)
 
         if not archives:
@@ -56,8 +56,8 @@ class ArchiveListResource(Resource):
     @jwt_required()
     def post(self, who):
         """Add archive link"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
         json_data = request.get_json(force=True)
@@ -72,7 +72,7 @@ class ArchiveListResource(Resource):
 
         data = archive_schema.load(json_data)
 
-        archive = archive.query.filter_by(archiveURL=data.get('archiveURL')).first()
+        archive = archiveTable.query.filter_by(archiveURL=data.get('archiveURL')).first()
 
         if archive:
             return {'status': 'fail', 'message': 'archive already exists'}, 400
@@ -89,11 +89,11 @@ class ArchiveResource(Resource):
     @cache.cached(timeout=100)
     def get(self, who, archiveID):
         """Get an archive by archive ID"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
-        archive = archive.query.filter_by(archiveID=archiveID)
+        archive = archiveTable.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
@@ -104,11 +104,11 @@ class ArchiveResource(Resource):
     @jwt_required()
     def delete(self, who, archiveID):
         """Delete an archive by ID"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
-        archive = archive.query.filter_by(archiveID=archiveID)
+        archive = archiveTable.query.filter_by(archiveID=archiveID)
 
         if not archive.first():
             return {'status': 'fail', 'message': 'No archive with ID ' + str(archiveID) + ' exists'}, 404
@@ -121,14 +121,14 @@ class ArchiveResource(Resource):
 class ArchiveRandomResource(Resource):
     def get(self, who):
         """Get a random archive link"""
-        archive = tableConversion(who)
-        if archive is None:
+        archiveTable = tableConversion(who)
+        if archiveTable is None:
             return {'status': 'fail', 'message': 'No data for ' + str(who) + ' exists'}, 404
 
-        size = archive.query.count()
+        size = archiveTable.query.count()
         daysPassed = (datetime.date.today() - datetime.date(2020, 10, 4)).days
         archiveID = daysPassed % size + 1
 
-        archive = archive.query.filter_by(archiveID=archiveID)
+        archive = archiveTable.query.filter_by(archiveID=archiveID)
         archive = archives_schema.dump(archive)
         return {'status': 'success', 'archives': archive}, 200
