@@ -1,0 +1,20 @@
+.timer-container {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    background:         #000;
+    width:              60vw;
+    height:             100px;
+}
+
+.timer-counter {
+    /*background:     #fff;*/
+    font-size:      2rem;
+    text-align:     center;
+    color:          #fff;
+}
+
+.timer-flexbox {
+    display:            flex;
+    justify-content:    center;
+}

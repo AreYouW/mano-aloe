@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+import Haaton0_0 from '../../assets/miscellaneous/haaton0.png';
+import Haaton0_1 from '../../assets/miscellaneous/haaton1.png';
+import Haaton1_0 from '../../assets/miscellaneous/haaton0-armsup.png';
+import Haaton1_1 from '../../assets/miscellaneous/haaton1-armsup.png';
+
 import './timer.css';
 
 interface TimerState 
@@ -10,15 +15,16 @@ interface TimerState
     seconds:    number;
 }
 
-interface TimerProps {
+interface TimerProps 
+{
     date: string;
 }
 
-class Timer extends Component<TimerProps, TimerState>
+export default class Timer extends Component<TimerProps, TimerState>
 {
 
     timerid: any;
-    state: TimerState= {
+    state: TimerState = {
         days: 0,
         hours: 0,
         minutes: 0,
@@ -34,7 +40,6 @@ class Timer extends Component<TimerProps, TimerState>
     {
         this.timerid = setInterval(() => {
             this.updateTime();
-            this.setState(this.state);
         }, 1000);
     }
 
@@ -45,24 +50,28 @@ class Timer extends Component<TimerProps, TimerState>
 
     updateTime(): void
     {
-        const diff = +new Date(this.props.date) - +new Date();
+        const diff = (new Date(this.props.date)).getTime() - (new Date()).getTime();
         if (diff > 0)
         {
-            this.state.days     =   Math.floor( diff / (1000 * 60 * 60 * 24));
-            this.state.hours    =   Math.floor((diff / (1000 * 60 * 60)) % 24);
-            this.state.minutes  =   Math.floor((diff / 1000 / 60) % 60);
-            this.state.seconds  =   Math.floor((diff / 1000) % 60);
+            this.setState({
+                days     :   Math.floor( diff / (1000 * 60 * 60 * 24)),
+                hours    :   Math.floor((diff / (1000 * 60 * 60)) % 24),
+                minutes  :   Math.floor((diff / 1000 / 60) % 60),
+                seconds  :   Math.floor((diff / 1000) % 60)
+            });
         }
     }
 
     render()
     {
         return (
-            <div>
-                {this.state.days} DAYS, {this.state.hours} HOURS, {this.state.minutes} MINUTES AND {this.state.seconds} SECONDS
+            <div className="timer-flexbox">
+                <div className="timer-container">
+                    <div className="timer-counter">
+                        {this.state.days} Days, {this.state.hours} Hours, {this.state.minutes} Minutes and {this.state.seconds} Seconds
+                    </div>
+                </div>
             </div>
         );
     }
 }
-
-export default Timer;
