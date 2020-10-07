@@ -9,7 +9,6 @@ import "./archiveSection.css";
 interface ArchiveCardProps {
     who: string;
     fallback: string;
-    style: CSS.Properties;
 }
 
 interface ArchiveCardState {
@@ -49,14 +48,13 @@ export default class ArchiveCard extends React.Component<ArchiveCardProps, Archi
         if (archive) {
             return (
                 <iframe title="A Random Archive" className="video-tag"
-                        style={this.props.style}
                         src={archive.archiveURL} frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen />
             );
         } else {
             return (
-                <div className="video-tag" style={this.props.style}>
+                <div className="video-tag">
                     Loading...
                 </div>
             );
