@@ -77,12 +77,12 @@ class ArchiveListResource(Resource):
         if archive:
             return {'status': 'fail', 'message': 'archive already exists'}, 400
 
-        archive = archive(archiveURL=data.get('archiveURL'))
+        archive = archiveTable(archiveURL=data.get('archiveURL'))
 
         db.session.add(archive)
         db.session.commit()
 
-        return {'status': 'success', 'message': 'archive successfully created'}, 201
+        return {'status': 'success', 'message': 'Archive successfully created'}, 201
 
 
 class ArchiveResource(Resource):
@@ -115,7 +115,7 @@ class ArchiveResource(Resource):
 
         archive.delete()
         db.session.commit()
-        return {'status': 'sucess', 'message': 'archive Deleted'}, 200
+        return {'status': 'sucess', 'message': 'Archive Deleted'}, 200
 
 
 class ArchiveRandomResource(Resource):
