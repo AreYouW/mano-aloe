@@ -54,7 +54,7 @@ export default function ButtonAppBar() {
                         );
                     } else {
                         return (
-                            <NavLink to={obj.link} className='inactive-page-icon' activeClassName='active-page-icon'>
+                            <NavLink key={idx} to={obj.link} className='inactive-page-icon' activeClassName='active-page-icon'>
                                 <IconButton key={idx} className="button" aria-label={buttonAltText}>
                                     {obj.iconFunc()}
                                 </IconButton>

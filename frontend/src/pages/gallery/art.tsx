@@ -3,7 +3,7 @@ import GallerySection from '../../components/gallery/gallerySection';
 import {Artwork} from "../../models/artwork";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './art.css'
+import '../../shared/globalStyles/global.css'
 
 export interface ArtPageProps {
 
@@ -57,7 +57,7 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
         return (
             <section id='anchor'>
                 <div className="separator"/>
-                <div className="notice-center">
+                <div className="justify-center">
                     <div className="notice-container">
                         <div className="notice-content">
                             <p>Fan Art video coming soon!</p>

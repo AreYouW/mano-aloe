@@ -1,16 +1,15 @@
 import React from 'react';
-import MessageCardSection from '../../components/messageCardSection/messageCardSection';
+import MessageCardSection from '../../components/messageSection/messageSection';
 import {Message} from "../../models/message";
 import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './home.css';
 import Spinner from "../../shared/components/spinner/spinner";
 import Fade from "../../shared/animation/fade";
-
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
-import IconButton from '@material-ui/core/IconButton';
+import './home.css';
+import '../../shared/globalStyles/global.css'
 
 export interface HomePageProps {
 
@@ -69,7 +68,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 </div>
                 <div className="video-container">
                     <section id='video-anchor'/>
-                    <iframe title="Mano Aloe Fanmade Video" className="video-tag"
+                    <iframe title="Mano Aloe Fanmade Video" className="video-tag height-width-100"
                             src="https://www.youtube-nocookie.com/embed/1QdGzRGSuOM?rel=0" frameBorder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen/>
@@ -79,7 +78,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                         <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
                     </AnchorLink>
                 </div>
-                <div className="notice-center">
+                <div className="justify-center">
                     <div className="notice-container">
                         <section id='message-anchor'/>
                         <a href="https://manoaloe.jetri.co">
@@ -90,7 +89,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                     <div className="wrapper-overlay">
                         {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
                     </div>
-                <div className="notice-center">
+                <div className="justify-center">
                     <div className="notice-container">
                         <div className="notice-content">
                             <p>Those were all the messages we managed to collect, but there were many more sent your

@@ -4,6 +4,7 @@ import ManoAloeService from "../../controllers/mano-aloe.service";
 import '../../components/gamesSection/gameSection.css'
 import games from './../../tempGameStash/games.json'
 import GameSection from "../../components/gamesSection/gameSection";
+import '../../shared/globalStyles/global.css'
 
 export interface GamePageProps {
 
@@ -31,8 +32,6 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
     componentDidMount() {
         this.getData();
     }
-
-
 
     private getData(): void {
         const mappedGames: Game[] =  games.map((game: { gameID: string; title: string; description: string; thumbnail: string; gitLink: string; gameLink: string; }, idx) => {
