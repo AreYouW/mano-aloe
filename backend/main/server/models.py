@@ -106,3 +106,26 @@ class ArchiveHaachama(db.Model):
 class ArchiveSchema(ma.Schema):
     archiveID = fields.Integer()
     archiveURL = fields.String(required=True)
+
+
+class Animation(db.Model):
+    __tablename__ = 'GALLERY'
+    animationID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    animationLink = db.Column(db.String(2048), nullable=False)
+    artistLink = db.Column(db.String(2048), nullable=True)
+    username = db.Column(db.String(64), nullable=True)
+    title = db.Column(db.String(64), nullable=True)
+
+    def __init__(self, animationLink, username, title, artistLink):
+        self.animationLink = animationLink
+        self.artistLink = artistLink
+        self.username = username
+        self.title = title
+
+
+class AnimationSchema(ma.Schema):
+    animationID = fields.Integer()
+    animationLink = fields.String(required=True)
+    artistLink = fields.String(required=False)
+    username = fields.String(required=True)
+    title = fields.String(required=False)
