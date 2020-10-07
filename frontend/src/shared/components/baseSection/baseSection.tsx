@@ -1,6 +1,7 @@
 import React from 'react';
 import {LanguageContext, LanguageContextValue} from "../../../components/languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
+import {CardStyleLength} from "../../shared/components/baseCard/baseCard.tsx";
 import './baseSection.css'
 
 export interface BaseSectionProps<T> {
@@ -28,7 +29,7 @@ export default abstract class BaseSection<T> extends React.Component<BaseSection
                     return (
                         <div className={sectionStyle}>
                             {this.props.data.map((object: T, idx: number) => {
-                                    return this.renderCard(object, idx % 3, language, idx)
+                                    return this.renderCard(object, idx % CardStyleLength, language, idx)
                                 }
                             )}
                         </div>

@@ -4,9 +4,6 @@ import classNames from 'classnames';
 import handleViewport from 'react-in-viewport';
 import {Region} from "../../../models/region";
 import {Message} from "../../../models/message";
-import CardStyle1 from "../../../assets/cards/card1.svg";
-import CardStyle2 from "../../../assets/cards/card2.png";
-import CardStyle3 from "../../../assets/cards/card3.png";
 import DisplayedLanguage from "../../../models/language";
 import {ReactComponent as TranslateBotan} from "../../../assets/icons/translateIcon.svg";
 import "./messageCard.css";
@@ -49,7 +46,6 @@ export default class MessageCard extends BaseCard<Message, MessageCardProps, Mes
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
     }
-
     private toggleCurrentLanguage(): void {
         this.setState((state: MessageCardState) => ({
             currentLanguage: state.currentLanguage === DisplayedLanguage.Original
