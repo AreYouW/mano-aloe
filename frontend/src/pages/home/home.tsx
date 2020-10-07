@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageCardSection from '../../components/messageSection/messageSection';
+import ArchiveSection from '../../components/archiveSection/archiveSection';
 import {Message} from "../../models/message";
 import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
@@ -77,6 +78,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         return (
             <div className="home-root">
                 <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
+                <ArchiveSection />
                 {this.renderMessageCardSection()}
             </div>
         )
