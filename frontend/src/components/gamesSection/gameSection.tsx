@@ -16,7 +16,7 @@ interface GameSectionState extends BaseSectionState {
 export default class GameSection extends BaseSection<Game> {
     renderCard(object: Game, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
         return(
-            <div className="game-card-container">
+            <div key={id} className="game-card-container">
                 <GameCard key={id} object={object} cardStyleNum={cardStyleNum} language={language}/>
             </div>
         );

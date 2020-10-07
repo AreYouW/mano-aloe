@@ -1,7 +1,5 @@
 .game-container {
     z-index: 1001;
-    width: 100%;
-    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,8 +9,6 @@
 
 .game-background {
     background-color: black;
-    width: 100%;
-    height: 100%;
     opacity: 0.5;
     position: fixed;
     z-index: 1000;
@@ -31,13 +27,6 @@
 .button-right {
     display: flex;
     align-items: flex-end;
-}
-
-
-
-.game-tag {
-    width: 100%;
-    height: 100%;
 }
 
 .game-exit-button {
@@ -67,10 +56,4 @@
     align-items: flex-start;
     overflow: auto;
     height: 100%;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
