@@ -16,7 +16,7 @@ export default class Spinner extends React.Component<SpinnerProps, SpinnerState>
     render(): JSX.Element {
         return (
             <div>
-                <div className="loading-background"/>
+                <div className="loading-background height-width-100"/>
                 <img className="loading-icon-center App-logo" src={AloeHeartIcon} alt="logo" />
             </div>
         )
