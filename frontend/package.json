@@ -14,7 +14,7 @@
     "cra-template-typescript": "1.0.3",
     "csstype": "^3.0.2",
     "intersection-observer": "^0.11.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^16.13.1",
@@ -22,6 +22,7 @@
     "react-in-viewport": "^1.0.0-alpha.14",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-visibility-sensor": "^5.1.1",
     "typescript": "^3.9.7"
   },
   "scripts": {

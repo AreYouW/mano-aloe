@@ -1,6 +1,7 @@
 import {MessageJson} from "./message";
 import {GameJson} from "./game";
 import {ArtworkJson} from "./artwork";
+import {ArchiveJson} from "./archive";
 
 interface BaseResponse {
     status: string;
@@ -16,6 +17,10 @@ export interface GamesResponse extends BaseResponse {
 
 export interface GalleryResponse extends BaseResponse {
     gallery: ArtworkJson[];
+}
+
+export interface ArchiveResponse extends BaseResponse {
+    archives: ArchiveJson[];
 }
 
 export interface CountResponse extends BaseResponse {

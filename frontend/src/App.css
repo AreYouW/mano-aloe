@@ -2,28 +2,6 @@ body {
     background-color: #282c34;
 }
 
-.notice-container {
-	background-image: url(assets/cards/card2.png);
-	background-size: cover;
-    border-radius: 15px;
-	text-align: center;
-	margin: 2rem;
-	max-width: 800px;
-}
-
-.notice-center {
-    display: flex;
-    justify-content: center;
-}
-
-.notice-content {
-	padding: 2rem;
-	padding-top: 15%;
-	font-size: 20px;
-	color: #fff;
-	text-decoration: none;
-}
-
 .community-message-card {
     background-image: url(assets/cards/card2.png);
     background-size: cover;
@@ -70,13 +48,6 @@ body {
     padding: 20px;
 }
 
-.separator {
-    height: 40px;
-    width: 100%;
-    background-color: #dc4087;
-}
-
-
 .anchor-link {
   position: absolute;
   /*make smaller than separator*/
@@ -87,7 +58,7 @@ body {
   right: 0;
   margin: auto;
 
-  transition: "all 0.25s ease";
+  transition: all 0.25s ease;
 }
 
 .main {

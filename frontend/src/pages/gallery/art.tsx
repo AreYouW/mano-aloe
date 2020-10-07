@@ -3,7 +3,7 @@ import GallerySection from '../../components/gallery/gallerySection';
 import {Artwork} from "../../models/artwork";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './art.css'
+import '../../shared/globalStyles/global.css'
 
 export interface ArtPageProps {
 

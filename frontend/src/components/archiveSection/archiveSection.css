@@ -1,7 +1,3 @@
-.wrapper-overlay {
-    padding: 2rem;
-}
-
 .video-container {
     width: 100%;
     box-sizing: border-box;
@@ -16,5 +12,6 @@
 }
 
 .video-tag {
-    float: left;
+    width: 50%;
+    height: 100%;
 }
