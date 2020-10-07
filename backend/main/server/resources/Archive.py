@@ -119,6 +119,7 @@ class ArchiveResource(Resource):
 
 
 class ArchiveRandomResource(Resource):
+    @cache.cached(timeout=100)
     def get(self, who):
         """Get a random archive link."""
         # The source of randomness is the order of the database. The code only pulls consecutive IDs from the database.
@@ -128,7 +129,7 @@ class ArchiveRandomResource(Resource):
 
         size = archiveTable.query.count()
         daysPassed = (datetime.date.today() - datetime.date(2020, 10, 4)).days
-        archiveID = daysPassed % size + 1
+        archiveID = daysPassed % size + 1   #modulus does not return negative, add one because sqlite index sucks and starts at 1
 
         archive = archiveTable.query.filter_by(archiveID=archiveID)
         archive = archives_schema.dump(archive)
