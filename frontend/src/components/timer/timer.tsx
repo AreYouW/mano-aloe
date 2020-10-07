@@ -65,10 +65,41 @@ export default class Timer extends Component<TimerProps, TimerState>
     render()
     {
         return (
-            <div className="timer-flexbox">
+            <div className="timer-center">
                 <div className="timer-container">
                     <div className="timer-counter">
-                        {this.state.days} Days, {this.state.hours} Hours, {this.state.minutes} Minutes and {this.state.seconds} Seconds
+                        <div className="timer-item">
+                            <div>
+                                {this.state.days}
+                            </div>
+                            <div>
+                                Days
+                            </div>
+                        </div>
+                        <div className="timer-item">
+                            <div>
+                                {this.state.hours}
+                            </div>
+                            <div>
+                                Hours 
+                            </div>
+                        </div>
+                        <div className="timer-item">
+                            <div>
+                                {this.state.minutes}
+                            </div>
+                            <div>
+                                Minutes
+                            </div>
+                        </div>
+                        <div className="timer-item">
+                            <div>
+                                {this.state.seconds}
+                            </div>
+                            <div>
+                                Seconds
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -7,14 +7,25 @@
     height:             100px;
 }
 
+@media (max-width: 1024px) {
+    .timer-container {
+        width:  100vw;
+    }
+}
+
 .timer-counter {
-    /*background:     #fff;*/
     font-size:      2rem;
     text-align:     center;
     color:          #fff;
+    display:        flex;
+    flex-wrap:      nowrap;
 }
 
-.timer-flexbox {
+.timer-center {
     display:            flex;
     justify-content:    center;
+}
+
+.timer-item {
+    width: 150px;
 }
