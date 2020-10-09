@@ -15,7 +15,8 @@
     padding: 10px;
 
     background-repeat: no-repeat;
-    background-size: cover;
+    /*background-size: cover;*/
+    background-size: 100%;
 
     color: white;
 
