@@ -2,6 +2,7 @@ import {Message, MessageJson, messageFromJson, messageToJson} from "../models/me
 import {Artwork, ArtworkJson, artworkFromJson, artworkToJson} from "../models/artwork";
 import {Game, GameJson, gameFromJson, gameToJson} from "../models/game";
 import {Archive, ArchiveJson, archiveFromJson, archiveToJson} from "../models/archive";
+import {Announcement, AnnouncementJson, announcementFromJson, announcementToJson} from "../models/announcement"
 import DisplayedLanguage from "../models/language";
 
 export default class SessionService {

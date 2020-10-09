@@ -5,6 +5,7 @@ import Navbar from './components/navigation/navbar';
 import './App.css';
 
 import Timer from './components/timer/timer'
+import AnnouncementSection from './components/announcementSection/announcementSection'
 
 import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
@@ -49,6 +50,7 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                     <div style={{height: 50}}/>
                     <Timer date="2020-10-18T15:00:00Z" />
                     <div style={{height: 50}}/>
+                    <AnnouncementSection/>
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path='/'>
