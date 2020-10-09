@@ -101,7 +101,7 @@ class MessageResource(Resource):
             return {'status': 'fail', 'message': 'No message with ID ' + str(messageID) + ' exists'}, 404
 
         message = messages_schema.dump(message)
-        return {'status': 'success', 'message': message}, 200
+        return {'status': 'success', 'messages': message}, 200
 
     @jwt_required()
     def delete(self, messageID):
