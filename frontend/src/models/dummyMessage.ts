@@ -1,8 +1,8 @@
-import {Country} from "./country";
+import {Region} from "./region";
 
 export interface MessageData {
     Native_message: string;
     JP_message_Deepl: string | null;
     Name: string | null;
-    Country: Country | null; // TODO
+    Region: Region | null; // TODO
 }
