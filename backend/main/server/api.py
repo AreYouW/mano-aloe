@@ -5,6 +5,7 @@ from main.server.resources.Message import MessageListResource, MessageResource, 
 from main.server.resources.Game import GameCount, GameListResource
 from main.server.resources.Gallery import GalleryCount, GalleryListResource
 from main.server.resources.Archive import ArchiveListResource, ArchiveResource, ArchiveCount, ArchiveRandomResource
+from main.server.resources.Annoucement import AnnoucementListResource, AnnoucementCount
 
 # Api Blueprint
 api_bp = Blueprint('api', __name__)
@@ -31,3 +32,7 @@ api.add_resource(ArchiveListResource, '/archives/<who>')
 api.add_resource(ArchiveRandomResource, '/archives/<who>/random')
 api.add_resource(ArchiveResource, '/archives/<who>/<archiveID>')
 api.add_resource(ArchiveCount, '/archives/<who>/count')
+
+# Annoucements
+api.add_resource(AnnoucementListResource, '/annoucements')
+api.add_resource(AnnoucementCount, '/annoucements/count')
