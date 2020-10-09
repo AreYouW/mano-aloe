@@ -1,5 +1,5 @@
 .base-card {
-    --card-text-width: 400px;
+    --card-text-width: 420px;
 
     display: block;
     position: relative;
@@ -15,7 +15,7 @@
     padding: 10px;
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 
     color: white;
 
@@ -24,3 +24,10 @@
 
     transition: all 0.4s ease;
 }
+
+@media (max-width: 1000px) {
+    .base-card {
+        --card-text-width: 330px;
+    }
+}
+

@@ -8,7 +8,11 @@ import './baseCard.css';
 import handleViewport from "react-in-viewport";
 import VisibilitySensor from "react-visibility-sensor";
 
-const CardStyleArr: Array<string> = [CardStyle1, CardStyle2, CardStyle3]
+const CardStyleArr: Array<Array<string>> = [
+    [CardStyle1, "#724683"], 
+    [CardStyle2, "#fd418d"], 
+    [CardStyle3, "#6e4080"]
+]
 
 export interface BaseCardProps<T> {
     object: T;
@@ -42,8 +46,9 @@ export default class BaseCard<T, P extends BaseCardProps<T>, S extends BaseCardS
 
     public renderCard(content: JSX.Element): JSX.Element {
         const rootStyles: CSS.Properties = {
-            backgroundImage: `url(${CardStyleArr[this.cardStyleNum]})`,
+            backgroundImage: `url(${CardStyleArr[this.cardStyleNum][0]})`,
             opacity: (this.state.inViewport ? 1 : 0),
+            backgroundColor: `${ CardStyleArr[this.cardStyleNum][1] }`,
         };
         return(
             <VisibilitySensor onChange={this.toggleVisibility.bind(this)} partialVisibility>
