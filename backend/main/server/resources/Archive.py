@@ -129,6 +129,8 @@ class ArchiveRandomResource(Resource):
 
         size = archiveTable.query.count()
         daysPassed = (datetime.date.today() - datetime.date(2020, 10, 4)).days
+        if size == 0:
+            return {'status': 'fail', 'message': 'No archives exist for ' + str(who) + ' exists'}, 404
         archiveID = daysPassed % size + 1   #modulus does not return negative, add one because sqlite index sucks and starts at 1
 
         archive = archiveTable.query.filter_by(archiveID=archiveID)
