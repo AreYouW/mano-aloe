@@ -2,7 +2,7 @@ import React from 'react';
 import MessageCardSection from '../../components/messageSection/messageSection';
 import ArchiveSection from '../../components/archiveSection/archiveSection';
 import {Message} from "../../models/message";
-import {toCountry} from "../../models/country";
+import {toRegion} from "../../models/region";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
 import Spinner from "../../shared/components/spinner/spinner";
@@ -47,7 +47,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
             this.manoAloeService.getAllMessages()
                 .then((messages: Message[]) => {
                     for (let message of messages) {
-                        message.country = toCountry(message.country as string);
+                        message.region = toRegion(message.region as string);
                     }
                     SessionService.saveMessages(messages);
                     this.setState({loading: false, messages});
