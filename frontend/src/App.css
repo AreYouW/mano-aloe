@@ -64,7 +64,6 @@ body {
 .main {
     background-image: url(assets/backgrounds/background_lightblue.svg);
     background-color: #29222f;
-    /*background-attachment: fixed;*/
     background-repeat: repeat;
 }
 
