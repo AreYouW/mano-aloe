@@ -1,0 +1,31 @@
+.timer-container {
+    display:            flex;
+    justify-content:    center;
+    align-items:        center;
+    background:         #000;
+    width:              60vw;
+    height:             100px;
+}
+
+@media (max-width: 1024px) {
+    .timer-container {
+        width:  100vw;
+    }
+}
+
+.timer-counter {
+    font-size:      2rem;
+    text-align:     center;
+    color:          #fff;
+    display:        flex;
+    flex-wrap:      nowrap;
+}
+
+.timer-center {
+    display:            flex;
+    justify-content:    center;
+}
+
+.timer-item {
+    width: 150px;
+}

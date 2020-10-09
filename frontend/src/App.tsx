@@ -4,6 +4,8 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import Navbar from './components/navigation/navbar';
 import './App.css';
 
+import Timer from './components/timer/timer'
+
 import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
 import DisplayedLanguage from "./models/language";
@@ -44,6 +46,9 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
             <LanguageContext.Provider value={this.state}>
                 <main className="main">
                     <Navbar/>
+                    <div style={{height: 50}}/>
+                    <Timer date="2020-10-18T15:00:00Z" />
+                    <div style={{height: 50}}/>
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path='/'>
