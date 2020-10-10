@@ -1,7 +1,7 @@
 import React from 'react';
 import {LanguageContext, LanguageContextValue} from "../../../components/languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
-import {CardStyleLength} from "../../shared/components/baseCard/baseCard.tsx";
+import {CardStyleLength} from "../../../shared/components/baseCard/baseCard";
 import './baseSection.css'
 
 export interface BaseSectionProps<T> {

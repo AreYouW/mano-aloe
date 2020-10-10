@@ -8,12 +8,14 @@ import './baseCard.css';
 import handleViewport from "react-in-viewport";
 import VisibilitySensor from "react-visibility-sensor";
 
+// TODO(#32): Change this to a class prop so inheriting classes can override it
 const CardStyleArr: Array<Array<string>> = [
     [CardStyle1, "#890620"],
     [CardStyle2, "#3f6fb9"]
 ]
-
-export const CardStyleLength: number = CardStyleArr.length
+// TODO(#32): Remove when CardStyleArr is a prop, and exporting this value is no longer necessary
+export const CardStyleLength: number =
+    CardStyleArr.length > 1 ? CardStyleArr.length : 1;
 
 export interface BaseCardProps<T> {
     object: T;

@@ -2,7 +2,7 @@ import React from 'react';
 import MessageCard from "./messageCard/messageCard";
 import {Message} from "../../models/message";
 import BaseSection, {BaseSectionProps, BaseSectionState} from "../../shared/components/baseSection/baseSection";
-import {CardStyleLength} from "../../shared/components/baseCard/baseCard.tsx";
+import {CardStyleLength} from "../../shared/components/baseCard/baseCard";
 import DisplayedLanguage from "../../models/language";
 
 interface MessageSectionProps extends BaseSectionProps<Message> {
