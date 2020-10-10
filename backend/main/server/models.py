@@ -109,7 +109,7 @@ class ArchiveSchema(ma.Schema):
 
 
 class Animation(db.Model):
-    __tablename__ = 'GALLERY'
+    __tablename__ = 'ANIMATION'
     animationID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     animationLink = db.Column(db.String(2048), nullable=False)
     artistLink = db.Column(db.String(2048), nullable=True)
