@@ -3,6 +3,7 @@
     left: 0;
     right: 0;
     top: 40%;
+    border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
     z-index: 1001;
