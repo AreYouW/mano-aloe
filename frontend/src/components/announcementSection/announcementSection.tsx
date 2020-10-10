@@ -25,16 +25,18 @@ export default class AnnouncementSection extends React.Component<AnnouncementSec
         this.manoAloeService.getAllAnnouncements()
             .then((announcements: Announcement[]) => {
                 this.setState({announcements});
-                console.log(announcements);
             })
     }
 
+    componentDidMount() {
+        this.getData();
+        //console.log(this.manoAloeService.getAllAnnouncements());
+        console.log(this.state);
+    }
+
     render(): JSX.Element {
-        console.log(this.manoAloeService.getAllAnnouncements());
-        //this.getData();
         return (
             <div>
-                test
             </div>
         );
     }

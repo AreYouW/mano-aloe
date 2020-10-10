@@ -29,5 +29,5 @@ export interface CountResponse extends BaseResponse {
 }
 
 export interface AnnouncementResponse extends BaseResponse {
-    announcement: AnnouncementJson[];
+    announcements: AnnouncementJson[];
 }
