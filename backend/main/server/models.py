@@ -83,7 +83,7 @@ class MessageSchema(ma.Schema):
     username = fields.String(required=False)
 
 class Announcement(db.Model):
-    __tablename__ = 'ANNOUCEMENTS'
+    __tablename__ = 'ANNOUNCEMENTS'
     announcementID = db.Column(db.Integer, primary_key=True, autoincrement=True)
     message = db.Column(db.String(1024), nullable=False)
 
