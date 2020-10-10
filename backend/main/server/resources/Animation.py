@@ -5,7 +5,7 @@ from main.server.models import Animation, AnimationSchema
 from flask_jwt import jwt_required
 
 animation_schema = AnimationSchema()
-cinema_schema = AnimationSchema(many=True)
+animations_schema = AnimationSchema(many=True)
 
 
 @app.after_request
@@ -29,14 +29,14 @@ class AnimationListResource(Resource):
     @cache.cached(timeout=100)
     def get(self):
         """Gets all Animations on the server"""
-        cinema = Animation.query.all()
-        cinema = cinema_schema.dump(cinema)
+        animations = Animation.query.all()
+        animations = animations_schema.dump(animations)
 
-        if not cinema:
+        if not animations:
             return {'status': 'success',
-                    'cinema': cinema}, 206  # Partial Content Served, the other status code never loads
+                    'animations': animations}, 206  # Partial Content Served, the other status code never loads
 
-        return {'status': 'success', 'cinema': cinema}, 200
+        return {'status': 'success', 'animations': animations}, 200
 
     @jwt_required()
     def post(self):
