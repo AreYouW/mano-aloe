@@ -50,7 +50,6 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                     <div style={{height: 50}}/>
                     <Timer date="2020-10-18T15:00:00Z" />
                     <div style={{height: 50}}/>
-                    <AnnouncementSection/>
                     <Suspense fallback={<div>Loading...</div>}>
                         <Switch>
                             <Route exact path='/'>

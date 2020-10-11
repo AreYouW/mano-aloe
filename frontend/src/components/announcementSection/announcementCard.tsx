@@ -1,6 +1,10 @@
 import React from "react";
 import {Announcement} from "../../models/announcement";
-//import "./announcementCard.css";
+import CardStyle1 from "../../assets/cards/card1.svg";
+import CardStyle2 from "../../assets/cards/card2.png";
+import CardStyle3 from "../../assets/cards/card3.png";
+import DisplayedLanguage from "../../models/language";
+//import "./messageCard.css";
 import BaseCard, {BaseCardProps, BaseCardState} from "../../shared/components/baseCard/baseCard";
 
 interface AnnouncementCardProps extends BaseCardProps<Announcement>{
@@ -20,8 +24,7 @@ export default class AnnouncementCard extends BaseCard<Announcement, Announcemen
     renderAnnouncement() {
         return (
             <div>
-                test
-                {this.announcement}
+                {this.announcement.message}
             </div>
         )
     }

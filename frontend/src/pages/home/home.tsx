@@ -9,8 +9,10 @@ import Spinner from "../../shared/components/spinner/spinner";
 import Fade from "../../shared/animation/fade";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import {Announcement} from "../../models/announcement"
 import './home.css';
 import '../../shared/globalStyles/global.css'
+import AnnouncementSection from "../../components/announcementSection/announcementSection"
 
 export interface HomePageProps {
 
@@ -19,6 +21,7 @@ export interface HomePageProps {
 export interface HomePageState {
     loading: boolean;
     messages: Message[];
+    announcements: Announcement[];
 }
 
 export default class HomePage extends React.Component<HomePageProps, HomePageState> {
@@ -32,6 +35,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     state: HomePageState = {
         loading: false,
         messages: [],
+        announcements: [],
     }
 
     componentDidMount() {
@@ -57,6 +61,13 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                     this.setState({loading: false});
                 })
         }
+        this.manoAloeService.getAllAnnouncements()
+            .then((announcements: Announcement[]) => {
+                this.setState({announcements});
+            })
+            .catch((error: Error) => {
+                console.error(error);
+            })
     }
 
     renderMessageCardSection() {
@@ -75,6 +86,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 <div className="home-root">
                     <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
                     <ArchiveSection />
+                    <AnnouncementSection data={this.state.announcements}/>
                     {this.renderMessageCardSection()}
                 </div>
             </section>

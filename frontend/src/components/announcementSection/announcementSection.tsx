@@ -3,42 +3,20 @@ import AnnouncementCard from "./announcementCard";
 import {Announcement} from "../../models/announcement";
 import BaseSection, {BaseSectionProps, BaseSectionState} from "../../shared/components/baseSection/baseSection";
 import DisplayedLanguage from "../../models/language";
-import ManoAloeService from "../../controllers/mano-aloe.service"
 
-interface AnnouncementSectionProps {
-    
+interface AnnouncementSectionProps extends BaseSectionProps<Announcement> {
+
 }
 
-interface AnnouncementSectionState {
-    announcements: Announcement[];
+interface AnnouncementSectionState extends BaseSectionState {
+
 }
 
-export default class AnnouncementSection extends React.Component<AnnouncementSectionProps, AnnouncementSectionState> {
-    private manoAloeService: ManoAloeService;
+
+export default class AnnouncementSection extends BaseSection<Announcement> {
 
     constructor(props: AnnouncementSectionProps) {
         super(props);
-        this.manoAloeService = new ManoAloeService();
-    }
-
-    private getData(): void {
-        this.manoAloeService.getAllAnnouncements()
-            .then((announcements: Announcement[]) => {
-                this.setState({announcements});
-            })
-    }
-
-    componentDidMount() {
-        this.getData();
-        //console.log(this.manoAloeService.getAllAnnouncements());
-        console.log(this.state);
-    }
-
-    render(): JSX.Element {
-        return (
-            <div>
-            </div>
-        );
     }
 
     renderCard(object: Announcement, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
