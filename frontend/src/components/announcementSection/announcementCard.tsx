@@ -23,7 +23,7 @@ export default class AnnouncementCard extends BaseCard<Announcement, Announcemen
 
     renderAnnouncement() {
         return (
-            <div>
+            <div className="notice-content">
                 {this.announcement.message}
             </div>
         )

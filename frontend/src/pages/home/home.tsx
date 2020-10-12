@@ -86,7 +86,11 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                 <div className="home-root">
                     <Fade mounted={this.state.loading} childComponent={<Spinner/>}/>
                     <ArchiveSection />
-                    <AnnouncementSection data={this.state.announcements}/>
+                    <div className="justify-center">
+                        <div className="justify-align-center">
+                            <AnnouncementSection data={this.state.announcements}/>
+                        </div>
+                    </div>
                     {this.renderMessageCardSection()}
                 </div>
             </section>
