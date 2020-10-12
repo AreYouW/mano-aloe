@@ -1,5 +1,5 @@
 import React from "react";
-import AloeHeartIcon from '../../../assets/icons/AloeHeartIcon.png';
+import Logo from '../../../assets/icons/temp_logo.svg';
 import './spinner.css';
 
 interface SpinnerProps {
@@ -17,7 +17,7 @@ export default class Spinner extends React.Component<SpinnerProps, SpinnerState>
         return (
             <div>
                 <div className="loading-background height-width-100"/>
-                <img className="loading-icon-center App-logo" src={AloeHeartIcon} alt="logo" />
+                <img className="loading-icon-center App-logo" src={Logo} alt="logo" />
             </div>
         )
     }
