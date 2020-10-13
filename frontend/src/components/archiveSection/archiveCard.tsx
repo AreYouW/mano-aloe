@@ -47,10 +47,9 @@ export default class ArchiveCard extends React.Component<ArchiveCardProps, Archi
         const { archive } = this.state;
         if (archive) {
             return (
-                <iframe title="A Random Archive" className="video-tag"
-                        src={archive.archiveURL} frameBorder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen />
+                <iframe className="video-card" id='ivplayer'
+                    src={archive.archiveURL}
+                    />
             );
         } else {
             return (
