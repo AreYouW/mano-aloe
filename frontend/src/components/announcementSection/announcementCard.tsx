@@ -6,10 +6,10 @@ import DisplayedLanguage from "../../models/language";
 //import "./messageCard.css";
 import BaseCard, {BaseCardProps, BaseCardState} from "../../shared/components/baseCard/baseCard";
 
-interface AnnouncementCardProps extends BaseCardProps<Announcement>{
+interface AnnouncementCardProps extends BaseCardProps<Announcement> {
 }
 
-interface AnnouncementCardState extends BaseCardState{
+interface AnnouncementCardState extends BaseCardState {
 }
 
 export default class AnnouncementCard extends BaseCard<Announcement, AnnouncementCardProps, AnnouncementCardState> {

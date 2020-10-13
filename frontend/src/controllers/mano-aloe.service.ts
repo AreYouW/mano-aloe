@@ -151,7 +151,6 @@ export default class ManoAloeService {
                 return res.json();
             })
             .then((apiResponse: AnnouncementResponse) => {
-                console.log(apiResponse);
                 return apiResponse.announcements.map(announcementFromJson);
             })
             .catch((error: Error) => {

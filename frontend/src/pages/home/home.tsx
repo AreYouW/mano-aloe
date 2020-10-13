@@ -54,20 +54,20 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                         message.region = toRegion(message.region as string);
                     }
                     SessionService.saveMessages(messages);
-                    this.setState({loading: false, messages});
+                    this.setState({messages});
                 })
                 .catch((error: Error) => {
                     console.error(error);
-                    this.setState({loading: false});
                 })
+            this.manoAloeService.getAllAnnouncements()
+                .then((announcements: Announcement[]) => {
+                    this.setState({announcements});
+                })
+                .catch((error: Error) => {
+                    console.error(error);
+                })
+            this.setState({loading: false});
         }
-        this.manoAloeService.getAllAnnouncements()
-            .then((announcements: Announcement[]) => {
-                this.setState({announcements});
-            })
-            .catch((error: Error) => {
-                console.error(error);
-            })
     }
 
     renderMessageCardSection() {
