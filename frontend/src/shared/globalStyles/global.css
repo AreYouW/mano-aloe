@@ -1,3 +1,16 @@
+.main {
+    min-height: 100vh;
+    background-size: 100%;
+}
+
+.padding-top {
+    padding-top: 2rem;
+}
+
+.padding-bottom {
+    padding-bottom: 2rem;
+}
+
 .wrapper-overlay {
     padding: 2rem;
 }
