@@ -44,20 +44,24 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
     render() {
         return (
             <LanguageContext.Provider value={this.state}>
-                <main className="main">
                     <Navbar/>
-                    <div style={{height: 50}}/>
-                    <Timer date="2020-10-18T15:00:00Z" />
-                    <div style={{height: 50}}/>
+                    <div>
+                        <header className="App-header">
+                            <div style={{height: 50}}/>
+                            <Timer date="2020-10-18T15:00:00Z" />
+                            <div style={{height: 50}}/>
+                        </header>
+                    </div>
+                <main className="main">
                     <Suspense fallback={<div>Loading...</div>}>
-                        <Switch>
-                            <Route exact path='/'>
-                                <Redirect to="/home" />
-                            </Route>
-                            <Route path='/home' component={HomePage}/>
-                            <Route path='/game' component={GamePage}/>
-                            <Route path='/art' component={ArtPage}/>
-                        </Switch>
+                    <Switch>
+                        <Route exact path='/'>
+                            <Redirect to="/home" />
+                        </Route>
+                        <Route path='/home' component={HomePage}/>
+                        <Route path='/game' component={GamePage}/>
+                        <Route path='/art' component={ArtPage}/>
+                    </Switch>
                     </Suspense>
                 </main>
             </LanguageContext.Provider>
