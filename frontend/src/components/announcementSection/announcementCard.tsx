@@ -1,8 +1,7 @@
 import React from "react";
 import {Announcement} from "../../models/announcement";
-import CardStyle1 from "../../assets/cards/card1.svg";
-import CardStyle2 from "../../assets/cards/card2.png";
-import CardStyle3 from "../../assets/cards/card3.png";
+import CardStyle1 from "../../assets/cards/fake_card.svg";
+import CardStyle2 from "../../assets/cards/fake_card.svg";
 import DisplayedLanguage from "../../models/language";
 //import "./messageCard.css";
 import BaseCard, {BaseCardProps, BaseCardState} from "../../shared/components/baseCard/baseCard";
