@@ -64,7 +64,6 @@ body {
 .main {
     background-image: url(assets/backgrounds/App-root-bg.svg);
     background-color: #a7bee3;
-    background-size: cover;
     background-repeat: repeat;
 
 }
