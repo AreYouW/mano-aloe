@@ -1,29 +1,39 @@
 .timer-container {
-    display:            flex;
-    justify-content:    center;
-    align-items:        center;
-    background:         #000;
-    width:              60vw;
-    height:             100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    width: 60vw;
+    height: 100px;
+    border-radius: 1vw;
+    position: relative;
 }
 
 @media (max-width: 1024px) {
     .timer-container {
-        width:  100vw;
+        width: 100vw;
     }
 }
 
 .timer-counter {
-    font-size:      2rem;
-    text-align:     center;
-    color:          #fff;
-    display:        flex;
-    flex-wrap:      nowrap;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: nowrap;
+}
+
+.timer-counter .overlay {
+    border: 2px solid green;
+    z-index: 10;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
 }
 
 .timer-center {
-    display:            flex;
-    justify-content:    center;
+    display: flex;
+    justify-content: center;
 }
 
 .timer-item {

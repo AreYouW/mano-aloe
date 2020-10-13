@@ -68,6 +68,7 @@ export default class Timer extends Component<TimerProps, TimerState>
             <div className="timer-center">
                 <div className="timer-container">
                     <div className="timer-counter">
+                        <div className="overlay"/>
                         <div className="timer-item">
                             <div>
                                 {this.state.days}
