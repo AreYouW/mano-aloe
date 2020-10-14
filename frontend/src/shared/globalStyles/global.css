@@ -1,3 +1,11 @@
+.padding-top {
+    padding-top: 2rem;
+}
+
+.padding-bottom {
+    padding-bottom: 2rem;
+}
+
 .wrapper-overlay {
     padding: 2rem;
 }
@@ -20,12 +28,9 @@
 }
 
 .notice-container {
-    background-image: url('../../assets/cards/card2.png');
-    background-size: cover;
-    border-radius: 15px;
-    text-align: center;
-    margin: 2rem;
     max-width: 800px;
+    width: 50vw;
+    min-width: 420px;
 }
 
 .notice-content {
@@ -46,4 +51,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+}
+
+.single-column {
+    columns: 1;
 }
