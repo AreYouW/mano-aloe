@@ -4,7 +4,7 @@
     align-items: center;
     background: #000;
     width: 60vw;
-    height: 100px;
+    height: 200px;
     border-radius: 1vw;
     position: relative;
 }
@@ -24,11 +24,17 @@
     flex-wrap: nowrap;
 }
 
-.timer-counter .overlay {
+.overlay {
     border: 2px solid green;
     z-index: 10;
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
 }
 
 .timer-center {

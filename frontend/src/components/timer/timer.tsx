@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-import Haaton0_0 from '../../assets/miscellaneous/haaton0.png';
-import Haaton0_1 from '../../assets/miscellaneous/haaton1.png';
-import Haaton1_0 from '../../assets/miscellaneous/haaton0-armsup.png';
-import Haaton1_1 from '../../assets/miscellaneous/haaton1-armsup.png';
+import Coco_Dragon_1 from '../../assets/timer/Coco_Dragon_1.png';
+import Coco_Dragon_2 from '../../assets/timer/Coco_Dragon_2.png';
+import Haaton_1 from '../../assets/timer/Haaton_1.png';
+import Haaton_2 from '../../assets/timer/Haaton_2.png';
 
 import './timer.css';
 
@@ -67,8 +67,13 @@ export default class Timer extends Component<TimerProps, TimerState>
         return (
             <div className="timer-center">
                 <div className="timer-container">
+                    <div className="overlay">
+                        <img src={Coco_Dragon_1} className="image" style={{ top: "0px", left: "0px" }}/>
+                        <img src={Coco_Dragon_2} className="image" style={{ top: "0px", right: "0px" }}/>
+                        <img src={Haaton_1} className="image" style={{ bottom: "0px", left: "0px" }}/>
+                        <img src={Haaton_2} className="image" style={{ bottom: "0px", right: "0px" }}/>
+                    </div>
                     <div className="timer-counter">
-                        <div className="overlay"/>
                         <div className="timer-item">
                             <div>
                                 {this.state.days}
