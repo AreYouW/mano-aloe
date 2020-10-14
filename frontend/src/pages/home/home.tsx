@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageCardSection from '../../components/messageSection/messageSection';
+import MessageSection from '../../components/messageSection/messageSection';
 import ArchiveSection from '../../components/archiveSection/archiveSection';
 import {Message} from "../../models/message";
 import {toRegion} from "../../models/region";
@@ -74,7 +74,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         return (
             <div>
                 <div className="wrapper-overlay">
-                    {this.state.loading ? <div/> : <MessageCardSection data={this.state.messages}/>}
+                    {this.state.loading ? <div/> : <MessageSection data={this.state.messages}/>}
                 </div>
             </div>
         )
