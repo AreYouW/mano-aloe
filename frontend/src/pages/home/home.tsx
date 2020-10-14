@@ -88,7 +88,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                     <ArchiveSection />
                     <div className="justify-center padding-top">
                         <div className="justify-align-center">
-                            <AnnouncementSection data={this.state.announcements}/>
+                            <AnnouncementSection data={this.state.announcements} customSectionStyle="single-column notice-container"/>
                         </div>
                     </div>
                     {this.renderMessageCardSection()}

@@ -5,7 +5,6 @@ import Navbar from './components/navigation/navbar';
 import './App.css';
 
 import Timer from './components/timer/timer'
-import AnnouncementSection from './components/announcementSection/announcementSection'
 
 import SessionService from "./services/session.service";
 import {LanguageContext, LanguageContextValue} from "./components/languageSwitch/languageContext";
