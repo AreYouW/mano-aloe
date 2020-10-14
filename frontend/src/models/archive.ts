@@ -37,5 +37,5 @@ function shortenArchiveURL(archiveURL: string): string {
  * @param archiveURL 
  */
 function lengthenArchiveURL(archiveURL: string): string {
-    return "https://www.youtube-nocookie.com/embed/" + archiveURL;
+    return "https://invidious.kavin.rocks/embed/" + archiveURL;
 }
