@@ -54,14 +54,14 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
                     </div>
                 <main className="main">
                     <Suspense fallback={<div>Loading...</div>}>
-                    <Switch>
-                        <Route exact path='/'>
-                            <Redirect to="/home" />
-                        </Route>
-                        <Route path='/home' component={HomePage}/>
-                        <Route path='/game' component={GamePage}/>
-                        <Route path='/art' component={ArtPage}/>
-                    </Switch>
+                        <Switch>
+                            <Route exact path='/'>
+                                <Redirect to="/home" />
+                            </Route>
+                            <Route path='/home' component={HomePage}/>
+                            <Route path='/game' component={GamePage}/>
+                            <Route path='/art' component={ArtPage}/>
+                        </Switch>
                     </Suspense>
                 </main>
             </LanguageContext.Provider>
