@@ -90,6 +90,7 @@ body {
     background-repeat: repeat;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
+    background-size: 100%;
 }
 
 .App-link {
