@@ -63,7 +63,7 @@ body {
 
 .main {
     background-image: url(assets/backgrounds/App-root-bg.svg);
-    background-color: #29222f;
+    background-color: #a7bee3;
     background-repeat: repeat;
 }
 
@@ -85,13 +85,12 @@ body {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
-    background-image: url(assets/backgrounds/bg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-color: #f6873d;
+    background-image: url(assets/backgrounds/top-bg.svg);
+    background-repeat: repeat;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
+    background-size: 100%;
 }
 
 .App-link {
