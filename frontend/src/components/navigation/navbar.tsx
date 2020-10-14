@@ -14,7 +14,7 @@ export default function ButtonAppBar() {
     return (
         <header className="navbar">
             <img className="icon-button" src={Logo} alt="cocohaato logo"/>
-            <div className="title">魔の友から、アロエちゃんへ</div>
+            <div className="title">ココとはあと、お帰り!</div>
             <div className="icons">
                 {[
                     {
