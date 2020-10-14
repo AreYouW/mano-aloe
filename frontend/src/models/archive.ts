@@ -37,5 +37,5 @@ function shortenArchiveURL(archiveURL: string): string {
  * @param archiveURL 
  */
 function lengthenArchiveURL(archiveURL: string): string {
-    return "https://invidious.xyz/embed/" + archiveURL;
+    return "https://invidious.snopyta.org/embed/" + archiveURL;
 }
