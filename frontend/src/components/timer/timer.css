@@ -10,7 +10,6 @@
 }
 
 .timer-counter {
-    font-size: 2rem;
     text-align: center;
     color: #fff;
     display: flex;
@@ -23,6 +22,14 @@
     z-index: 10;
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.timer-value {
+    font-size: 2.5rem;
+}
+
+.timer-unit {
+    font-size: 1.25rem;
 }
 
 .sprite {

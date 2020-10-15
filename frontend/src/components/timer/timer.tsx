@@ -87,34 +87,34 @@ export default class Timer extends Component<TimerProps, TimerState>
                     </div>
                     <div className="timer-counter">
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.days}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Days
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.hours}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Hours 
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.minutes}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Minutes
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.seconds}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Seconds
                             </div>
                         </div>
