@@ -25,17 +25,17 @@ export function archiveToJson(archive: Archive): ArchiveJson {
 }
 
 /**
- * Turn a full youtube-nocookie link into the 11-character ID
+ * Turn a full invidious link into the 11-character ID
  * @param archiveURL
  */
 function shortenArchiveURL(archiveURL: string): string {
-    return archiveURL.substring(39, 50);
+    return archiveURL.substring(28, 39);
 }
 
 /**
- * Turn a shortened 11-character ID into a full youtube-nocookie link
+ * Turn a shortened 11-character ID into a full invidious link
  * @param archiveURL 
  */
 function lengthenArchiveURL(archiveURL: string): string {
-    return "https://www.youtube-nocookie.com/embed/" + archiveURL + "?rel=0";
+    return "https://invidious.kavin.rocks/embed/" + archiveURL;
 }

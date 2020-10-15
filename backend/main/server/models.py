@@ -82,6 +82,17 @@ class MessageSchema(ma.Schema):
     region = fields.String(required=False)
     username = fields.String(required=False)
 
+class Announcement(db.Model):
+    __tablename__ = 'ANNOUNCEMENTS'
+    announcementID = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    message = db.Column(db.String(1024), nullable=False)
+
+    def __init__(self, message):
+        self.message = message
+
+class AnnouncementSchema(ma.Schema):
+    announcementID = fields.Integer()
+    message = fields.String(required=True)
 
 class ArchiveCoco(db.Model):
     __tablename__ = 'COCO'
