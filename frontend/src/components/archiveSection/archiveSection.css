@@ -3,6 +3,7 @@
     box-sizing: border-box;
     height: 75vh;
     background-attachment: fixed;
+    background-color: #000;
 }
 
 @media (max-width: 900px) {
