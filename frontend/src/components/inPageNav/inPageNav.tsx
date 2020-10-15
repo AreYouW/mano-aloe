@@ -10,8 +10,8 @@ import '../../shared/globalStyles/global.css'
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    color: "#333031",
+  containedPrimary: {
+    color: "#ffffff",
     backgroundColor: "#333031",
     '&:hover': {
       backgroundColor: "#333039",
@@ -25,12 +25,16 @@ export default function InPageNav() {
 
     return (
         <div className="in-page-nav">
-            <Button variant="contained" startIcon={<SportsEsportsIcon />} size="large" color="primary" className={classes.root}>
-                <NavLink to={"/game"}>Games</NavLink>
-            </Button>
-            <Button variant="contained" startIcon={<PhotoLibraryIcon />} size="large" color="primary">
-                <NavLink to={"/art"}>Gallery</NavLink>
-            </Button>
+            <NavLink to={"/game"}>
+                <Button variant="contained" startIcon={<SportsEsportsIcon />} size="large" color="primary" className={classes.containedPrimary}>
+                    Games
+                </Button>
+            </NavLink>
+            <NavLink to={"/art"}>
+                <Button variant="contained" startIcon={<PhotoLibraryIcon />} size="large" color="primary" className={classes.containedPrimary}>
+                    Gallery
+                </Button>
+            </NavLink>
         </div>
     );
 }
