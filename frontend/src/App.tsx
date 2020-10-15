@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import {Route, Switch, Redirect} from 'react-router-dom';
+import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 
 import ButtonAppBar from './components/navigation/navbar';
 import InPageNav from './components/inPageNav/inPageNav';
@@ -17,6 +17,14 @@ const ArtPage = lazy(() => import('./pages/gallery/art'));
 
 interface AppProps {
 }
+
+const AltNav = () => {
+    const location = useLocation();
+    if (location.pathname == "/home") {
+        return <InPageNav />;
+    }
+    return <span />
+};
 
 export default class App extends React.Component<AppProps, LanguageContextValue> {
 
@@ -45,13 +53,13 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
     render() {
         return (
             <LanguageContext.Provider value={this.state}>
-                    <ButtonAppBar/>
+                    <ButtonAppBar />
                     <div>
                         <header className="App-header">
                             <div style={{height: 50}}/>
                             <Timer date="2020-10-18T15:00:00Z" />
                             <div style={{height: 50}}/>
-                            <InPageNav/>
+                            <AltNav />
                         </header>
                     </div>
                 <main className="main">
