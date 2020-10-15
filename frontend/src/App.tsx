@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import {Route, Switch, Redirect} from 'react-router-dom';
 
-import Navbar from './components/navigation/navbar';
+import ButtonAppBar from './components/navigation/navbar';
+import InPageNav from './components/inPageNav/inPageNav';
 import './App.css';
 
 import Timer from './components/timer/timer'
@@ -44,12 +45,13 @@ export default class App extends React.Component<AppProps, LanguageContextValue>
     render() {
         return (
             <LanguageContext.Provider value={this.state}>
-                    <Navbar/>
+                    <ButtonAppBar/>
                     <div>
                         <header className="App-header">
                             <div style={{height: 50}}/>
                             <Timer date="2020-10-18T15:00:00Z" />
                             <div style={{height: 50}}/>
+                            <InPageNav/>
                         </header>
                     </div>
                 <main className="main">
