@@ -17,18 +17,3 @@
     font-size: 2.125rem;
     color: white;
 }
-
-
-.in-page-link-buttons {
-    color: #333031;
-}
-
-.inactive-page-icon {
-    opacity: 0.4;
-    text-decoration: none;
-}
-
-.active-page-icon {
-    opacity: 1;
-    text-decoration: none;
-  }
