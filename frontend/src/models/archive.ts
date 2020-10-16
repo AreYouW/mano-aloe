@@ -29,7 +29,7 @@ export function archiveToJson(archive: Archive): ArchiveJson {
  * @param archiveURL
  */
 function shortenArchiveURL(archiveURL: string): string {
-    return archiveURL.substring(28, 39);
+    return archiveURL.substring(39, 50);
 }
 
 /**
@@ -37,5 +37,5 @@ function shortenArchiveURL(archiveURL: string): string {
  * @param archiveURL 
  */
 function lengthenArchiveURL(archiveURL: string): string {
-    return "https://invidious.kavin.rocks/embed/" + archiveURL;
+    return "https://www.youtube-nocookie.com/embed/" + archiveURL;
 }
