@@ -24,22 +24,12 @@ export default abstract class BaseSection<T> extends React.Component<BaseSection
 
     render(): JSX.Element {
         const sectionStyle: string = this.props.customSectionStyle ? this.props.customSectionStyle : "base-section";
-        // if (!this.props.data.length)
-        //     return (
-        //         <div className="justify-center">
-        //             <div className="notice-container">
-        //                 <div className="notice-content">
-        //                     Nothing here! Check back later!
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     )
         return (
             <LanguageContext.Consumer>
                 {(value: LanguageContextValue) => {
                     const {language} = value;
                     if (!this.props.data.length) {
-                        const emptyAnnouncemment: Announcement = { announcementID: 0, message: "Nothing here! Check back later!"};
+                        const emptyAnnouncemment: Announcement = { announcementID: 0, message: "Nothing here! Check back later!" };
                         return <AnnouncementCard object={emptyAnnouncemment} cardStyleNum={0} language={language} />;
                     } else {
                         return (
