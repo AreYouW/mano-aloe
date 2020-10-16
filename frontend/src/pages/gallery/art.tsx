@@ -48,7 +48,17 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
     }
 
     renderGallerySection() {
-        return (
+        if (!this.state.artworks.length)
+            return (
+                <div className="justify-center">
+                    <div className="notice-container">
+                        <div className="notice-content">
+                            Nothing here! Check back later!
+                        </div>
+                    </div>
+                </div>
+            )
+        else return (
             <GallerySection data={this.state.artworks}/>
         )
     }
