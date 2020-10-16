@@ -81,7 +81,7 @@ body {
 }
 
 .App-header {
-    min-height: 80vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,10 +89,16 @@ body {
     font-size: calc(10px + 2vmin);
     background-color: #f6873d;
     background-image: url(https://u.cubeupload.com/zapple/topbg.png);
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-size: 100%;
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .App-header {
+        background-size: auto 100%;
+    }
 }
 
 .App-link {
