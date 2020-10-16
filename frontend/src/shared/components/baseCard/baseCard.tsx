@@ -3,7 +3,7 @@ import DisplayedLanguage from "../../../models/language";
 import CSS from "csstype";
 // Throwing in a fake card style in until we have actual cards
 import CardStyle1 from "../../../assets/cards/coco_card_2.svg";
-import CardStyle2 from "../../../assets/cards/card1.svg";
+import CardStyle2 from "../../../assets/cards/coco_card_2.svg";
 import './baseCard.css';
 import handleViewport from "react-in-viewport";
 import VisibilitySensor from "react-visibility-sensor";

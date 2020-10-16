@@ -36,9 +36,11 @@
 
 .notice-content {
     padding: 2rem;
-    padding-top: 15%;
     font-size: 20px;
+    text-align: center;
     color: #fff;
+    background-color: #890620;
+    border-radius: 15px;
     text-decoration: none;
 }
 
