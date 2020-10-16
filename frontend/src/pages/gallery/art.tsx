@@ -5,6 +5,10 @@ import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
 import '../../shared/globalStyles/global.css'
 
+import AnnouncementCard from '../../components/announcementSection/announcementCard';
+import {Announcement} from "../../models/announcement";
+import DisplayedLanguage from "../../models/language";
+
 export interface ArtPageProps {
 
 }
@@ -48,16 +52,10 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
     }
 
     renderGallerySection() {
-        if (!this.state.artworks.length)
-            return (
-                <div className="justify-center">
-                    <div className="notice-container">
-                        <div className="notice-content">
-                            Nothing here! Check back later!
-                        </div>
-                    </div>
-                </div>
-            )
+        if (!this.state.artworks.length) {
+            const emptyAnnouncemment: Announcement = { announcementID: 0, message: "Nothing here! Check back later!" };
+            return <AnnouncementCard object={emptyAnnouncemment} cardStyleNum={0} language={DisplayedLanguage.Original} />;
+        }
         else return (
             <GallerySection data={this.state.artworks}/>
         )
