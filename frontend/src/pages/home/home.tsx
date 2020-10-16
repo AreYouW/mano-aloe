@@ -17,7 +17,8 @@ export interface HomePageProps {
 }
 
 export interface HomePageState {
-    loading: boolean;
+    messageLoaded: boolean;
+    announcementLoaded: boolean;
     messages: Message[];
     announcements: Announcement[];
 }
@@ -31,7 +32,8 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     }
 
     state: HomePageState = {
-        loading: false,
+        messageLoaded: false,
+        announcementLoaded: false,
         messages: [],
         announcements: [],
     }
@@ -43,36 +45,35 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
     private getData(): void {
         const cachedMessages: Message[] | null = SessionService.getMessages();
         if (cachedMessages && cachedMessages.length) {
-            this.setState({messages: cachedMessages});
+            this.setState({messages: cachedMessages, messageLoaded: true});
         } else {
-            this.setState({loading: true});
+            this.setState({messageLoaded: false});
             this.manoAloeService.getAllMessages()
                 .then((messages: Message[]) => {
                     for (let message of messages) {
                         message.region = toRegion(message.region as string);
                     }
                     SessionService.saveMessages(messages);
-                    this.setState({messages});
+                    this.setState({messages, messageLoaded: true});
                 })
                 .catch((error: Error) => {
                     console.error(error);
-                })
-            this.manoAloeService.getAllAnnouncements()
-                .then((announcements: Announcement[]) => {
-                    this.setState({announcements});
-                })
-                .catch((error: Error) => {
-                    console.error(error);
-                })
-            this.setState({loading: false});
+                });
         }
+        this.manoAloeService.getAllAnnouncements()
+            .then((announcements: Announcement[]) => {
+                this.setState({announcements, announcementLoaded: true});
+            })
+            .catch((error: Error) => {
+                console.error(error);
+            });
     }
 
     renderMessageCardSection() {
         return (
             <div>
                 <div className="wrapper-overlay">
-                    {this.state.loading ? <div/> : <MessageSection data={this.state.messages}/>}
+                    {this.state.messageLoaded && this.state.announcementLoaded ? <MessageSection data={this.state.messages}/> : <div/>}
                 </div>
             </div>
         )
