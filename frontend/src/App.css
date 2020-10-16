@@ -69,8 +69,6 @@ body {
     background-size: 100%;
 }
 
-
-
 .App-logo {
     height: 20vmin;
     pointer-events: none;
@@ -90,7 +88,7 @@ body {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     background-color: #f6873d;
-    background-image: url(assets/backgrounds/top-bg.svg);
+    background-image: url(https://u.cubeupload.com/zapple/topbg.png);
     background-repeat: repeat;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
