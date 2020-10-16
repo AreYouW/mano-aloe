@@ -10,7 +10,7 @@ import VisibilitySensor from "react-visibility-sensor";
 
 // TODO(#32): Change this to a class prop so inheriting classes can override it
 const CardStyleArr: Array<Array<string>> = [
-    [CardStyle1, "#890620"],
+    [CardStyle1, "#d35454"],
     [CardStyle2, "#3f6fb9"]
 ]
 // TODO(#32): Remove when CardStyleArr is a prop, and exporting this value is no longer necessary

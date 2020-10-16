@@ -1,8 +1,9 @@
 .timer-container {
+    max-width: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #806c75;
+    background: #b0548c;
     width: 60vw;
     height: 200px;
     border-radius: 1vw;
