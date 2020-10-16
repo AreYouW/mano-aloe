@@ -71,7 +71,7 @@ export default class Timer extends Component<TimerProps, TimerState>
     render()
     {
         return (
-            <div className="timer-center">
+            <div className="justify-center">
                 <div className="timer-container">
                     <div className="timer-overlay">
                         <img src={Coco_Dragon_1} id="coco1"   className="sprite"/>

@@ -37,11 +37,6 @@
     height: 100px;
 }
 
-.timer-center {
-    display: flex;
-    justify-content: center;
-}
-
 .timer-item {
     width: 150px;
 }
