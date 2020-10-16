@@ -3,7 +3,7 @@ import {Region, toRegion} from "./region";
 export interface Message {
     messageID: number;
     orig_msg: string;
-    tl_msg: string|null;
+    tl_msg: string | null;
     region: Region;
     username: string;
 }
@@ -11,7 +11,7 @@ export interface Message {
 export interface MessageJson {
     messageID: number;
     orig_msg: string;
-    tl_msg: string|null;
+    tl_msg: string | null;
     region: string;
     username: string;
 }
