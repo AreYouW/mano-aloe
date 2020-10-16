@@ -1,0 +1,7 @@
+---
+siteuser: haachama-coco
+installpath: "/opt/{{ siteuser }}"
+gitrepo: "https://github.com/DuongTyler/haachama-coco.git"
+backend_proto: "https"
+backend_ip: "cocochama.tk"
+backend_port: "443"
