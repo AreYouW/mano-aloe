@@ -1,3 +1,4 @@
+import os
 from flask_jwt import JWT
 from main.server import app
 from main.server.models import User
@@ -17,7 +18,7 @@ def identity(payload):
 
 
 app.config['PROPAGATE_EXCEPTIONS'] = True
-app.config['SECRET_KEY'] = 'change_this_on_live'  # will change on upload
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'supersecretkey177013')  # will change on upload
 
 # Allows tokens to be valid for longer
 app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=60 * 15)
