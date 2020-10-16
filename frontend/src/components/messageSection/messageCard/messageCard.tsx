@@ -42,7 +42,7 @@ export default class MessageCard extends BaseCard<Message, MessageCardProps, Mes
         super(props);
         this.message = props.object;
         this.flag = regionCodeToFlag(props.object.region);
-        this.hasTlMsg = this.message.tl_msg.length > 0;
+        this.hasTlMsg = this.message.tl_msg != null;
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);
     }
