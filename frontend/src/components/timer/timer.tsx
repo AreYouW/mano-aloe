@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 
-import Haaton0_0 from '../../assets/miscellaneous/haaton0.png';
-import Haaton0_1 from '../../assets/miscellaneous/haaton1.png';
-import Haaton1_0 from '../../assets/miscellaneous/haaton0-armsup.png';
-import Haaton1_1 from '../../assets/miscellaneous/haaton1-armsup.png';
+import Coco_Dragon_1 from '../../assets/timer/Coco_Dragon_1.png';
+import Coco_Dragon_2 from '../../assets/timer/Coco_Dragon_2.png';
+import Coco_Dragon_3 from '../../assets/timer/dragon0.png';
+import Coco_Dragon_4 from '../../assets/timer/dragon1.png';
+import Haaton_1 from '../../assets/timer/Haaton_1.png';
+import Haaton_2 from '../../assets/timer/Haaton_2.png';
+import Haaton_3 from '../../assets/timer/haaton0.png';
+import Haaton_4 from '../../assets/timer/haaton1.png';
+import Haaton_5 from '../../assets/timer/haaton0-armsup.png';
+import Haaton_6 from '../../assets/timer/haaton1-armsup.png';
 
 import './timer.css';
 
@@ -65,38 +71,50 @@ export default class Timer extends Component<TimerProps, TimerState>
     render()
     {
         return (
-            <div className="timer-center">
+            <div className="justify-center">
                 <div className="timer-container">
+                    <div className="timer-overlay">
+                        <img src={Coco_Dragon_1} id="coco1"   className="sprite"/>
+                        <img src={Coco_Dragon_2} id="coco2"   className="sprite"/>
+                        <img src={Coco_Dragon_3} id="coco3"   className="sprite-large"/>
+                        <img src={Coco_Dragon_4} id="coco4"   className="sprite-large"/>
+                        <img src={Haaton_1}      id="haaton1" className="sprite"/>
+                        <img src={Haaton_2}      id="haaton2" className="sprite"/>
+                        <img src={Haaton_3}      id="haaton3" className="sprite-large"/>
+                        <img src={Haaton_4}      id="haaton4" className="sprite-large"/>
+                        <img src={Haaton_5}      id="haaton5" className="sprite-large"/>
+                        <img src={Haaton_6}      id="haaton6" className="sprite-large"/>
+                    </div>
                     <div className="timer-counter">
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.days}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Days
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.hours}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Hours 
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.minutes}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Minutes
                             </div>
                         </div>
                         <div className="timer-item">
-                            <div>
+                            <div className="timer-value">
                                 {this.state.seconds}
                             </div>
-                            <div>
+                            <div className="timer-unit">
                                 Seconds
                             </div>
                         </div>

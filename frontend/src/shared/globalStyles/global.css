@@ -11,6 +11,7 @@
 }
 
 .justify-align-center {
+    max-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +25,7 @@
 .separator {
     height: 40px;
     width: 100%;
-    background-color: #dc4087;
+    background-color: #890620;
 }
 
 .notice-container {
