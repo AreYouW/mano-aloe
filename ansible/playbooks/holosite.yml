@@ -4,7 +4,7 @@
     - "../vars/vars.yml"
   environment:
     REACT_APP_CACHE_LIFESPAN: 7200000
-    REACT_APP_API: "http://{{ backend_ip }}:{{ backend_port }}/api/"
+    REACT_APP_API: "{{ backend_proto }}://{{ backend_ip }}:{{ backend_port }}/api/"
   tasks:
 
 ### [SYSTEM]
@@ -18,7 +18,7 @@
     - name: install npm 
       become: yes
       apt:
-        name: npm
+        name: nodejs
         state: latest
 
     - name: install pip
@@ -102,6 +102,11 @@
         cmd: "/opt/{{ siteuser }}/venv/bin/python3 /opt/{{ siteuser }}/git/backend/manage.py create_db"
       when: not migration_exists.stat.exists
 
+    - name: "check if systemd service exists"
+      stat:
+        path: "/etc/systemd/system/cocochama.service"
+      register: systemd_exists
+
     - name: "upload systemd service file"
       become: yes
       copy:
@@ -110,6 +115,7 @@
         owner: root
         group: root
         mode: '0644'
+      when: not systemd_exists.stat.exists
 
     - name: "enable and start backend systemd service"
       become: yes
