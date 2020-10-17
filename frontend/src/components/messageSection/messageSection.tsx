@@ -22,7 +22,7 @@ export default class MessageSection extends BaseSection<Message> {
 
     renderCard(object: Message, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
         return (
-            <div id="message-anchor">
+            <div className="messagecard-center">
                 <MessageCard key={object.messageID} object={object} cardStyleNum={id % CardStyleLength} language={language}/>
             </div>
         );

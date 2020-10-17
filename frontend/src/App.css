@@ -87,17 +87,24 @@ body {
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    background-color: #f6873d;
+    background-color: #d35454;
     background-image: url(https://u.cubeupload.com/zapple/topbg.png);
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-size: 100%;
 }
 
-@media (max-aspect-ratio: 16/9) {
+@media (max-width: 900px) {
     .App-header {
-        background-size: auto 100%;
+        background-image: none;
+    }
+}
+
+@media (max-height: 800px) {
+    .App-header {
+        min-height: 580px;
     }
 }
 
@@ -113,4 +120,3 @@ body {
         transform: rotate(360deg);
     }
 }
-

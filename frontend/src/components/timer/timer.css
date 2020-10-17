@@ -143,4 +143,15 @@
     }
 }
 
-
+@media (max-width: 420px) {
+    #haaton3 {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+    #haaton4 {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+}

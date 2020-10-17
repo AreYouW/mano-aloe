@@ -21,6 +21,12 @@
     color: white;
 }
 
+@media (max-width: 356px) {
+    .navbar > .title {
+        font-size: 1rem;
+    }
+}
+
 .navbar > * {
     flex: 0 0 auto;
 }
@@ -65,4 +71,11 @@
 .active-page-icon {
     opacity: 1;
     text-decoration: none;
-  }
+}
+
+@media (max-width: 310px) {
+    .navbar > .icons .button {
+        width: 48px;
+        height: 48px;
+    }
+}

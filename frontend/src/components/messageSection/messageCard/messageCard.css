@@ -32,6 +32,7 @@
 
 .message-card-text-container {
     width: var(--card-text-width);
+    max-width: 100%;
     margin: 0 auto;
 
     font-size: 24px;
@@ -69,4 +70,19 @@
     float: left;
     width: 40px;
     height: 40px;
+}
+
+@media (max-width: 420px) {
+    .message-card {
+        --card-text-width: 100%;
+    }
+    .message-card-text > div {
+        max-width: 70vw;
+    }
+}
+@media (max-width: 1000px) {
+    .messagecard-center {
+        display: flex;
+        justify-content: center;
+    }
 }
