@@ -81,6 +81,8 @@ body {
 }
 
 .App-header {
+    padding-top: 7vw;
+    padding-bottom: 7vw;
     min-height: 70vh;
     display: flex;
     flex-direction: column;
@@ -93,6 +95,7 @@ body {
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-size: 100%;
+    background-position: center;
 }
 
 @media (max-aspect-ratio: 16/9) {
