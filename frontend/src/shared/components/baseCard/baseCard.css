@@ -4,6 +4,7 @@
     display: block;
     position: relative;
     width: auto;
+    min-height: 1px;  /*DO NOT REMOVE THIS LINE. OTHERWISE YOU WILL EXPERIENCE PAIN IN TRYING TO FIX COLUMN STACKING ON CHROME/IOS*/
     min-width: 330px;
     max-width: 45vw;
     overflow: auto;
