@@ -94,7 +94,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
                             <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
                         </AnchorLink>
                     </div>
-                    <div className="justify-center padding-top">
+                    <div id="message-anchor" className="justify-center padding-top">
                         <div className="justify-align-center">
                             <AnnouncementSection data={this.state.announcements} customSectionStyle="single-column notice-container"/>
                         </div>

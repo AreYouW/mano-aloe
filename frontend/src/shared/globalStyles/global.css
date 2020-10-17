@@ -59,3 +59,13 @@
 .single-column {
     columns: 1;
 }
+
+@media (max-width: 430px) {
+    .notice-content {
+        max-width: 100vw;
+    }
+    .notice-container {
+        max-width: 100vw;
+        min-width: 100vw;
+    }
+}
