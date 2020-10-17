@@ -4,7 +4,7 @@ Fork of Mano Aloe Support Squad's site [Mano Aloe Support Squad (M.A.S.S)](https
 
 ### Website Team
 - DuongTyler - System administrator and full stack
-- zapplecat - frontend dev
+- zapplecat - frontend dev and designer
 - kuroni - full stack dev
 - Laskovsky - refactored our CSS code into something usable
 
@@ -14,8 +14,11 @@ Fork of Mano Aloe Support Squad's site [Mano Aloe Support Squad (M.A.S.S)](https
 - [Kiranami](https://twitter.com/kyoto_kiranami) - Made some amazing Coco artwork featured on the front banner
 - [Rouge](https://twitter.com/roguedono) - Designed some assets for the banner
 
-### Translators
+### Translators/Proofreaders
 - JJhoonster - Helped with translations for the web team
+
+## Special Thanks
+Thanks to [Cubeupload](https://cubeupload.com/) for being the host of some of our assets and gallery content. Without them, the site would be much more barebones! Check them out!
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
