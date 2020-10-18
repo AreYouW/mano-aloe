@@ -74,21 +74,18 @@ export default class Timer extends Component<TimerProps, TimerState>
     }
 
     render() {
-        const buttonstyle = {
+        const popupstyle = {
             display: this.state.isFinale ? 'inherit' : 'none',
             width: '300px',
-        }
-        const videostyle = {
-            display: this.state.isFinale ? 'inherit' : 'none',
-            width: '300px',
+            zIndex: 69,
         }
         //I am well aware that this is such a scuffed way of doing this but I don't care
         return (
             <React.Fragment>
-                <div style={ { display: this.state.isFinale ? 'inherit' : 'none' } }>
+                <div style={ popupstyle }>
                     <iframe src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
                 </div>
-                <button onClick={() => {this.setState({isFinale: false})}} style={buttonstyle}>close</button>
+                <button onClick={() => {this.setState({isFinale: false})}} style={popupstyle}>close</button>
                 <div className="justify-center">
                     <div className="timer-container">
                         <div className="timer-overlay">
