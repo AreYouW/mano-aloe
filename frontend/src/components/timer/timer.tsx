@@ -91,16 +91,16 @@ export default class Timer extends Component<TimerProps, TimerState>
                 <div className="justify-center">
                     <div className="timer-container">
                         <div className="timer-overlay">
-                            <img src={Coco_Dragon_1} id="coco1"   className="sprite" />
-                            <img src={Coco_Dragon_2} id="coco2"   className="sprite" />
-                            <img src={Coco_Dragon_3} id="coco3"   className="sprite-large" />
-                            <img src={Coco_Dragon_4} id="coco4"   className="sprite-large" />
-                            <img src={Haaton_1}      id="haaton1" className="sprite" />
-                            <img src={Haaton_2}      id="haaton2" className="sprite" />
-                            <img src={Haaton_3}      id="haaton3" className="sprite-large" />
-                            <img src={Haaton_4}      id="haaton4" className="sprite-large" />
-                            <img src={Haaton_5}      id="haaton5" className="sprite-large" />
-                            <img src={Haaton_6}      id="haaton6" className="sprite-large" />
+                            <img src={Coco_Dragon_1} id="coco1"   title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
+                            <img src={Coco_Dragon_2} id="coco2"   title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
+                            <img src={Coco_Dragon_3} id="coco3"   title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Coco_Dragon_4} id="coco4"   title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_1}      id="haaton1" title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
+                            <img src={Haaton_2}      id="haaton2" title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
+                            <img src={Haaton_3}      id="haaton3" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_4}      id="haaton4" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_5}      id="haaton5" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_6}      id="haaton6" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
                         </div>
                         <div className="timer-counter">
                             <div className="timer-item">
