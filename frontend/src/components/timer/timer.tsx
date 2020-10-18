@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {Cancel} from "@material-ui/icons";
+import {IconButton} from "@material-ui/core";
 
 import Coco_Dragon_1 from '../../assets/timer/Coco_Dragon_1.png';
 import Coco_Dragon_2 from '../../assets/timer/Coco_Dragon_2.png';
@@ -83,11 +85,23 @@ export default class Timer extends Component<TimerProps, TimerState>
             color: '#ffffff',
             padding: '5px',
         }
+        const buttonstyle = {
+            display: this.state.isFinale ? 'flex' : 'none',
+            alignSelf: "flex-start",
+            marginLeft: "1vw",
+            marginTop: "-3vw",
+            disableRipple: true,
+            backgroundColor: 'transparent',
+        }
         //I am well aware that this is such a scuffed way of doing this but I don't care
         return (
             <React.Fragment>
-                <iframe style={popupstyle} src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
-                <button onClick={() => {this.setState({isFinale: false})}} style={popupstyle} title="I am not gonna spend another hour working on this last minute feature at 1AM, we'll fix it in another PR™">close</button>
+                <div style={ popupstyle }>
+                    <iframe src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
+                    <IconButton onClick={() => {this.setState({isFinale: false})}} style={buttonstyle}>
+                        <Cancel />
+                    </IconButton>
+                </div>
                 <div className="justify-center">
                     <div className="timer-container">
                         <div className="timer-overlay">
