@@ -13,15 +13,16 @@ import Haaton_6 from '../../assets/timer/haaton1-armsup.png';
 
 import './timer.css';
 
-interface TimerState 
+interface TimerState
 {
     days:       number;
     hours:      number;
     minutes:    number;
     seconds:    number;
+    isFinale:   boolean;
 }
 
-interface TimerProps 
+interface TimerProps
 {
     date: string;
 }
@@ -34,22 +35,23 @@ export default class Timer extends Component<TimerProps, TimerState>
         days: 0,
         hours: 0,
         minutes: 0,
-        seconds: 0
+        seconds: 0,
+        isFinale: false
     };
 
-    constructor(props: TimerProps) 
+    constructor(props: TimerProps)
     {
         super(props);
     }
 
-    componentDidMount(): void 
+    componentDidMount(): void
     {
         this.timerid = setInterval(() => {
             this.updateTime();
         }, 1000);
     }
 
-    componentDidUnmount(): void 
+    componentDidUnmount(): void
     {
         clearInterval(this.timerid);
     }
@@ -65,62 +67,68 @@ export default class Timer extends Component<TimerProps, TimerState>
                 minutes  :   Math.floor((diff / 1000 / 60) % 60),
                 seconds  :   Math.floor((diff / 1000) % 60)
             });
+        } else {
+            this.setState({isFinale: true})
         }
     }
 
-    render()
-    {
+    render() {
         return (
-            <div className="justify-center">
-                <div className="timer-container">
-                    <div className="timer-overlay">
-                        <img src={Coco_Dragon_1} id="coco1"   className="sprite"/>
-                        <img src={Coco_Dragon_2} id="coco2"   className="sprite"/>
-                        <img src={Coco_Dragon_3} id="coco3"   className="sprite-large"/>
-                        <img src={Coco_Dragon_4} id="coco4"   className="sprite-large"/>
-                        <img src={Haaton_1}      id="haaton1" className="sprite"/>
-                        <img src={Haaton_2}      id="haaton2" className="sprite"/>
-                        <img src={Haaton_3}      id="haaton3" className="sprite-large"/>
-                        <img src={Haaton_4}      id="haaton4" className="sprite-large"/>
-                        <img src={Haaton_5}      id="haaton5" className="sprite-large"/>
-                        <img src={Haaton_6}      id="haaton6" className="sprite-large"/>
-                    </div>
-                    <div className="timer-counter">
-                        <div className="timer-item">
-                            <div className="timer-value">
-                                {this.state.days}
-                            </div>
-                            <div className="timer-unit">
-                                Days
-                            </div>
+            <React.Fragment>
+                <div style={ { display: this.state.isFinale ? 'inherit' : 'none' } }>
+                    <iframe src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
+                </div>
+                <div className="justify-center">
+                    <div className="timer-container">
+                        <div className="timer-overlay">
+                            <img src={Coco_Dragon_1} id="coco1"   className="sprite" />
+                            <img src={Coco_Dragon_2} id="coco2"   className="sprite" />
+                            <img src={Coco_Dragon_3} id="coco3"   className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
+                            <img src={Coco_Dragon_4} id="coco4"   className="sprite-large"/>
+                            <img src={Haaton_1}      id="haaton1" className="sprite"/>
+                            <img src={Haaton_2}      id="haaton2" className="sprite"/>
+                            <img src={Haaton_3}      id="haaton3" className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
+                            <img src={Haaton_4}      id="haaton4" className="sprite-large" />
+                            <img src={Haaton_5}      id="haaton5" className="sprite-large" />
+                            <img src={Haaton_6}      id="haaton6" className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
                         </div>
-                        <div className="timer-item">
-                            <div className="timer-value">
-                                {this.state.hours}
+                        <div className="timer-counter">
+                            <div className="timer-item">
+                                <div className="timer-value">
+                                    {this.state.days}
+                                </div>
+                                <div className="timer-unit">
+                                    Days
+                                </div>
                             </div>
-                            <div className="timer-unit">
-                                Hours 
+                            <div className="timer-item">
+                                <div className="timer-value">
+                                    {this.state.hours}
+                                </div>
+                                <div className="timer-unit">
+                                    Hours
+                                </div>
                             </div>
-                        </div>
-                        <div className="timer-item">
-                            <div className="timer-value">
-                                {this.state.minutes}
+                            <div className="timer-item">
+                                <div className="timer-value">
+                                    {this.state.minutes}
+                                </div>
+                                <div className="timer-unit">
+                                    Minutes
+                                </div>
                             </div>
-                            <div className="timer-unit">
-                                Minutes
-                            </div>
-                        </div>
-                        <div className="timer-item">
-                            <div className="timer-value">
-                                {this.state.seconds}
-                            </div>
-                            <div className="timer-unit">
-                                Seconds
+                            <div className="timer-item">
+                                <div className="timer-value">
+                                    {this.state.seconds}
+                                </div>
+                                <div className="timer-unit">
+                                    Seconds
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
