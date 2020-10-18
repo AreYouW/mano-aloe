@@ -78,27 +78,29 @@ export default class Timer extends Component<TimerProps, TimerState>
             display: this.state.isFinale ? 'inherit' : 'none',
             width: '300px',
             zIndex: 69,
+            border: 'none',
+            backgroundColor: '#333031',
+            color: '#ffffff',
+            padding: '5px',
         }
         //I am well aware that this is such a scuffed way of doing this but I don't care
         return (
             <React.Fragment>
-                <div style={ popupstyle }>
-                    <iframe src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
-                </div>
-                <button onClick={() => {this.setState({isFinale: false})}} style={popupstyle}>close</button>
+                <iframe style={popupstyle} src="https://www.youtube-nocookie.com/embed/vHOmLRcCVQ0"/>
+                <button onClick={() => {this.setState({isFinale: false})}} style={popupstyle} title="I am not gonna spend another hour working on this last minute feature at 1AM, we'll fix it in another PR™">close</button>
                 <div className="justify-center">
                     <div className="timer-container">
                         <div className="timer-overlay">
                             <img src={Coco_Dragon_1} id="coco1"   className="sprite" />
                             <img src={Coco_Dragon_2} id="coco2"   className="sprite" />
-                            <img src={Coco_Dragon_3} id="coco3"   className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
-                            <img src={Coco_Dragon_4} id="coco4"   className="sprite-large"/>
-                            <img src={Haaton_1}      id="haaton1" className="sprite"/>
-                            <img src={Haaton_2}      id="haaton2" className="sprite"/>
-                            <img src={Haaton_3}      id="haaton3" className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
+                            <img src={Coco_Dragon_3} id="coco3"   className="sprite-large" />
+                            <img src={Coco_Dragon_4} id="coco4"   className="sprite-large" />
+                            <img src={Haaton_1}      id="haaton1" className="sprite" />
+                            <img src={Haaton_2}      id="haaton2" className="sprite" />
+                            <img src={Haaton_3}      id="haaton3" className="sprite-large" />
                             <img src={Haaton_4}      id="haaton4" className="sprite-large" />
                             <img src={Haaton_5}      id="haaton5" className="sprite-large" />
-                            <img src={Haaton_6}      id="haaton6" className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
+                            <img src={Haaton_6}      id="haaton6" className="sprite-large" />
                         </div>
                         <div className="timer-counter">
                             <div className="timer-item">
