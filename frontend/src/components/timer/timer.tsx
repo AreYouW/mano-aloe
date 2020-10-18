@@ -87,11 +87,12 @@ export default class Timer extends Component<TimerProps, TimerState>
         }
         const buttonstyle = {
             display: this.state.isFinale ? 'flex' : 'none',
-            alignSelf: "flex-start",
-            marginLeft: "1vw",
-            marginTop: "-3vw",
+            alignSelf: 'flex-start',
+            marginLeft: '-1vw',
+            marginTop: '-3vw',
             disableRipple: true,
             backgroundColor: 'transparent',
+            color: '#fff',
         }
         //I am well aware that this is such a scuffed way of doing this but I don't care
         return (
@@ -107,14 +108,14 @@ export default class Timer extends Component<TimerProps, TimerState>
                         <div className="timer-overlay">
                             <img src={Coco_Dragon_1} id="coco1"   title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
                             <img src={Coco_Dragon_2} id="coco2"   title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
-                            <img src={Coco_Dragon_3} id="coco3"   title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Coco_Dragon_3} id="coco3"   title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
                             <img src={Coco_Dragon_4} id="coco4"   title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
                             <img src={Haaton_1}      id="haaton1" title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
                             <img src={Haaton_2}      id="haaton2" title="Drawn by Porukana (@Porukana_Art)"  className="sprite" />
-                            <img src={Haaton_3}      id="haaton3" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_3}      id="haaton3" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } }/>
                             <img src={Haaton_4}      id="haaton4" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
                             <img src={Haaton_5}      id="haaton5" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
-                            <img src={Haaton_6}      id="haaton6" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" />
+                            <img src={Haaton_6}      id="haaton6" title="Drawn by Peanuts (@PistachiosChips)"   className="sprite-large" style={ { display: this.state.isFinale ? 'none' : 'inherit' } } />
                         </div>
                         <div className="timer-counter">
                             <div className="timer-item">
