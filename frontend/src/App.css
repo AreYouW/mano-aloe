@@ -17,15 +17,15 @@ body {
 }
 
 @media (max-height: 800px) {
-	/*Handle mobile layouts since everything is freaking tiny*/
-	.community-message-card {
-		margin-top: 12vh;
-	}
+    /*Handle mobile layouts since everything is freaking tiny*/
+    .community-message-card {
+        margin-top: 12vh;
+    }
 }
 
 @media (max-width: 900px) {
     .community-message-card {
-		margin-top: 25vh;
+        margin-top: 25vh;
         width: 90%;
     }
 }
@@ -88,7 +88,7 @@ body {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     background-color: #d35454;
-    background-image: url(https://u.cubeupload.com/zapple/topbg.png);
+    background-image: url(https://u.cubeupload.com/zapple/460topbg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
