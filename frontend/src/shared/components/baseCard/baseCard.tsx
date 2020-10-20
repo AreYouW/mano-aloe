@@ -4,7 +4,6 @@ import CSS from "csstype";
 // Throwing in a fake card style in until we have actual cards
 import CardStyle1 from "../../../assets/cards/card6.svg";
 import CardStyle2 from "../../../assets/cards/card5.png";
-import CardStyle3 from "../../../assets/cards/coco_card_2.svg";
 import './baseCard.css';
 import handleViewport from "react-in-viewport";
 import VisibilitySensor from "react-visibility-sensor";
@@ -13,7 +12,6 @@ import VisibilitySensor from "react-visibility-sensor";
 const CardStyleArr: Array<Array<string>> = [
     [CardStyle1, "#d35454"],
     [CardStyle2, "#3f6fb9"],
-    [CardStyle3, "#3f6fb9"]
 ]
 // TODO(#32): Remove when CardStyleArr is a prop, and exporting this value is no longer necessary
 export const CardStyleLength: number =
