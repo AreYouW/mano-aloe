@@ -89,10 +89,12 @@ for message in api_json["messages"]:
                      "username": str(driver.find_elements_by_class_name("message-card-footer")[api_json["messages"].index(message)].text)})
 def unescape(in_str):
     """Unicode-unescape string with only some characters escaped."""
-    regex_n.sub(" ", in_str)
+    in_str = in_str.replace('\\u3000', " ")
+    in_str = regex_n.sub(" ", in_str)
     in_str = in_str.encode('unicode-escape')   # bytes with all chars escaped (the original escapes have the backslash escaped)
     in_str = in_str.replace(b'\\\\u', b'\\u')  # unescape the \
     in_str = in_str.decode('unicode-escape')   # unescape unicode
+    in_str = in_str.rstrip()
     return in_str
 #print(DOM_list)
 for message in api_json["messages"]:
@@ -112,5 +114,5 @@ for message in api_json["messages"]:
         pass
     else:
         print(F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1} THE USERNAME HAS A MISMATCH')
-print(unescape(api_json["messages"][225]["tl_msg"]))
-print(DOM_list[225]["tl_msg"])
+print(unescape(api_json["messages"][177]["tl_msg"]))
+print(DOM_list[177]["tl_msg"])
