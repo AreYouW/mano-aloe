@@ -14,16 +14,16 @@ parser.add_argument(
 parser.add_argument(
     '--website_url', '-w', dest='website_url',
     default='https://manotomo.tk',
-    help='the website that this test will use, do not include a slash at the end'
+    help='the website that this test will use, do not include a slash at the end, for example https://manotomo.tk is good, but https://manotomo.tk/ or https://manotomo.tk/api/messages is bad.'
 )
 args = parser.parse_args()
-#driver = webdriver.Chrome(args.chromedriver_path)
-driver = webdriver.Chrome("/users/jesse/chromedriver")
+driver = webdriver.Chrome(args.chromedriver_path)
+#driver = webdriver.Chrome("/users/jesse/chromedriver")
 driver.implicitly_wait(5)
-#driver.get(args.website_url)
-driver.get("https://manotomo.tk")
-#api = requests.get(args.website_url + "/api/messages")
-api = requests.get("https://manotomo.tk/api/messages")
+driver.get(args.website_url)
+#driver.get("https://manotomo.tk")
+api = requests.get(args.website_url + "/api/messages")
+#api = requests.get("https://manotomo.tk/api/messages")
 api_json = api.json()
 print(json.dumps(api_json, sort_keys=True, ensure_ascii=True, indent=4))
 driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -89,6 +89,7 @@ for message in api_json["messages"]:
                      "username": str(driver.find_elements_by_class_name("message-card-footer")[api_json["messages"].index(message)].text)})
 def unescape(in_str):
     """Unicode-unescape string with only some characters escaped."""
+    #ideographic space skip, it doesn't work for some reason :(
     in_str = in_str.replace('\\u3000', " ")
     in_str = regex_n.sub(" ", in_str)
     in_str = in_str.encode('unicode-escape')   # bytes with all chars escaped (the original escapes have the backslash escaped)
@@ -114,5 +115,3 @@ for message in api_json["messages"]:
         pass
     else:
         print(F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1} THE USERNAME HAS A MISMATCH')
-print(unescape(api_json["messages"][177]["tl_msg"]))
-print(DOM_list[177]["tl_msg"])
