@@ -1,8 +1,8 @@
-from selenium import webdriver
-import requests
-import json
 import argparse
+import json
 import re
+import requests
+from selenium import webdriver
 
 REGEX_N = re.compile(r"((\\n)|\s){1,5}")
 
@@ -36,23 +36,21 @@ def test_main(args):
                 native_message_list.append(
                     driver.find_element_by_xpath(native_msg_xpath).text)
                 break
-            else:
-                pass
     driver.find_element_by_xpath(
         '//*[@id="root"]/main/header/div[2]/button').click()
+
     for message in api_json["messages"]:
-        front_end_index = api_json["messages"].index(message) + 1
+        message_index = api_json["messages"].index(message)
         jp_msg_xpath = "{}{}{}".format(
             msg_card_head,
-            front_end_index,
+            message_index + 1,
             msg_card_tail)
         flag_xpath = "{}{}{}".format(
             flag_head,
-            front_end_index,
+            message_index + 1,
             flag_tail
         )
-        if api_json["messages"][api_json["messages"].index(
-                message)]["tl_msg"] == "":
+        if api_json["messages"][message_index]["tl_msg"] == "":
             jp_message_list.append("")
         else:
             driver.execute_script(
@@ -63,8 +61,7 @@ def test_main(args):
                     jp_message_list.append(
                         driver.find_element_by_xpath(jp_msg_xpath).text)
                     break
-        if api_json["messages"][api_json["messages"].index(
-                message)]["country"] == "":
+        if api_json["messages"][message_index]["country"] == "":
             flag_list.append("")
         else:
             driver.execute_script(
@@ -83,46 +80,43 @@ def test_main(args):
         DOM_list.append(
             {
                 "country": str(
-                    flag_list[api_json["messages"].index(message)]),
+                    flag_list[message_index]),
                 "orig_msg": str(
-                    native_message_list[api_json["messages"].index(message)]),
+                    native_message_list[message_index]),
                 "tl_msg": str(
-                    jp_message_list[api_json["messages"].index(message)]),
+                    jp_message_list[message_index]),
                 "username": str(
                     driver.find_elements_by_class_name(
-                        "message-card-footer")[api_json[
-                            "messages"].index(message)].text)
+                        "message-card-footer")[message_index].text)
             }
         )
 
     for message in api_json["messages"]:
+        message_index = api_json["messages"].index(message)
+        front_end_index = message_index + 1
         if not (
-            api_json["messages"][api_json["messages"].index(message)][
-                "country"] == DOM_list[api_json["messages"].index(message)][
-                "country"]):
+            api_json["messages"][message_index][
+                "country"] == DOM_list[message_index]["country"]):
             print(
-                F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
+                F'ALERT: ON ENTRY {front_end_index}'
                 ' THE COUNTRY HAS A MISMATCH')
         if not (
-            unescape(api_json["messages"][api_json["messages"].index(message)][
-                "orig_msg"]) == DOM_list[api_json["messages"].index(message)][
-                "orig_msg"]):
+            unescape(api_json["messages"][message_index][
+                "orig_msg"]) == DOM_list[message_index]["orig_msg"]):
             print(
-                F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
+                F'ALERT: ON ENTRY {front_end_index}'
                 ' THE NATIVE MESSAGE HAS A MISMATCH')
         if not (
-            unescape(api_json["messages"][api_json["messages"].index(message)][
-                "tl_msg"]) == DOM_list[api_json["messages"].index(message)][
-                "tl_msg"]):
+            unescape(api_json["messages"][message_index][
+                "tl_msg"]) == DOM_list[message_index]["tl_msg"]):
             print(
-                F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
+                F'ALERT: ON ENTRY {front_end_index}'
                 ' THE TRANSLATED MESSAGE HAS A MISMATCH')
         if not (
-            unescape(api_json["messages"][api_json["messages"].index(message)][
-                "username"]) == DOM_list[api_json["messages"].index(message)][
-                "username"]):
+            unescape(api_json["messages"][message_index][
+                "username"]) == DOM_list[message_index]["username"]):
             print(
-                F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
+                F'ALERT: ON ENTRY {front_end_index}'
                 ' THE USERNAME HAS A MISMATCH')
 
 
