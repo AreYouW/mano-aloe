@@ -1,54 +1,47 @@
+# Python Standard libs
 import argparse
 import json
 import re
+from typing import List
+
+# 3rd party libs
 import requests
 from selenium import webdriver
 
+
 REGEX_N = re.compile(r"((\\n)|\s){1,5}")
+MSG_CARD_HEAD = '//div[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
+MSG_CARD_TAIL = ']/div[1]/div[@class="message-card-text active-message"]/div'
+FLAG_HEAD = '//*[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
+FLAG_TAIL = ']/div[2]/span/img'
 
 
-def test_main(args):
+def test_messages(args):
     driver = webdriver.Chrome(args.chromedriver_path)
     driver.implicitly_wait(5)
     driver.get(args.website_url)
+
     api = requests.get(args.backend_url + "/api/messages")
     api_json = api.json()
     print(json.dumps(api_json, sort_keys=True, ensure_ascii=True, indent=4))
+
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    msg_card_head = '//div[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
-    msg_card_tail = ']/div[1]/div[@class="message-card-text active-message"]/div'
-    flag_head = '//*[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
-    flag_tail = ']/div[2]/span/img'
-    native_message_list = []
+    native_message_list = get_native_messages(driver, api_json)
     jp_message_list = []
     flag_list = []
     DOM_list = []
-    for message in api_json["messages"]:
-        native_msg_xpath = "{}{}{}".format(
-            msg_card_head,
-            api_json["messages"].index(message) + 1,
-            msg_card_tail)
-        driver.execute_script(
-            "arguments[0].scrollIntoView();",
-            driver.find_element_by_xpath(native_msg_xpath))
-        while True:
-            if driver.find_element_by_xpath(native_msg_xpath).is_displayed():
-                native_message_list.append(
-                    driver.find_element_by_xpath(native_msg_xpath).text)
-                break
-    driver.find_element_by_xpath(
-        '//*[@id="root"]/main/header/div[2]/button').click()
 
     for message in api_json["messages"]:
         message_index = api_json["messages"].index(message)
+        front_end_index = message_index + 1
         jp_msg_xpath = "{}{}{}".format(
-            msg_card_head,
-            message_index + 1,
-            msg_card_tail)
+            MSG_CARD_HEAD,
+            front_end_index,
+            MSG_CARD_TAIL)
         flag_xpath = "{}{}{}".format(
-            flag_head,
-            message_index + 1,
-            flag_tail
+            FLAG_HEAD,
+            front_end_index,
+            FLAG_TAIL
         )
         if api_json["messages"][message_index]["tl_msg"] == "":
             jp_message_list.append("")
@@ -120,6 +113,26 @@ def test_main(args):
                 ' THE USERNAME HAS A MISMATCH')
 
 
+def get_native_messages(driver, api_json) -> List:
+    native_message_list = []
+    # Retrieves all the Native Messages
+    for message in api_json["messages"]:
+        native_msg_xpath = "{}{}{}".format(
+            MSG_CARD_HEAD,
+            api_json["messages"].index(message) + 1,
+            MSG_CARD_TAIL)
+        driver.execute_script(
+            "arguments[0].scrollIntoView();",
+            driver.find_element_by_xpath(native_msg_xpath))
+        while True:
+            if driver.find_element_by_xpath(native_msg_xpath).is_displayed():
+                native_message_list.append(
+                    driver.find_element_by_xpath(native_msg_xpath).text)
+                break
+    driver.find_element_by_xpath(
+        '//*[@id="root"]/main/header/div[2]/button').click()
+    return native_message_list
+
 def unescape(in_str):
     """Unicode-unescape string with only some characters escaped."""
     #ideographic space skip, it doesn't work for some reason :(
@@ -154,4 +167,4 @@ if __name__ == '__main__':
         help='URL for the backend. Used for local testing.'
     )
     args = parser.parse_args()
-    test_main(args)
+    test_messages(args)
