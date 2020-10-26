@@ -1,10 +1,11 @@
 # Python Standard libs
 import argparse
-import json
+from pprint import pprint
 import re
-from typing import List
+from typing import List, Dict
 
 # 3rd party libs
+from deepdiff import DeepDiff
 import requests
 from selenium import webdriver
 
@@ -14,6 +15,7 @@ MSG_CARD_HEAD = '//div[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
 MSG_CARD_TAIL = ']/div[1]/div[@class="message-card-text active-message"]/div'
 FLAG_HEAD = '//*[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
 FLAG_TAIL = ']/div[2]/span/img'
+TEST_DIMENSIONS = ["country", "orig_msg", "tl_msg", "username"]
 
 
 def test_messages(args):
@@ -23,115 +25,115 @@ def test_messages(args):
 
     api = requests.get(args.backend_url + "/api/messages")
     api_json = api.json()
-    print(json.dumps(api_json, sort_keys=True, ensure_ascii=True, indent=4))
 
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    native_message_list = get_native_messages(driver, api_json)
-    jp_message_list = []
-    flag_list = []
-    DOM_list = []
+    DOM_list = get_message_cards_data(driver, api_json)
+
+    for message in api_json["messages"]:
+        message["tl_msg"] = unescape(message["tl_msg"])
+        message["orig_msg"] = unescape(message["orig_msg"])
 
     for message in api_json["messages"]:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
-        jp_msg_xpath = "{}{}{}".format(
-            MSG_CARD_HEAD,
-            front_end_index,
-            MSG_CARD_TAIL)
-        flag_xpath = "{}{}{}".format(
-            FLAG_HEAD,
-            front_end_index,
-            FLAG_TAIL
-        )
-        if api_json["messages"][message_index]["tl_msg"] == "":
-            jp_message_list.append("")
-        else:
-            driver.execute_script(
-                "arguments[0].scrollIntoView();",
-                driver.find_element_by_xpath(jp_msg_xpath))
-            while True:
-                if driver.find_element_by_xpath(jp_msg_xpath).is_displayed():
-                    jp_message_list.append(
-                        driver.find_element_by_xpath(jp_msg_xpath).text)
-                    break
-        if api_json["messages"][message_index]["country"] == "":
-            flag_list.append("")
-        else:
-            driver.execute_script(
-                "arguments[0].scrollIntoView();",
-                driver.find_element_by_xpath(flag_xpath))
-            while True:
-                if driver.find_element_by_xpath(flag_xpath).is_displayed():
-                    flag_list.append("".join(
-                        map(lambda x: chr(
-                            ord(x) - 0x1F1A5), driver.find_element_by_xpath(
-                            flag_xpath).get_attribute("alt"))))
-                    break
+        for dimension in TEST_DIMENSIONS:
+            diff = DeepDiff(
+                api_json["messages"][message_index][dimension],
+                DOM_list[message_index][dimension])
+            if diff:
+                print(f"Diff detected in front end index {front_end_index}")
+                pprint(diff)
+
+
+def get_native_messages(
+        driver, api_json, front_end_index, message_index) -> str:
+    native_msg_xpath = "{}{}{}".format(
+        MSG_CARD_HEAD,
+        front_end_index,
+        MSG_CARD_TAIL)
+    driver.execute_script(
+        "arguments[0].scrollIntoView();",
+        driver.find_element_by_xpath(native_msg_xpath))
+    while True:
+        if driver.find_element_by_xpath(native_msg_xpath).is_displayed():
+            return driver.find_element_by_xpath(native_msg_xpath).text
+    else:
+        raise ValueError(
+            "Some opertaion has gone wrong, front_end_index "
+            f"{front_end_index} for native msg does not exist on page")
+
+
+def get_jp_messages(
+        driver, api_json, front_end_index, message_index) -> str:
+    jp_msg_xpath = "{}{}{}".format(
+        MSG_CARD_HEAD,
+        front_end_index,
+        MSG_CARD_TAIL)
+    if api_json["messages"][message_index]["tl_msg"]:
         driver.execute_script(
             "arguments[0].scrollIntoView();",
             driver.find_element_by_xpath(jp_msg_xpath))
-        DOM_list.append(
-            {
-                "country": str(
-                    flag_list[message_index]),
-                "orig_msg": str(
-                    native_message_list[message_index]),
-                "tl_msg": str(
-                    jp_message_list[message_index]),
-                "username": str(
-                    driver.find_elements_by_class_name(
-                        "message-card-footer")[message_index].text)
-            }
-        )
+        while True:
+            if driver.find_element_by_xpath(jp_msg_xpath).is_displayed():
+                return driver.find_element_by_xpath(jp_msg_xpath).text
+    return ""
 
+
+def get_message_flags(
+        driver, api_json, front_end_index, message_index) -> str:
+    flag_xpath = "{}{}{}".format(
+        FLAG_HEAD,
+        front_end_index,
+        FLAG_TAIL
+    )
+    if api_json["messages"][message_index]["country"]:
+        driver.execute_script(
+            "arguments[0].scrollIntoView();",
+            driver.find_element_by_xpath(flag_xpath))
+        while True:
+            if driver.find_element_by_xpath(flag_xpath).is_displayed():
+                return ("".join(
+                    map(lambda x: chr(
+                        ord(x) - 0x1F1A5), driver.find_element_by_xpath(
+                        flag_xpath).get_attribute("alt"))))
+    return ""
+
+
+def get_message_username(
+        driver, api_json, message_index) -> str:
+    return driver.find_elements_by_class_name(
+        "message-card-footer")[message_index].text
+
+
+def get_message_cards_data(driver, api_json) -> List:
+    dom_list = []
     for message in api_json["messages"]:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
-        if not (
-            api_json["messages"][message_index][
-                "country"] == DOM_list[message_index]["country"]):
-            print(
-                F'ALERT: ON ENTRY {front_end_index}'
-                ' THE COUNTRY HAS A MISMATCH')
-        if not (
-            unescape(api_json["messages"][message_index][
-                "orig_msg"]) == DOM_list[message_index]["orig_msg"]):
-            print(
-                F'ALERT: ON ENTRY {front_end_index}'
-                ' THE NATIVE MESSAGE HAS A MISMATCH')
-        if not (
-            unescape(api_json["messages"][message_index][
-                "tl_msg"]) == DOM_list[message_index]["tl_msg"]):
-            print(
-                F'ALERT: ON ENTRY {front_end_index}'
-                ' THE TRANSLATED MESSAGE HAS A MISMATCH')
-        if not (
-            unescape(api_json["messages"][message_index][
-                "username"]) == DOM_list[message_index]["username"]):
-            print(
-                F'ALERT: ON ENTRY {front_end_index}'
-                ' THE USERNAME HAS A MISMATCH')
+        native_msg = get_native_messages(
+            driver, api_json, front_end_index, message_index)
+        username = get_message_username(
+            driver, api_json, message_index)
+        flag = get_message_flags(
+            driver, api_json, front_end_index, message_index)
+        # Translate Botan GO!
+        driver.find_element_by_xpath(
+            '//*[@id="root"]/main/header/div[2]/button').click()
+        jp_msg = get_jp_messages(
+            driver, api_json, front_end_index, message_index)
+        # Revert Back for normal msg
+        driver.find_element_by_xpath(
+            '//*[@id="root"]/main/header/div[2]/button').click()
+        dom_list.append(
+            {
+                "country": flag,
+                "orig_msg": unescape(native_msg),
+                "tl_msg": unescape(jp_msg),
+                "username": username
+            }
+        )
+    return dom_list
 
-
-def get_native_messages(driver, api_json) -> List:
-    native_message_list = []
-    # Retrieves all the Native Messages
-    for message in api_json["messages"]:
-        native_msg_xpath = "{}{}{}".format(
-            MSG_CARD_HEAD,
-            api_json["messages"].index(message) + 1,
-            MSG_CARD_TAIL)
-        driver.execute_script(
-            "arguments[0].scrollIntoView();",
-            driver.find_element_by_xpath(native_msg_xpath))
-        while True:
-            if driver.find_element_by_xpath(native_msg_xpath).is_displayed():
-                native_message_list.append(
-                    driver.find_element_by_xpath(native_msg_xpath).text)
-                break
-    driver.find_element_by_xpath(
-        '//*[@id="root"]/main/header/div[2]/button').click()
-    return native_message_list
 
 def unescape(in_str):
     """Unicode-unescape string with only some characters escaped."""
