@@ -116,6 +116,7 @@ def get_message_cards_data(driver, api_json) -> List:
             driver, api_json, message_index)
         flag = get_message_flags(
             driver, api_json, front_end_index, message_index)
+        # TODO: Redo this part since flipping translations every single message take forever
         # Translate Botan GO!
         driver.find_element_by_xpath(
             '//*[@id="root"]/main/header/div[2]/button').click()
