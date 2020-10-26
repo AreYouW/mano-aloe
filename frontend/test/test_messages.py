@@ -9,12 +9,9 @@ REGEX_N = re.compile(r"((\\n)|\s){1,5}")
 
 def test_main(args):
     driver = webdriver.Chrome(args.chromedriver_path)
-    # driver = webdriver.Chrome("/users/jesse/chromedriver")
     driver.implicitly_wait(5)
     driver.get(args.website_url)
-    # driver.get("https://manotomo.tk")
-    api = requests.get(args.website_url + "/api/messages")
-    # api = requests.get("https://manotomo.tk/api/messages")
+    api = requests.get(args.backend_url + "/api/messages")
     api_json = api.json()
     print(json.dumps(api_json, sort_keys=True, ensure_ascii=True, indent=4))
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -44,13 +41,14 @@ def test_main(args):
     driver.find_element_by_xpath(
         '//*[@id="root"]/main/header/div[2]/button').click()
     for message in api_json["messages"]:
+        front_end_index = api_json["messages"].index(message) + 1
         jp_msg_xpath = "{}{}{}".format(
             msg_card_head,
-            api_json["messages"].index(message) + 1,
+            front_end_index,
             msg_card_tail)
         flag_xpath = "{}{}{}".format(
             flag_head,
-            api_json["messages"].index(message) + 1,
+            front_end_index,
             flag_tail
         )
         if api_json["messages"][api_json["messages"].index(
@@ -65,8 +63,6 @@ def test_main(args):
                     jp_message_list.append(
                         driver.find_element_by_xpath(jp_msg_xpath).text)
                     break
-                else:
-                    pass
         if api_json["messages"][api_json["messages"].index(
                 message)]["country"] == "":
             flag_list.append("")
@@ -81,8 +77,6 @@ def test_main(args):
                             ord(x) - 0x1F1A5), driver.find_element_by_xpath(
                             flag_xpath).get_attribute("alt"))))
                     break
-                else:
-                    pass
         driver.execute_script(
             "arguments[0].scrollIntoView();",
             driver.find_element_by_xpath(jp_msg_xpath))
@@ -102,39 +96,31 @@ def test_main(args):
         )
 
     for message in api_json["messages"]:
-        if (
+        if not (
             api_json["messages"][api_json["messages"].index(message)][
                 "country"] == DOM_list[api_json["messages"].index(message)][
                 "country"]):
-            pass
-        else:
             print(
                 F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
                 ' THE COUNTRY HAS A MISMATCH')
-        if (
+        if not (
             unescape(api_json["messages"][api_json["messages"].index(message)][
                 "orig_msg"]) == DOM_list[api_json["messages"].index(message)][
                 "orig_msg"]):
-            pass
-        else:
             print(
                 F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
                 ' THE NATIVE MESSAGE HAS A MISMATCH')
-        if (
+        if not (
             unescape(api_json["messages"][api_json["messages"].index(message)][
                 "tl_msg"]) == DOM_list[api_json["messages"].index(message)][
                 "tl_msg"]):
-            pass
-        else:
             print(
                 F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
                 ' THE TRANSLATED MESSAGE HAS A MISMATCH')
-        if (
+        if not (
             unescape(api_json["messages"][api_json["messages"].index(message)][
                 "username"]) == DOM_list[api_json["messages"].index(message)][
                 "username"]):
-            pass
-        else:
             print(
                 F'ALERT: ON ENTRY {api_json["messages"].index(message) + 1}'
                 ' THE USERNAME HAS A MISMATCH')
@@ -167,6 +153,11 @@ if __name__ == '__main__':
         'a slash at the end, for example https://manotomo.tk is '
         'good, but https://manotomo.tk/ or '
         'https://manotomo.tk/api/messages is bad.'
+    )
+    parser.add_argument(
+        '--backend_url', '-b', dest='backend_url',
+        default='https://manotomo.tk',
+        help='URL for the backend. Used for local testing.'
     )
     args = parser.parse_args()
     test_main(args)
