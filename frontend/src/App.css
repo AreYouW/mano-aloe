@@ -4,14 +4,15 @@ body {
 
 .community-message-card {
     background-image: url(assets/cards/card2.png);
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
     padding: 15px;
     border-radius: 15px;
     margin: 15px;
     margin-top: 2rem;
     width: 50%;
 
-    background-color: #dc4087;
+    background-color: #fd438c;
     color: #fff;
     font-size: 25px;
 }
