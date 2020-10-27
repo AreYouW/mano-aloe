@@ -21,30 +21,23 @@ export default class AnnouncementSection extends BaseSection<Announcement> {
         super(props);
     }
 
-    render(): JSX.Element {
-        const sectionStyle: string = this.props.customSectionStyle ? this.props.customSectionStyle : "base-section";
-        return (
-            <>
-                {() => {
-                    if (!this.props.data.length) {
-                        return <></>;
-                    } else {
-                        return (
-                            <div className={sectionStyle}>
-                                {this.props.data.map((object: Announcement, idx: number) => {
-                                        return this.renderCard(object, idx % CardStyleLength, DisplayedLanguage.Original, idx)
-                                    }
-                                )}
-                            </div>
-                        );
-                    }
-                }}
-            </>
-        );
-    }
-
-
     renderCard(object: Announcement, cardStyleNum: number, language: DisplayedLanguage, id: number): JSX.Element {
         return <AnnouncementCard key={object.announcementID} object={object} cardStyleNum={id % CardStyleLength} language={language}/>;
+    }
+
+    render(): JSX.Element {
+        const sectionStyle: string = this.props.customSectionStyle ? this.props.customSectionStyle : "base-section";
+        if (!this.props.data.length) {
+            return <></>;
+        } else {
+            return (
+                <div className={sectionStyle}>
+                    {this.props.data.map((object: Announcement, idx: number) => {
+                            return this.renderCard(object, idx % CardStyleLength, DisplayedLanguage.Original, idx)
+                        }
+                    )}
+                </div>
+            );
+        }
     }
 }
