@@ -104,14 +104,14 @@
 
     - name: "check if systemd service exists"
       stat:
-        path: "/etc/systemd/system/cocochama.service"
+        path: "/etc/systemd/system/manoaloe.service"
       register: systemd_exists
 
     - name: "upload systemd service file"
       become: yes
       copy:
-        src: "{{ playbook_dir }}/../../systemd/cocochama.service"
-        dest: "/etc/systemd/system/cocochama.service"
+        src: "{{ playbook_dir }}/../../systemd/manoaloe.service"
+        dest: "/etc/systemd/system/manoaloe.service"
         owner: root
         group: root
         mode: '0644'
@@ -120,7 +120,7 @@
     - name: "enable and start backend systemd service"
       become: yes
       systemd:
-        name: cocochama.service
+        name: manoaloe.service
         daemon_reload: yes
         state: started
         enabled: yes
