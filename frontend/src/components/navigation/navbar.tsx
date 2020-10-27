@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
                     },
                     {
                         externalLink: true,
-                        link: 'https://github.com/DuongTyler/haachama-coco',
+                        link: 'https://github.com/AreYouW/mano-aloe',
                         altText: "github",
                         iconFunc: () => <InfoIcon/>
                     },
