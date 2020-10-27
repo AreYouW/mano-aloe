@@ -40,7 +40,7 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
         return (
             <>
                 <header className="App-header">
-                    <div style={{height: 50}}/>
+                    <div style={{height: 120}}/>
                     <div className="community-message-card">
                         <h1 className="community-message-header">A Community Message for Aloe</h1>
                         <div className="community-message-body">
