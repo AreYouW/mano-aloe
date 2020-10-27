@@ -13,7 +13,7 @@ import './navbar.css';
 export default function ButtonAppBar() {
     return (
         <header className="navbar">
-            <img className="icon-button" src={Logo} alt="cocohaato logo"/>
+            <img className="icon-button" src={Logo} alt="aloe heart logo"/>
             <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[

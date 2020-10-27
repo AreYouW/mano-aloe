@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import InPageNav from '../inPageNav/inPageNav';
 import {Cancel} from "@material-ui/icons";
 import {IconButton} from "@material-ui/core";
+import '../../shared/globalStyles/global.css'
 
 import Manotomo1 from '../../assets/sprites/manotomo1.png'
 import Manotomo2 from '../../assets/sprites/manotomo2.png'
@@ -62,7 +63,7 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
                     <div style={{height: 50}}/>
                     <div className="community-message-card birthday-card">
                         <h1 className="community-message-header">Happy Birthday, Aloe</h1>
-                        <div className="community-message-body">
+                        <div className="community-message-body text-center">
                             <p>お元気にお過ごしのことと存じます</p>
                             <p>お誕生日おめでとうございます</p>
                         </div>
