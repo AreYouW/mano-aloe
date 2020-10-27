@@ -3,7 +3,7 @@ body {
 }
 
 .community-message-card {
-    background-image: url(assets/cards/card2.png);
+    background-image: url(assets/cards/card2.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 15px;
