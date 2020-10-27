@@ -28,6 +28,9 @@ def test_messages(args):
 
     api = requests.get(f"http://{args.backend_url}/api/messages")
     api_json = api.json()
+    api_dom_keys_diff = DeepDiff(
+        api_json["messages"][0].keys(), TEST_DIMENSIONS)
+    assert not api_dom_keys_diff, "Diff between backend and frontend keys"
 
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
     DOM_dict = get_message_cards_data(driver, api_json)
@@ -112,7 +115,7 @@ def get_message_cards_data(driver, api_json) -> Dict:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
         current_dict = {
-            "region": get_message_flags(
+            REGION: get_message_flags(
                 driver, api_json, front_end_index, message_index),
             "orig_msg": unescape(
                 get_native_messages(
