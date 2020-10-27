@@ -78,7 +78,7 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
 
     render() {
         let today: Date = new Date();
-        if (today.getDate() == 27 && today.getMonth() == 9) //Oct 28th
+        if (today.getDate() == 28 && today.getMonth() == 9) //Oct 28th
             return this.renderBirthdayHeader();
         return this.renderDefaultSection();
     }
