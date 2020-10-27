@@ -16,7 +16,9 @@ MSG_CARD_TAIL = (
     ']/div/div/div/div[@class="message-card-text active-message"]/div')
 FLAG_TAIL = ']/div/div/div[2]/span/img'
 TRANSLATE_BOTAN = '//*[@id="root"]/header[1]/div[2]/button'
-TEST_DIMENSIONS = ["region", "orig_msg", "tl_msg", "username"]
+# TODO: Replace TEST_DIMENSIONS with "region" once aloe site uses region in db
+REGION = "country"
+TEST_DIMENSIONS = [REGION, "orig_msg", "tl_msg", "username"]
 
 
 def test_messages(args):
@@ -85,7 +87,7 @@ def get_message_flags(
         front_end_index,
         FLAG_TAIL
     )
-    if api_json["messages"][message_index]["region"]:
+    if api_json["messages"][message_index][REGION]:
         driver.execute_script(
             "arguments[0].scrollIntoView();",
             driver.find_element_by_xpath(flag_xpath))
