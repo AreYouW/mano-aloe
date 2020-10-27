@@ -19,6 +19,7 @@
 
     font-size: 2.125rem;
     color: white;
+    z-index: 3;
 }
 
 @media (max-width: 522px) {

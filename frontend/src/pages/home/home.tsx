@@ -83,11 +83,6 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
         return (
             <section id='anchor'>
                 <div className="home-root">
-                    <div className="separator">
-                        <AnchorLink offset='120' href='#video-anchor'>
-                            <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
-                        </AnchorLink>
-                    </div>
                     <div className="video-container">
                     <section id='video-anchor'/>
                     <iframe title="Mano Aloe Fanmade Video" className="video-tag height-width-100"

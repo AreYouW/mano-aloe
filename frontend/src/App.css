@@ -26,7 +26,6 @@ body {
 
 @media (max-width: 900px) {
     .community-message-card {
-        margin-top: 25vh;
         width: 90%;
     }
 }

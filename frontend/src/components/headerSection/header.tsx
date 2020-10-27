@@ -3,7 +3,9 @@ import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import InPageNav from '../inPageNav/inPageNav';
 import {Cancel} from "@material-ui/icons";
 import {IconButton} from "@material-ui/core";
-import '../../shared/globalStyles/global.css'
+import '../../shared/globalStyles/global.css';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
 
 import Manotomo1 from '../../assets/sprites/manotomo1.png'
 import Manotomo2 from '../../assets/sprites/manotomo2.png'
@@ -59,8 +61,16 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
         return (
             <>
                 <header className="App-header App-Birthday-header">
-                    <img id="manotomo1" src={Manotomo1}/>
                     <div style={{height: 50}}/>
+                    <img id="manotomo1" src={Manotomo1}/>
+                    <img id="manotomo2" src={Manotomo2}/>
+                </header>
+                <div className="separator">
+                    <AnchorLink offset='120' href='#bday-card'>
+                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
+                    </AnchorLink>
+                </div>
+                <div id="bday-card" className="justify-align-center bday-msg-container">
                     <div className="community-message-card birthday-card">
                         <h1 className="community-message-header">Happy Birthday, Aloe</h1>
                         <div className="community-message-body text-center">
@@ -68,11 +78,7 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
                             <p>お元気でいらっしゃいますか</p>
                         </div>
                     </div>
-                    <div style={{height: 50}}/>
-                    <AltNav />
-                    <div style={{height: 50}}/>
-                    <img id="manotomo2" src={Manotomo2}/>
-                </header>
+                </div>
             </>
         )
     }

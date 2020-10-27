@@ -21,12 +21,16 @@
 }
 
 .App-Birthday-header {
-    background-image: url(../../assets/backgrounds/bday-bg.png) !important;
-    height: calc(100vh - 64px - 40px);  /* full screen - navbar height - bottom anchor thingy*/
+    background-image: url(../../assets/backgrounds/bday-bg-2.png) !important;
+    height: calc(100vh - 40px);  /* full screen - navbar height - bottom anchor thingy*/
+    background-size: 100%;
+    background-color: #ffffff;
+    background-position: center center;
 }
 
 #manotomo1 {
     position: absolute;
+    width: 400px;
     left: 10px;
     bottom: 50px;
     z-index: 0;
@@ -34,30 +38,52 @@
 
 #manotomo2 {
     position: absolute;
+    width: 200px;
     right: 10px;
     bottom: 50px;
     z-index: 0;
 }
 
 .birthday-card {
-    left: 0vw !important;
     z-index: 2;
     animation: fadeIn 4s;
+    max-width: 500px;
+    position: relative;
+    left: 0px;
+}
+
+.bday-msg-container {
+    height: 100%;
+    background-color: #fd418d;
 }
 
 @media (max-width: 700px) {
     #manotomo1 {
-        width: calc(100% - 10px);
-        max-width: 471px;
-        top: 160px;
+        bottom: 50px;
     }
     #manotomo2 {
         opacity: 0;
     }
+    .birthday-card {
+        position: relative;
+        left: 0px;
+        max-width: 100%;
+    }
+    .App-header {
+    }
+    /*Handle mobile layouts since everything is freaking tiny*/
+    .community-message-card {
+        margin-top: 0px !important;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     #manotomo1 {
+        opacity: 0;
+        width: 0px;
+    }
+    #manotomo2 {
+        width: 0px;
     }
 }
 
