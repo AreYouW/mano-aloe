@@ -2,7 +2,7 @@ import React from "react";
 import CSS from 'csstype';
 import classNames from 'classnames';
 import handleViewport from 'react-in-viewport';
-import {Region} from "../../../models/region";
+import {Country} from "../../../models/country";
 import {Message} from "../../../models/message";
 import DisplayedLanguage from "../../../models/language";
 import {ReactComponent as TranslateBotan} from "../../../assets/icons/translateIcon.svg";
@@ -16,8 +16,8 @@ interface MessageCardProps extends BaseCardProps<Message>{
 interface MessageCardState extends BaseCardState{
 }
 
-function regionCodeToFlag(code: Region): string {
-    // Offset between Latin uppercase A-Z and Regional Indicator Symbols A-Z
+function countryCodeToFlag(code: Country): string {
+    // Offset between Latin uppercase A-Z and Countryal Indicator Symbols A-Z
     const RI_OFFSET = 0x1F1A5;
 
     if (code.length !== 2) return "";
@@ -41,7 +41,7 @@ export default class MessageCard extends BaseCard<Message, MessageCardProps, Mes
     constructor(props: MessageCardProps) {
         super(props);
         this.message = props.object;
-        this.flag = regionCodeToFlag(props.object.region);
+        this.flag = countryCodeToFlag(props.object.country);
         this.hasTlMsg = this.message.tl_msg != null && this.message.tl_msg != "";
 
         this.toggleCurrentLanguage = this.toggleCurrentLanguage.bind(this);

@@ -2,7 +2,7 @@ import React from 'react';
 import MessageSection from '../../components/messageSection/messageSection';
 import ArchiveSection from '../../components/archiveSection/archiveSection';
 import {Message} from "../../models/message";
-import {toRegion} from "../../models/region";
+import {toCountry} from "../../models/country";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
 import AnchorLink from 'react-anchor-link-smooth-scroll';
@@ -51,7 +51,7 @@ export default class HomePage extends React.Component<HomePageProps, HomePageSta
             this.manoAloeService.getAllMessages()
                 .then((messages: Message[]) => {
                     for (let message of messages) {
-                        message.region = toRegion(message.region as string);
+                        message.country = toCountry(message.country as string);
                     }
                     SessionService.saveMessages(messages);
                     this.setState({messages, messageLoaded: true});

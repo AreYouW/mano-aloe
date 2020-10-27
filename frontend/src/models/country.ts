@@ -1,4 +1,4 @@
-const REGION_LIST = [
+const COUNTRY_LIST = [
     "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT",
     "AU", "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI",
     "BJ", "BL", "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY",
@@ -22,13 +22,13 @@ const REGION_LIST = [
     "VN", "VU", "WF", "WS", "YE", "YT", "ZA", "ZM", "ZW",
 ] as const;
 
-export type Region = typeof REGION_LIST[number] | "";
+export type Country = typeof COUNTRY_LIST[number] | "";
 
-export function toRegion(str: string): Region {
+export function toCountry(str: string): Country {
     if (str === "UK") {
         return "GB";
     }
-    for (let c of REGION_LIST) {
+    for (let c of COUNTRY_LIST) {
         if (str === c)
             return str;
     }
