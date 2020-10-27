@@ -14,11 +14,18 @@
     align-items: center;
     justify-content: space-between;
 
-    background-color: #29222f;
+    background-color: #333031;
     box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.2);
 
     font-size: 2.125rem;
     color: white;
+    z-index: 3;
+}
+
+@media (max-width: 522px) {
+    .navbar > .title {
+        font-size: 16px;
+    }
 }
 
 .navbar > * {
@@ -39,7 +46,7 @@
 
 @media (max-width: 750px) {
 	.navbar {
-    justify-content: center;
+        justify-content: center;
 	}
 }
 
@@ -65,4 +72,11 @@
 .active-page-icon {
     opacity: 1;
     text-decoration: none;
-  }
+}
+
+@media (max-width: 310px) {
+    .navbar > .icons .button {
+        width: 48px;
+        height: 48px;
+    }
+}

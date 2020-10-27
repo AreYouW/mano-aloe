@@ -1,0 +1,133 @@
+---
+- hosts: holosite
+  vars_files:
+    - "../vars/vars.yml"
+  environment:
+    REACT_APP_CACHE_LIFESPAN: 7200000
+    REACT_APP_API: "{{ backend_proto }}://{{ backend_ip }}:{{ backend_port }}/api/"
+  tasks:
+
+### [SYSTEM]
+
+    - name: upgrade system
+      become: yes
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: install npm 
+      become: yes
+      apt:
+        name: nodejs
+        state: latest
+
+    - name: install pip
+      become: yes
+      apt:
+        name: python3-pip
+        state: latest
+
+    - name: install virtualenv
+      become: yes
+      apt:
+        name: virtualenv
+        state: latest
+
+    - name: install waitress
+      become: yes
+      apt:
+        name: python3-waitress
+        state: latest
+     
+### [SETTING UP COCOCHAMA SITE]
+
+    - name: "Create {{ siteuser }} user"
+      become: yes
+      user:
+        name: "{{ siteuser }}"
+        home: "/opt/{{ siteuser }}"
+        create_home: yes
+        state: present
+        comment: "{{ siteuser }} backend user"
+        system: yes
+
+    - name: "Pull from git repo"
+      become: yes
+      become_user: "{{ siteuser }}"
+      git:
+        repo: "{{ gitrepo }}"
+        dest: "/opt/{{ siteuser }}/git"
+        update: yes
+
+    - name: "install python dependencies"
+      become: yes
+      become_user: "{{ siteuser }}"
+      pip:
+        virtualenv: "/opt/{{ siteuser }}/venv"
+        requirements: "/opt/{{ siteuser }}/git/backend/requirements.txt"
+
+    - name: "install npm dependencies"
+      become: yes
+      become_user: "{{ siteuser }}"
+      npm:
+        path: "/opt/{{ siteuser }}/git/frontend"
+        state: latest
+
+    - name: "check if migrations folder exists"
+      stat:
+        path: "/opt/{{ siteuser }}/git/backend/migrations"
+      register: migration_exists
+
+    - name: "db init"
+      become: yes
+      become_user: "{{ siteuser }}"
+      command:
+        chdir: "/opt/{{ siteuser }}/git/backend"
+        cmd: "/opt/{{ siteuser }}/venv/bin/python3 /opt/{{ siteuser }}/git/backend/manage.py db init"
+      when: not migration_exists.stat.exists
+ 
+    - name: "db migrate"
+      become: yes
+      become_user: "{{ siteuser }}"
+      command:
+        chdir: "/opt/{{ siteuser }}/git/backend"
+        cmd: "/opt/{{ siteuser }}/venv/bin/python3 /opt/{{ siteuser }}/git/backend/manage.py db migrate"
+      when: not migration_exists.stat.exists
+        
+    - name: "create_db"
+      become: yes
+      become_user: "{{ siteuser }}"
+      command:
+        chdir: "/opt/{{ siteuser }}/git/backend"
+        cmd: "/opt/{{ siteuser }}/venv/bin/python3 /opt/{{ siteuser }}/git/backend/manage.py create_db"
+      when: not migration_exists.stat.exists
+
+    - name: "check if systemd service exists"
+      stat:
+        path: "/etc/systemd/system/manoaloe.service"
+      register: systemd_exists
+
+    - name: "upload systemd service file"
+      become: yes
+      copy:
+        src: "{{ playbook_dir }}/../../systemd/manoaloe.service"
+        dest: "/etc/systemd/system/manoaloe.service"
+        owner: root
+        group: root
+        mode: '0644'
+      when: not systemd_exists.stat.exists
+
+    - name: "enable and start backend systemd service"
+      become: yes
+      systemd:
+        name: manoaloe.service
+        daemon_reload: yes
+        state: started
+        enabled: yes
+
+    - name: "build frontend for production"
+      become: yes
+      become_user: "{{ siteuser }}"
+      command:
+        chdir: "/opt/{{ siteuser }}/git/frontend"
+        cmd: "/usr/bin/npm run-script build"

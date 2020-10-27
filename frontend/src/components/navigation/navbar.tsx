@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import ManoAloeGif from '../../assets/miscellaneous/Aloeicon.gif'
+import Logo from '../../assets/icons/AloeHeartIcon.png'
 import LanguageSwitchButton from '../languageSwitch/languageSwitch';
 
 import './navbar.css';
@@ -13,7 +13,7 @@ import './navbar.css';
 export default function ButtonAppBar() {
     return (
         <header className="navbar">
-            <img className="icon-button" src={ManoAloeGif} alt="Mano Aloe GIF"/>
+            <img className="icon-button" src={Logo} alt="aloe heart logo"/>
             <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[

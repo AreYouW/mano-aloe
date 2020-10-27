@@ -1,0 +1,7 @@
+---
+siteuser: mano-aloe
+installpath: "/opt/{{ siteuser }}"
+gitrepo: "https://github.com/AreYouW/mano-aloe"
+backend_proto: "https"
+backend_ip: "manotomo.tk"
+backend_port: "443"

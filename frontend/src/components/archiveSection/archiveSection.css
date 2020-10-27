@@ -1,0 +1,35 @@
+.video-container {
+    width: 100%;
+    box-sizing: border-box;
+    height: 75vh;
+    max-height: 768px;
+    background-attachment: fixed;
+    background-color: #000;
+}
+
+@media (max-width: 900px) {
+    .video-container {
+        height: 50vh;
+    }
+}
+
+.video-tag {
+    width: 50%;
+    height: 100%;
+}
+
+.video-card {
+    width: 50%;
+    height: 100%;
+    max-height: 768px;
+    border: none;
+}
+
+.header-section {
+    background-color: #890620;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    font-size: 1.4rem;
+    padding: 20px;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
+import AnnouncementCard from '../../../components/announcementSection/announcementCard';
+import {Announcement} from "../../../models/announcement";
 import {LanguageContext, LanguageContextValue} from "../../../components/languageSwitch/languageContext";
 import DisplayedLanguage from "../../../models/language";
+import {CardStyleLength} from "../../../shared/components/baseCard/baseCard";
 import './baseSection.css'
 
 export interface BaseSectionProps<T> {
@@ -25,16 +28,21 @@ export default abstract class BaseSection<T> extends React.Component<BaseSection
             <LanguageContext.Consumer>
                 {(value: LanguageContextValue) => {
                     const {language} = value;
-                    return (
-                        <div className={sectionStyle}>
-                            {this.props.data.map((object: T, idx: number) => {
-                                    return this.renderCard(object, idx % 3, language, idx)
-                                }
-                            )}
-                        </div>
-                    );
+                    if (!this.props.data.length) {
+                        const emptyAnnouncemment: Announcement = { announcementID: 0, message: "Nothing here! Check back later!" };
+                        return <AnnouncementCard object={emptyAnnouncemment} cardStyleNum={0} language={language} />;
+                    } else {
+                        return (
+                            <div className={sectionStyle}>
+                                {this.props.data.map((object: T, idx: number) => {
+                                        return this.renderCard(object, idx % CardStyleLength, language, idx)
+                                    }
+                                )}
+                            </div>
+                        );
+                    }
                 }}
             </LanguageContext.Consumer>
-        )
+        );
     }
 }
