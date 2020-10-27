@@ -6,6 +6,7 @@
     width: 100%;
     box-sizing: border-box;
     height: 75vh;
+    max-height: 768px;
     background-attachment: fixed;
 }
 

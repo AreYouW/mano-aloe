@@ -2,7 +2,6 @@
     --card-text-width: 420px;
 
     display: block;
-    position: relative;
     width: auto;
     min-height: 1px;  /*DO NOT REMOVE THIS LINE. OTHERWISE YOU WILL EXPERIENCE PAIN IN TRYING TO FIX COLUMN STACKING ON CHROME/IOS*/
     overflow: auto;
@@ -17,7 +16,7 @@
     color: white;
 
     list-style-type: none;
-    object-fit: fill;
+    /*object-fit: fill;*/
 
     transition: all 0.4s ease;
 }
@@ -25,6 +24,7 @@
 @media (max-width: 1000px) {
     .base-card {
         --card-text-width: 330px;
+        width: 100%;
         max-width: 100vw;
     }
 }

@@ -88,18 +88,12 @@ body {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     background-color: #d35454;
-    background-image: url(https://u.cubeupload.com/zapple/460topbg.png);
+    background-image: url(assets/backgrounds/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-}
-
-@media (max-width: 900px) {
-    .App-header {
-        background-image: none;
-    }
 }
 
 @media (max-height: 800px) {

@@ -12,9 +12,9 @@ import '../../shared/globalStyles/global.css'
 const useStyles = makeStyles((theme) => ({
   containedPrimary: {
     color: "#ffffff",
-    backgroundColor: "#333031",
+    backgroundColor: "#724683",
     '&:hover': {
-      backgroundColor: "#333039",
+      backgroundColor: "#fd418d",
     },
   },
 }));

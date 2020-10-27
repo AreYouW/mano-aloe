@@ -5,7 +5,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import InfoIcon from '@material-ui/icons/Info';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
-import Logo from '../../assets/icons/temp_logo.svg'
+import Logo from '../../assets/icons/AloeHeartIcon.png'
 import LanguageSwitchButton from '../languageSwitch/languageSwitch';
 
 import './navbar.css';
@@ -14,7 +14,7 @@ export default function ButtonAppBar() {
     return (
         <header className="navbar">
             <img className="icon-button" src={Logo} alt="cocohaato logo"/>
-            <div className="title">ココとはあと、お帰り!</div>
+            <div className="title">魔の友から、アロエちゃんへ</div>
             <div className="icons">
                 {[
                     {
