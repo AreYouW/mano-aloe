@@ -27,21 +27,19 @@ def test_messages(args):
     api_json = api.json()
 
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-    DOM_list = get_message_cards_data(driver, api_json)
+    DOM_dict = get_message_cards_data(driver, api_json)
 
     for message in api_json["messages"]:
         message["tl_msg"] = unescape(message["tl_msg"])
         message["orig_msg"] = unescape(message["orig_msg"])
 
-    for message in api_json["messages"]:
-        message_index = api_json["messages"].index(message)
-        front_end_index = message_index + 1
+    for message_index, dom_message in DOM_dict.items():
         for dimension in TEST_DIMENSIONS:
             diff = DeepDiff(
                 api_json["messages"][message_index][dimension],
-                DOM_list[message_index][dimension])
+                dom_message[dimension])
             if diff:
-                print(f"Diff detected in front end index {front_end_index}")
+                print(f"Diff detected in front end index {message_index + 1}")
                 pprint(diff)
 
 
@@ -105,40 +103,40 @@ def get_message_username(
         "message-card-footer")[message_index].text
 
 
-def get_message_cards_data(driver, api_json) -> List:
-    dom_list = []
+def get_message_cards_data(driver, api_json) -> Dict:
+    dom_dict = {}
     for message in api_json["messages"]:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
-        native_msg = get_native_messages(
-            driver, api_json, front_end_index, message_index)
-        username = get_message_username(
-            driver, api_json, message_index)
-        flag = get_message_flags(
-            driver, api_json, front_end_index, message_index)
-        # TODO: Redo this part since flipping translations every single message take forever
-        # Translate Botan GO!
-        driver.find_element_by_xpath(
-            '//*[@id="root"]/main/header/div[2]/button').click()
-        jp_msg = get_jp_messages(
-            driver, api_json, front_end_index, message_index)
-        # Revert Back for normal msg
-        driver.find_element_by_xpath(
-            '//*[@id="root"]/main/header/div[2]/button').click()
-        dom_list.append(
-            {
-                "country": flag,
-                "orig_msg": unescape(native_msg),
-                "tl_msg": unescape(jp_msg),
-                "username": username
-            }
-        )
-    return dom_list
+        current_dict = {
+            "country": get_message_flags(
+                driver, api_json, front_end_index, message_index),
+            "orig_msg": unescape(
+                get_native_messages(
+                    driver, api_json, front_end_index, message_index)),
+            "tl_msg": "",  # Populate after page completely Japanese
+            "username": get_message_username(
+                driver, api_json, message_index)
+        }
+        dom_dict[message_index] = current_dict
+
+    # TRANSLATE BOTAN GO!
+    driver.find_element_by_xpath(
+        '//*[@id="root"]/main/header/div[2]/button').click()
+    # Not part of the original loop to save time since all cards are
+    # translated using the site-wide traslate botan
+    for message in api_json["messages"]:
+        message_index = api_json["messages"].index(message)
+        front_end_index = message_index + 1
+        dom_dict[message_index]['tl_msg'] = unescape(
+            get_jp_messages(
+                driver, api_json, front_end_index, message_index))
+    return dom_dict
 
 
 def unescape(in_str):
     """Unicode-unescape string with only some characters escaped."""
-    #ideographic space skip, it doesn't work for some reason :(
+    # ideographic space skip, it doesn't work for some reason :(
     in_str = in_str.replace('\\u3000', " ")
     in_str = REGEX_N.sub(" ", in_str)
     in_str = in_str.encode('unicode-escape')   # bytes with all chars escaped (the original escapes have the backslash escaped)
