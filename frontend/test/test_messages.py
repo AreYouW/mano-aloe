@@ -2,7 +2,7 @@
 import argparse
 from pprint import pprint
 import re
-from typing import List, Dict
+from typing import Dict
 
 # 3rd party libs
 from deepdiff import DeepDiff
@@ -11,19 +11,20 @@ from selenium import webdriver
 
 
 REGEX_N = re.compile(r"((\\n)|\s){1,5}")
-MSG_CARD_HEAD = '//div[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
-MSG_CARD_TAIL = ']/div[1]/div[@class="message-card-text active-message"]/div'
-FLAG_HEAD = '//*[@id="root"]/main/div[2]/div[2]/div[5]/div/div['
-FLAG_TAIL = ']/div[2]/span/img'
-TEST_DIMENSIONS = ["country", "orig_msg", "tl_msg", "username"]
+MSG_CARD_HEAD = '//div[@id="root"]/main/section/div/div[5]/div/div/div['
+MSG_CARD_TAIL = (
+    ']/div/div/div/div[@class="message-card-text active-message"]/div')
+FLAG_TAIL = ']/div/div/div[2]/span/img'
+TRANSLATE_BOTAN = '//*[@id="root"]/header[1]/div[2]/button'
+TEST_DIMENSIONS = ["region", "orig_msg", "tl_msg", "username"]
 
 
 def test_messages(args):
     driver = webdriver.Chrome(args.chromedriver_path)
     driver.implicitly_wait(5)
-    driver.get(args.website_url)
+    driver.get(f"http://{args.website_url}")
 
-    api = requests.get(args.backend_url + "/api/messages")
+    api = requests.get(f"http://{args.backend_url}/api/messages")
     api_json = api.json()
 
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
@@ -80,11 +81,11 @@ def get_jp_messages(
 def get_message_flags(
         driver, api_json, front_end_index, message_index) -> str:
     flag_xpath = "{}{}{}".format(
-        FLAG_HEAD,
+        MSG_CARD_HEAD,
         front_end_index,
         FLAG_TAIL
     )
-    if api_json["messages"][message_index]["country"]:
+    if api_json["messages"][message_index]["region"]:
         driver.execute_script(
             "arguments[0].scrollIntoView();",
             driver.find_element_by_xpath(flag_xpath))
@@ -109,7 +110,7 @@ def get_message_cards_data(driver, api_json) -> Dict:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
         current_dict = {
-            "country": get_message_flags(
+            "region": get_message_flags(
                 driver, api_json, front_end_index, message_index),
             "orig_msg": unescape(
                 get_native_messages(
@@ -121,8 +122,7 @@ def get_message_cards_data(driver, api_json) -> Dict:
         dom_dict[message_index] = current_dict
 
     # TRANSLATE BOTAN GO!
-    driver.find_element_by_xpath(
-        '//*[@id="root"]/main/header/div[2]/button').click()
+    driver.find_element_by_xpath(TRANSLATE_BOTAN).click()
     # Not part of the original loop to save time since all cards are
     # translated using the site-wide traslate botan
     for message in api_json["messages"]:
@@ -156,15 +156,15 @@ if __name__ == '__main__':
         help='the path to your chromedriver')
     parser.add_argument(
         '--website_url', '-w', dest='website_url',
-        default='https://manotomo.tk',
+        default='manotomo.tk',
         help='the website that this test will use, do not include '
-        'a slash at the end, for example https://manotomo.tk is '
-        'good, but https://manotomo.tk/ or '
-        'https://manotomo.tk/api/messages is bad.'
+        'a slash at the end, for example manotomo.tk is '
+        'good, but manotomo.tk/ or '
+        'manotomo.tk/api/messages is bad.'
     )
     parser.add_argument(
         '--backend_url', '-b', dest='backend_url',
-        default='https://manotomo.tk',
+        default='manotomo.tk',
         help='URL for the backend. Used for local testing.'
     )
     args = parser.parse_args()
