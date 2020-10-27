@@ -52,6 +52,11 @@ export default class HeaderSection extends Component<HeaderProps, HeaderState>
                     <AltNav />
                     <div style={{height: 50}}/>
                 </header>
+                <div className="separator">
+                    <AnchorLink offset='120' href='#video-anchor'>
+                        <ArrowDropDownCircleOutlinedIcon className="anchor-link" style={{width: 36, height:36}}/>
+                    </AnchorLink>
+                </div>
             </>
        )
     }
