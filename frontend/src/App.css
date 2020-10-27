@@ -81,28 +81,6 @@ body {
     }
 }
 
-.App-header {
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    background-color: #d35454;
-    background-image: url(assets/backgrounds/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-}
-
-@media (max-height: 800px) {
-    .App-header {
-        min-height: 580px;
-    }
-}
-
 .App-link {
     color: #61dafb;
 }
