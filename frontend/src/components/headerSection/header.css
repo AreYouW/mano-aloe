@@ -21,7 +21,7 @@
 }
 
 .App-Birthday-header {
-    background-image: url(../../assets/backgrounds/bday-bg-2.png) !important;
+    background-image: url(https://cdn.discordapp.com/attachments/745063266694201444/770662475015651338/HB_Aloe.png) !important;
     height: calc(100vh - 40px);  /* full screen - navbar height - bottom anchor thingy*/
     background-size: 100%;
     background-color: #ffffff;
