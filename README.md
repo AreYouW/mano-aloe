@@ -18,6 +18,7 @@ Website for the messages of support from the [Mano Aloe Support Squad (M.A.S.S)]
 
 ### Artwork Team
 
+- [Saeki Makai](https://twitter.com/SaekiMakai) ( [caution NSFW](https://www.pixiv.net/en/users/1795893) ) - Artist of the Birthday Header that shows up every October 28th
 - Akatadaiyo - Game character design (manotomo slime)
 - goo - Site art team manager
 - Fenneko - Skull Manotome / Minor designs
