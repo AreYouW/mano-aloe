@@ -1,3 +1,14 @@
+"""
+E2E test for whether API messages from Backend and DOM messages displayed
+on Frontend matches.
+
+Checks native messages, JP messages, flag emojis, and username.
+
+Exercises the following UI elements:
+- Full site translate botan on NavBar
+- Loading and displaying cards on the entire frontpage
+"""
+
 # Python Standard libs
 import argparse
 from pprint import pprint
