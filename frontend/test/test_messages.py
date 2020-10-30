@@ -39,9 +39,18 @@ def test_messages(args):
 
     api = requests.get(f"http://{args.backend_url}/api/messages")
     api_json = api.json()
+
+    # Determines whether fields in the FE and BE are the same.
+    # Skips UI testing early if there's possible issues here.
+    api_keys = list(api_json["messages"][0].keys())
+    # messageID not used on the frontend
+    api_keys.pop(api_keys.index("messageID"))
     api_dom_keys_diff = DeepDiff(
-        api_json["messages"][0].keys(), TEST_DIMENSIONS)
-    assert not api_dom_keys_diff, "Diff between backend and frontend keys"
+        api_keys,
+        TEST_DIMENSIONS,
+        ignore_order=True)
+    assert not api_dom_keys_diff, (
+        f"Diff between backend and frontend keys {api_dom_keys_diff}")
 
     driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
     DOM_dict = get_message_cards_data(driver, api_json)
