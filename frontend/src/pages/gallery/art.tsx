@@ -3,7 +3,11 @@ import GallerySection from '../../components/gallery/gallerySection';
 import {Artwork} from "../../models/artwork";
 import ManoAloeService from "../../controllers/mano-aloe.service";
 import SessionService from "../../services/session.service";
-import './art.css'
+import '../../shared/globalStyles/global.css'
+
+import AnnouncementCard from '../../components/announcementSection/announcementCard';
+import {Announcement} from "../../models/announcement";
+import DisplayedLanguage from "../../models/language";
 
 export interface ArtPageProps {
 
@@ -48,7 +52,11 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
     }
 
     renderGallerySection() {
-        return (
+        if (!this.state.artworks.length) {
+            const emptyAnnouncemment: Announcement = { announcementID: 0, message: "Nothing here! Check back later!" };
+            return <AnnouncementCard object={emptyAnnouncemment} cardStyleNum={0} language={DisplayedLanguage.Original} />;
+        }
+        else return (
             <GallerySection data={this.state.artworks}/>
         )
     }
@@ -57,14 +65,6 @@ export default class ArtPage extends React.Component<ArtPageProps, ArtPageState>
         return (
             <section id='anchor'>
                 <div className="separator"/>
-                <div className="notice-center">
-                    <div className="notice-container">
-                        <div className="notice-content">
-                            <p>Fan Art video coming soon!</p>
-                            <p>ファンから自作のビデオがもうすぐ出ます!</p>
-                        </div>
-                    </div>
-                </div>
                 <div className="wrapper-overlay">
                     {this.state.loading ? 'Loading...' : this.renderGallerySection()}
                 </div>

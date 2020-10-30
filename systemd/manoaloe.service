@@ -1,0 +1,15 @@
+[Unit]
+Description=mano aloe backend api and db
+After=network.target
+
+[Service]
+User=mano-aloe
+WorkingDirectory=/opt/mano-aloe/git/backend
+Environment="APP_CONFIG=main.server.config.ProductionConfig"
+Environment="SECRET_KEY=CHANGEME"
+ExecStart=/opt/mano-aloe/venv/bin/waitress-serve --listen=0.0.0.0:5000 main.server:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

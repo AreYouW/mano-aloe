@@ -1,0 +1,157 @@
+.timer-container {
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b0548c;
+    width: 60vw;
+    height: 200px;
+    border-radius: 1vw;
+    position: relative;
+}
+
+.timer-counter {
+    text-align: center;
+    color: #fff;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.timer-overlay {
+    z-index: 10;
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.timer-value {
+    font-size: 2.5rem;
+}
+
+.timer-unit {
+    font-size: 1.25rem;
+}
+
+.sprite {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+.sprite-large {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+
+.timer-item {
+    width: 150px;
+}
+
+/*
+ *  oh god this is... welp, we are out of time so let's just roll with it
+ */
+
+#coco1 {
+    /*top left dragon*/
+    top: -160px;
+    left: 0px;
+}
+
+#coco2 {
+    /*top right dragon that looks like (s)he's struggling*/
+    top: -120px;
+    right: -130px;
+    opacity: 1;
+}
+
+#coco3 {
+    /*dragon egg about to be yeeted by haaton 6*/
+    top: -170px;
+    right: 150px;
+}
+
+#coco4 {
+    /*flying dragon at the bottom of the timer*/
+    bottom: -70px;
+    right: 100px;
+}
+
+#haaton1 {
+    /*pushing from left side*/
+    bottom: -50px;
+    left: -100px;
+    opacity: 1;
+}
+
+#haaton2 {
+    /*pulling haaton right side*/
+    bottom: -60px;
+    right: -160px;
+    opacity: 1;
+}
+
+#haaton3 {
+    /*slacker haaton on top of timer*/
+    top: -90px;
+    left: 200px;
+}
+
+#haaton4 {
+    /*dude haaton at bottom*/
+    bottom: -200px;
+    left: 250px;
+}
+
+#haaton5 {
+    /*dudette haaton at bottom*/
+    bottom: -190px;
+    left: 150px;
+}
+
+#haaton6 {
+    /*about to yeet some poor dragon off the timer*/
+    top: -90px;
+    right: 150px;
+}
+
+@media (max-width: 1024px) {
+    .timer-container {
+        width: 100vw;
+    }
+    #haaton1 {
+        /*pushing from left side*/
+        opacity: 0;
+    }
+    #haaton2 {
+        /*pulling haaton right side*/
+        opacity: 0;
+        bottom: 0px;
+        right: 0px;
+    }
+    #coco2 {
+        opacity: 0;
+        top: 0px;
+        right: 0px;
+    }
+    #coco3 {
+        right: 0px;
+    }
+    #haaton6 {
+        right: 0px;
+    }
+}
+
+@media (max-width: 420px) {
+    #haaton3 {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+    #haaton4 {
+        opacity: 0;
+        top: 0;
+        left: 0;
+    }
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 import {Game} from "../../models/game";
 import ManoAloeService from "../../controllers/mano-aloe.service";
+import SessionService from "../../services/session.service"
 import '../../components/gamesSection/gameSection.css'
-import games from './../../tempGameStash/games.json'
 import GameSection from "../../components/gamesSection/gameSection";
+import '../../shared/globalStyles/global.css'
 
 export interface GamePageProps {
 
@@ -32,20 +33,20 @@ export default class GamePage extends React.Component<GamePageProps, GamePageSta
         this.getData();
     }
 
-
-
     private getData(): void {
-        const mappedGames: Game[] =  games.map((game: { gameID: string; title: string; description: string; thumbnail: string; gitLink: string; gameLink: string; }, idx) => {
-            return {
-                gameID: parseInt(game.gameID),
-                title: game.title,
-                description: game.description,
-                thumbnail: game.thumbnail,
-                gitLink: new URL(game.gitLink),
-                gameLink: new URL(game.gameLink),
-            } as Game
-        });
-        this.setState({games: mappedGames, loading: false});
+        const cachedGames: Game[] | null = SessionService.getGames();
+        if (cachedGames && cachedGames.length) {
+            this.setState({loading: false, games: cachedGames});
+        } else {
+            this.manoAloeService.getAllGames()
+                .then((games: Game[]) => {
+                    SessionService.saveGames(games);
+                    this.setState({loading: false, games});
+                })
+                .catch((error: Error) => {
+                    console.error(error);
+                })
+        }
     }
 
     render() {

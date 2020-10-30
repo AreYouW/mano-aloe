@@ -1,0 +1,88 @@
+.message-card {
+    --card-text-width: 400px;
+
+    display: block;
+    position: relative;
+    width: auto;
+    min-height: 100px;
+    min-width: 330px;
+    overflow: auto;
+    border-radius: 15px;
+
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 10px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: white;
+
+    list-style-type: none;
+    object-fit: fill;
+
+    transition: all 0.4s ease;
+}
+
+@media (max-width: 500px) {
+	.message-card {
+		--card-text-width: 300px;
+	}
+}
+
+.message-card-text-container {
+    width: var(--card-text-width);
+    max-width: 100%;
+    margin: 0 auto;
+
+    font-size: 24px;
+    padding-top: 25%;
+}
+
+.message-card-text-container > .clear {
+    clear: both;
+}
+
+.message-card-text {
+    width: 0;
+    float: left;
+    opacity: 0;
+
+    transition: all 0.25s ease;
+}
+
+.message-card-text.active-message {
+    opacity: 1;
+}
+
+.message-card-text > div {
+    width: var(--card-text-width);
+}
+
+.message-card-footer {
+    margin-top: 10px;
+    float: right;
+    text-align: right;
+}
+
+.message-card-translate {
+    /*the translate button properties*/
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 420px) {
+    .message-card {
+        --card-text-width: 100%;
+    }
+    .message-card-text > div {
+        max-width: 70vw;
+    }
+}
+@media (max-width: 1000px) {
+    .messagecard-center {
+        display: flex;
+        justify-content: center;
+    }
+}
