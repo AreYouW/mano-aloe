@@ -20,7 +20,7 @@ from deepdiff import DeepDiff
 import requests
 from selenium import webdriver
 
-
+NUM_ERRORS = 0
 REGEX_N = re.compile(r"((\\n)|\s){1,5}")
 MSG_CARD_HEAD = '//div[@id="root"]/main/section/div/div[5]/div/div/div['
 MSG_CARD_TAIL = (
@@ -59,6 +59,7 @@ def test_messages(args):
         message["tl_msg"] = unescape(message["tl_msg"])
         message["orig_msg"] = unescape(message["orig_msg"])
 
+    global NUM_ERRORS
     for message_index, dom_message in DOM_dict.items():
         for dimension in TEST_DIMENSIONS:
             diff = DeepDiff(
@@ -67,6 +68,8 @@ def test_messages(args):
             if diff:
                 print(f"Diff detected in front end index {message_index + 1}")
                 pprint(diff)
+                NUM_ERRORS += 1
+
 
 
 def get_native_messages(
@@ -83,7 +86,7 @@ def get_native_messages(
             return driver.find_element_by_xpath(native_msg_xpath).text
     else:
         raise ValueError(
-            "Some opertaion has gone wrong, front_end_index "
+            "Some operation has gone wrong, front_end_index "
             f"{front_end_index} for native msg does not exist on page")
 
 
@@ -149,7 +152,7 @@ def get_message_cards_data(driver, api_json) -> Dict:
     # TRANSLATE BOTAN GO!
     driver.find_element_by_xpath(TRANSLATE_BOTAN).click()
     # Not part of the original loop to save time since all cards are
-    # translated using the site-wide traslate botan
+    # translated using the site-wide translate botan
     for message in api_json["messages"]:
         message_index = api_json["messages"].index(message)
         front_end_index = message_index + 1
@@ -194,3 +197,4 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
     test_messages(args)
+    print(NUM_ERRORS)
